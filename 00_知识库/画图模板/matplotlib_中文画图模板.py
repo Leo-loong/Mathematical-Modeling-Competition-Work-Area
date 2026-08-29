@@ -71,6 +71,8 @@ def line_plot(x, y, xlabel="x", ylabel="y", title="", label=None,
 # 3. 散点图 + 拟合直线（回归可视化）
 # ------------------------------------------------------------
 def scatter_fit(x, y, xlabel="x", ylabel="y", title="", fname="scatter.png"):
+    x = np.asarray(x, dtype=float)   # 兼容 list 输入（polyfit/min 都要求 ndarray）
+    y = np.asarray(y, dtype=float)
     fig, ax = plt.subplots(figsize=(8, 5))
     ax.scatter(x, y, s=18, color="#ff7f0e", alpha=0.7, label="数据点")
     k, b = np.polyfit(x, y, 1)
