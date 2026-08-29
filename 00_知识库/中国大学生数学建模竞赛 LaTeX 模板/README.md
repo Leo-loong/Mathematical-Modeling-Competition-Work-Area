@@ -79,6 +79,14 @@ latexmk -C main
 	+ **TeXLive 版本**: 2023
 	+ **主文档(Main Document)**: main.tex
 
+## 常见问题
+
+- **本地编译报 `File 'cprotect.sty' not found` / `cleveref.sty` 不存在**：本机 TeXLive 是精简版，缺宏包。解决：
+  - 用管理员权限安装：`sudo tlmgr install cprotect cleveref`（Mac 上若 tlmgr 提示目录不可写，说明 TeXLive 装在系统目录，需 sudo）；
+  - 或者改用在线平台（TeXPage / Overleaf）编译，无需装宏包。
+- **编译很慢**：临时用 `\documentclass[draft]{commons/cumcmthesis}` 加快速度，交稿前务必去掉 `draft` 选项重新编译。
+- **电子版论文**：用 `\documentclass[withoutpreface,...]{commons/cumcmthesis}`（main.tex 当前默认），不含承诺书/编号页，第一页即摘要页。
+
 ## 文档类选项说明
 
 本项目文档类(Document Class)目前支持下面的选项:
