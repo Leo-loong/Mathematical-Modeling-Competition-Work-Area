@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Word 临时锁文件
+~$*
+
+# LaTeX 编译产物（各模板目录内也有 .gitignore）
+*.aux
+*.log
+*.out
+*.toc
