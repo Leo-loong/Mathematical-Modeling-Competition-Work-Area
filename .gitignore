@@ -36,11 +36,6 @@ untitled.pdf
 # 冗余 stderr 崩溃日志（各 2.9MB，已标记为垃圾）
 q4_w6_e5_stderr.txt
 
-# 大型外部资料（1.4GB，超 GitHub 限制且含第三方内容）
-kb/
-
-# 第三方获奖论文语料（103MB，版权归原作者）
-Work_Space/50_论文/02_章节稿/国奖优秀论文语料/
-
-# 机构付费课程资料（版权归机构）
-老哥机构资料整理/
+# 知识库引擎数据（962MB，含 856MB 检索库 catalog.db，超 GitHub 单文件 100MB 硬限；
+# 可由 kb/engine/*.py 重新构建，非语料本体）
+kb/engine/data/

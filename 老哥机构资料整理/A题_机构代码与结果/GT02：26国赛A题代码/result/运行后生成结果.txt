@@ -1,0 +1,2 @@
+请在 MATLAB 中运行 run_q1.m、run_q2.m、run_q3.m、run_q4.m。
+程序会在本文件夹生成 result1.xlsx 至 result4.xlsx、辅助汇总表和 PNG 图。

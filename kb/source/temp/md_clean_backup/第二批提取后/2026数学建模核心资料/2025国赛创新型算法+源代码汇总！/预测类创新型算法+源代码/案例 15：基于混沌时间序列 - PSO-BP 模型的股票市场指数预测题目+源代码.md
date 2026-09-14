@@ -1,0 +1,8 @@
+# 案例 15：基于混沌时间序列 - PSO-BP 模型的股票市场指数预测
+**问题背景**：股票市场指数（如上证指数、深证成指）的波动具有混沌特性，即短期可预测但长期因初值敏感性而难以预测，受宏观经济、政策变化、市场情绪等多种因素影响，呈现复杂的非线性关系。
+**问题描述**：某证券研究机构需要对某股票市场指数未来 10 个交易日的收盘指数进行预测。要求模型能够通过相空间重构揭示指数波动的内在混沌规律，结合优化后的神经网络提高预测精度，为投资者提供参考。
+**数据情况**：提供该股票市场指数过去 10 年的日收盘指数数据，同时提供宏观经济指标（GDP 增长率、利率、汇率等）、政策公告、市场成交量、投资者情绪指标等。数据量约 2500 条，存在部分交易日因节假日缺失的情况，且指数波动呈现明显的混沌特性。
+案例 15：混沌时间序列 - PSO-BP 模型股票市场指数预测代码
+
+| import pandas as pd<br>import numpy as np<br>import matplotlib.pyplot as plt<br>from sklearn.preprocessing import MinMaxScaler<br>from sklearn.metrics import mean_squared_error<br>from tensorflow.keras.models import Sequential<br>from tensorflow.keras.layers import Dense, Activation<br>from pyswarm import pso<br>import joblib<br>from scipy.spatial.distance import pdist, squareform<br># 数据加载与预处理<br>data = pd.read_csv('stock_index.csv', parse_dates=['date'], index_col='date')<br>index_data = data['close_index'].values.reshape(-1, 1)<br># 数据归一化<br>scaler = MinMaxScaler(feature_range=(0, 1))<br>index_scaled = scaler.fit_transform(index_data)<br># 相空间重构（混沌时间序列处理）<br>def phase_space_reconstruction(series, delay=5, dim=3):<br>"""<br>相空间重构<br>series: 一维时间序列<br>delay: 延迟时间<br>dim: 嵌入维数<br>"""<br>n = len(series)<br>m = n - (dim - 1) * delay<br>if m <= 0:<br>raise ValueError("重构参数不合适，无法构建相空间")<br>X = np.zeros((m, dim))<br>for i in range(dim):<br>X[:, i] = series[i * delay : i * delay + m].flatten()<br>return X[:, :dim-1], X[:, -1]  # 前dim-1列为特征，最后一列为目标<br># 计算最优延迟时间（互信息法简化）<br>def find_optimal_delay(series, max_delay=20):<br>delays = range(1, max_delay+1)<br>mi = []<br>for d in delays:<br>x1 = series[:-d].flatten()<br>x</doubaocanvas> |
+| --- |

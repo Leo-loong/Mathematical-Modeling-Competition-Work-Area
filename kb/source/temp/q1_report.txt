@@ -1,0 +1,602 @@
+第一步：不合格文件隔离报告
+============================================================
+目标目录 : C:\Users\wang-\Desktop\2026数学建模\2025国赛真题\B题\Work_Space\kb\source\第二批提取后
+隔离区   : C:\Users\wang-\Desktop\2026数学建模\2025国赛真题\B题\Work_Space\kb\source\temp\第二批提取后_不合格_20260910
+模式     : 实际移动 APPLY
+
+保留(可索引且可直读) : 3263
+隔离(不合格)         : 1577
+实际移动成功         : 1577
+移动失败             : 0
+清理空目录           : 144
+
+--- 隔离原因分布 ---
+  二进制_不可索引不可直读             1176
+  纯文本_扩展名未收录               284
+  无扩展名_不可索引_文本             107
+  无扩展名_不可索引                6
+  已标记_无效内容                 3
+  本目录自建产物                  1
+
+--- 隔离文件扩展名分布 ---
+  .vss           291
+  .ppt           171
+  .mat           126
+  (无扩展名)         113
+  .pdf           89
+  .out           77
+  .pptx          65
+  .fig           58
+  .doc           43
+  .xls           36
+  .lp            36
+  .zip           36
+  .rar           30
+  .asv           28
+  .docx          24
+  .xlsx          22
+  .vst           21
+  .p             20
+  .mps           17
+  .caj           17
+  .1             11
+  .vip           10
+  .y             9
+  .man           9
+  .mexw32        9
+  .vsdx          9
+  .l             8
+  .wav           8
+  .pyc           7
+  .ev1           7
+  .ps            6
+  .yuv           6
+  .log           5
+  .mexglx        5
+  .mexmaci       5
+  .obj           5
+  .lib           4
+  .dsw           4
+  .ide           4
+  .dos           4
+  .p1            4
+  .bas           4
+  .xml           4
+  .mexa64        4
+  .mexmaci64     4
+  .otf           3
+  .description   3
+  .url           3
+  .mexsol        3
+  .md            3
+  .xlsm          3
+  .tex           2
+  .lg4           2
+  .linux         2
+  .ovl           2
+  .pl            2
+  .res           2
+  .def           2
+  .vbp           2
+  .db            2
+  .tsp           2
+  .mex4          2
+  .mexhp7        2
+  .mexlx         2
+  .css           2
+  .vc            2
+  .pdb           2
+  .chm           2
+  .o             2
+  .dev           2
+  .txt           1
+  .mp4           1
+  .ttf           1
+  .eps           1
+  .hairy         1
+  .simple        1
+  .not           1
+  .sh            1
+  .prn           1
+  .386           1
+  .bug           1
+  .new           1
+  .rc            1
+  .msc           1
+  .sco5          1
+  .vbw           1
+  .iml           1
+  .idea          1
+  .dot           1
+  .r             1
+  .pps           1
+  .mht           1
+  .ds_store      1
+  .mv            1
+  .dsp           1
+  .ncb           1
+  .opt           1
+  .plg           1
+  .pb            1
+  .mdl           1
+  .in            1
+  .wps           1
+  .htmk          1
+  .dvi           1
+  .spec          1
+  .mexaxp        1
+  .mexhpux       1
+  .mexmac        1
+  .mexrs6        1
+  .mexsg         1
+  .m~            1
+  .txt~          1
+  .lnk           1
+  .vtx           1
+  .windows       1
+  .f             1
+
+--- 检出为纯文本、但扩展名不在 TEXT_EXTS（可考虑加扩展名而非删除）---
+  (无扩展名)         107
+  .out           77
+  .lp            36
+  .asv           28
+  .mps           17
+  .1             11
+  .y             9
+  .man           9
+  .l             8
+  .ps            6
+  .yuv           6
+  .log           5
+  .dos           4
+  .p1            4
+  .bas           4
+  .xml           4
+  .description   3
+  .url           3
+  .xls           3
+  .tex           2
+  .linux         2
+  .pl            2
+  .res           2
+  .def           2
+  .vbp           2
+  .tsp           2
+  .css           2
+  .dev           2
+  .eps           1
+  .hairy         1
+  .simple        1
+  .not           1
+  .sh            1
+  .prn           1
+  .bug           1
+  .new           1
+  .rc            1
+  .msc           1
+  .sco5          1
+  .vbw           1
+  .iml           1
+  .dot           1
+  .r             1
+  .mht           1
+  .dsp           1
+  .dsw           1
+  .plg           1
+  .mdl           1
+  .in            1
+  .htmk          1
+  .spec          1
+  .m~            1
+  .txt~          1
+  .vtx           1
+  .pdf           1
+  .windows       1
+  .f             1
+  合计 391
+
+--- 原始区无同名副本（需人工确认，共 1109 个）---
+  _非md非文本清单.txt
+  2026国赛论文写作模版\latex\latex\Fira Code Retina Nerd Font Complete.otf
+  2026国赛论文写作模版\latex\latex\YaHei.Consolas.1.11b.ttf
+  2026国赛论文写作模版\latex\latex\数模通用模板.tex
+  2026国赛论文写作模版\latex\latex\figures\example.eps
+  2026国赛论文写作模版\latex\latex\fonts\SourceHanSerifCN-Bold.otf
+  2026国赛论文写作模版\latex\latex\fonts\SourceHanSerifCN-Regular.otf
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——0-1整数规划\0-1规划的两种求解（模拟退火及Lingo求解）\2011年国赛B题论文代码复现\cumcm2011B附件2_全市六区交通网路和平台设置的数据表.xls
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——0-1整数规划\0-1规划的两种求解（模拟退火及Lingo求解）\2011年国赛B题论文代码复现\rask2.lg4
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——模拟退火算法\模拟退火算法\模拟退火算法学习及试验分析.ppt
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——模拟退火算法\模拟退火算法的matlab示例\SA_TSP\stsp.fig
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——模拟退火算法\模拟退火算法的matlab示例\SA_TSP\stsp_v61.fig
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpkit23.lib
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\README
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\README1
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\CHANGELO
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LEX.L
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP.Y
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LPKIT.LIB
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_SOLVE.1
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_SOLVE.DSW
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_SOLVE.IDE
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\MAKEFILE
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\MANIFEST
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\MIPLIB_R
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\NETLIB_R
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\README
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\DEMO_LAG.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX1.MPS
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX1.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX2.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX2.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX3.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX3.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX4.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX5.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX6.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX6.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX7.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX7.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\bison.hairy
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\bison.simple
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\CHANGELOG
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\HARTMUT_DOCUMENTATION
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lex.l
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp.y
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp23.ide
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp_solve.1
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp_solve.man
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\Makefile
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\makefile.dos
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\Makefile.linux
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\MANIFEST
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\MPS.description
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\NETLIB_RESULTS
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\README
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp_ex\demo_lag.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp_ex\ex1.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp_ex\ex2.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp_ex\ex3.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp_ex\ex4.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp_ex\ex5.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp_ex\ex6.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp_ex\ex7.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\out\lp23.lib
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\MAKEFILE
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos14.tar\defines.p1
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos14.tar\developr.not
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos14.tar\dos_port
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos14.tar\lp.p1
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos14.tar\main.p1
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos14.tar\makefile.dos
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos14.tar\readme.dos
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos14.tar\solve.p1
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\CHANGELO
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\COPYRIGH
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\DPMI32VM.OVL
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX1.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX1.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX2.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX2.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX3.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX3.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX4.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX4.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX5.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX5.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX6.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX6.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX7.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX7.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\INSTALL
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\KNOWN_BU
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\LEX.L
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\LP.Y
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\LP_SOLVE.1
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\LP_SOLVE.DSW
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\LP_SOLVE.IDE
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\LP_SOLVE.MAN
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\MANIFEST
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\README
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\SCHED.SH
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\SCHEDOP.PRN
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\SCHEDPRE.PL
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\SCHEPOST.PL
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\WINDPMI.386
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\DPMI32VM.OVL
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\LPKIT.LIB
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\LP_SOLVE.DSW
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\LP_SOLVE.IDE
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\CHANGES
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\DOS_PORT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX1.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX1.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX2.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX2.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX3.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX3.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX4.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX4.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX5.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX5.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX6.LP
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX6.OUT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\FILELIST
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\KNOWN.BUG
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\LP_SOLVE.1
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\LP_SOLVE.MAN
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\MIPLIB.RES
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\NETLIB.RES
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\README
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\README.DOS
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\CHANGELOG
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex1.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex1.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex2.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex2.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex3.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex3.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex4.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex4.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex5.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex5.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex6.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex6.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\INSTALL
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\KNOWN_BUGS
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lex.l
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp.y
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp_solve.1
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp_solve.man
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\Makefile
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\MANIFEST
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\MIPLIB_RESULTS
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\NETLIB_RESULTS
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\README
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\VMS_SUPPORT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\CHANGELOG
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\COPYRIGHT
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex1.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex2.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex2.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex3.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex3.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex4.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex5.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex6.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex6.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex7.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex7.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\KNOWN_BUGS
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\lex.l
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\lp.y
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\Makefile
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\MANIFEST
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\MIPLIB_RESULTS
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\README
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\CHANGELOG
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lex.l
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp.y
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_solve.1
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\Makefile
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\MANIFEST
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\MIPLIB_RESULTS
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\NETLIB_RESULTS
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\README
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\read_mps.c.new
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_examples\demo_lag.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_examples\ex1.mps
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_examples\ex1.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_examples\ex2.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_examples\ex3.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_examples\ex4.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_examples\ex5.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_examples\ex6.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_examples\ex7.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\CHANGELOG
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\HARTMUT_DOCUMENTATION
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\lex.l
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\lp.y
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\lp_solve.1
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\lp_solve.man
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\Makefile
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\MANIFEST
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\NETLIB_RESULTS
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\README
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\lp_examples\demo_lag.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\lp_examples\ex1.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\lp_examples\ex4.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\lp_examples\ex5.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\lp_examples\ex6.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\lp_examples\ex7.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\CHANGELOG
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\lp_solve.1
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\lp_solve.man
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\Makefile
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\MANIFEST
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\README
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\CHANGELOG
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\lp.y
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\lp_solve.1
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\Makefile
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\Makefile.linux
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\MANIFEST
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\MPS.description
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\README
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\lp_examples\ex1.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\lp_examples\ex2.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\lp_examples\ex3.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\lp_examples\ex4.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\lp_examples\ex5.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\lp_examples\ex6.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\lp_examples\ex7.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.0.tar\lp_solve_3.0\CHANGELOG
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.0.tar\lp_solve_3.0\Makefile
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.0.tar\lp_solve_3.0\MANIFEST
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.0.tar\lp_solve_3.0\MPS.description
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.0.tar\lp_solve_3.0\README
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.0.tar\lp_solve_3.0\test.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.0.tar\lp_solve_3.0\test.mps
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.0.tar\lp_solve_3.0\lp_examples\xx
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\CHANGELOG
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\Makefile
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\MANIFEST
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\README
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.2.tar\lp_solve_3.2\CHANGELOG
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.2.tar\lp_solve_3.2\lp_solve.man
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.2.tar\lp_solve_3.2\Makefile
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.2.tar\lp_solve_3.2\MANIFEST
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\CHANGELOG
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lex.l
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp.y
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lpsolve.rc
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_solve.1
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_solve.man
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\Makefile
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\Makefile.msc
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\Makefile.sco5
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\MANIFEST
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\README
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\windll.def
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\demo_lag.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\demo_lag.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex1.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex1sc.mps
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex1sc.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex1sos.mps
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex1sos.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex2.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex2sc.mps
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex2sc.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex2sos.mps
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex2sos.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex3.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex3sos.mps
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex3sos.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex4.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex4sos.mps
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex4sos.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex5.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex5sos.mps
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex5sos.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex6.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex6sos.mps
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex6sos.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\ex7.out
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\CHANGELOG
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\MANIFEST
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\windll.def
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1_vb\lpsolve.bas
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1_vb\Module1.bas
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1_vb\project1.vbp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1_vb\Project1.vbw
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0_vb\lpsolve.bas
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0_vb\Module1.bas
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0_vb\project1.vbp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\bore3d.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\bore3d.mps
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\CHANGELOG
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\INSTALL
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\Makefile
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\MANIFEST
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\mps2eq.1
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\mps2eq.man
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\MPS_FORMAT_GREGORY
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\MPS_FORMAT_MIPLIB
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\README
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\share1b.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\share1b.mps
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\stein9.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\stein9.mps
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\stein9b.mps
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\test.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\test.mps
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\test2.lp
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\test2.mps
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——粒子群算法\粒子群算法优化RBF网络\Matlab中文论坛--助努力的人完成毕业设计.url
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——粒子群算法\粒子群算法优化RBF网络\粒子群算法优化RBF网络\pfile1.mat
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——粒子群算法\粒子群算法遗传算法学习资料+工具箱+代码\粒子群算法\粒子群优化.ppt
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——粒子群算法\粒子群算法遗传算法学习资料+工具箱+代码\粒子群算法\粒子群优化算法.ppt
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——粒子群算法\粒子群算法遗传算法学习资料+工具箱+代码\粒子群算法\粒子群优化算法PPT.ppt
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——粒子群算法\粒子群算法遗传算法学习资料+工具箱+代码\粒子群算法\粒子群优化算法求优.ppt
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——粒子群算法\粒子群算法遗传算法学习资料+工具箱+代码\粒子群算法\粒子群算法简介.ppt
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——粒子群算法\粒子群算法遗传算法学习资料+工具箱+代码\粒子群算法\蚁群算法.ppt
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——线性规划模型\01型整数线性规划\01型整数线性规划\BintLp_E.asv
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——线性规划模型\01型整数线性规划\01型整数线性规划\Untitled.asv
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——线性规划模型\线性规划\第4讲 线性规划\LINGO1.lg4
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——遗传算法\基于 python 实现的遗传算法解决旅行商（TSP）问题\ga-tsp-main\.idea\ga-tsp.iml
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——遗传算法\基于 python 实现的遗传算法解决旅行商（TSP）问题\ga-tsp-main\.idea\misc.xml
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——遗传算法\基于 python 实现的遗传算法解决旅行商（TSP）问题\ga-tsp-main\.idea\modules.xml
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——遗传算法\基于 python 实现的遗传算法解决旅行商（TSP）问题\ga-tsp-main\.idea\vcs.xml
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——遗传算法\基于 python 实现的遗传算法解决旅行商（TSP）问题\ga-tsp-main\.idea\workspace.xml
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——遗传算法\基于 python 实现的遗传算法解决旅行商（TSP）问题\ga-tsp-main\__pycache__\config.cpython-37.pyc
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——遗传算法\基于 python 实现的遗传算法解决旅行商（TSP）问题\ga-tsp-main\__pycache__\ga.cpython-37.pyc
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——遗传算法\基于 python 实现的遗传算法解决旅行商（TSP）问题\__MACOSX\._ga-tsp-main
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——遗传算法\基于 python 实现的遗传算法解决旅行商（TSP）问题\__MACOSX\ga-tsp-main\._.idea
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备分类模型——决策树分类及代码\数学建模-决策树的预测模型的Python实现\decision_tree材料包\decision_tree.dot
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——主成分分析法\pca主成分分析\pca主成分分析\importance.xls
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——主成分分析法\pca主成分分析\pca主成分分析\newTab.xls
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——主成分分析法\pca主成分分析\pca主成分分析\PC.xls
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——主成分分析法\pca主成分分析\pca主成分分析\pca.R
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——主成分分析法\pca主成分分析\pca主成分分析\pca主成分分析.ppt
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——主成分分析法\pca主成分分析\pca主成分分析\Thumbs.db
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——层次分析法\层次分析法建模\层次分析法建模.ppt
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——神经网络算法\神经网络算法MATLAB程序\data1.mat
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——神经网络算法\神经网络算法MATLAB程序\data1.xlsx
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——神经网络算法\神经网络算法MATLAB程序\data2.mat
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——神经网络算法\神经网络算法MATLAB程序\data2.xlsx
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——神经网络算法\神经网络算法MATLAB程序\data3.mat
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——神经网络算法\神经网络算法MATLAB程序\data3.xlsx
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——神经网络算法\神经网络算法MATLAB程序\data4.mat
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——神经网络算法\神经网络算法MATLAB程序\data4.xlsx
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——神经网络算法\神经网络详细的预测内容\预测多组\预测多组\spectra_data.mat
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——神经网络算法\神经网络预测\神经网络预测\神经网络预测\test.xls
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备预测模型——Logistic模型\Logistic回归模型\Logistic回归模型\Ch3_logistic_ex1.xlsx
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备预测模型——LSTM模型\时间序列预测（LSTM模型）python代码实现\chapter_15\.gitignore
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备预测模型——回归分析\Matlab的回归分析\9回归分析\examp9_2_1.xls
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备预测模型——回归分析\Matlab的回归分析\9回归分析\examp9_3_1.xls
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备预测模型——回归分析\Matlab的回归分析\9回归分析\examp9_4_1.xls
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备预测模型——回归分析\Matlab的回归分析\9回归分析\examp9_6_1.xls
+  2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备预测模型——灰色预测模型\灰色预测\灰色预测.ppt
+  2026数学建模核心资料\数学建模典型题目优秀论文\‌评价类：2012A葡萄酒的评价问题\2012国赛国家一等奖A题优秀论文4(1)\A0285\附件\1.xlsx
+  2026数学建模核心资料\数学建模典型题目优秀论文\‌评价类：2012A葡萄酒的评价问题\2012国赛国家一等奖A题优秀论文4(1)\A0285\附件\2.xls
+  2026数学建模核心资料\数学建模典型题目优秀论文\‌评价类：2012A葡萄酒的评价问题\2012国赛国家一等奖A题优秀论文4(1)\A0285\附件\3.xlsx
+  2026数学建模核心资料\数学建模典型题目优秀论文\‌评价类：2012A葡萄酒的评价问题\2012国赛国家一等奖A题优秀论文4(1)\A0285\附件\4.xls
+  2026数学建模核心资料\数学建模典型题目优秀论文\‌评价类：2012A葡萄酒的评价问题\2012国赛国家一等奖A题优秀论文4(1)\A0285\附件\5.xlsx
+  2026数学建模核心资料\数学建模典型题目优秀论文\‌评价类：2012A葡萄酒的评价问题\2012国赛国家一等奖A题优秀论文4(1)\A0285\附件\b系数.xls
+  2026数学建模核心资料\数学建模典型题目优秀论文\‌评价类：2012A葡萄酒的评价问题\2012国赛国家一等奖A题优秀论文4(1)\A0285\附件\b系数1.xls
+  2026数学建模核心资料\数学建模典型题目优秀论文\‌评价类：2012A葡萄酒的评价问题\2012国赛国家一等奖A题优秀论文4(1)\A0285\附件\b系数2.xls
+  2026数学建模核心资料\数学建模典型题目优秀论文\‌评价类：2012A葡萄酒的评价问题\2012国赛国家一等奖A题优秀论文4(1)\A0285\附件\b系数3.xls
+  2026数学建模核心资料\数学建模典型题目优秀论文\‌评价类：2012A葡萄酒的评价问题\2012国赛国家一等奖A题优秀论文4(1)\A0285\附件\指标总表2.xlsx
+  2026数学建模核心资料\数学建模典型题目优秀论文\‌评价类：2012A葡萄酒的评价问题\2012国赛国家一等奖A题优秀论文4(1)\A0285\附件\白葡萄酒.xlsx
+  2026数学建模核心资料\数学建模典型题目优秀论文\‌评价类：2012A葡萄酒的评价问题\2012国赛国家一等奖A题优秀论文4(1)\A0285\附件\系数.xls
+  2026数学建模核心资料\数学建模典型题目优秀论文\‌评价类：2012A葡萄酒的评价问题\2012国赛国家一等奖A题优秀论文4(1)\A0285\附件\系数1.xls
+  2026数学建模核心资料\数学建模典型题目优秀论文\‌评价类：2012A葡萄酒的评价问题\2012国赛国家一等奖A题优秀论文4(1)\A0285\附件\系数3.xls
+  2026数学建模核心资料\数学建模典型题目优秀论文\‌评价类：2012A葡萄酒的评价问题\2012国赛国家一等奖A题优秀论文4(1)\A0285\附件\红葡萄酒.xlsx
+  2026数学建模核心资料\流程图！美赛O奖论文同款流程图模版！\数学建模论文流程图1.pptx
+  2026数学建模核心资料\流程图！美赛O奖论文同款流程图模版！\数学建模论文流程图2.pptx
+  2026数学建模核心资料\流程图！美赛O奖论文同款流程图模版！\数学建模论文流程图3.pptx
+  2026数学建模核心资料\流程图！美赛O奖论文同款流程图模版！\数学建模论文流程图4.pptx
+  2026数学建模核心资料\流程图！美赛O奖论文同款流程图模版！\数学建模论文流程图5.pptx
+  2026数学建模核心资料\流程图！美赛O奖论文同款流程图模版！\数学建模论文流程图6.pptx
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\GA优化后的RBF神经网络优化分析代码\pfile.mat
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\人工鱼群求解TSP问题源代码\att48.tsp
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\人工鱼群求解TSP问题源代码\ulysses22.tsp
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\免疫优化算法在物流配送中心选址中的应用代码\centre.fig
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\免疫优化算法在物流配送中心选址中的应用代码\figure.fig
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\免疫优化算法在物流配送中心选址中的应用代码\IAdata.mat
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多目标粒子群优化算法代码\www.kalami.ir.url
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\gatbx\DOC\GATBXA0.LOG
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\gatbx\DOC\GATBXA0.PS
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\gatbx\DOC\GATBXA1.LOG
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\gatbx\DOC\GATBXA1.PS
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\gatbx\DOC\GATBXA2.LOG
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\gatbx\DOC\GATBXA2.PS
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\gatbx\DOC\The MathWorks - 1-18GTU Why do I get an error in MATLAB 6_0 (R12) where I got a warning in R11 with reference to uninitialized variables.mht
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\gatbx\TEST_FNS\TEST_FNS.PS
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\蚁群算法求解TSP问题matlab代码\citys_data.mat
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\分类与判别类题型参考代码【数学建模老哥】\100多种数据处理与分类算法集合\模式分类（Matlab程序）\classifier.mat
+  2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\分类与判别类题型参考代码【数学建模老哥】\100多种数据处理与分类算法集合\模式分类（Matlab程序）\enter_distributions.mat
+  ... 其余 709 条见 q1_manifest.csv (has_origin=N)
+
+清单文件: C:\Users\wang-\Desktop\2026数学建模\2025国赛真题\B题\Work_Space\kb\source\temp\q1_manifest.csv

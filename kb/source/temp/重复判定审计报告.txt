@@ -1,0 +1,1161 @@
+扫描 b2: 5000
+扫描完成 b2: 9865
+扫描 quar: 5000
+扫描 quar: 10000
+扫描 quar: 15000
+扫描 quar: 20000
+扫描完成 quar: 22088
+纳入文件: 31953
+唯一 md5: 9985
+文本提取 3000/9985
+文本提取 6000/9985
+文本提取 9000/9985
+A 类（MD5 一致）组数: 9242
+B 类（文本一致但字节不同）组数: 36
+
+# 重复判定审计报告
+
+第二批文件: 9865，隔离区文件: 22088，纳入审计: 31953
+
+## 一、A 类：MD5 完全一致（字节级相同，判定绝对可靠）
+  组数 9242
+  说明：同一 MD5 意味着文件二进制内容完全相同，不存在版本差异。
+
+## 二、B 类：文本一致但字节不同（★ 需重点核查版本差异 ★）
+  组数 36
+  说明：去空白后文本完全相同，但文件大小/二进制不同，
+        可能来自不同格式导出（docx/版本另存），也可能存在细微修订差异。
+
+  [组1] DEBUG.C
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\DEBUG.C  (1751 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\DEBUG.C  (1751 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\DEBUG.C  (1751 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\DEBUG.C  (1751 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\DEBUG.C  (1751 bytes)
+        大小集合: [1669, 1751]  差异: 82 bytes
+  [组2] DEBUG.H
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\DEBUG.H  (173 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\DEBUG.H  (173 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\DEBUG.H  (173 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\DEBUG.H  (173 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\DEBUG.H  (173 bytes)
+        大小集合: [168, 173]  差异: 5 bytes
+  [组3] DEMO.C
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\DEMO.C  (7024 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\DEMO.C  (7024 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\DEMO.C  (7024 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\DEMO.C  (7024 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\DEMO.C  (7024 bytes)
+        大小集合: [6823, 7024]  差异: 201 bytes
+  [组4] LP2MPS.C
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP2MPS.C  (555 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LP2MPS.C  (555 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\LP2MPS.C  (555 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP2MPS.C  (555 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LP2MPS.C  (555 bytes)
+        大小集合: [531, 555]  差异: 24 bytes
+  [组5] LPGLOB.H
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LPGLOB.H  (2006 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LPGLOB.H  (2006 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\LPGLOB.H  (2006 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LPGLOB.H  (2006 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LPGLOB.H  (2006 bytes)
+        大小集合: [1927, 2006]  差异: 79 bytes
+  [组6] LPKIT.C
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LPKIT.C  (46347 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LPKIT.C  (46347 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\LPKIT.C  (46347 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LPKIT.C  (46347 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LPKIT.C  (46347 bytes)
+        大小集合: [44544, 46347]  差异: 1803 bytes
+  [组7] LP_SOLVE.C
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_SOLVE.C  (4171 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LP_SOLVE.C  (4171 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\LP_SOLVE.C  (4171 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_SOLVE.C  (4171 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LP_SOLVE.C  (4171 bytes)
+        大小集合: [4035, 4171]  差异: 136 bytes
+  [组8] MPS2LP.C
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\MPS2LP.C  (533 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\MPS2LP.C  (533 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\MPS2LP.C  (533 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\MPS2LP.C  (533 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\MPS2LP.C  (533 bytes)
+        大小集合: [509, 533]  差异: 24 bytes
+  [组9] READ.H
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\READ.H  (311 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\read.h  (311 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\READ.H  (311 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\READ.H  (311 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\READ.H  (311 bytes)
+        大小集合: [301, 311]  差异: 10 bytes
+  [组10] READMPS.C
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\READMPS.C  (14872 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\READMPS.C  (14872 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\READMPS.C  (14872 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\READMPS.C  (14872 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\READMPS.C  (14872 bytes)
+        大小集合: [14290, 14872]  差异: 582 bytes
+  [组11] SOLVE.C
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\SOLVE.C  (42775 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\SOLVE.C  (42775 bytes)
+        移走: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\SOLVE.C  (42775 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\SOLVE.C  (42775 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\SOLVE.C  (42775 bytes)
+        大小集合: [41069, 42775]  差异: 1706 bytes
+  [组12] debug.c
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\debug.c  (1945 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\debug.c  (1945 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\debug.c  (1945 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\debug.c  (1945 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\debug.c  (1945 bytes)
+        大小集合: [1857, 1945]  差异: 88 bytes
+  [组13] debug.h
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\debug.h  (204 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\debug.h  (204 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\debug.h  (204 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\debug.h  (204 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\debug.h  (204 bytes)
+        大小集合: [199, 204]  差异: 5 bytes
+  [组14] demo.c
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\demo.c  (7037 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\demo.c  (7037 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\demo.c  (7037 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\demo.c  (7037 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\demo.c  (7037 bytes)
+        大小集合: [6837, 7037]  差异: 200 bytes
+  [组15] hash.c
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\hash.c  (2443 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\hash.c  (2443 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\hash.c  (2443 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\hash.c  (2443 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\hash.c  (2443 bytes)
+        大小集合: [2340, 2443]  差异: 103 bytes
+  [组16] hash.h
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\hash.h  (573 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\hash.h  (573 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\hash.h  (573 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\hash.h  (573 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\hash.h  (573 bytes)
+        大小集合: [552, 573]  差异: 21 bytes
+  [组17] lp2mps.c
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp2mps.c  (509 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp2mps.c  (509 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\lp2mps.c  (509 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp2mps.c  (509 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\lp2mps.c  (509 bytes)
+        大小集合: [488, 509, 531]  差异: 43 bytes
+  [组18] lp_solve.c
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp_solve.c  (6257 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp_solve.c  (6257 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\lp_solve.c  (6257 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\lp_solve.c  (6257 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\lp_solve.c  (6257 bytes)
+        大小集合: [6055, 6257]  差异: 202 bytes
+  [组19] mps2lp.c
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\mps2lp.c  (487 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\mps2lp.c  (487 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\mps2lp.c  (487 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\mps2lp.c  (487 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\mps2lp.c  (487 bytes)
+        大小集合: [466, 487, 509]  差异: 43 bytes
+  [组20] readmps.c
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\readmps.c  (17426 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\readmps.c  (17426 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\readmps.c  (17426 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp23\lp23\readmps.c  (17426 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp23\lp23\readmps.c  (17426 bytes)
+        大小集合: [16798, 17426]  差异: 628 bytes
+  [组21] DEFINES.H
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\DEFINES.H  (2547 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\DEFINES.H  (2547 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\DEFINES.H  (2547 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\DEFINES.H  (2547 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\DEFINES.H  (2547 bytes)
+        大小集合: [2439, 2547]  差异: 108 bytes
+  [组22] DUAL.C
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\DUAL.C  (2602 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\DUAL.C  (2602 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\DUAL.C  (2602 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\DUAL.C  (2602 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\DUAL.C  (2602 bytes)
+        大小集合: [2464, 2602]  差异: 138 bytes
+  [组23] GLOBALS.H
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\GLOBALS.H  (1935 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\GLOBALS.H  (1935 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\GLOBALS.H  (1935 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\GLOBALS.H  (1935 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\GLOBALS.H  (1935 bytes)
+        大小集合: [1870, 1935]  差异: 65 bytes
+  [组24] SOLVE.C
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\SOLVE.C  (23331 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\SOLVE.C  (23331 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\SOLVE.C  (23331 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\SOLVE.C  (23331 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\SOLVE.C  (23331 bytes)
+        大小集合: [22368, 23331]  差异: 963 bytes
+  [组25] TRAN.C
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\TRAN.C  (1009 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\TRAN.C  (1009 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\TRAN.C  (1009 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\TRAN.C  (1009 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\TRAN.C  (1009 bytes)
+        大小集合: [960, 1009]  差异: 49 bytes
+  [组26] WRITE.C
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\WRITE.C  (2088 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\WRITE.C  (2088 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\WRITE.C  (2088 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\WRITE.C  (2088 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\WRITE.C  (2088 bytes)
+        大小集合: [1993, 2088]  差异: 95 bytes
+  [组27] 层次分析法的基本代码.txt
+        保留: 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——层次分析法\层次分析法的基本代码.txt  (819 bytes)
+        移走: 2026数学建模核心资料\国赛C题必备模型+代码资料合集\国赛C题必备评价模型——层次分析法\层次分析法的基本代码.txt  (819 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——层次分析法\层次分析法的基本代码(1).txt  (819 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——层次分析法\层次分析法的基本代码.txt  (819 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛C题必备模型+代码资料合集\国赛C题必备评价模型——层次分析法\层次分析法的基本代码(1).txt  (819 bytes)
+        大小集合: [817, 819]  差异: 2 bytes
+  [组28] de_code.m
+        保留: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码\de_code.m  (1320 bytes)
+        移走: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码\de_code(1).m  (1320 bytes)
+        移走: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛F题常见参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码【数学建模老哥】\de_code.m  (1320 bytes)
+        移走: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛F题常见参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码【数学建模老哥】\de_code__dup1.m  (1320 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter36\chapter36\de_code.m  (1400 bytes)
+        大小集合: [1320, 1400]  差异: 80 bytes
+  [组29] fitness.m
+        保留: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码\fitness.m  (105 bytes)
+        移走: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码\fitness(1).m  (105 bytes)
+        移走: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛F题常见参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码【数学建模老哥】\fitness.m  (105 bytes)
+        移走: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛F题常见参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码【数学建模老哥】\fitness__dup1.m  (105 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter36\chapter36\fitness.m  (113 bytes)
+        大小集合: [105, 113]  差异: 8 bytes
+  [组30] gabpEval.m
+        保留: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码\gabpEval.m  (113 bytes)
+        移走: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码\gabpEval(1).m  (113 bytes)
+        移走: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛F题常见参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码【数学建模老哥】\gabpEval.m  (113 bytes)
+        移走: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛F题常见参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码【数学建模老哥】\gabpEval__dup1.m  (113 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter36\chapter36\gabpEval.m  (121 bytes)
+        大小集合: [113, 121]  差异: 8 bytes
+  [组31] gadecod.m
+        保留: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码\gadecod.m  (674 bytes)
+        移走: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码\gadecod(1).m  (674 bytes)
+        移走: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛F题常见参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码【数学建模老哥】\gadecod.m  (674 bytes)
+        移走: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛F题常见参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码【数学建模老哥】\gadecod__dup1.m  (674 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter36\chapter36\gadecod.m  (714 bytes)
+        大小集合: [674, 714]  差异: 40 bytes
+  [组32] ObjectFunction.m
+        保留: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\ObjectFunction.m  (179 bytes)
+        移走: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\ObjectFunction(1).m  (179 bytes)
+        移走: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码【数学建模老哥】\ObjectFunction.m  (179 bytes)
+        移走: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码【数学建模老哥】\ObjectFunction__dup1.m  (179 bytes)
+        移走: 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种遗传算法优化论文与代码\chapter7\ObjectFunction.m  (177 bytes)
+        大小集合: [177, 179]  差异: 2 bytes
+  [组33] Contents.m
+        保留: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——遗传算法\遗传算法工具箱\GA2(1)\GAOT\Contents.m  (3021 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——遗传算法\遗传算法工具箱\GA\Genetic Algorithms\GAOT\GAOT\Contents.m  (3021 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——遗传算法\遗传算法工具箱\GA\Genetic Algorithms\GAOT_tar.tar\GAOT\Contents.m  (3021 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——遗传算法\遗传算法工具箱\GA(1)\Genetic Algorithms\GAOT\GAOT\Contents.m  (3021 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——遗传算法\遗传算法工具箱\GA(1)\Genetic Algorithms\GAOT_tar.tar\GAOT\Contents.m  (3021 bytes)
+        大小集合: [3021, 3027]  差异: 6 bytes
+  [组34] 一维非稳态导热方程求解 附Matlab程序 .pdf
+        保留: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备模型——热传导模型及代码等\一维非稳态导热方程求解 附Matlab程序 .pdf  (94791 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备模型——热传导模型及代码等\一维非稳态导热方程求解 附Matlab程序 (1).pdf  (94791 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备模型——热传导模型及代码等\一维非稳态导热方程求解(附Matlab程序)(1).pdf  (89715 bytes)
+        移走: 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备模型——热传导模型及代码等\一维非稳态导热方程求解(附Matlab程序).pdf  (89715 bytes)
+        大小集合: [89715, 94791]  差异: 5076 bytes
+  [组35] 无保留项（异常）
+  [组36] 无保留项（异常）
+
+## 三、C 类：文件名相同但大小不同（未被判为重复，疑似版本差异）
+  共 342 组
+  bp_neural_network.m
+          5272  [b2] 2026数学建模核心资料\50多种常用算法源代码！（Matlab+Python）\BP 神经网络分类模型Matlab+Python代码\bp_neural_network.m
+          5272  [quar] A114 2025数模国赛冲刺资料（第一版）\50多种常用算法源代码！（Matlab+Python）\BP 神经网络分类模型Matlab+Python代码\bp_neural_network.m
+          5642  [b2] 2026数学建模核心资料\50多种常用算法源代码！（Matlab+Python）\BP神经网络预测模型Matlab+Python代码\bp_neural_network.m
+          5642  [quar] A114 2025数模国赛冲刺资料（第一版）\50多种常用算法源代码！（Matlab+Python）\BP神经网络预测模型Matlab+Python代码\bp_neural_network.m
+  bp_neural_network.py
+          5005  [b2] 2026数学建模核心资料\50多种常用算法源代码！（Matlab+Python）\BP 神经网络分类模型Matlab+Python代码\bp_neural_network.py
+          5005  [quar] A114 2025数模国赛冲刺资料（第一版）\50多种常用算法源代码！（Matlab+Python）\BP 神经网络分类模型Matlab+Python代码\bp_neural_network.py
+          5116  [b2] 2026数学建模核心资料\50多种常用算法源代码！（Matlab+Python）\BP神经网络预测模型Matlab+Python代码\bp_neural_network.py
+          5116  [quar] A114 2025数模国赛冲刺资料（第一版）\50多种常用算法源代码！（Matlab+Python）\BP神经网络预测模型Matlab+Python代码\bp_neural_network.py
+  cons.m
+            69  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——二次规划\序列二次规划法及matlab代码\第13章 序列二次规划法\cons.m
+            69  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——二次规划\序列二次规划法及matlab代码\第13章 序列二次规划法\cons.m
+            69  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——二次规划\序列二次规划法及matlab代码(1)\第13章 序列二次规划法\cons.m
+            69  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——二次规划\序列二次规划法及matlab代码\第13章 序列二次规划法\cons.m
+            69  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——二次规划\序列二次规划法及matlab代码(1)\第13章 序列二次规划法\cons.m
+  dcons.m
+            67  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——二次规划\序列二次规划法及matlab代码\第13章 序列二次规划法\dcons.m
+            67  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——二次规划\序列二次规划法及matlab代码\第13章 序列二次规划法\dcons.m
+            67  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——二次规划\序列二次规划法及matlab代码(1)\第13章 序列二次规划法\dcons.m
+            67  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——二次规划\序列二次规划法及matlab代码\第13章 序列二次规划法\dcons.m
+            67  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——二次规划\序列二次规划法及matlab代码(1)\第13章 序列二次规划法\dcons.m
+  df1.m
+           101  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——二次规划\序列二次规划法及matlab代码\第13章 序列二次规划法\df1.m
+           101  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——二次规划\序列二次规划法及matlab代码\第13章 序列二次规划法\df1.m
+           101  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——二次规划\序列二次规划法及matlab代码(1)\第13章 序列二次规划法\df1.m
+           101  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——二次规划\序列二次规划法及matlab代码\第13章 序列二次规划法\df1.m
+           101  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——二次规划\序列二次规划法及matlab代码(1)\第13章 序列二次规划法\df1.m
+  f1.m
+            90  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——二次规划\序列二次规划法及matlab代码\第13章 序列二次规划法\例13.6\f1.m
+            90  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——二次规划\序列二次规划法及matlab代码\第13章 序列二次规划法\例13.6\f1.m
+            90  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——二次规划\序列二次规划法及matlab代码(1)\第13章 序列二次规划法\例13.6\f1.m
+            90  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——二次规划\序列二次规划法及matlab代码\第13章 序列二次规划法\例13.6\f1.m
+            90  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——二次规划\序列二次规划法及matlab代码(1)\第13章 序列二次规划法\例13.6\f1.m
+  ga.m
+           573  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——随机规划\基于遗传算法的随机规划（matlab）\ga.m
+           573  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——随机规划\基于遗传算法的随机规划（matlab）\ga.m
+           573  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——随机规划\基于遗传算法的随机规划（matlab）(1)\ga.m
+           573  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——随机规划\基于遗传算法的随机规划（matlab）\ga.m
+           573  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——随机规划\基于遗传算法的随机规划（matlab）(1)\ga.m
+  test.m
+           149  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\人工鱼群求解TSP问题源代码\test.m
+           149  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\人工鱼群求解TSP问题源代码【数学建模老哥】\test.m
+           201  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——整数规划\整数规划：分支定界算法代码\整数规划：分支定界算法代码\test.m
+           201  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——整数规划\整数规划：分支定界算法代码\整数规划：分支定界算法代码\test.m
+           201  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——整数规划\整数规划：分支定界算法代码(1)\整数规划：分支定界算法代码\test.m
+  README.txt
+           467  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——模拟退火算法\模拟退火工具箱satools\satools\m\examples\README.txt
+           467  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——模拟退火算法\模拟退火工具箱satools\satools\m\examples\README.txt
+           467  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——模拟退火算法\模拟退火工具箱satools(1)\satools\m\examples\README.txt
+           467  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——模拟退火算法\模拟退火工具箱satools\satools\m\examples\README.txt
+           467  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——模拟退火算法\模拟退火工具箱satools(1)\satools\m\examples\README.txt
+  try_me.m
+          1569  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——模拟退火算法\模拟退火工具箱satools\satools\m\examples\graphbipart\try_me.m
+          1569  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——模拟退火算法\模拟退火工具箱satools\satools\m\examples\graphbipart\try_me.m
+          1569  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——模拟退火算法\模拟退火工具箱satools(1)\satools\m\examples\graphbipart\try_me.m
+          1569  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——模拟退火算法\模拟退火工具箱satools\satools\m\examples\graphbipart\try_me.m
+          1569  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——模拟退火算法\模拟退火工具箱satools(1)\satools\m\examples\graphbipart\try_me.m
+  distance.m
+           491  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\人工鱼群求解TSP问题源代码\distance.m
+           491  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\人工鱼群求解TSP问题源代码【数学建模老哥】\distance.m
+           546  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——模拟退火算法\模拟退火算法的matlab示例\SA_TSP\distance.m
+           546  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——模拟退火算法\模拟退火算法的matlab示例\SA_TSP\distance.m
+           546  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——模拟退火算法\模拟退火算法的matlab示例(1)\SA_TSP\distance.m
+  README
+           347  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\README
+           347  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\README
+           347  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\README
+           347  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\README
+           347  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\README
+  CHANGELO
+          3255  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\CHANGELO
+          3255  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\CHANGELO
+          3255  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\CHANGELO
+          3255  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\CHANGELO
+          3255  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\CHANGELO
+  DOSPORT.TXT
+          4621  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\DOSPORT.TXT
+          4621  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\DOSPORT.TXT
+          4621  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\DOSPORT.TXT
+          4621  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\DOSPORT.TXT
+          4621  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp20w95\DOSPORT.TXT
+  LEX.L
+          1232  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LEX.L
+          1232  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LEX.L
+          1232  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\LEX.L
+          1232  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LEX.L
+          1232  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LEX.L
+  LP.Y
+          3690  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP.Y
+          3690  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LP.Y
+          3690  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\LP.Y
+          3690  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP.Y
+          3690  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LP.Y
+  LPKIT.H
+         16033  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LPKIT.H
+         16033  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LPKIT.H
+         16033  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp2djgpp\LPKIT.H
+         16033  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LPKIT.H
+         16033  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp2djgpp\LPKIT.H
+  LPKIT.LIB
+        106989  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\LPKIT.LIB
+        106989  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\LPKIT.LIB
+        106989  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos20\LPKIT.LIB
+        106989  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\LPKIT.LIB
+        106989  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos20\LPKIT.LIB
+  LP_SOLVE.1
+          7201  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\LP_SOLVE.1
+          7201  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\LP_SOLVE.1
+          7201  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpsol14\LP_SOLVE.1
+          7201  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\LP_SOLVE.1
+          7201  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpsol14\LP_SOLVE.1
+  LP_SOLVE.DSW
+          3421  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\LP_SOLVE.DSW
+          3421  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\LP_SOLVE.DSW
+          3421  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\LP_SOLVE.DSW
+          3421  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\LP_SOLVE.DSW
+          3421  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\LP_SOLVE.DSW
+  LP_SOLVE.IDE
+         26436  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\LP_SOLVE.IDE
+         26436  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\LP_SOLVE.IDE
+         26436  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\LP_SOLVE.IDE
+         26436  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\LP_SOLVE.IDE
+         26436  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\LP_SOLVE.IDE
+  MAKEFILE
+          2881  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\MAKEFILE
+          2881  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\MAKEFILE
+          2881  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\MAKEFILE
+          2881  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\MAKEFILE
+          2881  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp20w95\MAKEFILE
+  MANIFEST
+          1521  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\MANIFEST
+          1521  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\MANIFEST
+          1521  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\MANIFEST
+          1521  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\MANIFEST
+          1521  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\MANIFEST
+  READ.C
+         18967  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\READ.C
+         18967  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\READ.C
+         18967  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\READ.C
+         18967  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\READ.C
+         18967  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp20w95\READ.C
+  SOLVE.C
+         23331  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\SOLVE.C
+         23331  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\SOLVE.C
+         23331  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\SOLVE.C
+         23331  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\SOLVE.C
+         23331  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\SOLVE.C
+  YTAB.C
+         29498  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\YTAB.C
+         29498  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\YTAB.C
+         29498  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\YTAB.C
+         29498  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\YTAB.C
+         29498  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp20w95\YTAB.C
+  EX1.OUT
+           104  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX1.OUT
+           104  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX1.OUT
+           104  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\EX1.OUT
+           104  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX1.OUT
+           104  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\EX1.OUT
+  EX2.LP
+            53  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX2.LP
+            53  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX2.LP
+            53  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpsol14\EX2.LP
+            53  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX2.LP
+            53  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpsol14\EX2.LP
+  EX2.OUT
+           104  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX2.OUT
+           104  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX2.OUT
+           104  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\EX2.OUT
+           104  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX2.OUT
+           104  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\EX2.OUT
+  EX3.LP
+            50  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX3.LP
+            50  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX3.LP
+            50  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpsol14\EX3.LP
+            50  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX3.LP
+            50  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpsol14\EX3.LP
+  EX3.OUT
+           104  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX3.OUT
+           104  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX3.OUT
+           104  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\EX3.OUT
+           104  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX3.OUT
+           104  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\EX3.OUT
+  EX4.OUT
+          1588  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX4.OUT
+          1588  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX4.OUT
+          1588  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\EX4.OUT
+          1588  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX4.OUT
+          1588  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\EX4.OUT
+  EX5.OUT
+          3968  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX5.OUT
+          3968  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX5.OUT
+          3968  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\EX5.OUT
+          3968  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX5.OUT
+          3968  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\EX5.OUT
+  EX6.LP
+           537  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX6.LP
+           537  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX6.LP
+           537  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpsol14\EX6.LP
+           537  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX6.LP
+           537  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpsol14\EX6.LP
+  EX6.OUT
+           244  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX6.OUT
+           244  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX6.OUT
+           244  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\EX6.OUT
+           244  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX6.OUT
+           244  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\EX6.OUT
+  EX7.LP
+          7893  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX7.LP
+          7893  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LP_EXAMP\EX7.LP
+          7893  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\LP_EXAMP\EX7.LP
+          7893  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX7.LP
+          7893  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LP_EXAMP\EX7.LP
+  EX7.OUT
+           496  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX7.OUT
+           496  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX7.OUT
+           496  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\EX7.OUT
+           496  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\EX7.OUT
+           496  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\EX7.OUT
+  CHANGELOG
+           235  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\CHANGELOG
+           235  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\CHANGELOG
+           235  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\CHANGELOG
+           235  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\CHANGELOG
+           235  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\CHANGELOG
+  debug.c
+          1669  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\debug.c
+          1669  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\debug.c
+          1669  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\debug.c
+          1669  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\debug.c
+          1669  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\debug.c
+  debug.h
+           168  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\debug.h
+           168  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\debug.h
+           168  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\debug.h
+           168  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\debug.h
+           168  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\debug.h
+  demo.c
+          6823  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\demo.c
+          6823  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\demo.c
+          6823  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\demo.c
+          6823  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\demo.c
+          6823  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\demo.c
+  HARTMUT_DOCUMENTATION
+         82600  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\HARTMUT_DOCUMENTATION
+         82600  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\HARTMUT_DOCUMENTATION
+         82600  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\HARTMUT_DOCUMENTATION
+         82600  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\HARTMUT_DOCUMENTATION
+         82600  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.2.tar\lp_solve_3.2\HARTMUT_DOCUMENTATION
+  hash.c
+          1832  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\hash.c
+          1832  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\hash.c
+          1832  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\hash.c
+          1832  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\hash.c
+          1832  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\hash.c
+  hash.h
+           509  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\hash.h
+           509  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\hash.h
+           509  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\hash.h
+           509  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\hash.h
+           509  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\hash.h
+  lex.l
+          1140  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lex.l
+          1140  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lex.l
+          1140  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lex.l
+          1140  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lex.l
+          1140  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lex.l
+  lp.y
+          3423  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp.y
+          3423  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp.y
+          3423  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp.y
+          3423  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp.y
+          3423  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp.y
+  lp2mps.c
+           488  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\lp2mps.c
+           488  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\lp2mps.c
+           488  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.2.tar\lp_solve_3.2\lp2mps.c
+           488  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\lp2mps.c
+           488  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\lp2mps.c
+  lpglob.h
+           791  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\lpglob.h
+           791  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\lpglob.h
+           791  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\lpglob.h
+           791  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\lpglob.h
+           791  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\lpglob.h
+  lpkit.c
+         44544  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lpkit.c
+         44544  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lpkit.c
+         44544  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lpkit.c
+         44544  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lpkit.c
+         44544  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lpkit.c
+  lpkit.h
+         15330  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lpkit.h
+         15330  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lpkit.h
+         15330  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lpkit.h
+         15330  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lpkit.h
+         15330  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lpkit.h
+  lp_solve.1
+          7004  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp_solve.1
+          7004  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp_solve.1
+          7004  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp_solve.1
+          7004  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp_solve.1
+          7004  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp_solve.1
+  lp_solve.c
+          4035  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_solve.c
+          4035  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_solve.c
+          4035  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_solve.c
+          4035  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_solve.c
+          4035  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_solve.c
+  lp_solve.man
+          9932  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp_solve.man
+          9932  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp_solve.man
+          9932  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp_solve.man
+          9932  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp_solve.man
+          9932  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\lp_solve.man
+  Makefile
+           907  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\Makefile
+           907  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\Makefile
+           907  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\Makefile
+           907  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\Makefile
+           907  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\Makefile
+  makefile.dos
+           973  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos14.tar\makefile.dos
+           973  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos14.tar\makefile.dos
+           973  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos14.tar\makefile.dos
+           973  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos14.tar\makefile.dos
+           973  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos14.tar\makefile.dos
+  Makefile.linux
+          3380  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\Makefile.linux
+          3380  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\Makefile.linux
+          3380  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.2.tar\lp_solve_3.2\Makefile.linux
+          3380  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\Makefile.linux
+          3380  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\Makefile.linux
+  MPS.description
+          4706  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\MPS.description
+          4706  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\MPS.description
+          4706  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\MPS.description
+          4706  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\MPS.description
+          4706  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\MPS.description
+  mps2lp.c
+           466  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\mps2lp.c
+           466  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\mps2lp.c
+           466  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.2.tar\lp_solve_3.2\mps2lp.c
+           466  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\mps2lp.c
+           466  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\mps2lp.c
+  NETLIB_RESULTS
+          4576  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\NETLIB_RESULTS
+          4576  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\NETLIB_RESULTS
+          4576  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\NETLIB_RESULTS
+          4576  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\NETLIB_RESULTS
+          4576  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.2.tar\lp_solve_3.2\NETLIB_RESULTS
+  patchlevel.h
+            25  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\patchlevel.h
+            25  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\patchlevel.h
+            25  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\patchlevel.h
+            25  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\patchlevel.h
+            25  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\patchlevel.h
+  presolve.c
+            95  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\presolve.c
+            95  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\presolve.c
+            95  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\presolve.c
+            95  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.2.tar\lp_solve_3.2\presolve.c
+            95  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\presolve.c
+  read.c
+         15085  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\read.c
+         15085  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\read.c
+         15085  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\read.c
+         15085  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\read.c
+         15085  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\read.c
+  readmps.c
+         14290  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\readmps.c
+         14290  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\readmps.c
+         14290  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\readmps.c
+         14290  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\readmps.c
+         14290  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\readmps.c
+  solve.c
+         22368  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\solve.c
+         22368  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\solve.c
+         22368  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\solve.c
+         22368  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\solve.c
+         22368  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\solve.c
+  demo_lag.out
+           378  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\demo_lag.out
+           378  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\lp_examples\demo_lag.out
+           378  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\demo_lag.out
+           378  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\lp_examples\demo_lag.out
+           378  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\demo_lag.out
+  ex1.out
+           100  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex1.out
+           100  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex1.out
+           100  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex1.out
+           100  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex1.out
+           100  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex1.out
+  ex2.out
+           100  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex2.out
+           100  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex2.out
+           100  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex2.out
+           100  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex2.out
+           100  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex2.out
+  ex3.out
+           100  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex3.out
+           100  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex3.out
+           100  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex3.out
+           100  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex3.out
+           100  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex3.out
+  ex4.out
+          1531  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex4.out
+          1531  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex4.out
+          1531  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex4.out
+          1531  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex4.out
+          1531  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex4.out
+  ex5.out
+          3826  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex5.out
+          3826  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex5.out
+          3826  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex5.out
+          3826  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex5.out
+          3826  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex5.out
+  ex6.out
+           235  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex6.out
+           235  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex6.out
+           235  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex6.out
+           235  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex6.out
+           235  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex6.out
+  ex7.out
+           478  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex7.out
+           478  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex7.out
+           478  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex7.out
+           478  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex7.out
+           478  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex7.out
+  DPMI32VM.OVL
+         58344  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\DPMI32VM.OVL
+         58344  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\DPMI32VM.OVL
+         58344  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\DPMI32VM.OVL
+         58344  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\DPMI32VM.OVL
+         58344  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\DPMI32VM.OVL
+  EX1.LP
+            71  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX1.LP
+            71  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX1.LP
+            71  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LP_EXAMP\EX1.LP
+            71  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\LP_EXAMP\EX1.LP
+            71  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX1.LP
+  EX4.LP
+          4957  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX4.LP
+          4957  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX4.LP
+          4957  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LP_EXAMP\EX4.LP
+          4957  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\LP_EXAMP\EX4.LP
+          4957  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX4.LP
+  EX5.LP
+          9067  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\EX5.LP
+          9067  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX5.LP
+          9067  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\LP_EXAMP\EX5.LP
+          9067  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos20\LP_EXAMP\EX5.LP
+          9067  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp20w95\LP_EXAMP\EX5.LP
+  INSTALL
+           200  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\INSTALL
+           200  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\INSTALL
+           200  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\INSTALL
+           200  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\INSTALL
+           200  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\mps2eq_0.2.tar\mps2eq\INSTALL
+  LP_SOLVE.MAN
+         10192  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\LP_SOLVE.MAN
+         10192  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\LP_SOLVE.MAN
+         10192  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpsol14\LP_SOLVE.MAN
+         10192  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\LP_SOLVE.MAN
+         10192  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpsol14\LP_SOLVE.MAN
+  README.TXT
+          1612  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\数据处理类题型参考代码【数学建模老哥】\基于压缩感知算法的数据压缩与复原代码\CS_code\l1_ls_matlab\README.TXT
+          1612  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛C题常见参考代码【数学建模老哥】\基于压缩感知算法的数据压缩与复原代码【数学建模老哥】\CS_code\l1_ls_matlab\README.TXT
+          2396  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\README.TXT
+          2396  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpdos15\README.TXT
+          2396  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpdos15\README.TXT
+  MIPLIB.RES
+          2349  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\MIPLIB.RES
+          2349  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\MIPLIB.RES
+          2349  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpsol14\MIPLIB.RES
+          2349  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lpsol14\MIPLIB.RES
+          2349  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lpsol14\MIPLIB.RES
+  NETLIB.RES
+          5719  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\NETLIB.RES
+          5719  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\NETLIB.RES
+          5719  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp2djgpp\NETLIB.RES
+          5719  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp2djgpp\NETLIB.RES
+          5719  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp2djgpp\NETLIB.RES
+  defines.h
+          2274  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\defines.h
+          2274  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\defines.h
+          2274  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\defines.h
+          2274  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\defines.h
+          2274  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\defines.h
+  dual.c
+          2464  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\dual.c
+          2464  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\dual.c
+          2464  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\dual.c
+          2464  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\dual.c
+          2464  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\dual.c
+  ex1.lp
+            65  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex1.lp
+            65  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex1.lp
+            65  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_examples\ex1.lp
+            65  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\lp_examples\ex1.lp
+            65  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\lp_examples\ex1.lp
+  ex2.lp
+            50  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex2.lp
+            50  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex2.lp
+            50  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex2.lp
+            50  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex2.lp
+            50  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex2.lp
+  ex3.lp
+            47  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex3.lp
+            47  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex3.lp
+            47  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex3.lp
+            47  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex3.lp
+            47  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex3.lp
+  ex4.lp
+          4821  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex4.lp
+          4821  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex4.lp
+          4821  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_examples\ex4.lp
+          4821  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\lp_examples\ex4.lp
+          4821  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\lp_examples\ex4.lp
+  ex5.lp
+          8873  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex5.lp
+          8873  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex5.lp
+          8873  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_examples\ex5.lp
+          8873  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\lp_examples\ex5.lp
+          8873  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\lp_examples\ex5.lp
+  ex6.lp
+           511  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex6.lp
+           511  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex6.lp
+           511  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex6.lp
+           511  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex6.lp
+           511  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\ex6.lp
+  globals.h
+          1715  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\globals.h
+          1715  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\globals.h
+          1715  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\globals.h
+          1715  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\globals.h
+          1715  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\globals.h
+  KNOWN_BUGS
+          1570  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\KNOWN_BUGS
+          1570  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\KNOWN_BUGS
+          1570  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\KNOWN_BUGS
+          1570  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\KNOWN_BUGS
+          1570  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\KNOWN_BUGS
+  main.c
+          8085  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\main.c
+          8085  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\main.c
+          8085  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\main.c
+          8085  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\main.c
+          8085  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\main.c
+  MIPLIB_RESULTS
+          2281  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\MIPLIB_RESULTS
+          2281  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\MIPLIB_RESULTS
+          2281  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\MIPLIB_RESULTS
+          2281  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\MIPLIB_RESULTS
+          2281  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\MIPLIB_RESULTS
+  proto.h
+           924  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\proto.h
+           924  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\proto.h
+           924  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\proto.h
+           924  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\proto.h
+           924  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\proto.h
+  tran.c
+           954  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\tran.c
+           954  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\tran.c
+           954  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\tran.c
+           954  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\tran.c
+           954  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\tran.c
+  write.c
+          1730  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\write.c
+          1730  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\write.c
+          1730  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\write.c
+          1730  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\write.c
+          1730  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.4.tar\lp_solve_1.4\write.c
+  COPYRIGHT
+           340  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\COPYRIGHT
+           340  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\COPYRIGHT
+           340  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\COPYRIGHT
+           340  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\COPYRIGHT
+           340  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\COPYRIGHT
+  ex7.lp
+          7858  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_1.5.tar\lp_solve_1.5\ex7.lp
+          7858  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_examples\ex7.lp
+          7858  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\lp_examples\ex7.lp
+          7858  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\lp_examples\ex7.lp
+          7858  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\lp_examples\ex7.lp
+  demo_lag.lp
+           330  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\demo_lag.lp
+           330  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\lp_examples\demo_lag.lp
+           330  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\demo_lag.lp
+           330  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\lp_examples\demo_lag.lp
+           330  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0.tar\lp_solve_4.0\lp_examples\demo_lag.lp
+  ex1.mps
+           397  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.0.tar\lp_solve_2.0\lp_examples\ex1.mps
+           397  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.1.tar\lp_solve_2.1\lp_examples\ex1.mps
+           397  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.2.tar\lp_solve_2.2\lp_examples\ex1.mps
+           397  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_2.3.tar\lp_solve_2.3\lp_examples\ex1.mps
+           397  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\lp_examples\ex1.mps
+  test.lp
+            50  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\test.lp
+            50  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.2.tar\lp_solve_3.2\test.lp
+            50  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\test.lp
+            50  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.2.tar\lp_solve_3.2\test.lp
+            50  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\test.lp
+  test.mps
+           239  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\test.mps
+           239  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.2.tar\lp_solve_3.2\test.mps
+           239  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\test.mps
+           239  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_3.2.tar\lp_solve_3.2\test.mps
+           239  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_3.1a.tar\lp_solve_3.1a\test.mps
+  declare.h
+           388  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\declare.h
+           388  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\declare.h
+           388  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\declare.h
+           388  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\declare.h
+           388  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\declare.h
+  read.h
+           297  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\read.h
+           297  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\read.h
+           297  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\read.h
+           297  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\read.h
+           297  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\read.h
+  ufortify.h
+          1767  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\ufortify.h
+          1767  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\ufortify.h
+          1767  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\ufortify.h
+          1767  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\ufortify.h
+          1767  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\ufortify.h
+  windll.c
+         17273  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\windll.c
+         17273  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\windll.c
+         17273  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\windll.c
+         17273  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\windll.c
+         17273  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\windll.c
+  windll.def
+          1991  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\windll.def
+          1991  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\windll.def
+          1991  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\windll.def
+          1991  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\windll.def
+          1991  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0beta1.tar\lp_solve_4.0\windll.def
+  lpsolve.bas
+         31312  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1_vb\lpsolve.bas
+         31312  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1_vb\lpsolve.bas
+         31312  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0beta1_vb\lpsolve.bas
+         31312  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1_vb\lpsolve.bas
+         31312  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0beta1_vb\lpsolve.bas
+  Module1.bas
+         10079  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1_vb\Module1.bas
+         10079  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1_vb\Module1.bas
+         10079  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0beta1_vb\Module1.bas
+         10079  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0beta1_vb\Module1.bas
+         10079  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0beta1_vb\Module1.bas
+  project1.vbp
+           704  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0_vb\project1.vbp
+           704  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0_vb\project1.vbp
+           704  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0_vb\project1.vbp
+           704  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划\Mixed Integer Linear Program\lp_solve_4.0_vb\project1.vbp
+           704  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——混合整数规划\Matlab工具包混合整数规划(1)\Mixed Integer Linear Program\lp_solve_4.0_vb\project1.vbp
+  PSO.m
+          1695  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛F题常见参考代码【数学建模老哥】\基于粒子群算法的寻优算法-非线性函数极值寻优【数学建模老哥】\PSO.m
+          1902  [b2] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【智能优化】30种智能优化算法代码汇总\30种智能优化算法\多种智能优化算法测试文件夹\PSO.m
+          2815  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——粒子群算法\粒子群算法优化RBF网络\粒子群算法优化RBF网络\PSO.m
+          2815  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——粒子群算法\粒子群算法优化RBF网络\粒子群算法优化RBF网络\PSO.m
+          2815  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——粒子群算法\粒子群算法优化RBF网络(1)\粒子群算法优化RBF网络\PSO.m
+  pso.m
+          7583  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——粒子群算法\粒子群算法遗传算法学习资料+工具箱+代码\粒子群算法\粒子群工具箱 - Particle Swarm (PSO) Toolbox-beta-0.3\pso.m
+          7583  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——粒子群算法\粒子群算法遗传算法学习资料+工具箱+代码\粒子群算法\粒子群工具箱 - Particle Swarm (PSO) Toolbox-beta-0.3\pso.m
+          7583  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——粒子群算法\粒子群算法遗传算法学习资料+工具箱+代码\粒子群算法\粒子群工具箱 - Particle Swarm (PSO) Toolbox-beta-0.3\pso.m
+          7583  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——粒子群算法\粒子群算法遗传算法学习资料+工具箱+代码(1)\粒子群算法\粒子群工具箱 - Particle Swarm (PSO) Toolbox-beta-0.3\pso.m
+          7583  [quar] 数学建模国赛速成资料汇总！\国赛C题必备模型+代码资料合集\国赛C题必备优化模型——粒子群算法\粒子群算法遗传算法学习资料+工具箱+代码\粒子群算法\粒子群工具箱 - Particle Swarm (PSO) Toolbox-beta-0.3\pso.m
+  Readme.txt
+           296  [b2] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【神经网络】评价预测和优化赛题代码\【聚类问题】极限学习机在回归拟合及分类问题中的应用研究——对比实验【公众号：数学建模老哥】\chapter29\classification\Readme.txt
+           296  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter29\chapter29\classification\Readme.txt
+           296  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter29\chapter29\regression\Readme.txt
+           296  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据(1)\《MATLAB 神经网络43个案例分析》源代码&数据\chapter29\chapter29\classification\Readme.txt
+           296  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据(1)\《MATLAB 神经网络43个案例分析》源代码&数据\chapter29\chapter29\regression\Readme.txt
+  使用说明.txt
+            68  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——线性规划模型\线性规划\第4讲 线性规划\使用说明.txt
+            68  [quar] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——非线性规划\第6讲 非线性规划\第6讲 非线性规划\使用说明.txt
+            68  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——线性规划模型\线性规划\第4讲 线性规划\使用说明.txt
+            68  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——线性规划模型\线性规划(1)\第4讲 线性规划\使用说明.txt
+            68  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——非线性规划\第6讲 非线性规划(1)\第6讲 非线性规划\使用说明.txt
+  README.md
+           228  [b2] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——遗传算法\python遗传算法旅行商代码\README.md
+           228  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——遗传算法\python遗传算法旅行商代码\README.md
+           228  [quar] 数学建模国赛速成资料汇总！\国赛C题必备模型+代码资料合集\国赛C题必备优化模型——遗传算法\python遗传算法旅行商代码\README.md
+           229  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——神经网络算法\神经网络详细的预测内容\README.md
+           229  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——神经网络算法\神经网络详细的预测内容\README.md
+  mutate.m
+           523  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——随机规划\基于遗传算法的随机规划（matlab）\mutate.m
+           523  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——随机规划\基于遗传算法的随机规划（matlab）\mutate.m
+           523  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——随机规划\基于遗传算法的随机规划（matlab）(1)\mutate.m
+           523  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——随机规划\基于遗传算法的随机规划（matlab）\mutate.m
+           523  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——随机规划\基于遗传算法的随机规划（matlab）(1)\mutate.m
+  select.m
+           502  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——随机规划\基于遗传算法的随机规划（matlab）\select.m
+           502  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——随机规划\基于遗传算法的随机规划（matlab）\select.m
+           502  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备优化模型——随机规划\基于遗传算法的随机规划（matlab）(1)\select.m
+           502  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——随机规划\基于遗传算法的随机规划（matlab）\select.m
+           502  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备优化模型——随机规划\基于遗传算法的随机规划（matlab）(1)\select.m
+  data.mat
+           379  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——topsis模型\TOPSIS模型具体步骤及代码\TOPSIS模型具体步骤\data.mat
+           379  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——topsis模型\TOPSIS模型具体步骤及代码\TOPSIS模型具体步骤\data.mat
+           379  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——topsis模型\TOPSIS模型具体步骤及代码(1)\TOPSIS模型具体步骤\data.mat
+           379  [quar] 数学建模国赛速成资料汇总！\国赛C题必备模型+代码资料合集\国赛C题必备评价模型——topsis模型\TOPSIS模型具体步骤及代码\TOPSIS模型具体步骤\data.mat
+           379  [quar] 数学建模国赛速成资料汇总！\国赛C题必备模型+代码资料合集\国赛C题必备评价模型——topsis模型\TOPSIS模型具体步骤及代码(1)\TOPSIS模型具体步骤\data.mat
+  Thumbs.db
+         33280  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——主成分分析法\pca主成分分析\pca主成分分析\Thumbs.db
+         33280  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——主成分分析法\pca主成分分析\pca主成分分析\Thumbs.db
+         33280  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——主成分分析法\pca主成分分析(1)\pca主成分分析\Thumbs.db
+         33280  [quar] 数学建模国赛速成资料汇总！\国赛C题必备模型+代码资料合集\国赛C题必备评价模型——主成分分析法\pca主成分分析\pca主成分分析\Thumbs.db
+         33280  [quar] 数学建模国赛速成资料汇总！\国赛C题必备模型+代码资料合集\国赛C题必备评价模型——主成分分析法\pca主成分分析(1)\pca主成分分析\Thumbs.db
+  PCA.m
+           940  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\分类与判别类题型参考代码【数学建模老哥】\100多种数据处理与分类算法集合\模式分类（Matlab程序）\PCA.m
+           940  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛C题常见参考代码【数学建模老哥】\100多种数据处理与分类算法集合【数学建模老哥】\模式分类（Matlab程序）\PCA.m
+          3791  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——主成分分析法\主成分分析法的MATLAB代码实现\主成分分析\PCA.m
+          3791  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——主成分分析法\主成分分析法的MATLAB代码实现\主成分分析\PCA.m
+          3791  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——主成分分析法\主成分分析法的MATLAB代码实现(1)\主成分分析\PCA.m
+  fa.m
+          2106  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\数据处理类题型参考代码【数学建模老哥】\34种数据降维方法代码\drtoolbox\techniques\fa.m
+          2106  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛C题常见参考代码【数学建模老哥】\34种数据降维方法代码【数学建模老哥】\drtoolbox\techniques\fa.m
+          2354  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——因子分析法\因子分析法MATLAB程序\fa.m
+          2354  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——因子分析法\因子分析法MATLAB程序\fa.m
+          2354  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——因子分析法\因子分析法MATLAB程序(1)\fa.m
+  www.downma.com.txt
+             0  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛C题常见参考代码【数学建模老哥】\混沌时间序列的RBF神经网络预测代码【数学建模老哥】\www.downma.com.txt
+             0  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛E题常见参考代码【数学建模老哥】\基于SVM支持向量机算法的降水量预测模型代码【数学建模老哥】\www.downma.com.txt
+             0  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛E题常见参考代码【数学建模老哥】\基于SVM支持向量机算法的降水量预测模型代码【数学建模老哥】(1)\www.downma.com.txt
+             0  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\预测与预报类题型参考代码【数学建模老哥】\混沌时间序列的RBF神经网络预测代码\www.downma.com.txt
+           151  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备评价模型——模糊综合评价\模糊综合评价富营养化评价\www.downma.com.txt
+  data1.mat
+           195  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\分类与判别类题型参考代码【数学建模老哥】\离散Hopfield神经网络的联想记忆数字识别代码\data1.mat
+           195  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛E题常见参考代码【数学建模老哥】\离散Hopfield神经网络的联想记忆数字识别代码【数学建模老哥】\data1.mat
+           195  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter9\chapter9\data1.mat
+           195  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据(1)\《MATLAB 神经网络43个案例分析》源代码&数据\chapter9\chapter9\data1.mat
+           195  [quar] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【神经网络】评价预测和优化赛题代码\【评价类】离散Hopfield神经网络的联想记忆——数字识别【公众号：数学建模老哥】\chapter9\data1.mat
+  data2.mat
+           205  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\分类与判别类题型参考代码【数学建模老哥】\离散Hopfield神经网络的联想记忆数字识别代码\data2.mat
+           205  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛E题常见参考代码【数学建模老哥】\离散Hopfield神经网络的联想记忆数字识别代码【数学建模老哥】\data2.mat
+           205  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter9\chapter9\data2.mat
+           205  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据(1)\《MATLAB 神经网络43个案例分析》源代码&数据\chapter9\chapter9\data2.mat
+           205  [quar] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【神经网络】评价预测和优化赛题代码\【评价类】离散Hopfield神经网络的联想记忆——数字识别【公众号：数学建模老哥】\chapter9\data2.mat
+  data3.mat
+           192  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\分类与判别类题型参考代码【数学建模老哥】\离散Hopfield神经网络的联想记忆数字识别代码\data3.mat
+           192  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛E题常见参考代码【数学建模老哥】\离散Hopfield神经网络的联想记忆数字识别代码【数学建模老哥】\data3.mat
+           192  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter9\chapter9\data3.mat
+           192  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据(1)\《MATLAB 神经网络43个案例分析》源代码&数据\chapter9\chapter9\data3.mat
+           192  [quar] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【神经网络】评价预测和优化赛题代码\【评价类】离散Hopfield神经网络的联想记忆——数字识别【公众号：数学建模老哥】\chapter9\data3.mat
+  data4.mat
+           195  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\分类与判别类题型参考代码【数学建模老哥】\离散Hopfield神经网络的联想记忆数字识别代码\data4.mat
+           195  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛E题常见参考代码【数学建模老哥】\离散Hopfield神经网络的联想记忆数字识别代码【数学建模老哥】\data4.mat
+           195  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter9\chapter9\data4.mat
+           195  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据(1)\《MATLAB 神经网络43个案例分析》源代码&数据\chapter9\chapter9\data4.mat
+           195  [quar] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【神经网络】评价预测和优化赛题代码\【评价类】离散Hopfield神经网络的联想记忆——数字识别【公众号：数学建模老哥】\chapter9\data4.mat
+  main.m
+           259  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛F题常见参考代码【数学建模老哥】\元胞自动机模型模拟交通路网中车辆拥挤疏散全过程代码【数学建模老哥】(1)\路网带红绿灯 （2x2)\main.m
+           259  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛F题常见参考代码【数学建模老哥】\元胞自动机模型模拟交通路网中车辆拥挤疏散全过程代码【数学建模老哥】\路网带红绿灯 （2x2)\main.m
+          1332  [b2] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【神经网络】评价预测和优化赛题代码\【聚类问题】极限学习机在回归拟合及分类问题中的应用研究——对比实验【公众号：数学建模老哥】\chapter29\regression\main.m
+          1332  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter29\chapter29\regression\main.m
+          1332  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据(1)\《MATLAB 神经网络43个案例分析》源代码&数据\chapter29\chapter29\regression\main.m
+  Matlab求解微分方程(组)及偏微分方程(组).doc
+        243712  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备预测模型——微分方程\Matlab求解微分方程(组)及偏微分方程(组).doc
+        243712  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备预测模型——微分方程\Matlab求解微分方程(组)及偏微分方程(组).doc
+        243712  [quar] 数学建模国赛速成资料汇总！\国赛C题必备模型+代码资料合集\国赛C题必备预测模型——微分方程\Matlab求解微分方程(组)及偏微分方程(组).doc
+        282664  [b2] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备模型——微分方程及差分方程模型和代码\Matlab求解微分方程(组)及偏微分方程(组).doc
+  main1.m
+           156  [b2] 2026数学建模核心资料\国赛B题必备模型+代码资料合集\国赛B题必备预测模型——时间序列分析\matlab时间序列分析代码\main1.m
+           156  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备预测模型——时间序列分析\matlab时间序列分析代码\main1.m
+           156  [quar] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备预测模型——时间序列分析\matlab时间序列分析代码(1)\main1.m
+           156  [quar] 数学建模国赛速成资料汇总！\国赛C题必备模型+代码资料合集\国赛C题必备预测模型——时间序列分析\matlab时间序列分析代码\main1.m
+           156  [quar] 数学建模国赛速成资料汇总！\国赛C题必备模型+代码资料合集\国赛C题必备预测模型——时间序列分析\matlab时间序列分析代码(1)\main1.m
+  GA.m
+          2481  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\GA优化后的RBF神经网络优化分析代码\GA.m
+          2481  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\GA优化后的RBF神经网络优化分析代码【数学建模老哥】\GA.m
+          6076  [b2] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【智能优化】30种智能优化算法代码汇总\30种智能优化算法\多种智能优化算法测试文件夹\GA.m
+  reverse.m
+            51  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\数据处理类题型参考代码【数学建模老哥】\基于压缩感知算法的数据压缩与复原代码\CS_code\CSBP_matlab\reverse.m
+            51  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛C题常见参考代码【数学建模老哥】\基于压缩感知算法的数据压缩与复原代码【数学建模老哥】\CS_code\CSBP_matlab\reverse.m
+           833  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\人工鱼群求解TSP问题源代码\reverse.m
+           833  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\人工鱼群求解TSP问题源代码【数学建模老哥】\reverse.m
+  Cross.m
+          1294  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\免疫优化算法在物流配送中心选址中的应用代码\Cross.m
+          1294  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\免疫优化算法在物流配送中心选址中的应用代码【数学建模老哥】\Cross.m
+          1294  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛D题常见参考代码【数学建模老哥】\免疫优化算法在物流配送中心选址中的应用代码【数学建模老哥】\Cross.m
+          1294  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛E题常见参考代码【数学建模老哥】\免疫优化算法在物流配送中心选址中的应用代码【数学建模老哥】\Cross.m
+          1556  [b2] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【神经网络】评价预测和优化赛题代码\【预测类】遗传算法优化BP神经网络——非线性函数拟合【公众号：数学建模老哥】\Cross.m
+  draw.m
+          1046  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\免疫优化算法在物流配送中心选址中的应用代码\draw.m
+          1046  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\免疫优化算法在物流配送中心选址中的应用代码【数学建模老哥】\draw.m
+          1046  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛D题常见参考代码【数学建模老哥】\免疫优化算法在物流配送中心选址中的应用代码【数学建模老哥】\draw.m
+          1046  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛E题常见参考代码【数学建模老哥】\免疫优化算法在物流配送中心选址中的应用代码【数学建模老哥】\draw.m
+          5697  [b2] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【神经网络】评价预测和优化赛题代码\【控制类】PID神经元网络解耦控制算法——多变量系统控制【公众号：数学建模老哥】\draw.m
+  fitness.m
+           105  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码\fitness.m
+           105  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛F题常见参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码【数学建模老哥】\fitness.m
+           113  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter36\chapter36\fitness.m
+           113  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据(1)\《MATLAB 神经网络43个案例分析》源代码&数据\chapter36\chapter36\fitness.m
+           113  [quar] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【神经网络】评价预测和优化赛题代码\【优化类】遗传算法优化计算——建模自变量降维【公众号：数学建模老哥】\chapter36\fitness.m
+  Mutation.m
+          1001  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\免疫优化算法在物流配送中心选址中的应用代码\Mutation.m
+          1001  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\免疫优化算法在物流配送中心选址中的应用代码【数学建模老哥】\Mutation.m
+          1001  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛D题常见参考代码【数学建模老哥】\免疫优化算法在物流配送中心选址中的应用代码【数学建模老哥】\Mutation.m
+          1001  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛E题常见参考代码【数学建模老哥】\免疫优化算法在物流配送中心选址中的应用代码【数学建模老哥】\Mutation.m
+          1545  [b2] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【神经网络】评价预测和优化赛题代码\【优化类】神经网络遗传算法函数极值寻优——非线性函数极值寻优【公众号：数学建模老哥】\chapter4\Mutation.m
+  Select.m
+           823  [b2] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【神经网络】评价预测和优化赛题代码\【优化类】神经网络遗传算法函数极值寻优——非线性函数极值寻优【公众号：数学建模老哥】\chapter4\Select.m
+           823  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter4\chapter4\Select.m
+           823  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据(1)\《MATLAB 神经网络43个案例分析》源代码&数据\chapter4\chapter4\Select.m
+           853  [b2] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【神经网络】评价预测和优化赛题代码\【预测类】遗传算法优化BP神经网络——非线性函数拟合【公众号：数学建模老哥】\Select.m
+           853  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter3\chapter3\Select.m
+  de_code.m
+          1320  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码\de_code.m
+          1320  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛F题常见参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码【数学建模老哥】\de_code.m
+          1400  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter36\chapter36\de_code.m
+          1400  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据(1)\《MATLAB 神经网络43个案例分析》源代码&数据\chapter36\chapter36\de_code.m
+          1400  [quar] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【神经网络】评价预测和优化赛题代码\【优化类】遗传算法优化计算——建模自变量降维【公众号：数学建模老哥】\chapter36\de_code.m
+  gabpEval.m
+           113  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码\gabpEval.m
+           113  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛F题常见参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码【数学建模老哥】\gabpEval.m
+           121  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter36\chapter36\gabpEval.m
+           121  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据(1)\《MATLAB 神经网络43个案例分析》源代码&数据\chapter36\chapter36\gabpEval.m
+           121  [quar] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【神经网络】评价预测和优化赛题代码\【优化类】遗传算法优化计算——建模自变量降维【公众号：数学建模老哥】\chapter36\gabpEval.m
+  gadecod.m
+           674  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码\gadecod.m
+           674  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛F题常见参考代码【数学建模老哥】\基于遗传算法的优化计算——建模自变量降维代码【数学建模老哥】\gadecod.m
+           714  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据\《MATLAB 神经网络43个案例分析》源代码&数据\chapter36\chapter36\gadecod.m
+           714  [quar] 数学建模国赛速成资料汇总！\国赛A题必备模型+代码资料合集\国赛A题必备：数学建模编程学习\数学建模42种常用算法程序包Matlab版（公众号：数学建模老哥）\程序包：《MATLAB+神经网络43个案例分析》源代码&数据(1)\《MATLAB 神经网络43个案例分析》源代码&数据\chapter36\chapter36\gadecod.m
+           714  [quar] 数学建模国赛速成资料汇总！\数学建模各类创新型算法汇总！\【神经网络】评价预测和优化赛题代码\【优化类】遗传算法优化计算——建模自变量降维【公众号：数学建模老哥】\chapter36\gadecod.m
+  EliteInduvidual.m
+           349  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种遗传算法优化论文与代码\chapter7\EliteInduvidual.m
+           349  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\多种遗传算法优化论文与代码【数学建模老哥】\chapter7\EliteInduvidual.m
+           801  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\EliteInduvidual.m
+           801  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码【数学建模老哥】\EliteInduvidual.m
+  immigrant.m
+           457  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种遗传算法优化论文与代码\chapter7\immigrant.m
+           457  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\多种遗传算法优化论文与代码【数学建模老哥】\chapter7\immigrant.m
+           763  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\immigrant.m
+           763  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码【数学建模老哥】\immigrant.m
+  MPGA.m
+          2054  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种遗传算法优化论文与代码\chapter7\MPGA.m
+          2054  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\多种遗传算法优化论文与代码【数学建模老哥】\chapter7\MPGA.m
+          2275  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\MPGA.m
+          2275  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码【数学建模老哥】\MPGA.m
+  ObjectFunction.m
+           177  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种遗传算法优化论文与代码\chapter7\ObjectFunction.m
+           177  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\多种遗传算法优化论文与代码【数学建模老哥】\chapter7\ObjectFunction.m
+           179  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\ObjectFunction.m
+           179  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码【数学建模老哥】\ObjectFunction.m
+  contents.m
+          1471  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\分类与判别类题型参考代码【数学建模老哥】\100多种数据处理与分类算法集合\模式分类（Matlab程序）\Other\contents.m
+          1471  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛C题常见参考代码【数学建模老哥】\100多种数据处理与分类算法集合【数学建模老哥】\模式分类（Matlab程序）\Other\contents.m
+          1835  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\gatbx\contents.m
+          1835  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码\Sheffield的遗传算法工具箱\Sheffield的遗传算法工具箱\gatbx\contents.m
+          1835  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码\Sheffield的遗传算法工具箱(1)\Sheffield的遗传算法工具箱\gatbx\contents.m
+  crtbase.m
+           497  [b2] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备模型——图与网络模型\MATLAB工具箱-图论工具箱\V100\optim\crtbase.m
+          1168  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\gatbx\crtbase.m
+          1168  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码\Sheffield的遗传算法工具箱\Sheffield的遗传算法工具箱\gatbx\crtbase.m
+          1168  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码\Sheffield的遗传算法工具箱(1)\Sheffield的遗传算法工具箱\gatbx\crtbase.m
+          1168  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码【数学建模老哥】\Sheffield的遗传算法工具箱\Sheffield的遗传算法工具箱\gatbx\crtbase.m
+  crtrp.m
+           561  [b2] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备模型——图与网络模型\MATLAB工具箱-图论工具箱\V100\optim\crtrp.m
+          2091  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\gatbx\crtrp.m
+          2091  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码\Sheffield的遗传算法工具箱\Sheffield的遗传算法工具箱\gatbx\crtrp.m
+          2091  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码\Sheffield的遗传算法工具箱(1)\Sheffield的遗传算法工具箱\gatbx\crtrp.m
+          2091  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码【数学建模老哥】\Sheffield的遗传算法工具箱\Sheffield的遗传算法工具箱\gatbx\crtrp.m
+  migrate.m
+          4123  [b2] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备模型——图与网络模型\MATLAB工具箱-图论工具箱\V100\optim\migrate.m
+          7205  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\gatbx\migrate.m
+          7205  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码\Sheffield的遗传算法工具箱\Sheffield的遗传算法工具箱\gatbx\migrate.m
+          7205  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码\Sheffield的遗传算法工具箱(1)\Sheffield的遗传算法工具箱\gatbx\migrate.m
+          7205  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码【数学建模老哥】\Sheffield的遗传算法工具箱\Sheffield的遗传算法工具箱\gatbx\migrate.m
+  ranking.m
+          2407  [b2] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备模型——图与网络模型\MATLAB工具箱-图论工具箱\V100\optim\ranking.m
+          4709  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\gatbx\ranking.m
+          4709  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码\Sheffield的遗传算法工具箱\Sheffield的遗传算法工具箱\gatbx\ranking.m
+          4709  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码\Sheffield的遗传算法工具箱(1)\Sheffield的遗传算法工具箱\gatbx\ranking.m
+          4709  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码【数学建模老哥】\Sheffield的遗传算法工具箱\Sheffield的遗传算法工具箱\gatbx\ranking.m
+  recombin.m
+          1065  [b2] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备模型——图与网络模型\MATLAB工具箱-图论工具箱\V100\optim\recombin.m
+          2438  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\gatbx\recombin.m
+          2438  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码\Sheffield的遗传算法工具箱\Sheffield的遗传算法工具箱\gatbx\recombin.m
+          2438  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码\Sheffield的遗传算法工具箱(1)\Sheffield的遗传算法工具箱\gatbx\recombin.m
+          2438  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码【数学建模老哥】\Sheffield的遗传算法工具箱\Sheffield的遗传算法工具箱\gatbx\recombin.m
+  reins.m
+          3007  [b2] 数学建模国赛速成资料汇总！\国赛B题必备模型+代码资料合集\国赛B题必备模型——图与网络模型\MATLAB工具箱-图论工具箱\V100\optim\reins.m
+          5574  [b2] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\多种群遗传算法的函数优化算法代码\gatbx\reins.m
+          5574  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码\Sheffield的遗传算法工具箱\Sheffield的遗传算法工具箱\gatbx\reins.m
+          5574  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\优化与控制题型参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码\Sheffield的遗传算法工具箱(1)\Sheffield的遗传算法工具箱\gatbx\reins.m
+          5574  [quar] 2026数学建模核心资料\美赛按题目题型分类常用算法代码程序包！\美赛照题目分类程序包【数学建模老哥】\美赛A题常见参考代码【数学建模老哥】\基于遗传算法的Bp神经网络优化算法代码【数学建模老哥】\Sheffield的遗传算法工具箱\Sheffield的遗传算法工具箱\gatbx\reins.m
+  ...（共 342 组）

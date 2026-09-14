@@ -1,0 +1,46 @@
+high=xlsread('yumi.xlsx','Sheet1','B2:B727');
+low=xlsread('yumi.xlsx','Sheet1','C2:C727');
+close=xlsread('yumi.xlsx','Sheet1','D2:D727');
+open=xlsread('yumi.xlsx','Sheet1','E2:E727');
+average=xlsread('yumi.xlsx','Sheet1','F2:F727');
+volume=xlsread('yumi.xlsx','Sheet1','G2:G727');
+positions=xlsread('yumi.xlsx','Sheet1','H2:H727');
+date=xlsread('yumi.xlsx','Sheet1','A2:A727');
+Accuratcy=cell(1,2);
+EED=cell(1,2);
+SharpeRadio=cell(1,2);
+Inforatio=cell(1,2);
+for i=1:2
+    R_S{i}=Label(window{i}+1:end-1,:);
+    k=ones(length(P_S{i}),1);
+    z=sum(k(P_S{i}==R_S{i}));
+    Accuratcy{i}=z/length(k);
+    rm=price2ret(ret{i});
+    Return=tick2ret(ret{i});
+    [mean,std]=normfit(Return);
+    EED{i}=emaxdrawdown(mean,std,5);
+    SharpeRadio{i}=sqrt(250)*sharpe(rm,0);
+    Inforatio{i}=inforatio(rm,price2ret(benchmark{i}));
+end
+strtemp={'[以价量信息为样本属性集合]','[以技术指标为样本属性集合]'};
+for i=1:2
+    fprintf(1,'--------------------\n');
+    fprintf(1,'各项指标的测试结果\n');
+    fprintf(1,strtemp{i});
+    fprintf(1,'\n');
+    fprintf(1,['最优滑窗敞口=',num2str(window{i})]);
+    fprintf(1,'\n');
+    fprintf(1,['最优准确率=',num2str(bestaccurate{i})]);
+    fprintf(1,'\n');
+    fprintf(1,['夏普比率=',num2str(SharpeRadio{i})]);
+    fprintf(1,'\n');
+    fprintf(1,['信息比率=',num2str(Inforatio{i})]);
+    fprintf(1,'\n');
+    fprintf(1,['最终获利点数=',num2str(cumr{i}(end,1))]);
+    fprintf(1,'\n');
+    fprintf(1,['最大回撤=',num2str(Maxdrawdown{i}),'回撤时间为第',num2str(dd{i}(1,1)),'到',num2str(dd{i}(2,1)),'个交易日']);
+    fprintf(1,'\n');
+    fprintf(1,['预期未来10日内最大回撤=',num2str(EED{i})]);
+    fprintf(1,'\n');
+end
+    

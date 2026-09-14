@@ -1,0 +1,65 @@
+/* function declarations */
+#include "proto.h"
+
+/* global variables */
+extern int        Rows, Columns, Nonnuls, Sum;
+extern REAL       Extrad;
+extern REAL       *Pcol; /* [Rows+1] */
+extern nstring    Probname;
+extern int        Totnum, Classnr, Linenr;
+extern short      Bounds, Ranges, Verbose, Debug, Show_results, Print_duals;
+extern unsigned   Cur_eta_size;
+extern REAL       *Eta_value;
+extern int        *Eta_rownr;
+extern int        Numeta, Numinv, Invnum;
+extern constraint_name *First_constraint_name;
+extern REAL       Epsilon, Infinite, Epsb, Epsel, Epsd;
+extern REAL       Scale_factor;
+extern REAL       *Scale_factors;
+
+extern matrec     *Mat;
+extern REAL       *Upbo, *Lowbo;
+extern nstring    *Names;
+extern int        *Cend;
+extern REAL       *Rh;
+extern short      *Relat;
+
+extern short      *Chsign;
+extern int        *Endetacol;
+extern int        *Rend, *Bas;
+extern REAL       *Rhs;
+extern int        *Colno;
+extern short      *Basis, *Lower;
+extern short      Maximise;
+
+extern REAL       *Solution, *Best_solution, *Orig_rh, *Orig_upbo, *Orig_lowbo;
+extern REAL       *Best_duals;
+extern short      *Must_be_int;
+extern short      Having_ints;
+extern int        Level;
+extern short      Floorfirst;
+extern short      Solve_dual;
+
+extern intrec     *First_int;
+
+   /* external variables for yy_trans and the yacc parser */
+extern int        yylineno;
+extern int        yyleng;
+extern int        Lin_term_count;
+extern int        Sign;
+
+
+/* I hate #ifdefs, but there seems to be no "standard" way to do this */
+#if defined(__hpux) || defined(__apollo) || defined(_AIX)
+/* for HP and Apollo (and possibly others) */
+extern unsigned char       yytext[];
+#else
+/* For other computers */
+extern char    yytext[];
+#endif
+
+extern hashelem   *Hash_tab[];
+extern rside      *First_rside;
+extern short      Ignore_decl;
+
+extern tmp_store_struct tmp_store;

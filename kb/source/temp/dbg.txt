@@ -1,0 +1,3 @@
+BLOCK len=1 first='1．5标准七步解题法一一每一步手把手教你做' last='1．5标准七步解题法一一每一步手把手教你做'
+  try_table -> False
+  m=1 candidate cols=[]
