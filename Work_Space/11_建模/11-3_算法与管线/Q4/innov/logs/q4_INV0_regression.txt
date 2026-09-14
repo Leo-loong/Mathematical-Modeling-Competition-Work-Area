@@ -1,0 +1,4 @@
+======================================================================
+BITWISE  innov(c_fr=-1,if_mode=0) vs formal: max|dT|=0.000e+00 max|dC|=0.000e+00 -> PASS
+c_fr=2.0 effect probe (60 s 内 C<2 区域存在，钳位应生效): max|dT|=0.000e+00 max|dC|=0.000e+00
+c_fr=2.0 differs from base: CHECK

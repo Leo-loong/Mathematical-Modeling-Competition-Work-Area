@@ -1,0 +1,41 @@
+% !TEX program = xelatex
+% !TEX encoding = UTF-8
+% !TEX root = main.tex
+% —— 上面三行是"魔术注释"：TeXworks／TeXstudio 打开本文件会自动选用 XeLaTeX ＋ UTF-8，
+%    不必每次手动切换（否则默认走 pdfLaTeX ⟹ 中文与 fontspec 会报错）。
+% ============================================================================
+% A 题 · 论文主文件（由 gen\_latex.py 生成；本文件只做 \input 装配，内容在各分节文件）
+% GEN\_LATEX\_VERSION: gen\_latex/v11
+% 结构：摘要专用页 → 正文（第一章…第七章）→ AI 工具使用声明 → 参考文献 → 附录
+%       —— 顺序依官方规范与《AI 工具使用规定》第 3 条（AI 声明在参考文献之前）
+% ============================================================================
+\input{preamble}
+
+% ============================================================================
+% ★ 调试开关：**是否编译附录**（附录 A／B／C，约 160 页，其中附录 B 是 39 个源程序清单）
+%   `\withappendixtrue`   ＝ 完整编译（**交付前必须用这个**，正文＋附录）；
+%   `\withappendixfalse`  ＝ **只编正文**（写稿／调试正文时用，编译时间大幅缩短）。
+%   ⚠ 关掉附录后，正文里指向附录的交叉引用（如表 A-1／表 C-1）会显示 `??`——
+%     这是正常现象（附录没参与编译），**不是错误**；出稿前改回 true 即恢复。
+% ============================================================================
+\newif\ifwithappendix
+\withappendixtrue
+
+\begin{document}
+
+\input{frontmatter/00\_摘要页}          % 官方第三条：摘要专用页（含标题与关键词，≤1 页）
+
+\input{sections/01\_问题重述}
+\input{sections/02\_问题分析}
+\input{sections/03\_模型假设}
+\input{sections/04\_符号说明}
+\input{sections/05\_模型建立与求解}      % 含 5.5（原 A\_09 结果分析，已并入本章）
+\input{sections/06\_模型检验}
+\input{sections/07\_模型评价与推广}
+\input{sections/08\_AI工具使用声明}      % 不编号；位置在参考文献之前
+\input{sections/09\_参考文献}
+\ifwithappendix
+\input{sections/10\_附录}
+\fi
+
+\end{document}

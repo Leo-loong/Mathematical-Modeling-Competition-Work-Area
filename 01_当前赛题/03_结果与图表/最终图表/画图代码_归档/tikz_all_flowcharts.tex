@@ -1,0 +1,428 @@
+% ============================================================
+% A 题 6 张流程图/示意图 — TikZ xelatex 独立编译
+% 输出 6 页 PDF，后续拆分为单页
+% ============================================================
+\documentclass[a4paper]{article}
+\usepackage[margin=0.5cm,paperwidth=21cm,paperheight=29.7cm]{geometry}
+\pagestyle{empty}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\usepackage{ctex}
+% 字体路径：从 01_当前赛题/03_结果与图表/最终图表/ 向上 3 层到根目录
+\newcommand{\fontdir}{../../../00_知识库/论文写作/LaTeX模板_2026国赛版/fonts/}
+\setCJKfamilyfont{song}[%
+  Path = \fontdir,
+  UprightFont = SourceHanSerifCN-Regular.otf,
+  BoldFont   = SourceHanSerifCN-Bold.otf,
+  AutoFakeBold = true,
+]{SourceHanSerifCN}
+\newcommand*{\song}{\CJKfamily{song}}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric,shapes.multipart,backgrounds,fit,decorations.pathreplacing}
+
+% ---- 颜色：与论文设计语言一致 ----
+\definecolor{priBlue}{HTML}{1F3A93}
+\definecolor{priGold}{HTML}{F39C12}
+\definecolor{priGreen}{HTML}{27AE60}
+\definecolor{priRed}{HTML}{C0392B}
+\definecolor{tkGray}{HTML}{9E9E9E}
+\definecolor{tkInk}{HTML}{333333}
+\definecolor{tkBg}{HTML}{F4F6F7}
+
+% ---- 节点样式 ----
+\tikzset{
+  boxBlue/.style={rectangle,draw=priBlue,line width=1.0pt,fill=priBlue!10,text=tkInk,minimum width=3.5cm,minimum height=1.0cm,align=center,font=\song\footnotesize,inner sep=6pt,rounded corners=3pt},
+  boxGreen/.style={rectangle,draw=priGreen,line width=1.0pt,fill=priGreen!10,text=tkInk,minimum width=3.5cm,minimum height=1.0cm,align=center,font=\song\footnotesize,inner sep=6pt,rounded corners=3pt},
+  boxGold/.style={rectangle,draw=priGold,line width=1.0pt,fill=priGold!10,text=tkInk,minimum width=3.5cm,minimum height=1.0cm,align=center,font=\song\footnotesize,inner sep=6pt,rounded corners=3pt},
+  boxRed/.style={rectangle,draw=priRed,line width=1.0pt,fill=priRed!10,text=tkInk,minimum width=3.2cm,minimum height=0.9cm,align=center,font=\song\footnotesize,inner sep=6pt,rounded corners=3pt},
+  boxGray/.style={rectangle,draw=tkGray,line width=0.7pt,fill=tkBg,text=tkInk,minimum width=3.0cm,minimum height=0.8cm,align=center,font=\song\footnotesize\itshape,inner sep=4pt,rounded corners=3pt},
+  arr/.style={-{Stealth[length=2.0mm,width=1.8mm]},line width=0.9pt,draw=tkGray!60!tkInk},
+  arrBlue/.style={-{Stealth[length=2.0mm,width=1.8mm]},line width=1.0pt,draw=priBlue},
+  arrRed/.style={-{Stealth[length=2.0mm,width=1.8mm]},line width=1.0pt,draw=priRed},
+  arrGreen/.style={-{Stealth[length=2.0mm,width=1.8mm]},line width=1.0pt,draw=priGreen},
+  arrDash/.style={-{Stealth[length=1.8mm,width=1.6mm]},line width=0.7pt,draw=tkGray,densely dashed},
+  bidir/.style={{Stealth[length=1.8mm,width=1.6mm]}-{Stealth[length=1.8mm,width=1.6mm]},line width=0.9pt,draw=priRed},
+}
+
+\begin{document}
+
+% ============================================================
+% F-01: 总体建模流程图
+% ============================================================
+\begin{center}
+{\large\bfseries\song 图 F-01：总体建模流程图}\\[0.8cm]
+\begin{tikzpicture}[node distance=1.3cm and 1.0cm]
+
+  % 顶部：四个阶段水平排列
+  \node[boxGold,minimum width=3.2cm] (S1) {赛题分析\\附件1/2、附录2/3/4};
+  \node[boxBlue,right=of S1,minimum width=3.2cm] (S2) {模型建立\\PDE + 边界条件\\cylindrical 1D};
+  \node[boxGreen,right=of S2,minimum width=3.2cm] (S3) {数值求解\\FVM + 全隐式\\+ Picard 迭代};
+  \node[boxGreen,right=of S3,minimum width=3.2cm] (S4) {结果验证\\对照附件1\\收敛性/灵敏度};
+  \node[boxRed,right=of S4,minimum width=3.2cm] (S5) {论文呈现\\结果 + 检验\\+ 评价};
+
+  \draw[arr] (S1) -- (S2);
+  \draw[arr] (S2) -- (S3);
+  \draw[arr] (S3) -- (S4);
+  \draw[arr] (S4) -- (S5);
+
+  % 中部：两个核心方程
+  \node[boxBlue,below=of S2,yshift=-1.0cm,minimum width=5.5cm] (EqT) {
+    \textbf{热传导}\\[2pt]
+    $\rho c_p\frac{\partial T}{\partial t}=\frac{1}{r}\frac{\partial}{\partial r}\!\bigl(k\,r\frac{\partial T}{\partial r}\bigr)$
+  };
+  \node[boxGreen,below=of S3,yshift=-1.0cm,minimum width=5.5cm] (EqC) {
+    \textbf{水分扩散（Fick）}\\[2pt]
+    $\frac{\partial C}{\partial t}=\frac{1}{r}\frac{\partial}{\partial r}\!\bigl(D\,r\frac{\partial C}{\partial r}\bigr)$
+  };
+  \draw[arr] (S2) -- (EqT);
+  \draw[arr] (S3) -- (EqC);
+  \draw[bidir] (EqT) -- (EqC) node[midway,above,font=\song\footnotesize] {双向耦合};
+
+  % 底部：四问递进
+  \node[boxGold,below=of EqC,yshift=-1.2cm,minimum width=14.5cm] (Qchain) {
+    \textbf{同一 PDE 框架，逐问加码：}\\[3pt]
+    Q1 定物性(附录2)~~$\rightarrow$~~Q2 变物性(附录3)~~$\rightarrow$~~Q3 长时程+终止判据~~$\rightarrow$~~Q4 移动边界(附录4+附件2)
+  };
+  \draw[arr] (EqT.south) -- ++(0,-0.3) -| (Qchain.north);
+  \draw[arr] (EqC.south) -- ++(0,-0.3) -| (Qchain.north);
+
+  % 底部数值方法
+  \node[boxGray,below=of Qchain,yshift=-0.1cm,minimum width=15cm] (Method) {
+    数值方法：守恒型有限体积法~~~~全隐式时间推进~~~~Picard $\omega$=0.7, tol=$10^{-10}$~~~~Q4: 物料坐标 $\xi=r/R(t)$
+  };
+  \draw[arr] (Qchain) -- (Method);
+
+\end{tikzpicture}
+\end{center}
+\newpage
+
+% ============================================================
+% F-02: 四问递进关系图
+% ============================================================
+\begin{center}
+{\large\bfseries\song 图 F-02：四问递进关系图}\\[1.0cm]
+\begin{tikzpicture}[node distance=1.5cm and 1.8cm]
+
+  % Q1
+  \node[boxBlue,minimum width=3.6cm,minimum height=2.2cm] (Q1) {
+    \textbf{Q1 预热阶段}\\[2pt]
+    0--1800 s\\[2pt]
+    附录2 定物性\\固定半径 2 cm\\$\rho,c_p,k$ 常数
+  };
+  \node[boxGray,below=0.2cm of Q1,minimum width=3.6cm] (N1) {基础：建立 PDE 框架\\验证数值方法};
+
+  % Q2
+  \node[boxGreen,right=of Q1,minimum width=3.6cm,minimum height=2.2cm] (Q2) {
+    \textbf{Q2 变物性}\\[2pt]
+    0--3 h\\[2pt]
+    附录3 变物性\\$\rho(C),c_p(C),$\\$k(C),D(C,T)$
+  };
+  \node[boxGray,below=0.2cm of Q2,minimum width=3.6cm] (N2) {扩展：引入变物性\\IMEX 交替推进};
+
+  % Q3
+  \node[boxGreen,right=of Q2,minimum width=3.6cm,minimum height=2.2cm] (Q3) {
+    \textbf{Q3 长时程}\\[2pt]
+    至达标\\[2pt]
+    $\max C(r,t)<0.15$\\烘干时间确定
+  };
+  \node[boxGray,below=0.2cm of Q3,minimum width=3.6cm] (N3) {应用：事件驱动终止\\全过程模拟};
+
+  % Q4
+  \node[boxRed,right=of Q3,minimum width=3.6cm,minimum height=2.2cm] (Q4) {
+    \textbf{Q4 移动边界}\\[2pt]
+    考虑收缩\\[2pt]
+    附录4 + 附件2\\$R=R(t)$, 坐标变换
+  };
+  \node[boxGray,below=0.2cm of Q4,minimum width=3.6cm] (N4) {修正：移动边界\\收缩效应量化};
+
+  % 递进箭头
+  \draw[arrBlue] (Q1.east) -- (Q2.west);
+  \draw[arrBlue] (Q2.east) -- (Q3.west);
+  \draw[arrBlue] (Q3.east) -- (Q4.west);
+
+  % 底部统一框架
+  \node[boxGold,below=of N2,yshift=-1.0cm,xshift=3.5cm,minimum width=15cm] (Unified) {
+    \textbf{统一框架}：轴对称圆柱 1D 径向~~~$L/R$=12.5~~~热传导 + Fick 扩散 PDE 耦合\\[2pt]
+    全隐式 FVM + Picard 迭代~~~同一模型、逐问递进、逐级加码
+  };
+  \draw[arr] (N1.south) -- ++(0,-0.3) -| (Unified.north);
+  \draw[arr] (N2.south) -- ++(0,-0.3) -| (Unified.north);
+  \draw[arr] (N3.south) -- ++(0,-0.3) -| (Unified.north);
+  \draw[arr] (N4.south) -- ++(0,-0.3) -| (Unified.north);
+
+\end{tikzpicture}
+\end{center}
+\newpage
+
+% ============================================================
+% F-05: Q4 物质坐标变换示意
+% ============================================================
+\begin{center}
+{\large\bfseries\song 图 F-05：物质坐标变换 $\xi=r/R(t)$}\\[0.8cm]
+\begin{tikzpicture}[node distance=1.0cm]
+
+  % (a) 物理域 — 画三个同心圆
+  \node[font=\song\small\bfseries] at (-3.5, 3.5) {(a) 物理域：$r$ 坐标（边界移动）};
+
+  % 三个半径
+  \draw[priBlue,line width=1.5pt] (-3.5,0) circle (1.8cm);
+  \draw[priBlue,dashed,line width=1.0pt] (-3.5,0) circle (1.35cm);
+  \draw[priBlue,dashed,line width=0.7pt] (-3.5,0) circle (0.9cm);
+
+  \node[font=\song\footnotesize] at (-1.5,0.3) {$R(t_1)=2$ cm};
+  \node[font=\song\footnotesize] at (-2.1,-0.6) {$R(t_2)$};
+  \node[font=\song\footnotesize] at (-2.6,-1.1) {$R(t_3)$};
+  \node[font=\song\footnotesize] at (-3.5,0) {$r=0$};
+
+  % 热流箭头
+  \draw[arrRed,line width=1.2pt] (-2.5,0.9) -- (-2.9,0.9);
+  \draw[arrRed,line width=1.2pt] (-2.9,0.5) -- (-3.1,0.5);
+  \node[font=\song\footnotesize,text=priRed] at (-1.8,0.9) {热/湿流方向（外→内）};
+
+  % 边界标注
+  \draw[arr] (-1.5,1.4) -- (-1.0,2.0) node[font=\song\footnotesize,anchor=west] {
+    Robin 边界：\\$-k\partial_r T=h(T_R{-}T_\infty)$\\$-D\partial_r C=k_m(C_R{-}C_\infty)$
+  };
+
+  % (b) 计算域
+  \node[font=\song\small\bfseries] at (3.5, 3.5) {(b) 计算域：$\xi=r/R(t)$（固定 $[0,1]$）};
+
+  % 三条固定线段
+  \draw[priBlue,line width=1.5pt] (1.0, 2.5) -- (6.0, 2.5) node[right,font=\song\footnotesize] {$R=2$ cm};
+  \draw[priBlue,dashed,line width=1.0pt] (1.0, 1.2) -- (6.0, 1.2) node[right,font=\song\footnotesize] {$R=1.6$ cm};
+  \draw[priBlue,dashed,line width=0.7pt] (1.0, -0.1) -- (6.0, -0.1) node[right,font=\song\footnotesize] {$R=1.2$ cm};
+
+  \draw[tkGray!60!tkInk,line width=0.6pt] (1.0,2.7) -- (1.0,-0.3);
+  \draw[tkGray!60!tkInk,line width=0.6pt] (6.0,2.7) -- (6.0,-0.3);
+  \node[font=\song\footnotesize] at (3.5, -0.9) {$\xi=0$（中心）~~~~~~$\xi$ 增大~~~~~~$\xi=1$（表面）};
+
+  % 方程标注
+  \node[boxGray,minimum width=14cm] at (3.5, -2.2) {
+    变换后控制方程（质量）：\quad$\partial_t\tilde{C} = \frac{1}{\xi R^2}\partial_\xi(\xi D\partial_\xi\tilde{C})$\quad（无对流项）\\[2pt]
+    能量方程含压缩项：\quad$-2(\dot{R}/R)\rho c_p T$
+  };
+
+\end{tikzpicture}
+\end{center}
+\newpage
+
+% ============================================================
+% F-07: Q1 求解原理示意图
+% ============================================================
+\begin{center}
+{\large\bfseries\song 图 F-07：Q1 求解原理示意图}\\[0.8cm]
+\begin{tikzpicture}[node distance=1.2cm and 1.0cm]
+
+  % (a) 圆柱截面 + 边界条件
+  \node[font=\song\small\bfseries] at (-5.5, 3.0) {(a) 圆柱截面与边界};
+
+  \draw[priBlue,line width=1.3pt,fill=priBlue!5] (-5.5,0) circle (2.0cm);
+  \filldraw (-5.5,0) circle (1.5pt);
+  \node[font=\song\footnotesize] at (-5.5,-0.25) {$r=0$};
+
+  % 标注半径
+  \draw[tkGray,line width=0.6pt] (-5.5,0) -- (-3.8,1.1);
+  \node[font=\song\footnotesize,text=priBlue] at (-3.5,1.8) {$R_0=2$ cm};
+
+  % 边界条件标注
+  \draw[arrRed] (-3.3,0.7) -- (-2.5,1.5)
+    node[font=\song\footnotesize,anchor=west,text=priRed] {表面 Robin 边界};
+  \draw[arrRed] (-3.3,-0.7) -- (-2.5,-1.5)
+    node[font=\song\footnotesize,anchor=west,text=priRed] {$-k\partial_rT=h(T_R-T_\infty)$};
+
+  % 热流方向
+  \draw[arr,priGold,line width=1.0pt] (-4.3,0.7) -- (-4.9,0.3);
+  \draw[arr,priGold,line width=1.0pt] (-4.7,0.2) -- (-5.1,-0.1);
+  \node[font=\song\footnotesize,text=priGold] at (-5.8,1.4) {热/湿流};
+  \node[font=\song\footnotesize,text=priGold] at (-5.8,1.0) {外→内};
+
+  % 中心条件
+  \node[font=\song\footnotesize] at (-5.5,-0.65) {$\partial_rT=\partial_rC=0$};
+
+  % (b) 径向控制体
+  \node[font=\song\small\bfseries] at (0, 3.0) {(b) 径向控制体网格};
+
+  \draw[priBlue,line width=1.2pt] (0,0) circle (2.0cm);
+  % 同心环
+  \foreach \r in {0.4,0.8,1.2,1.6} {
+    \draw[tkGray,dashed,line width=0.4pt] (0,0) circle (\r cm);
+  }
+  % 径向线
+  \foreach \a in {0,36,72,108,144,180,216,252,288,324} {
+    \draw[tkGray,dashed,line width=0.3pt] (0,0) -- ({2*cos(\a)},{2*sin(\a)});
+  }
+  % 高亮一个控制体
+  \fill[priGreen!15,draw=priGreen,line width=0.8pt] (0.6,0.1) -- (1.0,0.3) arc(16.7:0:1.0) -- (1.0,0.0) arc(0:16.7:1.0) -- cycle;
+  \node[font=\song\footnotesize,text=priGreen] at (1.6,1.0) {控制体};
+
+  \draw[arr] (2.2,1.2) -- (2.8,1.2) node[font=\song\footnotesize,anchor=west] {$\Delta r=0.25$ mm};
+  \node[font=\song\footnotesize] at (2.8,0.6) {$N=80$ 区间};
+
+  % 中心控制体高亮
+  \fill[priBlue!15,draw=priBlue,line width=0.8pt] (0,0) circle (0.3cm);
+  \node[font=\song\footnotesize,text=priBlue] at (-1.4,1.3) {中心控制体};
+  \node[font=\song\footnotesize,text=priBlue] at (-1.4,0.9) {(半径 $\Delta r/2$)};
+
+  % (c) 时空离散
+  \node[font=\song\small\bfseries] at (5.8, 3.0) {(c) 时空离散与推进};
+
+  % 网格
+  \foreach \i in {0,1,2,3,4} {
+    \draw[tkGray,dashed,line width=0.3pt] (3.0, \i*0.8+0.3) -- (8.3, \i*0.8+0.3);
+  }
+  \foreach \j in {0,1,2,3,4,5,6} {
+    \draw[tkGray,dashed,line width=0.3pt] (3.0+\j*0.8, 0.3) -- (3.0+\j*0.8, 3.5);
+  }
+
+  % 计算节点
+  \foreach \j in {0,1,2,3,4} {
+    \foreach \i in {1,2,3} {
+      \fill[priBlue] (3.4+\j*0.8, \i*0.8+0.3) circle (1.2pt);
+    }
+  }
+  \fill[priRed] (7.4, 3.1) circle (2.0pt);
+  \node[font=\song\footnotesize,text=priRed] at (7.4, 3.5) {已知 $t^n$};
+
+  \draw[arrRed,line width=1.2pt] (4.2, 3.8) -- (7.0, 3.8)
+    node[midway,above,font=\song\footnotesize,text=priRed] {时间推进方向 →};
+  \node[font=\song\footnotesize] at (8.5, 1.5) {$\Delta t=1$ s (输出)};
+  \node[font=\song\footnotesize] at (8.5, 0.9) {子步 $1/32$ s};
+
+  \node[font=\song\footnotesize] at (5.5, -0.2) {$r$ 方向（0 $\to$ $R_0$）};
+
+\end{tikzpicture}
+\end{center}
+\newpage
+
+% ============================================================
+% F-21: Q2 双向耦合关系图
+% ============================================================
+\begin{center}
+{\large\bfseries\song 图 F-21：Q2 热--湿双向耦合关系}\\[1.0cm]
+\begin{tikzpicture}[node distance=1.8cm and 2.5cm]
+
+  % 温度场
+  \node[boxBlue,minimum width=4.0cm,minimum height=2.0cm] (Tbox) {
+    \textbf{温度场 $T(r,t)$}\\[3pt]
+    热传导方程\\[2pt]
+    $\rho c_p\frac{\partial T}{\partial t} = \frac{1}{r}\frac{\partial}{\partial r}(kr\frac{\partial T}{\partial r})$
+  };
+
+  % 水分浓度
+  \node[boxGreen,below=of Tbox,minimum width=4.0cm,minimum height=2.0cm] (Cbox) {
+    \textbf{水分浓度 $C(r,t)$}\\[3pt]
+    Fick 扩散方程\\[2pt]
+    $\frac{\partial C}{\partial t} = \frac{1}{r}\frac{\partial}{\partial r}(Dr\frac{\partial C}{\partial r})$
+  };
+
+  % 物性模块
+  \node[boxGold,right=of Tbox,xshift=2.0cm,minimum width=4.5cm,minimum height=4.0cm] (Prop) {
+    \textbf{物性参数（附录3）}\\[3pt]
+    $\rho = 650+128C$\\[2pt]
+    $c_p = 1450+2736\frac{C}{C+1}$\\[2pt]
+    $k = 0.21+0.38\frac{C}{C+1}$\\[2pt]
+    $D = 2.4{\times}10^{-3}e^{-0.45/C}e^{-3850/T}$
+  };
+
+  % 耦合箭头 T → Prop (C 和 T 共同影响 D)
+  \draw[arrRed,line width=1.2pt] ($(Tbox.north east)!0.35!(Tbox.east)$) --
+    node[sloped,above,font=\song\footnotesize,text=priRed] {$T$ 影响 $D$}
+    ($(Prop.west)!0.32!(Prop.north west)$);
+  \draw[arrRed,line width=1.2pt] ($(Cbox.north east)!0.35!(Cbox.east)$) --
+    node[sloped,above,font=\song\footnotesize,text=priRed] {$C$ 影响 $\rho,c_p,k,D$}
+    ($(Prop.west)!0.50!(Prop.north west)$);
+
+  % Prop → T, C
+  \draw[arrRed,line width=1.2pt] ($(Prop.west)!0.55!(Prop.south west)$) --
+    node[sloped,above,font=\song\footnotesize,text=priRed] {$\rho,c_p,k$ 更新}
+    ($(Tbox.east)!0.65!(Tbox.south east)$);
+  \draw[arrRed,line width=1.2pt] ($(Prop.west)!0.75!(Prop.south west)$) --
+    node[sloped,above,font=\song\footnotesize,text=priRed] {$D$ 更新}
+    ($(Cbox.east)!0.65!(Cbox.south east)$);
+
+  % 双向耦合标注
+  \draw[bidir] ($(Tbox.south)!0.5!(Tbox.south west)$) --
+    node[midway,left,font=\song\footnotesize\bfseries,text=priRed] {双向\\强耦合}
+    ($(Cbox.north)!0.5!(Cbox.north west)$);
+
+  % IMEX 标签
+  \node[boxGray,below=of Prop,yshift=-0.5cm,xshift=0.5cm,minimum width=4.0cm] (IMEX) {
+    \textbf{IMEX 交替推进}\\[2pt]
+    每子步更新物性\\$T$ 隐式 → 重算 $D$ → $C$ 隐式\\Picard $\omega$=0.7, tol=$10^{-10}$
+  };
+  \draw[arrDash] (Prop.south) -- (IMEX.north);
+
+  % Q1对比
+  \node[boxGray,below=of Cbox,yshift=-2.2cm,minimum width=12cm] (Note) {
+    Q1 为单向耦合（附录2 常物性 $\rho,c_p,k$ 常数，$D=D(C)$ 仅单向）~~~Q2 起成闭环（附录3 全变物性双向强耦合）
+  };
+
+\end{tikzpicture}
+\end{center}
+\newpage
+
+% ============================================================
+% F-22: IMEX 交替推进算法流程图
+% ============================================================
+\begin{center}
+{\large\bfseries\song 图 F-22：IMEX 交替推进算法流程}\\[0.6cm]
+\begin{tikzpicture}[node distance=1.1cm and 1.5cm]
+
+  % 开始
+  \node[boxBlue,minimum width=5.0cm] (Init) {\textbf{开始}~~~$t=0$，$T_0=28$ ℃，$C_0=2.55$ kg/kg};
+
+  % 物性更新
+  \node[boxGold,below=of Init,minimum width=5.0cm] (Props) {更新物性 $\rho,c_p,k,D(C,T)$（附录3）};
+
+  % 解 T
+  \node[boxBlue,below=of Props,minimum width=5.0cm] (SolveT) {隐式求解温度 $T^{n+1}$~~~~三对角矩阵直接求解};
+
+  % 重算 D
+  \node[boxGold,below=of SolveT,minimum width=5.0cm] (UpdateD) {重算 $D(C,T^{n+1})$~~（温度已更新）};
+
+  % 解 C（含 Picard）
+  \node[boxGreen,below=of UpdateD,minimum width=5.0cm] (SolveC) {隐式求解水分浓度 $C^{n+1}$\\Picard 迭代 ($\omega{=}0.7$, tol${=}10^{-10}$, 最多 30 次)};
+
+  % 收敛判断
+  \node[boxGold,below=of SolveC,minimum width=5.0cm,minimum height=0.8cm] (Converge) {Picard 收敛？};
+
+  % 时间推进
+  \node[boxBlue,below=of Converge,yshift=-0.5cm,minimum width=5.0cm] (Advance) {$t \mathrel{+}= \Delta t$~~~时间推进};
+
+  % 外层循环判断
+  \node[boxGold,below=of Advance,minimum width=5.0cm] (Check) {$t < t_{\max}$ ?};
+
+  % 结束
+  \node[boxRed,below=of Check,yshift=-0.3cm,minimum width=5.0cm] (End) {\textbf{结束}~~~输出结果};
+
+  % 主流程箭头
+  \draw[arr] (Init) -- (Props);
+  \draw[arr] (Props) -- (SolveT);
+  \draw[arr] (SolveT) -- (UpdateD);
+  \draw[arr] (UpdateD) -- (SolveC);
+  \draw[arr] (SolveC) -- (Converge);
+  \draw[arr] (Converge) -- node[right,font=\song\footnotesize,text=priGreen] {是} (Advance);
+  \draw[arr] (Advance) -- (Check);
+  \draw[arr] (Check) -- node[right,font=\song\footnotesize] {否} (End);
+
+  % Picard 未收敛 -- 回到解 C
+  \node[boxRed,right=of SolveC,xshift=3.5cm,minimum width=3.0cm,minimum height=0.8cm] (Retry) {未收敛：继续迭代};
+  \draw[arrRed] (Converge.east) -- ++(1.0,0) |-
+    node[pos=0.7,right,font=\song\footnotesize,text=priRed] {否（最多 30 次）} (Retry.west);
+  \draw[arrRed] (Retry.north) -- ++(0,0.5) -| (SolveC.east);
+
+  % 外层循环 -- 回到物性更新
+  \draw[arr,rounded corners=8pt] (Check.west) -- ++(-5.5,0) |-
+    node[pos=0.25,left,font=\song\footnotesize] {是} (Props.west);
+
+  % 标注循环规模
+  \node[font=\song\footnotesize,text=tkGray,anchor=west] at (8.5, -1.5) {外层：$\Delta t=1$ s};
+  \node[font=\song\footnotesize,text=tkGray,anchor=west] at (8.5, -4.5) {共 10800 步};
+  \node[font=\song\footnotesize,text=tkGray,anchor=west] at (8.5, -7.5) {(Q3 用事件驱动终止)};
+
+\end{tikzpicture}
+\end{center}
+
+\end{document}

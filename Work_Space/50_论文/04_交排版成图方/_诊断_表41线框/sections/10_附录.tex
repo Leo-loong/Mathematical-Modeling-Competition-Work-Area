@@ -1,0 +1,678 @@
+% 官方第四、五、十一条：附录页数不限；含支撑材料文件列表与全部可运行源程序
+\appendix
+附录按官方《论文格式规范》第五、十一条的要求给出两部分内容：\textbf{支撑材料文件列表}与\textbf{源程序}；另附关键中间结果的索引说明。源程序按"\textbf{关键程序全文 ＋ 全部程序清单}"两段收录（附录 B：B.1–B.7 为关键程序，正文\textbf{全文嵌入}；B.8–B.13 为其余源程序，只列\textbf{文件名清单}），全部源程序的全文随\textbf{支撑材料}提交，并在表~\ref{tab:A-1} 中逐项登记。为免歧义，本附录表内所称含水率均指干基含水率。
+
+\section{支撑材料文件列表}
+支撑材料文件列表见表~\ref{tab:A-1}（按官方第十一条，随论文附录提交）。
+
+
+
+
+\settabw{8}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.069\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.268\tblw\relax}>{\centering\arraybackslash}m{\dimexpr 0.125\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.538\tblw\relax}}
+  \caption{类别 1.1　源程序（全部完整可运行、不裁剪）}\label{tab:A-1}\\
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endfirsthead
+  \multicolumn{4}{r}{\footnotesize（续）}\\
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  1 & \texttt{code/\allowbreak{}q1\_\allowbreak{}core.\allowbreak{}py} & 16.4 KB & 求解核：元体平衡（有限体积）加后向欧拉与三对角追赶法；中心两条独立装配路径；含退化与物性缩放模式供检验复用 \\
+  2 & \texttt{code/\allowbreak{}q1\_\allowbreak{}solver.\allowbreak{}py} & 11.4 KB & 主力求解：附件核验、中心双路比对、单遍求解、写结果文件、程序化格式断言 \\
+  3 & \texttt{code/\allowbreak{}q1\_\allowbreak{}e1\_\allowbreak{}gci.\allowbreak{}py} & 7.3 KB & 检验（收敛性）：空间网格收敛指数（1／0.5／0.25 mm）与时间收敛（温度、含水率分别） \\
+  4 & \texttt{code/\allowbreak{}q1\_\allowbreak{}e2\_\allowbreak{}series.\allowbreak{}py} & 10.6 KB & 检验（解析对拍）：圆柱非稳态级数解对拍（常边界与分段常边界） \\
+  5 & \texttt{code/\allowbreak{}q1\_\allowbreak{}e3\_\allowbreak{}explicit.\allowbreak{}py} & 19.5 KB & 检验（独立实现互验）：显式格式第二套求解代码，全场逐点比对 \\
+  6 & \texttt{code/\allowbreak{}q1\_\allowbreak{}e3\_\allowbreak{}figdata.\allowbreak{}py} & 2.3 KB & 由互验结果生成对应图数据 CSV \\
+  7 & \texttt{code/\allowbreak{}q1\_\allowbreak{}e4\_\allowbreak{}watchdog.\allowbreak{}py} & 9.1 KB & 检验（物理自检）：看门狗（方向／单调／极值）加三项退化自检、边界口径对照、人为注错演示 \\
+  8 & \texttt{code/\allowbreak{}q1\_\allowbreak{}e5\_\allowbreak{}sensitivity.\allowbreak{}py} & 12.0 KB & 检验（灵敏度）：单因素扰动、归一化灵敏度系数、龙卷风图数据 \\
+  9 & \texttt{code/\allowbreak{}q1\_\allowbreak{}e6\_\allowbreak{}smooth.\allowbreak{}py} & 6.9 KB & 检验（预处理对照）：边界移动平均平滑与不平滑对照 \\
+  10 & \texttt{code/\allowbreak{}q1\_\allowbreak{}consistency\_\allowbreak{}check.\allowbreak{}py} & 2.8 KB & 一致性核验：单遍新版结果与历史两版结果逐值比对 \\
+  11 & \texttt{code/\allowbreak{}q1\_\allowbreak{}figdata\_\allowbreak{}export.\allowbreak{}py} & 2.6 KB & 由结果文件导出图表数据 CSV \\
+  12 & \texttt{code/\allowbreak{}q1\_\allowbreak{}diag.\allowbreak{}py} & 4.8 KB & 诊断脚本（保留以溯源）：常数扩散系数线性解与半无限估计对照、迭代残差序列 \\
+  13 & \texttt{code/\allowbreak{}dq\_\allowbreak{}check.\allowbreak{}py} & 5.5 KB & 数据质量核查：附件数据点位数、单调性、缺失与异常检查 \\
+  14 & \texttt{code/\allowbreak{}q1\_\allowbreak{}conservation.\allowbreak{}py} & 5.4 KB & 守恒性核算：区域积分闭合（质量与能量），报告相对残差并归因 \\
+  15 & \texttt{requirements.\allowbreak{}txt} & 0.9 KB & 运行依赖清单（数值库与表格库版本；绘图库不在本包范围） \\
+  16 & \texttt{code/\allowbreak{}q2\_\allowbreak{}core\_\allowbreak{}c.\allowbreak{}py} & 27.3 KB & 第二问主力求解核（交付采用）：变物性配合交替推进与元体平衡全隐式，自实现追赶法 \\
+  17 & \texttt{code/\allowbreak{}q2\_\allowbreak{}core.\allowbreak{}py} & 25.2 KB & 第二问求解核（备选版）：同上，三对角求解改用带状矩阵求解器，用于互校 \\
+  18 & \texttt{code/\allowbreak{}q2\_\allowbreak{}core\_\allowbreak{}orig.\allowbreak{}py} & 19.4 KB & 第二问求解核（优化前基线，供对照运行） \\
+  19 & \texttt{code/\allowbreak{}q2\_\allowbreak{}solver.\allowbreak{}py} & 8.8 KB & 第二问主力求解：附件核验、三小时全程求解、写结果文件、六项程序化断言 \\
+  20 & \texttt{code/\allowbreak{}q2\_\allowbreak{}solver\_\allowbreak{}orig.\allowbreak{}py} & 6.7 KB & 第二问主力求解（基线前台版，输出隔离，供对照运行） \\
+  21 & \texttt{code/\allowbreak{}q2\_\allowbreak{}checks.\allowbreak{}py} & 10.7 KB & 第二问检验：独立实现互验（显式格式、同步长、端点严格对齐）与守恒性核算 \\
+  22 & \texttt{code/\allowbreak{}q2\_\allowbreak{}e2\_\allowbreak{}frozen.\allowbreak{}py} & 5.7 KB & 第二问检验：常物性退化对拍（与圆柱非稳态导热级数解逐点比对） \\
+  23 & \texttt{code/\allowbreak{}q2\_\allowbreak{}e5\_\allowbreak{}sensitivity.\allowbreak{}py} & 5.3 KB & 第二问检验：单因素灵敏度分析（并行执行 12 个算例） \\
+  24 & \texttt{code/\allowbreak{}q2\_\allowbreak{}w2\_\allowbreak{}foreground.\allowbreak{}py} & 5.6 KB & 第二问步长与网格收敛预试验（空间二阶、时间一阶的判定依据） \\
+  25 & \texttt{code/\allowbreak{}q2\_\allowbreak{}figdata\_\allowbreak{}export.\allowbreak{}py} & 5.9 KB & 第二问图表数据导出 \\
+  26 & \texttt{code/\allowbreak{}q2\_\allowbreak{}verify\_\allowbreak{}BC.\allowbreak{}py} & 3.2 KB & 双核一致性核对工具：两个求解核跑同一算例并输出逐点最大偏差 \\
+  27 & \texttt{code/\allowbreak{}q2\_\allowbreak{}bench\_\allowbreak{}ab.\allowbreak{}py} & 3.6 KB & 优化前后单迭代耗时对照基准 \\
+  28 & \texttt{code/\allowbreak{}q2\_\allowbreak{}opt\_\allowbreak{}verify.\allowbreak{}py} & 6.3 KB & 性能优化的数值等价性校验（组件级逐位比对与端到端回归） \\
+  29 & \texttt{code/\allowbreak{}q2\_\allowbreak{}diag\_\allowbreak{}picard.\allowbreak{}py} & 4.2 KB & 诊断：内层迭代上限对结果的影响（对照定量确认迭代截断） \\
+  30 & \texttt{code/\allowbreak{}q2\_\allowbreak{}quick\_\allowbreak{}check.\allowbreak{}py} & 2.1 KB & 早期快速自检脚本（已被检验脚本取代，保留以溯源） \\
+  31 & \texttt{code/\allowbreak{}q2\_\allowbreak{}w2\_\allowbreak{}prestudy.\allowbreak{}py} & 4.8 KB & 早期预研脚本（已被预试验脚本取代，保留以溯源） \\
+\end{longtable}
+
+
+
+\settabw{8}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.069\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.365\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.255\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.311\tblw\relax}}
+  \caption{（续）　类别 1.1b　问题一 改进代码（全部完整可运行、不裁剪）}\label{tab:A-1-a}\\
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endfirsthead
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  15b & \texttt{code/\allowbreak{}q1\_\allowbreak{}exact.\allowbreak{}py} & 9.2 KB & 问题一温度侧时间精确推进求解核：矩阵指数与分段线性推进系数；离线预分解一次、全程复用；被求解核以精确推进模式调用 \\
+  i1 & \texttt{code/\allowbreak{}innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}lib.\allowbreak{}py} & 4.2 KB & 改进模块公共库（附件读取、口径常量、结果写出） \\
+  i2 & \texttt{code/\allowbreak{}innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}par.\allowbreak{}py} & 2.8 KB & 并行执行器（改进实验批量调度） \\
+  i3 & \texttt{code/\allowbreak{}innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T0.\allowbreak{}py} & 9.0 KB & 零成本理论化：传质判据分区定位、有效扩散系数反演、误差预算分配 \\
+  i4 & \texttt{code/\allowbreak{}innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T1\_\allowbreak{}duhamel.\allowbreak{}py} & 6.5 KB & 半解析参照轨：真实时变边界的积分推进与级数解，与主力逐时逐点对拍 \\
+  i5 & \texttt{code/\allowbreak{}innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T1\_\allowbreak{}adaptive.\allowbreak{}py} & 4.2 KB & 误差驱动自适应步长（后验估计与比例积分控制器），与固定步长对拍 \\
+  i6 & \texttt{code/\allowbreak{}innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T1\_\allowbreak{}iface.\allowbreak{}py} & 3.3 KB & 界面口径对照（调和型积分与现行沿含水率积分平均口径对照） \\
+  i7 & \texttt{code/\allowbreak{}innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T1\_\allowbreak{}interp.\allowbreak{}py} & 2.7 KB & 边界插值口径对照（线性与单调保形插值；立场为不动原始数据） \\
+  i8 & \texttt{code/\allowbreak{}innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T2\_\allowbreak{}uq.\allowbreak{}py} & 6.6 KB & 不确定性量化：边界噪声刻画、严格解采样、代理模型、分位区间 \\
+  i9 & \texttt{code/\allowbreak{}innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T2\_\allowbreak{}da.\allowbreak{}py} & 5.6 KB & 边界数据同化（状态空间滤波与平滑），作为第二条相互独立的量化路线 \\
+  i10 & \texttt{code/\allowbreak{}innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T2\_\allowbreak{}gs.\allowbreak{}py} & 5.2 KB & 全局灵敏度（筛选法的均值与标准差、方差分解的一阶与总效应指数） \\
+  i11 & \texttt{code/\allowbreak{}innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T2\_\allowbreak{}adjoint.\allowbreak{}py} & 8.0 KB & 伴随灵敏度（连续伴随，与单因素结果交叉验证） \\
+  i12 & \texttt{code/\allowbreak{}innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T3.\allowbreak{}py} & 7.9 KB & 主算法升级：温度精确积分的正式实现与四闸门验收核 \\
+  L1–L10 & \texttt{code/\allowbreak{}innov/\allowbreak{}logs/\allowbreak{}} 下的十份日志（零成本理论化、自适应步长、积分推进、界面口径、插值口径、伴随灵敏度、数据同化、全局灵敏度、不确定性量化、主算法升级） & 各改进实验的完整运行日志（含判据、对照数值与结论），供逐条复算；\textbf{位于 \texttt{logs/\allowbreak{}} 子目录} &  \\
+\end{longtable}
+
+
+
+\settabw{8}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.070\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.229\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.175\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.526\tblw\relax}}
+  \caption{（续）　类别 1.1c　问题一 检验日志（11 份，位于代码与复现目录）}\label{tab:A-1-b}\\
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endfirsthead
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  J1 & \texttt{q1\_\allowbreak{}run\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 主力求解日志：中心双路比对、单遍收集、程序化断言通过 \\
+  J2 & \texttt{q1\_\allowbreak{}e1\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 收敛性：空间网格与时间收敛（温度、含水率分别） \\
+  J3 & \texttt{q1\_\allowbreak{}e2\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 解析对拍：圆柱级数解（常边界与分段常边界） \\
+  J4 & \texttt{q1\_\allowbreak{}e3\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 独立实现互验：显式格式与主力实现 \\
+  J5 & \texttt{q1\_\allowbreak{}e4\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 物理看门狗：13 项全部通过并含注错演示 \\
+  J6 & \texttt{q1\_\allowbreak{}e5\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 灵敏度：扩散系数、换热系数、传质系数各 ±20\%，初始含水率 ±5\%，初始温度 ±1 ℃ \\
+  J7 & \texttt{q1\_\allowbreak{}e6\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 预处理对照（温度侧无内部子步） \\
+  J8 & \texttt{conservation\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 守恒性核算：质量与能量区域积分闭合 \\
+  J9 & \texttt{q1\_\allowbreak{}consistency\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 同口径幂等性核验：重跑主力结果与交付文件逐值一致，用于关闭"论文数字与程序输出不符"的风险 \\
+  J12 & \texttt{q1\_\allowbreak{}upgrade\_\allowbreak{}diff\_\allowbreak{}log.\allowbreak{}txt} & 对照轨（非缺陷） & 升级前后对照（跨口径）：温度最大逐值差 1.0×10\textsuperscript{-4} ℃（14189 格）、含水率逐位一致，证明升级只动温度侧 \\
+  J10 & \texttt{dq\_\allowbreak{}check\_\allowbreak{}log.\allowbreak{}txt} & 与时间格式无关 & 数据质量核查（点位数、步长、缺失、离群） \\
+  J11 & \texttt{q1\_\allowbreak{}diag\_\allowbreak{}log.\allowbreak{}txt} & 与交付口径无关 & 诊断（非真值）：保留旧口径以复现早期缺陷，故重跑后与旧日志一致，属自洽复现 \\
+\end{longtable}
+
+
+
+\settabw{8}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.072\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.222\tblw\relax}>{\centering\arraybackslash}m{\dimexpr 0.090\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.616\tblw\relax}}
+  \caption{（续）　类别 1.2　自主查阅数据资料}\label{tab:A-1-c}\\
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endfirsthead
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  — & 本题无外部查阅数据 & — & 全部输入均来自题目附件（边界时序、半径序列、结果模板）。按官方规范，赛题原始数据不必列入支撑材料，故本类别为空 \\
+\end{longtable}
+
+
+
+\settabw{8}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.069\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.228\tblw\relax}>{\centering\arraybackslash}m{\dimexpr 0.108\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.595\tblw\relax}}
+  \caption{（续）　类别 1.3　较大篇幅中间结果图表}\label{tab:A-1-d}\\
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endfirsthead
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  16 & \texttt{results/\allowbreak{}result1.\allowbreak{}xlsx} & 367.4 KB & 问题一完整结果文件（工作表为温度与水分浓度，1801 行 × 22 列，含表头；四位小数；A 列自 1 s 起逐秒输出、末行为 1800 s，t=0 为题面给定的初始条件；首行为到药材中心的距离 0–2.0 cm，间隔 0.1 cm） \\
+  17 & \texttt{figdata/\allowbreak{}fig\_\allowbreak{}q1\_\allowbreak{}field\_\allowbreak{}T.\allowbreak{}csv} & 304.9 KB & 温度场径向—时间全量数据 \\
+  18 & \texttt{figdata/\allowbreak{}fig\_\allowbreak{}q1\_\allowbreak{}field\_\allowbreak{}C.\allowbreak{}csv} & 268.0 KB & 水分浓度场径向—时间全量数据 \\
+  19 & \texttt{figdata/\allowbreak{}fig\_\allowbreak{}q1\_\allowbreak{}curves.\allowbreak{}csv} & 62.2 KB & 中心与表面温度、含水率的关键点时程数据 \\
+  20 & \texttt{figdata/\allowbreak{}fig\_\allowbreak{}gci\_\allowbreak{}data.\allowbreak{}csv} & 0.9 KB & 网格与时间收敛检验数据 \\
+  21 & \texttt{figdata/\allowbreak{}fig\_\allowbreak{}series\_\allowbreak{}check.\allowbreak{}csv} & 2.3 KB & 解析级数解对拍数据 \\
+  22 & \texttt{figdata/\allowbreak{}fig\_\allowbreak{}e3\_\allowbreak{}check.\allowbreak{}csv} & 0.7 KB & 独立实现互验逐时点比对数据 \\
+  23 & \texttt{figdata/\allowbreak{}fig\_\allowbreak{}tornado\_\allowbreak{}data.\allowbreak{}csv} & 1.7 KB & 参数灵敏度龙卷风图数据 \\
+  24 & \texttt{figdata/\allowbreak{}fig\_\allowbreak{}smooth\_\allowbreak{}check.\allowbreak{}csv} & 0.2 KB & 数据预处理对照数据 \\
+  24b & \texttt{figdata/\allowbreak{}fig\_\allowbreak{}q1\_\allowbreak{}stepsize.\allowbreak{}csv} & 97.9 KB & 误差驱动自适应步长的阶梯轨迹数据（已抽稀，阶梯形态不变） \\
+  24c & \texttt{figdata/\allowbreak{}fig\_\allowbreak{}q1\_\allowbreak{}gs.\allowbreak{}csv} & 0.6 KB & 问题一全局灵敏度数据 \\
+  25 & \texttt{results/\allowbreak{}result2.\allowbreak{}xlsx} & 2.44 MB & 问题二完整结果文件（10801 行 × 22 列，含表头；四位小数；六项程序化断言通过；\textbf{逐秒结果覆盖题面表~\ref{tab:3}／表~\ref{tab:4} 的 3 h 区间}，A 列自 1 s 起至 10800 s） \\
+  26 & \texttt{figdata/\allowbreak{}fig\_\allowbreak{}q2\_\allowbreak{}field\_\allowbreak{}T.\allowbreak{}csv} & 1807.3 KB & 第二问温度场径向—时间全量数据 \\
+  27 & \texttt{figdata/\allowbreak{}fig\_\allowbreak{}q2\_\allowbreak{}field\_\allowbreak{}C.\allowbreak{}csv} & 1561.2 KB & 第二问水分浓度场径向—时间全量数据 \\
+  28 & \texttt{figdata/\allowbreak{}fig\_\allowbreak{}q2\_\allowbreak{}curves.\allowbreak{}csv} & 371.2 KB & 第二问关键点时程数据 \\
+  29 & \texttt{figdata/\allowbreak{}fig\_\allowbreak{}q2\_\allowbreak{}props.\allowbreak{}csv} & 3.2 KB & 第二问物性随含水率的演化数据 \\
+  30 & \texttt{figdata/\allowbreak{}fig\_\allowbreak{}q1q2\_\allowbreak{}overlap.\allowbreak{}csv} & 88.6 KB & 前两问重叠段对照数据 \\
+  31 & \texttt{figdata/\allowbreak{}fig\_\allowbreak{}q2\_\allowbreak{}gci.\allowbreak{}csv} & 0.7 KB & 第二问收敛性数据 \\
+\end{longtable}
+
+
+
+\settabw{8}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.068\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.463\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.116\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.353\tblw\relax}}
+  \caption{（续）　类别 1.3b　第三问 源程序与结果}\label{tab:A-1-e}\\
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endfirsthead
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  32 & \texttt{code/\allowbreak{}q3\_\allowbreak{}core.\allowbreak{}py} & — & 第三问交付求解核（环境预查表与子步循环下沉） \\
+  33 & \texttt{code/\allowbreak{}q3\_\allowbreak{}solver.\allowbreak{}py} & — & 第三问主力求解（事件驱动、60 s 输出、子步级二分定位、熔断 120 h、六项断言） \\
+  34 & \texttt{code/\allowbreak{}q3\_\allowbreak{}pretest\_\allowbreak{}bench.\allowbreak{}py} & — & 冒烟微基准（成本结构分解；不产交付物） \\
+  35 & \texttt{code/\allowbreak{}q3\_\allowbreak{}w2\_\allowbreak{}convergence.\allowbreak{}py} & — & 检验：长时程收敛性（空间四档与时间三档） \\
+  36 & \texttt{code/\allowbreak{}q3\_\allowbreak{}grid\_\allowbreak{}experiment.\allowbreak{}py} & — & 检验：网格裁决实验（四档加密） \\
+  37 & \texttt{code/\allowbreak{}q3\_\allowbreak{}conservation.\allowbreak{}py} & — & 检验：守恒性核算（质量区域积分闭合） \\
+  38 & \texttt{code/\allowbreak{}q3\_\allowbreak{}postcheck.\allowbreak{}py} & — & 后置检验：结果表生成、与第二问重叠段一致性、解析量级对照 \\
+  39 & \texttt{code/\allowbreak{}q3\_\allowbreak{}e5\_\allowbreak{}sensitivity.\allowbreak{}py} & — & 检验：灵敏度（烘干时长对五个参数，10 算例并行） \\
+  40 & \texttt{code/\allowbreak{}q3\_\allowbreak{}core\_\allowbreak{}nu.\allowbreak{}py} & — & 复检：非均匀（表面加密）网格求解核；等距网格上与交付核逐点一致 \\
+  41 & \texttt{code/\allowbreak{}q3\_\allowbreak{}verify\_\allowbreak{}nu.\allowbreak{}py}／\texttt{q3\_\allowbreak{}verify\_\allowbreak{}grid.\allowbreak{}py}／\texttt{q3\_\allowbreak{}verify\_\allowbreak{}opt.\allowbreak{}py} & — & 复检：非均匀核验证、细网格收尾验证、加速等价性校验 \\
+  42 & \texttt{code/\allowbreak{}q3\_\allowbreak{}probe\_\allowbreak{}crit.\allowbreak{}py}／\texttt{q3\_\allowbreak{}probe\_\allowbreak{}dcut.\allowbreak{}py}／\texttt{q3\_\allowbreak{}probe\_\allowbreak{}grid.\allowbreak{}py} & — & 复检：判据敏感度、低含水率端扩散系数冻结对照、烘干时长网格裁决 \\
+  43 & \texttt{code/\allowbreak{}q3\_\allowbreak{}diag\_\allowbreak{}mech.\allowbreak{}py}／\texttt{q3\_\allowbreak{}diag\_\allowbreak{}iface.\allowbreak{}py} & — & 界面口径诊断：常数扩散系数解析对拍、界面取法单变量对照（修正的直接依据） \\
+  44 & \texttt{code/\allowbreak{}q3\_\allowbreak{}impact\_\allowbreak{}check.\allowbreak{}py}／\texttt{q3\_\allowbreak{}surface\_\allowbreak{}theory.\allowbreak{}py}／\texttt{q3\_\allowbreak{}diag\_\allowbreak{}lowC.\allowbreak{}py}／\texttt{q3\_\allowbreak{}diag\_\allowbreak{}surface.\allowbreak{}py}／\texttt{q3\_\allowbreak{}check\_\allowbreak{}maxloc.\allowbreak{}py} & — & 只读分析与诊断（不参与交付数值） \\
+  45 & \texttt{code/\allowbreak{}q3\_\allowbreak{}audit\_\allowbreak{}consistency.\allowbreak{}py}／\texttt{q3\_\allowbreak{}audit\_\allowbreak{}tables.\allowbreak{}py} & — & 只读审计：口径一致性扫描、结果表与结果文件逐值核对 \\
+  46 & \texttt{results/\allowbreak{}result3.\allowbreak{}xlsx} & 325.8 KB & 第三问完整结果（单工作表，3453 行 × 22 列，含表头；四位小数；六项断言通过） \\
+  — & \texttt{figdata/\allowbreak{}} 下第三问图数据 13 件（长时程含水率、收敛性、网格裁决各位置、干燥速率、判据敏感度、全局灵敏度三件、界面口径对照、自适应步长、不确定性量化两件） & 合计约 428.3 KB & 对应各图数据；源目录与交付包数据目录同名单件一致 \\
+\end{longtable}
+
+
+
+\settabw{8}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.098\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.225\tblw\relax}>{\centering\arraybackslash}m{\dimexpr 0.149\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.528\tblw\relax}}
+  \caption{（续）　类别 1.3c　第二问 检验日志}\label{tab:A-1-f}\\
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endfirsthead
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  Q2-L1 & \texttt{q2\_\allowbreak{}run\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 交付运行日志：交付核、交替推进、10800 步、六项断言全部通过；关键值与口径登记逐值一致 \\
+  Q2-L2 & \texttt{q2\_\allowbreak{}checks\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 独立实现互验与守恒核算的合并日志；以本文件为准 \\
+  Q2-L3 & \texttt{q2\_\allowbreak{}e3b\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 强制解耦退化检验（单向耦合下改换热系数，含水率场变化量级） \\
+  Q2-L4 & \texttt{q2\_\allowbreak{}e5\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 单因素灵敏度（含初始含水率补检） \\
+  Q2-L5 & \texttt{q2\_\allowbreak{}e5b\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 全局灵敏度（筛选法与方差分解法） \\
+  Q2-L6 & \texttt{q2\_\allowbreak{}e7\_\allowbreak{}log.\allowbreak{}txt} & 旧版留痕 & 守恒核算的旧口径输出（恒定边界），非交付口径；其价值在发现过程：首次暴露"变物性下含热容的温度积分不是守恒量"，现行结论以合并日志为准 \\
+  Q2-L7 & \texttt{q2\_\allowbreak{}e8\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 潜热对照（计入潜热后温度系统性偏低 0.074–0.077 ℃） \\
+  Q2-L8 & \texttt{q2\_\allowbreak{}e9\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 自适应步长（墙钟由 47.6 s 降至 9.9 s） \\
+  Q2-L9 & \texttt{q2\_\allowbreak{}diag\_\allowbreak{}picard\_\allowbreak{}log.\allowbreak{}txt} & 现行（诊断） & 内层迭代上限对照诊断：上限取 8 时每子步跑满；上限取 120 且容限收紧时平均 16.362 次每子步 \\
+  Q2-L10 & \texttt{q2\_\allowbreak{}opt\_\allowbreak{}verify\_\allowbreak{}log.\allowbreak{}txt} & 现行 & 两个优化核的逐点一致性核对（差异不超过 1.8×10\textsuperscript{-11}） \\
+  Q2-L11 & \texttt{w2\_\allowbreak{}foreground\_\allowbreak{}log.\allowbreak{}txt} & 现行（预试验） & 空间与时间收敛预试验（确定空间步长与内部子步） \\
+  Q2-L12 & \texttt{q2\_\allowbreak{}run\_\allowbreak{}orig\_\allowbreak{}log.\allowbreak{}txt} & 对照轨（明示） & 优化前基线核的运行日志（输出与交付件隔离） \\
+  Q2-L13 & \texttt{q2\_\allowbreak{}e1\_\allowbreak{}log\_\allowbreak{}废弃\_\allowbreak{}早期未收敛.\allowbreak{}txt} & 废弃 & 早期外层迭代未收敛阶段留痕；不代表现行口径 \\
+  Q2-L14 & \texttt{q2\_\allowbreak{}e3\_\allowbreak{}log\_\allowbreak{}旧版对照.\allowbreak{}txt} & 旧版对照 & 旧编号体系下的对照文本 \\
+  Q2-L15 & \texttt{q2\_\allowbreak{}e5\_\allowbreak{}log\_\allowbreak{}旧版stdout.\allowbreak{}txt} & 旧版 & 串行版标准输出留痕 \\
+  Q2-L16 & \texttt{q2\_\allowbreak{}e5\_\allowbreak{}log\_\allowbreak{}旧编号残留.\allowbreak{}txt} & 旧编号 & 编号统一前的残留 \\
+\end{longtable}
+
+
+
+\settabw{8}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.069\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.252\tblw\relax}>{\centering\arraybackslash}m{\dimexpr 0.110\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.569\tblw\relax}}
+  \caption{（续）　类别 1.3d　第四问 源程序与结果}\label{tab:A-1-g}\\
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endfirsthead
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  47 & \texttt{code/\allowbreak{}q4\_\allowbreak{}core.\allowbreak{}py} & 22.2 KB & 第四问交付求解核：物料坐标守恒离散（质量方程与守恒形式能量方程）、元体平衡、中心双路装配 \\
+  48 & \texttt{code/\allowbreak{}q4\_\allowbreak{}solver.\allowbreak{}py} & 9.7 KB & 第四问主力求解：写结果文件（事件驱动、子步级二分、熔断 240 h） \\
+  49 & \texttt{code/\allowbreak{}q4\_\allowbreak{}pretest.\allowbreak{}py} & 13.2 KB & 第四问预试验批次（九例）：单元自检、冒烟、复用检验、绝热自检、时间与空间收敛、插值分解、口径移植对照；默认仅打印规模并退出，须显式开关才运行 \\
+  50 & \texttt{code/\allowbreak{}q4\_\allowbreak{}w6\_\allowbreak{}lib.\allowbreak{}py} & 4.1 KB & 第四问检验套件公共库 \\
+  51 & \texttt{code/\allowbreak{}q4\_\allowbreak{}w6\_\allowbreak{}e15.\allowbreak{}py} & 3.4 KB & 检验：24 h 三网格收敛指数与单因素灵敏度（11 算例） \\
+  52 & \texttt{code/\allowbreak{}q4\_\allowbreak{}w6\_\allowbreak{}e2.\allowbreak{}py} & 2.9 KB & 检验：常物性加固定半径的退化对拍 \\
+  53 & \texttt{code/\allowbreak{}q4\_\allowbreak{}w6\_\allowbreak{}e5.\allowbreak{}py} & 3.8 KB & 检验：参数灵敏度 \\
+  54 & \texttt{code/\allowbreak{}q4\_\allowbreak{}w6\_\allowbreak{}e78.\allowbreak{}py} & 2.5 KB & 检验：守恒核算合并档 \\
+  55 & \texttt{code/\allowbreak{}q4\_\allowbreak{}w6\_\allowbreak{}e78b.\allowbreak{}py} & 6.5 KB & 检验：守恒核算增强档（含物性变化项的能量核算；潜热处理修复后重跑） \\
+  56 & \texttt{code/\allowbreak{}q4\_\allowbreak{}table6.\allowbreak{}py} & 1.3 KB & 由结果文件生成论文结果表（含机读形态） \\
+  57 & \texttt{code/\allowbreak{}q4\_\allowbreak{}diag\_\allowbreak{}adiab.\allowbreak{}py} & 2.9 KB & 诊断：绝热自检（同时关断导热与对流条件下的不变量核算） \\
+  58 & \texttt{code/\allowbreak{}q4\_\allowbreak{}diag\_\allowbreak{}blow.\allowbreak{}py} & 4.5 KB & 诊断：几何吹扫效应核查 \\
+  59 & \texttt{code/\allowbreak{}q4\_\allowbreak{}diag\_\allowbreak{}e3g2.\allowbreak{}py} & 3.5 KB & 诊断：零收缩率加附录 3 物性下逐位复现第二问的退化检验 \\
+  60 & \texttt{code/\allowbreak{}q4\_\allowbreak{}core\_\allowbreak{}fixed.\allowbreak{}py} & 22.2 KB & 修复版对照核（用于与交付核做数值等价性核对） \\
+  61 & \texttt{code/\allowbreak{}q4\_\allowbreak{}core\_\allowbreak{}prebug.\allowbreak{}py} & 21.7 KB & 缺陷前基线核（供溯源；不作交付） \\
+  62 & \texttt{code/\allowbreak{}run\_\allowbreak{}chain.\allowbreak{}py} & 1.0 KB & 第四问串联执行驱动（按序调用预试验与求解） \\
+  63 & \texttt{code/\allowbreak{}innov/\allowbreak{}q4\_\allowbreak{}INV6\_\allowbreak{}sobol.\allowbreak{}py} & 4.5 KB & 全局灵敏度的方差分解档（六维含低含水率端截断因子；代理样本求解） \\
+  — & \texttt{code/\allowbreak{}rerun\_\allowbreak{}chain.\allowbreak{}ps1} & 0.7 KB & 上述驱动的一键重跑脚本（辅助件，不占编号）；已改为路径自适应 \\
+  64 & \texttt{code/\allowbreak{}innov/\allowbreak{}q4\_\allowbreak{}core\_\allowbreak{}INV.\allowbreak{}py} & 23.4 KB & 改进项专用求解核（含低含水率端截断因子与界面模式开关；与交付核逐位一致） \\
+  65 & \texttt{code/\allowbreak{}innov/\allowbreak{}q4\_\allowbreak{}INV\_\allowbreak{}lib.\allowbreak{}py} & 4.5 KB & 改进项公共库（数据装载与事件驱动求解封装） \\
+  66 & \texttt{code/\allowbreak{}innov/\allowbreak{}q4\_\allowbreak{}INV0\_\allowbreak{}regression.\allowbreak{}py} & 2.3 KB & 改进项逐位一致回归验证（改进核与交付核） \\
+  67 & \texttt{code/\allowbreak{}innov/\allowbreak{}q4\_\allowbreak{}INV1\_\allowbreak{}gci\_\allowbreak{}tend.\allowbreak{}py} & 4.3 KB & 改进项：烘干时长的离散误差带（空间三档与时间三档） \\
+  68 & \texttt{code/\allowbreak{}innov/\allowbreak{}q4\_\allowbreak{}INV2\_\allowbreak{}uq\_\allowbreak{}lowC.\allowbreak{}py} & 4.0 KB & 改进项：低含水率端扩散系数外推的不确定性量化（截断族与分位抽样） \\
+  69 & \texttt{code/\allowbreak{}innov/\allowbreak{}q4\_\allowbreak{}INV3\_\allowbreak{}global.\allowbreak{}py} & 8.2 KB & 改进项：全局灵敏度（筛选法与偏相关系数，六维含截断因子） \\
+  70 & \texttt{code/\allowbreak{}innov/\allowbreak{}q4\_\allowbreak{}INV4\_\allowbreak{}aux.\allowbreak{}py} & 5.4 KB & 改进项：判据敏感度、固定半径效应分解、潜热中段曲线、取法与网格对照 \\
+  71 & \texttt{code/\allowbreak{}innov/\allowbreak{}q4\_\allowbreak{}INV5\_\allowbreak{}theory.\allowbreak{}py} & 5.5 KB & 改进项：解析两界夹逼与压缩温升机理（零偏微分方程求解） \\
+  72 & \texttt{results/\allowbreak{}result4.\allowbreak{}xlsx} & 226.2 KB & 第四问完整结果（单工作表，3041 行 × 22 列，含表头；四位小数；A 列自 60 s 起逐分钟输出至达标时刻；\textbf{末列为药材表面}，半径收缩后越出边界的距离列留空） \\
+  73 & \texttt{results/\allowbreak{}result4\_\allowbreak{}data.\allowbreak{}csv} & 348.5 KB & 第四问结果的 CSV 形态（便于第三方逐值核对） \\
+  — & \texttt{results/\allowbreak{}table6.\allowbreak{}csv} & 0.4 KB & 第四问结果表的机读形态 \\
+\end{longtable}
+
+
+
+\settabw{8}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.069\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.339\tblw\relax}>{\centering\arraybackslash}m{\dimexpr 0.110\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.482\tblw\relax}}
+  \caption{（续）　类别 1.3e　第二问 改进代码}\label{tab:A-1-h}\\
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endfirsthead
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  74 & \texttt{code/\allowbreak{}innov/\allowbreak{}q2\_\allowbreak{}inv\_\allowbreak{}tol\_\allowbreak{}tradeoff.\allowbreak{}py} & 8.1 KB & 内层迭代容限的成本—精度曲线（六档单变量隔离，五档并行） \\
+  75 & \texttt{code/\allowbreak{}innov/\allowbreak{}logs/\allowbreak{}q2\_\allowbreak{}inv\_\allowbreak{}tol\_\allowbreak{}tradeoff.\allowbreak{}log} & 2.3 KB & 上述实验的完整日志（逐档墙钟、四处输出、与最严档逐格差、裁决结论） \\
+  76 & \texttt{code/\allowbreak{}innov/\allowbreak{}q2\_\allowbreak{}inv\_\allowbreak{}tol\_\allowbreak{}tradeoff.\allowbreak{}csv} & 0.5 KB & 上述实验的机读数据 \\
+  77 & \texttt{code/\allowbreak{}innov/\allowbreak{}q2\_\allowbreak{}inv\_\allowbreak{}monolithic.\allowbreak{}py} & 9.6 KB & 整体式联立求解实现（含两条耦合通道的解析耦合块），与分区式外层迭代及交替推进作三方同口径对照 \\
+  78 & \texttt{code/\allowbreak{}innov/\allowbreak{}logs/\allowbreak{}q2\_\allowbreak{}inv\_\allowbreak{}monolithic.\allowbreak{}log} & 2.2 KB & 上述三方对照的完整日志（终态对照、逐格差、墙钟与迭代成本、实现复杂度） \\
+  79 & \texttt{code/\allowbreak{}innov/\allowbreak{}q2\_\allowbreak{}inv\_\allowbreak{}tol\_\allowbreak{}delivery.\allowbreak{}py} & 5.0 KB & 放宽裁决：在交付口径下重做容限单变量对照 \\
+  80 & \texttt{code/\allowbreak{}innov/\allowbreak{}logs/\allowbreak{}q2\_\allowbreak{}inv\_\allowbreak{}tol\_\allowbreak{}delivery.\allowbreak{}log} & 1.9 KB & 上述裁决的完整日志（整表逐格差、关键值对照、裁决结论） \\
+  81 & \texttt{code/\allowbreak{}innov/\allowbreak{}q2\_\allowbreak{}inv\_\allowbreak{}tol\_\allowbreak{}converge.\allowbreak{}py} & 5.2 KB & 收敛充分性裁决：容限四档扫描（以最严档为参考） \\
+  82 & \texttt{code/\allowbreak{}innov/\allowbreak{}logs/\allowbreak{}q2\_\allowbreak{}inv\_\allowbreak{}tol\_\allowbreak{}converge.\allowbreak{}log} & 2.1 KB & 上述扫描的完整日志（四档墙钟、内层迭代数、逐格差） \\
+\end{longtable}
+
+
+
+\settabw{8}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.072\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.357\tblw\relax}>{\centering\arraybackslash}m{\dimexpr 0.152\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.419\tblw\relax}}
+  \caption{（续）　类别 1.3f　第二问 改进链支持脚本}\label{tab:A-1-i}\\
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endfirsthead
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  83 & \texttt{code/\allowbreak{}innov/\allowbreak{}run\_\allowbreak{}innov\_\allowbreak{}chain.\allowbreak{}py} & 1.0 KB & 第四问四支改进求解档的串行启动器 \\
+  84 & \texttt{code/\allowbreak{}innov/\allowbreak{}run\_\allowbreak{}innov\_\allowbreak{}chain2.\allowbreak{}py} & 0.8 KB & 第四问改进补跑链 \\
+  85 & \texttt{code/\allowbreak{}q2\_\allowbreak{}core\_\allowbreak{}bdf2.\allowbreak{}py} & 28.8 KB & 第二问求解核变体（二阶时间精度） \\
+  86 & \texttt{code/\allowbreak{}q2\_\allowbreak{}core\_\allowbreak{}latent.\allowbreak{}py} & 29.7 KB & 第二问求解核变体（潜热对照，用于检验） \\
+  87 & \texttt{code/\allowbreak{}q2\_\allowbreak{}e3b\_\allowbreak{}decoupled.\allowbreak{}py} & 5.1 KB & 第二问检验：强制解耦退化与耦合强度量化 \\
+  88 & \texttt{code/\allowbreak{}q2\_\allowbreak{}e5b\_\allowbreak{}global.\allowbreak{}py} & 9.0 KB & 第二问检验：全局灵敏度（筛选与方差分解） \\
+  89 & \texttt{code/\allowbreak{}q2\_\allowbreak{}e8\_\allowbreak{}latent.\allowbreak{}py} & 6.7 KB & 第二问检验：蒸发潜热对照 \\
+  90 & \texttt{code/\allowbreak{}q2\_\allowbreak{}e9\_\allowbreak{}adaptive.\allowbreak{}py} & 7.3 KB & 第二问检验：自适应时间步 \\
+  91 & \texttt{code/\allowbreak{}q2\_\allowbreak{}f30\_\allowbreak{}pareto.\allowbreak{}py} & 4.4 KB & 精度—效率帕累托图数据导出 \\
+  92 & \texttt{code/\allowbreak{}q2\_\allowbreak{}fig\_\allowbreak{}export.\allowbreak{}py} & 8.5 KB & 第二问图数据导出 \\
+  93 & \texttt{code/\allowbreak{}q2\_\allowbreak{}verify\_\allowbreak{}results.\allowbreak{}py} & 4.9 KB & 第二问基线版与优化版结果的全表逐点核对 \\
+\end{longtable}
+
+
+
+\settabw{8}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.081\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.328\tblw\relax}>{\centering\arraybackslash}m{\dimexpr 0.134\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.457\tblw\relax}}
+  \caption{（续）　类别 1.3g　第三问 改进链脚本（全部完整可运行、不裁剪）}\label{tab:A-1-j}\\
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endfirsthead
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  95 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}solver\_\allowbreak{}INVbase.\allowbreak{}py} & 11.7 KB & 第三问改进链基线求解档（事件驱动终止与子步级二分定位） \\
+  96 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}solver\_\allowbreak{}INV1.\allowbreak{}py} & 10.4 KB & 第三问改进档一：自适应时间步（与固定子步对拍） \\
+  97 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}core\_\allowbreak{}INVbase.\allowbreak{}py} & 8.6 KB & 第三问改进链求解核（等距网格，供各改进档复用） \\
+  98 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}core\_\allowbreak{}nu\_\allowbreak{}INVbase.\allowbreak{}py} & 14.0 KB & 第三问改进链求解核（表面加密的非均匀网格） \\
+  99 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}e3\_\allowbreak{}INV2\_\allowbreak{}cn.\allowbreak{}py} & 12.4 KB & 第三问独立实现互验（另一时间格式轨，全场逐点比对） \\
+  100 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}e5\_\allowbreak{}INVbase.\allowbreak{}py} & 6.4 KB & 第三问单因素灵敏度（烘干时长对五个参数） \\
+  101 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}e5b\_\allowbreak{}INV3\_\allowbreak{}global.\allowbreak{}py} & 14.9 KB & 第三问全局灵敏度（筛选法与方差分解两族方法） \\
+  102 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}gci\_\allowbreak{}INV4\_\allowbreak{}tend.\allowbreak{}py} & 10.2 KB & 第三问烘干时长的离散误差带（空间三档与时间三档） \\
+  103 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}uq\_\allowbreak{}INV4\_\allowbreak{}lowC.\allowbreak{}py} & 8.9 KB & 第三问低含水率端外推的不确定性量化（截断族与分位抽样） \\
+  104 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}w2\_\allowbreak{}INVbase.\allowbreak{}py} & 5.6 KB & 第三问长时程收敛性预试验（空间四档与时间三档） \\
+  105 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}diag\_\allowbreak{}INV2\_\allowbreak{}step.\allowbreak{}py} & 3.2 KB & 第三问诊断：时间步进方式与结果的关系 \\
+  106 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}diag\_\allowbreak{}mech\_\allowbreak{}T.\allowbreak{}py} & 8.8 KB & 第三问诊断：温度侧机理与主导项核查 \\
+  107 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}energy.\allowbreak{}py} & 9.6 KB & 第三问能量核算（区域积分闭合与残差归因） \\
+  108 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}compare\_\allowbreak{}INV.\allowbreak{}py} & 4.5 KB & 第三问各改进档与基线的同口径对照 \\
+  109 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}xchk\_\allowbreak{}dt.\allowbreak{}py} & 6.8 KB & 第三问交叉核验：时间步单向加密对照 \\
+  110 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}xchk\_\allowbreak{}gt02.\allowbreak{}py} & 12.5 KB & 第三问交叉核验：干燥后期的含水率与时长关系 \\
+  111 & \texttt{code/\allowbreak{}innov/\allowbreak{}q3\_\allowbreak{}fig\_\allowbreak{}export.\allowbreak{}py} & 10.1 KB & 第三问图表数据导出（全量图数据 CSV） \\
+  112 & \texttt{code/\allowbreak{}innov/\allowbreak{}\_\allowbreak{}ref\_\allowbreak{}e15.\allowbreak{}py} & 3.4 KB & 第三问参照实现：24 h 三网格收敛指数与单因素灵敏度（11 算例） \\
+\end{longtable}
+
+
+
+\settabw{8}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.084\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.246\tblw\relax}>{\centering\arraybackslash}m{\dimexpr 0.140\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.530\tblw\relax}}
+  \caption{（续）　类别 1.3h　复现与依赖（支撑材料根目录）}\label{tab:A-1-k}\\
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endfirsthead
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  113 & \texttt{run\_\allowbreak{}all.\allowbreak{}py} & 5.3 KB & 一键复现入口：按序调度全部求解与检验脚本（纯标准库；默认只打印计划，须显式开关才执行） \\
+  114 & \texttt{A\_\allowbreak{}代码复现.\allowbreak{}md} & 26.7 KB & 复现指南：论文每个关键数字的复算路径与对照方式 \\
+  115 & \texttt{requirements.\allowbreak{}txt} & 1.7 KB & 运行依赖与版本清单 \\
+  116 & \texttt{README\_\allowbreak{}跨平台一键复现.\allowbreak{}md} & 8.3 KB & 跨平台一键复现说明（含第三方独立复跑记录） \\
+  117 & \texttt{README\_\allowbreak{}日志索引.\allowbreak{}md} & 21.7 KB & 运行日志索引（日志与脚本、检验项的对应关系） \\
+\end{longtable}
+
+
+本节所列图件与论文正文所引图件分列、互不重复；随支撑材料提交，不在论文附录中呈现。
+
+
+\settabw{6}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.143\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.620\tblw\relax}>{\centering\arraybackslash}m{\dimexpr 0.237\tblw\relax}}
+  \caption{（续）　类别 1.3i　未进论文正文的中间结果图件（\textbackslash{}texttt\{figures/\textbackslash{}allowbreak\{\}\}，40 张）}\label{tab:A-1-l}\\
+  \toprule
+    \# & 文件 & 大小 \\
+  \midrule
+  \endfirsthead
+  \toprule
+    \# & 文件 & 大小 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  118 & \texttt{figures/\allowbreak{}图02-四问递进关系图.\allowbreak{}pdf} & 51.1 KB \\
+  119 & \texttt{figures/\allowbreak{}图03-烘房环境时序.\allowbreak{}pdf} & 19.8 KB \\
+  120 & \texttt{figures/\allowbreak{}图04-药材半径收缩曲线.\allowbreak{}pdf} & 17.3 KB \\
+  121 & \texttt{figures/\allowbreak{}图08-Q1关键点时程曲线.\allowbreak{}pdf} & 15.3 KB \\
+  122 & \texttt{figures/\allowbreak{}图10-独立实现互验.\allowbreak{}pdf} & 20.5 KB \\
+  123 & \texttt{figures/\allowbreak{}图12-数据预处理对照.\allowbreak{}pdf} & 18.7 KB \\
+  124 & \texttt{figures/\allowbreak{}图14-Q2温度场时空分布.\allowbreak{}pdf} & 75.4 KB \\
+  125 & \texttt{figures/\allowbreak{}图15-Q2水分浓度场时空分布.\allowbreak{}pdf} & 203.4 KB \\
+  126 & \texttt{figures/\allowbreak{}图16-Q2关键点时程曲线.\allowbreak{}pdf} & 23.3 KB \\
+  127 & \texttt{figures/\allowbreak{}图18-Q2收敛性.\allowbreak{}pdf} & 19.3 KB \\
+  128 & \texttt{figures/\allowbreak{}图19-IMEX交替推进算法流程图.\allowbreak{}pdf} & 63.5 KB \\
+  129 & \texttt{figures/\allowbreak{}图20-Q2三维演化曲面.\allowbreak{}pdf} & 97.2 KB \\
+  130 & \texttt{figures/\allowbreak{}图21-Q2温度含水率相轨迹.\allowbreak{}pdf} & 19.1 KB \\
+  131 & \texttt{figures/\allowbreak{}图22-Q2全断面失水瀑布图.\allowbreak{}pdf} & 22.5 KB \\
+  132 & \texttt{figures/\allowbreak{}图23-Q2耦合强度分解图.\allowbreak{}pdf} & 19.1 KB \\
+  133 & \texttt{figures/\allowbreak{}图25-Q2潜热对照双联图.\allowbreak{}pdf} & 20.8 KB \\
+  134 & \texttt{figures/\allowbreak{}图26-Q2精度效率帕累托图.\allowbreak{}pdf} & 14.9 KB \\
+  135 & \texttt{figures/\allowbreak{}图27-Q2全局灵敏度热力图.\allowbreak{}pdf} & 23.2 KB \\
+  136 & \texttt{figures/\allowbreak{}图28-Q2自适应步长轨迹图.\allowbreak{}pdf} & 11.6 KB \\
+  137 & \texttt{figures/\allowbreak{}图30a-Q3收敛性与网格裁决-a.\allowbreak{}pdf} & 20.5 KB \\
+  138 & \texttt{figures/\allowbreak{}图30b-Q3收敛性与网格裁决-b.\allowbreak{}pdf} & 18.5 KB \\
+  139 & \texttt{figures/\allowbreak{}图30c-Q3收敛性与网格裁决-c.\allowbreak{}pdf} & 16.6 KB \\
+  140 & \texttt{figures/\allowbreak{}图31-Q3参数灵敏度.\allowbreak{}pdf} & 15.7 KB \\
+  141 & \texttt{figures/\allowbreak{}图32-Q3离散不确定度与误差带.\allowbreak{}pdf} & 17.6 KB \\
+  142 & \texttt{figures/\allowbreak{}图33-Q3全局灵敏度.\allowbreak{}pdf} & 19.0 KB \\
+  143 & \texttt{figures/\allowbreak{}图36-Q3干燥速率曲线.\allowbreak{}pdf} & 31.5 KB \\
+  144 & \texttt{figures/\allowbreak{}图37-自适应步长轨迹.\allowbreak{}pdf} & 14.7 KB \\
+  145 & \texttt{figures/\allowbreak{}图38-边界不确定度散布区间.\allowbreak{}pdf} & 15.7 KB \\
+  146 & \texttt{figures/\allowbreak{}图39-全局灵敏度与OAT并置.\allowbreak{}pdf} & 17.6 KB \\
+  147 & \texttt{figures/\allowbreak{}图40-Q4离散误差带GCI.\allowbreak{}pdf} & 12.9 KB \\
+  148 & \texttt{figures/\allowbreak{}图41a-Q4低C端外推UQ-a.\allowbreak{}pdf} & 16.7 KB \\
+  149 & \texttt{figures/\allowbreak{}图41b-Q4低C端外推UQ-b.\allowbreak{}pdf} & 16.8 KB \\
+  150 & \texttt{figures/\allowbreak{}图42-Q4全局灵敏度.\allowbreak{}pdf} & 21.6 KB \\
+  151 & \texttt{figures/\allowbreak{}图43-Q4收缩物性双效应分解.\allowbreak{}pdf} & 16.8 KB \\
+  152 & \texttt{figures/\allowbreak{}图44-Q4潜热中段温降曲线.\allowbreak{}pdf} & 16.9 KB \\
+  153 & \texttt{figures/\allowbreak{}图46-Q4界面取法与网格对照.\allowbreak{}pdf} & 13.8 KB \\
+  154 & \texttt{figures/\allowbreak{}图47-F26\_\allowbreak{}灵敏度雷达图.\allowbreak{}pdf} & 25.5 KB \\
+  155 & \texttt{figures/\allowbreak{}图49-F07\_\allowbreak{}Q1求解原理示意图.\allowbreak{}pdf} & 46.3 KB \\
+  156 & \texttt{figures/\allowbreak{}图50-F21\_\allowbreak{}Q2双向耦合关系图.\allowbreak{}pdf} & 41.5 KB \\
+  157 & \texttt{figures/\allowbreak{}图51-F51\_\allowbreak{}Q3求解流程图.\allowbreak{}pdf} & 38.4 KB \\
+\end{longtable}
+
+
+
+\settabw{8}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.079\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.164\tblw\relax}>{\centering\arraybackslash}m{\dimexpr 0.079\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.678\tblw\relax}}
+  \caption{（续）　类别 1.4　AI 工具使用详情（官方规定要求）}\label{tab:A-1-m}\\
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endfirsthead
+  \toprule
+    \# & 文件 & 大小 & 说明 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  158 & \texttt{AI 工具使用详情.\allowbreak{}pdf} & PDF & 依官方《人工智能工具使用规定》第 4 条随支撑材料提交，含四项内容：所用 AI 工具名称、版本或型号；具体使用目的和环节；主要提示方式与使用过程说明（附典型交互示例）；对 AI 输出的采纳、人工修改和核验的主要情况。该文件由机读登记源件（\texttt{A\_\allowbreak{}AI工具使用登记.\allowbreak{}json}）逐项整理导出；机读源件随包保留，便于逐条回查 \\
+\end{longtable}
+
+说明：上表为论文附录中的列表，其随件实体见支撑材料包；电子版论文与纸质版的内容及格式须完全一致。若某项确未使用，则在附录中明确说明。
+
+\section{源程序}
+本附录收录建模所用的源程序：\textbf{关键程序}（B.1–B.7，公共模块与四问求解的交付核、主流程）\textbf{全文嵌入}；\textbf{其余源程序}（B.8–B.13，检验脚本与其余溯源脚本）\textbf{只列文件名清单}，其全文随\textbf{支撑材料}提交，并按官方第十一条在表~\ref{tab:A-1} 中逐项登记。全篇按"通用模块、分问求解、检验脚本"的顺序编排；附录中不描述运行环境与硬件信息，只保留程序本身及其接口说明。
+
+
+
+\settabw{8}
+\begin{longtable}{>{\raggedleft\arraybackslash}m{\dimexpr 0.089\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.247\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.468\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.196\tblw\relax}}
+  \caption{附录 B 源程序模块清单}\label{tab:B-1}\\
+  \toprule
+    序 & 程序（模块） & 作用 & 对应论文位置 \\
+  \midrule
+  \endfirsthead
+  \multicolumn{4}{r}{\footnotesize（续）}\\
+  \toprule
+    序 & 程序（模块） & 作用 & 对应论文位置 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  B.1 & 公共模块：网格与物性 & 生成径向网格、按问题装配物性（附录 2／附录 3／附录 4） & 5.0.1／假设 3 \\
+  B.2 & 公共模块：元体平衡装配 & 组装三对角矩阵、界面系数（沿含水率的积分平均）、中心奇点半格系数 & 5.1.3／式~\eqref{eq:5-9} \\
+  B.3 & 公共模块：时间推进 & 温度侧时间方向精确推进（矩阵指数与分段线性推进系数）；含水率侧后向欧拉与迭代 & 5.1.3／式~\eqref{eq:5-7}(5-8) \\
+  B.4 & 问题一求解 & 常物性完全解耦情形 & 5.1 \\
+  B.5 & 问题二求解 & 变物性双向耦合与交替推进 & 5.2 \\
+  B.6 & 问题三求解 & 事件驱动终止与子步级二分定位 & 5.3 \\
+  B.7 & 问题四求解 & 物料坐标、守恒形式、预估与校正、事件判定 & 5.4 \\
+  B.8 & 检验脚本：收敛性与误差带 & 三档网格与三档时间步长、广义理查森外推 & 6.1 \\
+  B.9 & 检验脚本：解析对拍 & 圆柱级数解（常边界与分段常边界） & 6.2 \\
+  B.10 & 检验脚本：独立实现互验 & 第二套实现（显式格式与另一时间格式轨） & 6.3 \\
+  B.11 & 检验脚本：守恒核算 & 质量与能量的区域积分闭合 & 6.5 \\
+  B.12 & 检验脚本：灵敏度分析 & 单因素与全局两族方法 & 6.6／6.7 \\
+\end{longtable}
+
+代码一致性声明：附录所列源程序与实际生成四个结果文件的程序同一版本；结果文件与论文各结果表（共六张）逐格一致。按官方要求，源程序缺失、不能运行或运行结果与论文不符者可能被取消评奖资格；故本附录收录的关键程序\textbf{不做删节}（仅按上述顺序重组），其余源程序\textbf{不裁剪、文件名列全}（全文随支撑材料提交）。
+
+
+% ---- 附录 B 源程序块清单：按《附录B\_代码块对应源文件.md》块序列出（并入附录 B）----
+\small
+% ---- ℃／①-④ 交 xeCJK 的 CJK 字体渲染（等宽字体无此字形，代码注释会留空）----
+\xeCJKDeclareCharClass{CJK}{"2103 -> "2103, "2460 -> "24FF}
+
+\noindent\textbf{B.1\quad 公共模块：网格与物性}
+\srcfile{q1_core.py}
+\srcfile{q4_core.py}
+
+\noindent\textbf{B.2\quad 公共模块：元体平衡装配}
+\srcfile{q1_core.py}
+\srcfile{q2_core_c.py}
+
+\noindent\textbf{B.3\quad 公共模块：时间推进}
+\srcfile{q1_exact.py}
+\srcfile{q1_core.py}
+
+\noindent\textbf{B.4\quad 问题一求解}
+\srcfile{q1_solver.py}
+\srcfile{q1_core.py}
+
+\noindent\textbf{B.5\quad 问题二求解}
+\srcfile{q2_solver.py}
+\srcfile{q2_core_c.py}
+
+\noindent\textbf{B.6\quad 问题三求解}
+\srcfile{q3_solver.py}
+\srcfile{q3_core.py}
+
+\noindent\textbf{B.7\quad 问题四求解}
+\srcfile{q4_solver.py}
+\srcfile{q4_core.py}
+
+\noindent\textbf{B.8\quad 检验脚本：收敛性与误差带}
+\noindent\footnotesize 本块为检验脚本，正文不随附录印出；源文件全文随支撑材料提交，文件名与附录 A 表 A-1 逐项对应：
+\begingroup\raggedright\sloppy
+\noindent \texttt{q1\_\allowbreak{}e1\_\allowbreak{}gci.py}\quad \texttt{q2\_\allowbreak{}w2\_\allowbreak{}foreground.py}\quad \texttt{q3\_\allowbreak{}w2\_\allowbreak{}convergence.py}
+\noindent \texttt{q3\_\allowbreak{}grid\_\allowbreak{}experiment.py}\quad \texttt{q4\_\allowbreak{}w6\_\allowbreak{}e15.py}
+\par\endgroup
+
+\noindent\textbf{B.9\quad 检验脚本：解析对拍}
+\noindent\footnotesize 本块为检验脚本，正文不随附录印出；源文件全文随支撑材料提交，文件名与附录 A 表 A-1 逐项对应：
+\begingroup\raggedright\sloppy
+\noindent \texttt{q1\_\allowbreak{}e2\_\allowbreak{}series.py}\quad \texttt{q2\_\allowbreak{}e2\_\allowbreak{}frozen.py}\quad \texttt{q4\_\allowbreak{}w6\_\allowbreak{}e2.py}
+\par\endgroup
+
+\noindent\textbf{B.10\quad 检验脚本：独立实现互验}
+\noindent\footnotesize 本块为检验脚本，正文不随附录印出；源文件全文随支撑材料提交，文件名与附录 A 表 A-1 逐项对应：
+\begingroup\raggedright\sloppy
+\noindent \texttt{q1\_\allowbreak{}e3\_\allowbreak{}explicit.py}\quad \texttt{q2\_\allowbreak{}checks.py}\quad \texttt{q3\_\allowbreak{}verify\_\allowbreak{}nu.py}
+\noindent \texttt{q3\_\allowbreak{}verify\_\allowbreak{}grid.py}\quad \texttt{q3\_\allowbreak{}verify\_\allowbreak{}opt.py}\quad \texttt{q4\_\allowbreak{}core\_\allowbreak{}fixed.py}
+\par\endgroup
+
+\noindent\textbf{B.11\quad 检验脚本：守恒核算}
+\noindent\footnotesize 本块为检验脚本，正文不随附录印出；源文件全文随支撑材料提交，文件名与附录 A 表 A-1 逐项对应：
+\begingroup\raggedright\sloppy
+\noindent \texttt{q1\_\allowbreak{}conservation.py}\quad \texttt{q2\_\allowbreak{}checks.py}\quad \texttt{q3\_\allowbreak{}conservation.py}
+\noindent \texttt{q4\_\allowbreak{}w6\_\allowbreak{}e78b.py}
+\par\endgroup
+
+\noindent\textbf{B.12\quad 检验脚本：灵敏度分析}
+\noindent\footnotesize 本块为检验脚本，正文不随附录印出；源文件全文随支撑材料提交，文件名与附录 A 表 A-1 逐项对应：
+\begingroup\raggedright\sloppy
+\noindent \texttt{q1\_\allowbreak{}e5\_\allowbreak{}sensitivity.py}\quad \texttt{q2\_\allowbreak{}e5\_\allowbreak{}sensitivity.py}\quad \texttt{q2\_\allowbreak{}e5b\_\allowbreak{}global.py}
+\noindent \texttt{q3\_\allowbreak{}e5\_\allowbreak{}sensitivity.py}\quad \texttt{q4\_\allowbreak{}w6\_\allowbreak{}e5.py}\quad \texttt{innov/\allowbreak{}q4\_\allowbreak{}INV3\_\allowbreak{}global.py}
+\noindent \texttt{innov/\allowbreak{}q4\_\allowbreak{}INV6\_\allowbreak{}sobol.py}
+\par\endgroup
+
+\noindent\textbf{B.13\quad 其余源程序（清单，正文不嵌入）}
+\noindent\footnotesize 下列 93 个文件与 B.1–B.12 不重复（含改进链脚本 innov/）；全部源程序随支撑材料提交，并在附录 A 表 A-1 逐项登记；检验日志与结果数据同属支撑材料。
+\begingroup\raggedright\sloppy
+\noindent \texttt{dq\_\allowbreak{}check.py}\quad \texttt{innov/\allowbreak{}\_\allowbreak{}ref\_\allowbreak{}e15.py}\quad \texttt{innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T0.py}
+\noindent \texttt{innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T1\_\allowbreak{}adaptive.py}\quad \texttt{innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T1\_\allowbreak{}duhamel.py}
+\noindent \texttt{innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T1\_\allowbreak{}iface.py}\quad \texttt{innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T1\_\allowbreak{}interp.py}
+\noindent \texttt{innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T2\_\allowbreak{}adjoint.py}\quad \texttt{innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T2\_\allowbreak{}da.py}
+\noindent \texttt{innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T2\_\allowbreak{}gs.py}\quad \texttt{innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T2\_\allowbreak{}uq.py}
+\noindent \texttt{innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}T3.py}\quad \texttt{innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}lib.py}\quad \texttt{innov/\allowbreak{}q1\_\allowbreak{}inv\_\allowbreak{}par.py}
+\noindent \texttt{innov/\allowbreak{}q2\_\allowbreak{}inv\_\allowbreak{}monolithic.py}\quad \texttt{innov/\allowbreak{}q2\_\allowbreak{}inv\_\allowbreak{}tol\_\allowbreak{}converge.py}
+\noindent \texttt{innov/\allowbreak{}q2\_\allowbreak{}inv\_\allowbreak{}tol\_\allowbreak{}delivery.py}\quad \texttt{innov/\allowbreak{}q2\_\allowbreak{}inv\_\allowbreak{}tol\_\allowbreak{}tradeoff.py}
+\noindent \texttt{innov/\allowbreak{}q3\_\allowbreak{}compare\_\allowbreak{}INV.py}\quad \texttt{innov/\allowbreak{}q3\_\allowbreak{}core\_\allowbreak{}INVbase.py}
+\noindent \texttt{innov/\allowbreak{}q3\_\allowbreak{}core\_\allowbreak{}nu\_\allowbreak{}INVbase.py}\quad \texttt{innov/\allowbreak{}q3\_\allowbreak{}diag\_\allowbreak{}INV2\_\allowbreak{}step.py}
+\noindent \texttt{innov/\allowbreak{}q3\_\allowbreak{}diag\_\allowbreak{}mech\_\allowbreak{}T.py}\quad \texttt{innov/\allowbreak{}q3\_\allowbreak{}e3\_\allowbreak{}INV2\_\allowbreak{}cn.py}
+\noindent \texttt{innov/\allowbreak{}q3\_\allowbreak{}e5\_\allowbreak{}INVbase.py}\quad \texttt{innov/\allowbreak{}q3\_\allowbreak{}e5b\_\allowbreak{}INV3\_\allowbreak{}global.py}
+\noindent \texttt{innov/\allowbreak{}q3\_\allowbreak{}energy.py}\quad \texttt{innov/\allowbreak{}q3\_\allowbreak{}fig\_\allowbreak{}export.py}
+\noindent \texttt{innov/\allowbreak{}q3\_\allowbreak{}gci\_\allowbreak{}INV4\_\allowbreak{}tend.py}\quad \texttt{innov/\allowbreak{}q3\_\allowbreak{}solver\_\allowbreak{}INV1.py}
+\noindent \texttt{innov/\allowbreak{}q3\_\allowbreak{}solver\_\allowbreak{}INVbase.py}\quad \texttt{innov/\allowbreak{}q3\_\allowbreak{}uq\_\allowbreak{}INV4\_\allowbreak{}lowC.py}
+\noindent \texttt{innov/\allowbreak{}q3\_\allowbreak{}w2\_\allowbreak{}INVbase.py}\quad \texttt{innov/\allowbreak{}q3\_\allowbreak{}xchk\_\allowbreak{}dt.py}
+\noindent \texttt{innov/\allowbreak{}q3\_\allowbreak{}xchk\_\allowbreak{}gt02.py}\quad \texttt{innov/\allowbreak{}q4\_\allowbreak{}INV0\_\allowbreak{}regression.py}
+\noindent \texttt{innov/\allowbreak{}q4\_\allowbreak{}INV1\_\allowbreak{}gci\_\allowbreak{}tend.py}\quad \texttt{innov/\allowbreak{}q4\_\allowbreak{}INV2\_\allowbreak{}uq\_\allowbreak{}lowC.py}
+\noindent \texttt{innov/\allowbreak{}q4\_\allowbreak{}INV4\_\allowbreak{}aux.py}\quad \texttt{innov/\allowbreak{}q4\_\allowbreak{}INV5\_\allowbreak{}theory.py}
+\noindent \texttt{innov/\allowbreak{}q4\_\allowbreak{}INV\_\allowbreak{}lib.py}\quad \texttt{innov/\allowbreak{}q4\_\allowbreak{}core\_\allowbreak{}INV.py}
+\noindent \texttt{innov/\allowbreak{}run\_\allowbreak{}innov\_\allowbreak{}chain.py}\quad \texttt{innov/\allowbreak{}run\_\allowbreak{}innov\_\allowbreak{}chain2.py}
+\noindent \texttt{q1\_\allowbreak{}consistency\_\allowbreak{}check.py}\quad \texttt{q1\_\allowbreak{}diag.py}\quad \texttt{q1\_\allowbreak{}e3\_\allowbreak{}figdata.py}
+\noindent \texttt{q1\_\allowbreak{}e4\_\allowbreak{}watchdog.py}\quad \texttt{q1\_\allowbreak{}e6\_\allowbreak{}smooth.py}\quad \texttt{q1\_\allowbreak{}figdata\_\allowbreak{}export.py}
+\noindent \texttt{q2\_\allowbreak{}bench\_\allowbreak{}ab.py}\quad \texttt{q2\_\allowbreak{}core.py}\quad \texttt{q2\_\allowbreak{}core\_\allowbreak{}bdf2.py}
+\noindent \texttt{q2\_\allowbreak{}core\_\allowbreak{}latent.py}\quad \texttt{q2\_\allowbreak{}core\_\allowbreak{}orig.py}\quad \texttt{q2\_\allowbreak{}diag\_\allowbreak{}picard.py}
+\noindent \texttt{q2\_\allowbreak{}e3b\_\allowbreak{}decoupled.py}\quad \texttt{q2\_\allowbreak{}e8\_\allowbreak{}latent.py}\quad \texttt{q2\_\allowbreak{}e9\_\allowbreak{}adaptive.py}
+\noindent \texttt{q2\_\allowbreak{}f30\_\allowbreak{}pareto.py}\quad \texttt{q2\_\allowbreak{}fig\_\allowbreak{}export.py}\quad \texttt{q2\_\allowbreak{}figdata\_\allowbreak{}export.py}
+\noindent \texttt{q2\_\allowbreak{}opt\_\allowbreak{}verify.py}\quad \texttt{q2\_\allowbreak{}quick\_\allowbreak{}check.py}\quad \texttt{q2\_\allowbreak{}solver\_\allowbreak{}orig.py}
+\noindent \texttt{q2\_\allowbreak{}verify\_\allowbreak{}BC.py}\quad \texttt{q2\_\allowbreak{}verify\_\allowbreak{}results.py}\quad \texttt{q2\_\allowbreak{}w2\_\allowbreak{}prestudy.py}
+\noindent \texttt{q3\_\allowbreak{}audit\_\allowbreak{}consistency.py}\quad \texttt{q3\_\allowbreak{}audit\_\allowbreak{}tables.py}
+\noindent \texttt{q3\_\allowbreak{}check\_\allowbreak{}maxloc.py}\quad \texttt{q3\_\allowbreak{}core\_\allowbreak{}nu.py}\quad \texttt{q3\_\allowbreak{}diag\_\allowbreak{}iface.py}
+\noindent \texttt{q3\_\allowbreak{}diag\_\allowbreak{}lowC.py}\quad \texttt{q3\_\allowbreak{}diag\_\allowbreak{}mech.py}\quad \texttt{q3\_\allowbreak{}diag\_\allowbreak{}surface.py}
+\noindent \texttt{q3\_\allowbreak{}impact\_\allowbreak{}check.py}\quad \texttt{q3\_\allowbreak{}postcheck.py}\quad \texttt{q3\_\allowbreak{}pretest\_\allowbreak{}bench.py}
+\noindent \texttt{q3\_\allowbreak{}probe\_\allowbreak{}crit.py}\quad \texttt{q3\_\allowbreak{}probe\_\allowbreak{}dcut.py}\quad \texttt{q3\_\allowbreak{}probe\_\allowbreak{}grid.py}
+\noindent \texttt{q3\_\allowbreak{}surface\_\allowbreak{}theory.py}\quad \texttt{q4\_\allowbreak{}core\_\allowbreak{}prebug.py}\quad \texttt{q4\_\allowbreak{}diag\_\allowbreak{}adiab.py}
+\noindent \texttt{q4\_\allowbreak{}diag\_\allowbreak{}blow.py}\quad \texttt{q4\_\allowbreak{}diag\_\allowbreak{}e3g2.py}\quad \texttt{q4\_\allowbreak{}pretest.py}
+\noindent \texttt{q4\_\allowbreak{}table6.py}\quad \texttt{q4\_\allowbreak{}w6\_\allowbreak{}e78.py}\quad \texttt{q4\_\allowbreak{}w6\_\allowbreak{}lib.py}
+\noindent \texttt{rerun\_\allowbreak{}chain.ps1}\quad \texttt{run\_\allowbreak{}chain.py}
+\par\endgroup
+
+\section{关键中间结果与图示说明}
+
+
+\settabw{6}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.132\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.566\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.302\tblw\relax}}
+  \caption{附录 C 关键中间结果索引}\label{tab:C-1}\\
+  \toprule
+    项 & 内容 & 对应论文位置 \\
+  \midrule
+  \endfirsthead
+  \multicolumn{3}{r}{\footnotesize（续）}\\
+  \toprule
+    项 & 内容 & 对应论文位置 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  C.1 & 空间与时间收敛性的加密序列明细 & 6.1 \\
+  C.2 & 解析对拍与独立互验的逐时刻偏差表 & 6.2／6.3 \\
+  C.3 & 守恒核算的分量明细 & 6.5 \\
+  C.4 & 灵敏度算例的完整结果表 & 6.6／6.7 \\
+  C.5 & 低含水率端外推的多档扫描结果与概率区间 & 6.10 \\
+  C.6 & 各问不宜入正文的检验图表 & 第六章 \\
+  C.7 & 各问的场分布与关键点曲线（补充图） & 5.1–5.4 的补充 \\
+\end{longtable}
+
+说明：附录 C 只作中间结果的陈列与索引，不重复正文结论；凡正文已给出的结论，附录不再复述。

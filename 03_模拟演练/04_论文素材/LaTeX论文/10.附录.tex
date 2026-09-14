@@ -1,0 +1,128 @@
+\makeatletter
+\let\@oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{}
+\section*{附录}
+\let\addcontentsline\@oldaddcontentsline
+\makeatother
+
+\subsection*{附录A：提交材料清单}
+
+本论文附有以下支撑材料：
+
+\begin{table}[H]
+  \centering
+  \caption{提交文件清单}
+  \label{tab:appendix_files}
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{LX}
+    \toprule
+    文件 & 说明 \\
+    \midrule
+    solve\_q1.m & 问题1 双光束模型推导与极值回归求解（v1.0）\\
+    solve\_q2.m / run\_v15\_pipeline.m & 问题2 三域互证融合管线（v1.5，主程序）\\
+    sic\_e1\_e2\_e3.m & 问题2 三域估计器核心实现 \\
+    v20\_airy\_forward.m & 问题3 Airy 多光束前向模型（v2.0）\\
+    v20\_tmm.m & 问题3 传输矩阵法验证实现 \\
+    drude\_params.m & 问题3 Drude 介电函数参数 \\
+    exp6\_w3\_si.m & 问题3 Si 判定实验（EXP-6）\\
+    exp7\_sic\_w4\_exp8.m & 问题3 SiC 效应分离与精度量化（EXP-7/8）\\
+    make\_paper\_figures.m & 论文图表生成脚本（MATLAB 基准图）\\
+    draw\_all\_figures.py & 论文图表生成脚本（Python 重绘版）\\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsection*{附录B：核心代码（v1.0 双光束模型极值回归）}
+
+以下为问题2 E1 极值回归法的核心 MATLAB 实现（完整管线代码另附）。代码以中文注释说明用途、输入输出与关键参数。
+
+\begin{lstlisting}[language=Matlab, caption={双光束模型极值回归核心代码（E1）}]
+% E1 极值回归法 — 条纹极值线性回归反演厚度
+% 用途：从扣除背景后的条纹分量检测极值，线性回归得厚度
+% 输入：sigma（波数列）, F（条纹分量列）, n1, theta_deg
+% 输出：d_hat（厚度估计, um）, sigma_d（统计不确定度, um）
+% 依赖：无
+
+function [d_hat, sigma_d] = e1_extrema_regression(sigma, F, n1, theta_deg)
+
+theta = deg2rad(theta_deg);
+theta1 = asin(sin(theta)/n1);
+
+% 亚像素极值检测：二次抛物线细化
+[~, locs_max] = findpeaks(F);
+[~, locs_min] = findpeaks(-F);
+extrema_idx = sort([locs_max; locs_min]);
+
+% 抛物线三点插值细化极值位置（亚像素）
+for i = 1:length(extrema_idx)
+    idx = extrema_idx(i);
+    if idx > 1 && idx < length(sigma)
+        xx = sigma(idx-1:idx+1);
+        yy = F(idx-1:idx+1);
+        p = polyfit(xx, yy, 2);
+        sigma_refined(i) = -p(2)/(2*p(1));  % 抛物线顶点
+    end
+end
+
+% 多假设周期竞争：在 GB/T 物理窗 [3,200] um 内取 top-5 候选
+sigma_m = sigma_refined';
+m = (1:length(sigma_m))';  % 起始级数赋值
+
+% 线性回归：m = k*sigma_m + c
+X = [sigma_m, ones(size(sigma_m))];
+beta = X \ m;
+k = beta(1);  % 斜率 = 4*n1*d*cos(theta1)
+c = beta(2);  % 截距 = phi12/pi
+
+d_hat = k / (4 * n1 * cos(theta1));  % 单位：cm
+d_hat = d_hat * 1e4;  % 转换为 um
+
+% 回归残差折算统计不确定度
+res = m - X*beta;
+sigma_d = std(res) / (4 * n1 * cos(theta1)) * 1e4;
+end
+\end{lstlisting}
+
+\subsection*{附录C：Airy 多光束前向模型（v2.0）}
+
+以下为问题3 的 Airy 多光束前向模型 MATLAB 核心实现。
+
+\begin{lstlisting}[language=Matlab, caption={Airy 多光束前向模型核心代码（v2.0）}]
+% v2.0 Airy 多光束前向模型 — 三介质 Airy 合成
+% 用途：计算给定参数下的反射率谱 R(sigma)
+% 输入：sigma（波数列, cm-1）, d（厚度, um）, n1（外延层折射率）,
+%        theta_deg（入射角）, eps_inf, sigma_p, gamma（衬底 Drude 参数）
+% 输出：R（反射率列, 0-1）
+% 依赖：无
+
+function R = v20_airy_forward(sigma, d, n1, theta_deg, ...
+                               eps_inf, sigma_p, gamma)
+
+theta = deg2rad(theta_deg);
+theta1 = asin(sin(theta)/n1);
+
+% 空气/外延层界面 Fresnel（标量）
+r01 = (cos(theta) - n1*cos(theta1)) / (cos(theta) + n1*cos(theta1));
+r10 = -r01;  % Stokes 关系
+
+% 衬底 Drude 介电函数
+eps_drude = eps_inf - sigma_p^2 ./ (sigma .* (sigma + 1i*gamma));
+n2 = sqrt(eps_drude);  % 复折射率
+
+% 衬底界面 Fresnel（复数）
+theta2 = asin(n1*sin(theta1)./n2);
+r12 = (n1*cos(theta1) - n2.*cos(theta2)) ./ ...
+      (n1*cos(theta1) + n2.*cos(theta2));
+
+% 往返相位
+delta = 4*pi * n1 * (d*1e-4) * cos(theta1) * sigma;  % d 转 cm
+
+% Airy 合成
+E_r = r01 + (1-r01^2) * r12 .* exp(1i*delta) ./ ...
+              (1 + r01 * r12 .* exp(1i*delta));
+
+R = abs(E_r).^2;
+% v2.0 退化验证：q=|r01*r12| -> 0 时精确退化为 v1.0 双光束式
+% 数值偏差 3.9e-16（机器精度）
+end
+\end{lstlisting}

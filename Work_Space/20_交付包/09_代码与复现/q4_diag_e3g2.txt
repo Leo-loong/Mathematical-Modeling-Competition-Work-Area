@@ -1,0 +1,8 @@
+======================================================================
+E3-g-2 localization (1 h, N=80, n_sub=32, appendix-3 props, fixed R)
+q2_core_c (result2 production path): T(0)=40.382880 C(0)=2.525674 C(R)=1.471068
+q4 fixR+app3 t_corr=0 : T(0)=40.382880 C(0)=2.525674 C(R)=1.471068  max|dT|=3.713e-08 max|dC|=5.066e-10
+   argmax dT at node j=0 (r=0.0000 cm): T2=40.3829 T4=40.3829
+q4 fixR+app3 t_corr=1 : T(0)=41.958805 C(0)=2.521447 C(R)=1.484520  max|dT|=1.576e+00 max|dC|=1.345e-02
+   argmax dT at node j=0 (r=0.0000 cm): T2=40.3829 T4=41.9588
+total wall=58 s

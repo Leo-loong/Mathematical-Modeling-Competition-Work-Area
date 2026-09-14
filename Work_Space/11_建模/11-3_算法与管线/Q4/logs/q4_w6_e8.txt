@@ -1,0 +1,6 @@
+======================================================================
+E8 latent heat (L=2.26e6 J/kg) vs baseline
+baseline: t_dry=50.7824 h (wall 491 s)
+latent  : t_dry=50.7824 h (wall 471 s)
+end-field: max|dT|=1.991e-09 K ; max|dC|=2.122e-10
+t_dry shift = +0.0000 h (+0.000%)

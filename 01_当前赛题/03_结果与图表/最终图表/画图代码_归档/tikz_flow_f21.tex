@@ -1,0 +1,74 @@
+\documentclass[border=5pt]{article}
+\usepackage[margin=0pt,paperwidth=16cm,paperheight=11cm]{geometry}
+\pagestyle{empty}
+\usepackage{fontspec}
+\usepackage{ctex}
+\newcommand{\fontdir}{../../../00_知识库/论文写作/LaTeX模板_2026国赛版/fonts/}
+\setCJKfamilyfont{song}[Path=\fontdir,UprightFont=SourceHanSerifCN-Regular.otf,BoldFont=SourceHanSerifCN-Bold.otf,AutoFakeBold=true]{SourceHanSerifCN}
+\newcommand*{\song}{\CJKfamily{song}}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\definecolor{primary}{HTML}{1F3A93}\definecolor{primaryDark}{HTML}{1A3A6E}\definecolor{secondary}{HTML}{D9E4F2}
+\definecolor{accent}{HTML}{D35400}\definecolor{accentLight}{HTML}{FDEBD0}
+\definecolor{green}{HTML}{27AE60}\definecolor{red}{HTML}{C0392B}
+\definecolor{gray}{HTML}{95A5A6}\definecolor{textDark}{HTML}{333333}\definecolor{arrowColor}{HTML}{5D6D7E}
+\tikzset{
+  process/.style={rectangle,draw=primaryDark,line width=0.8pt,fill=primary,text=white,minimum width=4.5cm,minimum height=1.5cm,align=center,font=\song\footnotesize,inner sep=5pt,rounded corners=2pt},
+  subprocess/.style={rectangle,draw=primaryDark,line width=0.7pt,fill=secondary,text=textDark,minimum width=4.5cm,minimum height=1.5cm,align=center,font=\song\footnotesize,inner sep=4pt,rounded corners=2pt},
+  graybox/.style={rectangle,draw=gray,line width=0.7pt,fill=gray!8,text=textDark,minimum width=14cm,minimum height=0.85cm,align=center,font=\song\footnotesize,inner sep=4pt,rounded corners=2pt},
+  arrow/.style={-{Stealth[length=2.0mm,width=1.8mm]},line width=0.9pt,draw=arrowColor},
+  arrowR/.style={-{Stealth[length=2.0mm,width=1.8mm]},line width=1.0pt,draw=accent},
+  arrowBi/.style={{Stealth[length=1.8mm,width=1.6mm]}-{Stealth[length=1.8mm,width=1.6mm]},line width=1.0pt,draw=accent},
+}
+
+\begin{document}
+\begin{center}
+{\large\bfseries\song 图 21：Q2 热--湿双向耦合关系}\\[0.8cm]
+\begin{tikzpicture}
+
+  % 温度场（左）
+  \node[process] (T) at (-3.5, 2.0) {
+    \textbf{温度场 $T(r,t)$}\\[2pt]
+    热传导方程\\[2pt]
+    $\rho c_p\frac{\partial T}{\partial t}= \frac{1}{r}\frac{\partial}{\partial r}\!\bigl(k r\frac{\partial T}{\partial r}\bigr)$
+  };
+
+  % 水分浓度（左）
+  \node[subprocess] (C) at (-3.5, -2.0) {
+    \textbf{水分浓度 $C(r,t)$}\\[2pt]
+    Fick 扩散方程\\[2pt]
+    $\frac{\partial C}{\partial t}= \frac{1}{r}\frac{\partial}{\partial r}\!\bigl(D r\frac{\partial C}{\partial r}\bigr)$
+  };
+
+  % 物性参数（右）
+  \node[rectangle,draw=accent!60!black,line width=0.8pt,fill=accentLight,text=textDark,minimum width=5.5cm,minimum height=3.5cm,align=center,font=\song\footnotesize,inner sep=5pt,rounded corners=2pt] (Prop) at (3.5, 0) {
+    \textbf{物性参数（附录3）}\\[4pt]
+    $\rho = 650+128C$\\[3pt]
+    $c_p = 1450+2736\frac{C}{C+1}$\\[3pt]
+    $k = 0.21+0.38\frac{C}{C+1}$\\[3pt]
+    $D = 2.4\!\times\!10^{-3}e^{-0.45/C}e^{-3850/T}$
+  };
+
+  % T <-> C 双向耦合
+  \draw[arrowBi] (-3.5, 1.0) -- (-3.5, -1.0);
+  \node[font=\song\footnotesize,text=accent] at (-2.6, 0.0) {双向强耦合};
+
+  % 耦合箭头 T → Prop
+  \draw[arrowR] (-0.8, 2.4) -- (0.5, 1.2)
+    node[midway,above,sloped,font=\song\footnotesize,text=accent] {$T$ 影响 $D$};
+  \draw[arrowR] (-0.8, -1.6) -- (0.5, -0.8)
+    node[midway,below,sloped,font=\song\footnotesize,text=accent] {$C$ 影响 $\rho,c_p,k,D$};
+  \draw[arrowR] (1.0, 0.8) -- (-1.0, 1.8)
+    node[midway,above,sloped,font=\song\footnotesize,text=accent] {更新 $\rho,c_p,k$};
+  \draw[arrowR] (1.0, -0.8) -- (-1.0, -1.8)
+    node[midway,above,sloped,font=\song\footnotesize,text=accent] {更新 $D$};
+
+  % 底部说明
+  \node[graybox] at (0, -4.5) {
+    Q1：单向耦合（附录2 常物性，$\rho,c_p,k$ 常数，$D=D(C)$ 仅单向）\qquad
+    Q2 起：闭环双向强耦合（附录3 全变物性，IMEX 交替推进）
+  };
+
+\end{tikzpicture}
+\end{center}
+\end{document}

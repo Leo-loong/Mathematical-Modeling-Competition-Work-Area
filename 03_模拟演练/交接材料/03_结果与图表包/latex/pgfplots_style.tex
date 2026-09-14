@@ -1,0 +1,22 @@
+% pgfplots_style.tex — 论文图统一风格（与 MATLAB 版 paperfig_style 对应）
+% 用法: 导言区 \input{pgfplots_style.tex}（需 \usepackage{pgfplots} 且 \pgfplotsset{compat=1.17}）
+% 依赖: \usepgfplotslibrary{groupplots}（fig3 的上下轴组需要）
+% 中文: 建议xelatex + ctex 编译
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{statistics}
+\pgfplotsset{
+  paperfig/.style={
+    width=0.86\textwidth, height=7.2cm,
+    grid=major, grid style={dashed, gray!25},
+    every axis plot/.append style={line width=1pt},
+    tick label style={font=\small},
+    label style={font=\small},
+    legend style={font=\small, draw=gray!60, fill=none},
+    tick align=outside, axis line style={black},
+    xlabel style={yshift=2pt}, ylabel style={yshift=-2pt},
+  },
+  paperfig small/.style={paperfig, width=0.86\textwidth, height=4.6cm},
+}
+% 与MATLAB版一致的固定配色:
+% 黑 #000000(实测10°) | 蓝 rgb,0,0.447,0.741(实测15°/拟合) | 橙 rgb,0.851,0.325,0.098(残差)
+% 灰 #999999(背景/区间带)

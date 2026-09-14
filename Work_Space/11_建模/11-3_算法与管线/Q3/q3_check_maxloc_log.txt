@@ -1,0 +1,7 @@
+﻿q3_check_maxloc.py -- NOT RUN (missing prerequisite input)
+
+Reason: script reads 'result3_raw.xlsx' (legacy intermediate), which does not exist.
+Type: read-only diagnostic, not part of delivery evidence.
+Impact: none on Q3 results.
+
+<!-- placeholder -->

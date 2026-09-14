@@ -1,0 +1,29 @@
+% ============================================================================
+% 本文件由 `40_复核/06_偏移性检查/temp/gen_pylists.py` **自动生成**（勿手改）；
+% 内容＝从附录 B 实际嵌入的源程序里抽取的**函数/类名、全大写常量、import 模块别名**，
+% 供 `preamble.tex` 的 `\lstdefinestyle{pycode}` 做"IDE 式"识别着色。
+% 代码改动后重跑该脚本即可刷新（本文件缺失时 preamble 会自动退回基础样式，不会编译失败）。
+% ============================================================================
+\definecolor{pyfn}{HTML}{795E26}    % 函数/方法名（VS Code Light+ 的函数色）
+\definecolor{pyid}{HTML}{001080}    % 普通标识符（≈变量；VS Code 变量色）
+\definecolor{pynum}{HTML}{098658}   % 数字字面量（VS Code 数字色）
+\lstdefinestyle{pycode}{%
+  language=Python,%
+  basicstyle=\lstmonofam\scriptsize,%
+  keywordstyle=\color{pykw}\bfseries,%
+  stringstyle=\color{pystr},%
+  commentstyle=\color{pycmt},%
+  identifierstyle=\color{pyid},%
+  emphstyle={[1]\color{pyfn}},%
+  emphstyle={[2]\color{pyfn!75!black}},%
+  emphstyle={[3]\color{pynum!85!black}},%
+  emph={[1]main,say,load_att1,_find_root,thomas,D_of,harm,_rho_nb,_cp_nb,_k_nb,_D_nb,_iface_nb,_thomas_nb,flush_log,_worker,thomas_prep,thomas_solve_prep,assemble_T,rhs_T,assemble_C,rhs_C,faceD_int,step_C,run_sim,run_sim_collect,_interp1_nb,_step_all_nb,env_tables_from_att1,njit,deco,_facek4_nb,_faceD4_nb,load_R_table,step_imex4,run_q4,interp_cubic,interp_lagrange,_faceD_nb,_facek_nb,_assemble_T_nb,_rhs_T_nb,_assemble_C_nb,_rhs_C_nb,rho_of,cp_of,k_of,iface,faceD_of,facek_of,assemble_T_var,rhs_T_var,assemble_C_var,rhs_C_var,step_coupled,step_imex,run_q2,_gate,run,_case_worker,explicit_run,e4,e7,field_int,rc_of,energy_int,load_env,assemble_T_ode,assemble_C_ode,etd_prop,run_T_expm,run_C_etd,assert_result1,Tenv,Cenv,step_imex_fast,log,flush,prog,Rof,one_case,richardson,order_seq,bar,one,judge,run_to,_j0_series,_j1_series,find_roots,series_coeffs,theta,psi,step_fn,char_roots,series_theta,roots,series,_faceD_int,explicit_ftcs,watchdog,run_nu26,do_overlap,do_temporal,make_lambda,fn,load_field,cinf_at,run_case,_solve,_solve_one,run_batch,to_phys,morris,sobol,phys,_surrogate_worker,_strict_worker,oat_trajectories},%
+  emph={[2]HERE,LOG,ATT1,DT_OUT,BUF,ROOT,NSTEP,NSUB,WS,D_FAC,DR,HH,R0,DEF,V0_OF,VN_OF,SNAP,DEF4,CM,DT,SUB,SUBT,LINES,HC,KM,NC,CSVDIR,CSV,NCPU,Q2,DEF2,NSAMP_FACE,RESDIR,COLS,C_CRIT,T_END,MAX_WORKERS,T_CMP,REG,CR,TR,C0_BASE,PNAMES,RES1,OMEGA,TOL,MAXIT,RES2,H_INNER,C_WATCH,C_ENV_TAIL,T_ENV_TAIL,NCOL,MODE_MAP,RES,LOGF,PROG,CC,BREAK_H,R_TOL,TENVM,HEADER,R60,FS,H_IN,GRIDS,PTS,TINF,TSE,DT_EX,NSTEPS_EX,SNAP_STEPS,CRIT_T,CRIT_C,FIELDC,FIELDT,LOGD,M0,U0,OUTS,PARAMS,AMP,N_SUB,NBASE,PHALF,WORKERS,LO,HI,PROBLEM},%
+  emph={[3]Exception,SALib,TypeError,ValueError,_base,_ex,_np,_os,_q3,_sys,_xl,abs,all,any,argparse,base,bool,classmethod,concurrent,core,csv,dict,enumerate,ex,float,int,io,isinstance,len,list,max,min,mp,np,nu,numba,open,openpyxl,os,platform,print,property,q1_core,q2_core,q2_core_c,q2_core_orig,q3,q4_INV_lib,q4_w6_lib,qc,range,round,scipy,set,sorted,staticmethod,str,sum,super,sys,time,tuple,zip},%
+  literate={0}{{\color{pynum}\char"30}}1 {1}{{\color{pynum}\char"31}}1 {2}{{\color{pynum}\char"32}}1 {3}{{\color{pynum}\char"33}}1 {4}{{\color{pynum}\char"34}}1 {5}{{\color{pynum}\char"35}}1 {6}{{\color{pynum}\char"36}}1 {7}{{\color{pynum}\char"37}}1 {8}{{\color{pynum}\char"38}}1 {9}{{\color{pynum}\char"39}}1,%
+  showstringspaces=false,%
+  breaklines=true,%
+  extendedchars=true,%
+  columns=fullflexible,%
+  keepspaces=true,%
+}

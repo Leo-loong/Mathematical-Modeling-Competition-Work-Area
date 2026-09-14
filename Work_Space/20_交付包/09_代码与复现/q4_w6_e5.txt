@@ -1,0 +1,26 @@
+======================================================================
+E5 OAT sensitivity (t_dry output; 11 cases, Pool(5), n_sub=16)
+base t_dry (n_sub=16) = 50.6431 h (wall 318 s)
+Tinf-1   t_dry=52.3377 h  dt=+1.6946 h  S=-1.673
+Tinf+1   t_dry=49.0218 h  dt=-1.6213 h  S=-1.601
+Cinf-20  t_dry=50.4581 h  dt=-0.1850 h  S=+0.018
+Cinf+20  t_dry=50.9434 h  dt=+0.3003 h  S=+0.030
+h-20     t_dry=50.5727 h  dt=-0.0704 h  S=+0.007
+h+20     t_dry=50.6897 h  dt=+0.0467 h  S=+0.005
+km-20    t_dry=51.3642 h  dt=+0.7211 h  S=-0.071
+km+20    t_dry=50.2262 h  dt=-0.4169 h  S=-0.041
+D0-20    t_dry=61.8798 h  dt=+11.2368 h  S=-1.109
+D0+20    t_dry=43.1941 h  dt=-7.4490 h  S=-0.735
+S_norm (|S|/max|S|):
+  Tinf-1   1.000
+  Tinf+1   0.957
+  D0-20    0.663
+  D0+20    0.440
+  km-20    0.043
+  km+20    0.025
+  Cinf+20  0.018
+  Cinf-20  0.011
+  h-20     0.004
+  h+20     0.003
+note: n_sub=16 justified by S5 (16->32 rel change 3.4e-6)
+total wall=900 s

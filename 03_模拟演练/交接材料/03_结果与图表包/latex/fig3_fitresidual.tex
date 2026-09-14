@@ -1,0 +1,26 @@
+% fig3_fitresidual.tex — 图3: 联合拟合与残差（上下两轴组: 拟合在上, 残差在下）
+% 数据: data/fig3_data.csv (列: sigma,F_meas,F_fit,residual)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{groupplot}[
+  group style={group size=1 by 2, vertical sep=0.9cm, y descriptions at=edge left},
+  paperfig small, width=0.86\textwidth,
+  xlabel={}, ymin=-2.2, ymax=2.2,
+]
+\nextgroupplot[ylabel={条纹分量 (\%)}, legend cell align={left}, legend pos={north east}]
+\addplot[only marks, mark=*, mark size=0.8pt, black]
+  table[x=sigma, y=F_meas, col sep=comma] {data/fig3_data.csv};
+\addlegendentry{实测条纹分量 (10°)}
+\addplot[blue!70!black, line width=0.9pt]
+  table[x=sigma, y=F_fit, col sep=comma] {data/fig3_data.csv};
+\addlegendentry{联合 E3 拟合}
+\nextgroupplot[ylabel={残差 (\%)}, xlabel={波数 $\sigma$ (cm$^{-1}$)}, yshift=-2mm]
+\addplot[orange!85!black, line width=0.7pt]
+  table[x=sigma, y=residual, col sep=comma] {data/fig3_data.csv};
+\addlegendentry{残差 (std $\approx 0.5\%$, 噪声 $0.012\%$)}
+\end{groupplot}
+\end{tikzpicture}
+\caption{联合 E3 拟合效果与残差（10°）。残差存在结构（lag-1 自相关 0.999），已归因并计入系统误差预算，作为问题 3 模型升级的定量触发证据。}
+\label{fig:fitresidual}
+\end{figure}

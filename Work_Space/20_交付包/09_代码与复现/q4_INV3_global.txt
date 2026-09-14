@@ -1,0 +1,24 @@
+======================================================================
+IN-3 global sensitivity v2 (6-dim, surrogate N=40/n_sub=8; strict spot N=160/16)
+params: d_fac[0.8,1.2], h[20,30], km[6.4e-07,9.6e-07], Tinf[-1,1], Cinf[-0.2,0.2], C_fr[0.15,1]
+Morris/OAT: 10 trajectories x 7 points (delta=2/3, bounce at bounds)
+unique surrogate runs: 70 ; surrogate base t_dry = 52.0226 h
+--- Morris elementary effects (normalized (dt/t)/dx) ---
+d_fac  mu*=0.1445 (norm 0.429)  mu=-0.1445  sigma=0.0685  (r=10)
+h      mu*=0.0023 (norm 0.007)  mu=+0.0023  sigma=0.0006  (r=10)
+km     mu*=0.0430 (norm 0.128)  mu=-0.0430  sigma=0.0138  (r=10)
+Tinf   mu*=0.0268 (norm 0.079)  mu=-0.0268  sigma=0.0153  (r=10)
+Cinf   mu*=0.0212 (norm 0.063)  mu=+0.0212  sigma=0.0047  (r=10)
+C_fr   mu*=0.3369 (norm 1.000)  mu=-0.3369  sigma=0.3460  (r=10)
+--- LHS 48 + Spearman rank correlation (surrogate) ---
+d_fac  rho=-0.501  p=0.000284
+h      rho=+0.247  p=0.09
+km     rho=-0.185  p=0.207
+Tinf   rho=-0.124  p=0.402
+Cinf   rho=+0.179  p=0.223
+C_fr   rho=-0.833  p=2.07e-13
+strict spot s0: strict=28.7139 h vs surrogate=28.7137 h  rel=6.67e-06
+strict spot s1: strict=27.0747 h vs surrogate=27.0751 h  rel=1.41e-05
+NOTE: 代理保真度 N=40/n_sub=8 仅用于筛选排序；严格轨抽查给出保真度界限
+NOTE: Sobol 方差分解未做（需 SALib），登记为可补做项
+total wall=868 s

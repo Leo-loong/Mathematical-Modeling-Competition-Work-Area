@@ -1,0 +1,15 @@
+[chain] running python q4_w6_e5.py --go
+[SCALE] E5 OAT: 11 full solves (N=160, n_sub=16, breaker 150 h), Pool(5)
+[SCALE] wall est 13-18 min; output: logs/q4_w6_e5.txt
+[SCALE] E5 OAT: 11 full solves (N=160, n_sub=16, breaker 150 h), Pool(5)
+[SCALE] wall est 13-18 min; output: logs/q4_w6_e5.txt
+[SCALE] E5 OAT: 11 full solves (N=160, n_sub=16, breaker 150 h), Pool(5)
+[SCALE] wall est 13-18 min; output: logs/q4_w6_e5.txt
+[SCALE] E5 OAT: 11 full solves (N=160, n_sub=16, breaker 150 h), Pool(5)
+[SCALE] wall est 13-18 min; output: logs/q4_w6_e5.txt
+[SCALE] E5 OAT: 11 full solves (N=160, n_sub=16, breaker 150 h), Pool(5)
+[SCALE] wall est 13-18 min; output: logs/q4_w6_e5.txt
+[SCALE] E5 OAT: 11 full solves (N=160, n_sub=16, breaker 150 h), Pool(5)
+[SCALE] wall est 13-18 min; output: logs/q4_w6_e5.txt
+E5 DONE
+[chain] exit=0

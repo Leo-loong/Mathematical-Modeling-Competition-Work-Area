@@ -1,0 +1,44 @@
+% fig1_schematic.tex — 图1: 测量原理示意图（双光束几何 + 参数标注）
+% 纯示意图（无数据），结构已经建模组确认；风格由写作者自行调整
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[>=stealth, scale=1.0]
+% ---- 三层结构 ----
+\fill[gray!12] (-4,0) rectangle (4,1.2);          % 空气
+\fill[blue!8]  (-4,-1.1) rectangle (4,0);         % 外延层
+\fill[gray!45] (-4,-2.6) rectangle (4,-1.1);      % 衬底
+\draw[black]   (-4,0) -- (4,0);
+\draw[black]   (-4,-1.1) -- (4,-1.1);
+\node[anchor=west, font=\small] at (-5.7,0.6)  {空气 $n_0=1$};
+\node[anchor=west, font=\small] at (-5.7,-0.55){外延层 $n_1$, 厚度 $d$};
+\node[anchor=west, font=\small] at (-5.7,-1.85){重掺衬底（光学厚）};
+% ---- 界面反射系数 ----
+\node[font=\small] at (2.9,0.28)   {$r_{01}$};
+\node[font=\small] at (2.9,-1.38)  {$\rho_{12}\,\mathrm{e}^{\mathrm{i}\phi_{12}}$};
+% ---- 入射与法线 ----
+\draw[->, blue!70!black, line width=1pt] (-3.4,2.4) -- (-1.2,0)
+  node[midway, left, font=\small] {入射光};
+\draw[dashed, gray] (-1.2,1.1) -- (-1.2,0);
+\draw[black!60] (-1.2,0.75) arc (90:117:0.75);
+\node[font=\small] at (-1.75,0.95) {$\theta$};
+% ---- R1 表面反射 ----
+\draw[->, black, line width=1pt] (-1.2,0) -- (0.8,2.4)
+  node[midway, right, font=\small] {$R_1$ 表面反射};
+% ---- 层内折射与 R2 ----
+\draw[->, blue!70!black, line width=1pt] (-1.2,0) -- (0.3,-1.1);
+\draw[dashed, gray] (0.3,-1.1) -- (0.3,-2.1);
+\draw[black!60] (0.3,-1.55) arc (-90:-38:0.45);
+\node[font=\small] at (0.85,-1.75) {$\theta_1$};
+\draw[->, black, line width=1pt] (0.3,-1.1) -- (1.6,0)
+  node[pos=0.45, below right, font=\small] {$R_2$ 衬底界面反射};
+\draw[->, black, line width=1pt] (1.6,0) -- (3.4,2.28);
+% ---- 厚度标注 ----
+\draw[<->, black!70] (-3.6,0) -- (-3.6,-1.1) node[midway, left, font=\small] {$d$};
+% ---- 相位差公式 ----
+\node[anchor=west, align=left, font=\small] at (4.35,0.4)
+  {$\Delta\varphi(\sigma)=4\pi n_1 d\cos\theta_1\,\sigma+\phi_{12}$\\[2pt]
+   $=2\pi p\,\sigma+\phi_{12},\quad p=2n_1 d\cos\theta_1$};
+\end{tikzpicture}
+\caption{红外反射法测量原理示意。入射红外光一部分在外延层表面反射（$R_1$），另一部分穿透外延层、在轻掺外延层与重掺衬底界面反射（$R_2$）后返回；两束反射光的光程差 $p=2n_1 d\cos\theta_1$ 随波数 $\sigma$ 产生干涉条纹，条纹角频率与厚度 $d$ 直接相关。}
+\label{fig:schematic}
+\end{figure}

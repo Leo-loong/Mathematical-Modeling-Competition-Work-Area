@@ -1,0 +1,38 @@
+[chain] running python q4_INV1_gci_tend.py --go
+[SCALE] IN-1 GCI on t_dry: 5 full event solves, Pool(4), wall 25-35 min
+[SCALE] IN-1 GCI on t_dry: 5 full event solves, Pool(4), wall 25-35 min
+[SCALE] IN-1 GCI on t_dry: 5 full event solves, Pool(4), wall 25-35 min
+[SCALE] IN-1 GCI on t_dry: 5 full event solves, Pool(4), wall 25-35 min
+[SCALE] IN-1 GCI on t_dry: 5 full event solves, Pool(4), wall 25-35 min
+  [spN320] step 12000 t=3.3 h C0=2.3251 wall=83
+  [spN320] step 24000 t=6.7 h C0=1.4727 wall=168
+  [spN320] step 36000 t=10.0 h C0=0.9073 wall=253
+  [spN320] step 48000 t=13.3 h C0=0.6030 wall=332
+  [tsub64] step 12000 t=3.3 h C0=2.3251 wall=77
+  [spN320] step 60000 t=16.7 h C0=0.4391 wall=402
+  [tsub64] step 24000 t=6.7 h C0=1.4727 wall=149
+  [spN320] step 72000 t=20.0 h C0=0.3458 wall=471
+  [tsub64] step 36000 t=10.0 h C0=0.9073 wall=223
+  [spN320] step 84000 t=23.3 h C0=0.2882 wall=532
+  [tsub64] step 48000 t=13.3 h C0=0.6030 wall=291
+  [spN320] step 96000 t=26.7 h C0=0.2501 wall=590
+  [tsub64] step 60000 t=16.7 h C0=0.4391 wall=355
+  [spN320] step 108000 t=30.0 h C0=0.2232 wall=648
+  [tsub64] step 72000 t=20.0 h C0=0.3458 wall=414
+  [spN320] step 120000 t=33.3 h C0=0.2034 wall=698
+  [spN320] step 132000 t=36.7 h C0=0.1881 wall=749
+  [tsub64] step 84000 t=23.3 h C0=0.2882 wall=473
+  [spN320] step 144000 t=40.0 h C0=0.1761 wall=799
+  [tsub64] step 96000 t=26.7 h C0=0.2501 wall=525
+  [spN320] step 156000 t=43.3 h C0=0.1662 wall=849
+  [tsub64] step 108000 t=30.0 h C0=0.2232 wall=577
+  [spN320] step 168000 t=46.7 h C0=0.1581 wall=899
+  [tsub64] step 120000 t=33.3 h C0=0.2034 wall=628
+  [spN320] step 180000 t=50.0 h C0=0.1512 wall=947
+  [tsub64] step 132000 t=36.7 h C0=0.1882 wall=680
+  [tsub64] step 144000 t=40.0 h C0=0.1761 wall=723
+  [tsub64] step 156000 t=43.3 h C0=0.1663 wall=765
+  [tsub64] step 168000 t=46.7 h C0=0.1581 wall=808
+  [tsub64] step 180000 t=50.0 h C0=0.1513 wall=851
+INV1 DONE
+[chain] exit=0

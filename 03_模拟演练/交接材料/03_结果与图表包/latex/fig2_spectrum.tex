@@ -1,0 +1,26 @@
+% fig2_spectrum.tex — 图2: 实测反射率谱与背景估计
+% 数据: data/fig2_data.csv (列: sigma10,R10,bg10,sigma15,R15,bg15)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  paperfig,
+  xlabel={波数 $\sigma$ (cm$^{-1}$)},
+  ylabel={反射率 (\%)},
+  legend cell align={left},
+  legend pos={north east},
+  xmin=1050, xmax=4100,
+]
+\addplot[black, line width=0.8pt]  table[x=sigma10, y=R10, col sep=comma] {data/fig2_data.csv};
+\addlegendentry{10° 实测}
+\addplot[blue!70!black, line width=0.8pt] table[x=sigma15, y=R15, col sep=comma] {data/fig2_data.csv};
+\addlegendentry{15° 实测}
+\addplot[gray!70, dashed, line width=0.8pt] table[x=sigma10, y=bg10, col sep=comma] {data/fig2_data.csv};
+\addlegendentry{poly7 背景}
+\addplot[black!60, dotted, line width=1pt] coordinates {(1100,-2) (1100,2)};
+\addlegendentry{条纹区下界 1100 cm$^{-1}$}
+\end{axis}
+\end{tikzpicture}
+\caption{实测反射率谱与背景估计（10°/15°，条纹区 $\sigma\ge 1100$ cm$^{-1}$）}
+\label{fig:spectrum}
+\end{figure}

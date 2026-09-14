@@ -1,0 +1,83 @@
+\documentclass[border=5pt]{article}
+\usepackage[margin=0pt,paperwidth=16cm,paperheight=16cm]{geometry}
+\pagestyle{empty}
+\usepackage{fontspec}
+\usepackage{ctex}
+\newcommand{\fontdir}{../../../00_知识库/论文写作/LaTeX模板_2026国赛版/fonts/}
+\setCJKfamilyfont{song}[Path=\fontdir,UprightFont=SourceHanSerifCN-Regular.otf,BoldFont=SourceHanSerifCN-Bold.otf,AutoFakeBold=true]{SourceHanSerifCN}
+\newcommand*{\song}{\CJKfamily{song}}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric}
+\definecolor{primary}{HTML}{1F3A93}\definecolor{primaryDark}{HTML}{1A3A6E}\definecolor{secondary}{HTML}{D9E4F2}
+\definecolor{accent}{HTML}{D35400}\definecolor{accentLight}{HTML}{FDEBD0}
+\definecolor{green}{HTML}{27AE60}\definecolor{red}{HTML}{C0392B}
+\definecolor{gray}{HTML}{95A5A6}\definecolor{textDark}{HTML}{333333}\definecolor{arrowColor}{HTML}{5D6D7E}
+\tikzset{
+  process/.style={rectangle,draw=primaryDark,line width=0.8pt,fill=primary,text=white,minimum width=6.0cm,minimum height=0.85cm,align=center,font=\song\footnotesize,inner sep=5pt,rounded corners=2pt},
+  decision/.style={diamond,draw=accent,line width=0.8pt,fill=accentLight,text=textDark,minimum width=3.5cm,minimum height=0.9cm,align=center,font=\song\footnotesize,inner sep=2pt,aspect=2.5},
+  greenbox/.style={rectangle,draw=green!60!black,line width=0.8pt,fill=green!10,text=textDark,minimum width=6.0cm,minimum height=0.85cm,align=center,font=\song\footnotesize,inner sep=5pt,rounded corners=2pt},
+  redbox/.style={rectangle,draw=red!60!black,line width=0.8pt,fill=red!10,text=textDark,minimum width=6.0cm,minimum height=0.85cm,align=center,font=\song\footnotesize,inner sep=5pt,rounded corners=2pt},
+  startstop/.style={rectangle,draw=accent,line width=1.0pt,fill=accentLight,text=accent!85!black,minimum width=6.0cm,minimum height=0.85cm,align=center,font=\song\footnotesize,inner sep=5pt,rounded corners=6pt},
+  arrow/.style={-{Stealth[length=2.0mm,width=1.8mm]},line width=0.8pt,draw=arrowColor},
+  arrowR/.style={-{Stealth[length=2.0mm,width=1.8mm]},line width=0.9pt,draw=accent},
+}
+
+\begin{document}
+\begin{center}
+{\large\bfseries\song IMEX 交替推进算法流程}\\[0.5cm]
+\begin{tikzpicture}[node distance=0.85cm]
+
+  % 开始
+  \node[process] (Init) {开始：$t=0$, $T_0=28$ ℃, $C_0=2.55$ kg/kg};
+
+  % 物性更新
+  \node[process,below=of Init] (Props) {更新物性 $\rho,c_p,k,D(C,T)$（附录3）};
+
+  % 解T
+  \node[process,below=of Props] (SolveT) {隐式求解温度 $T^{n+1}$（三对角矩阵直接求解）};
+
+  % 重算D
+  \node[process,below=of SolveT] (UpdateD) {重算 $D(C,T^{n+1})$（温度已更新）};
+
+  % 解C
+  \node[greenbox,below=of UpdateD] (SolveC) {隐式求解水分浓度 $C^{n+1}$\\Picard 迭代 ($\omega=0.7$, tol$=10^{-10}$, 最多 30 次)};
+
+  % 收敛判断
+  \node[decision,below=of SolveC] (Converge) {Picard\\收敛？};
+
+  % 时间推进
+  \node[process,below=of Converge] (Advance) {$t \mathrel{+}= \Delta t$（时间推进）};
+
+  % 外循环
+  \node[decision,below=of Advance] (Check) {$t<t_{\max}$?};
+
+  % 结束
+  \node[startstop,below=of Check] (End) {结束：输出 result2.xlsx};
+
+  % 主流程箭头
+  \draw[arrow] (Init) -- (Props);
+  \draw[arrow] (Props) -- (SolveT);
+  \draw[arrow] (SolveT) -- (UpdateD);
+  \draw[arrow] (UpdateD) -- (SolveC);
+  \draw[arrow] (SolveC) -- (Converge);
+  \draw[arrow] (Converge) -- node[right,font=\song\footnotesize,text=green!60!black] {是} (Advance);
+  \draw[arrow] (Advance) -- (Check);
+  \draw[arrow] (Check) -- node[right,font=\song\footnotesize] {否} (End);
+
+  % Picard未收敛 → 回到解C
+  \node[redbox,right=2.5cm of SolveC,minimum width=3.5cm] (Retry) {未收敛：继续迭代};
+  \draw[arrowR,rounded corners=5pt] (Converge.east) -- ++(0.6,0) |-
+    node[pos=0.45,right,font=\song\footnotesize,text=accent] {否} (Retry.west);
+  \draw[arrowR,rounded corners=5pt] (Retry.north) -- ++(0,0.3) -| (SolveC.east);
+
+  % 外循环回到物性
+  \draw[arrow,rounded corners=8pt] (Check.west) -- ++(-7.0,0) |-
+    node[pos=0.25,left,font=\song\footnotesize] {是} (Props.west);
+
+  % 标注循环规模
+  \node[font=\song\footnotesize,text=gray,anchor=west] at (10.0, -9.0) {$\Delta t=1$ s，共 10800 步};
+  \node[font=\song\footnotesize,text=gray,anchor=west] at (10.0, -12.0) {（Q3 使用事件驱动终止）};
+
+\end{tikzpicture}
+\end{center}
+\end{document}

@@ -1,0 +1,65 @@
+% F-05 Q4 物质坐标变换示意
+\documentclass[a4paper]{article}
+\usepackage[margin=0.3cm,paperwidth=18cm,paperheight=8cm]{geometry}
+\pagestyle{empty}
+\usepackage{fontspec}\setmainfont{Times New Roman}\setsansfont{Arial}
+\usepackage{ctex}
+\newcommand{\fontdir}{../../../00_知识库/论文写作/LaTeX模板_2026国赛版/fonts/}
+\setCJKfamilyfont{song}[Path=\fontdir,UprightFont=SourceHanSerifCN-Regular.otf,BoldFont=SourceHanSerifCN-Bold.otf,AutoFakeBold=true]{SourceHanSerifCN}
+\newcommand*{\song}{\CJKfamily{song}}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,patterns}
+
+\definecolor{priBlue}{HTML}{1F3A93}\definecolor{priGold}{HTML}{F39C12}
+\definecolor{priGreen}{HTML}{27AE60}\definecolor{priRed}{HTML}{C0392B}
+\definecolor{tkGray}{HTML}{9E9E9E}\definecolor{tkInk}{HTML}{333333}
+
+\tikzset{
+  arrR/.style={-{Stealth[length=2.0mm,width=1.8mm]},line width=0.9pt,draw=priRed},
+  arr/.style={-{Stealth[length=1.8mm,width=1.6mm]},line width=0.7pt,draw=tkInk!60},
+  boxG/.style={rectangle,draw=tkGray,line width=0.7pt,fill=tkGray!8,text=tkInk,align=center,font=\song\footnotesize,inner sep=4pt,rounded corners=2pt},
+}
+
+\begin{document}
+\begin{center}
+{\large\bfseries\song 图 5：Q4 物质坐标变换 $r \to \xi = r/R(t)$}\\[0.5cm]
+\begin{tikzpicture}
+
+  % ===== (a) 物理域 =====
+  \node[font=\song\footnotesize\bfseries] at (-3.8, 3.2) {(a) 物理域 $r$：边界移动};
+  \draw[priBlue,line width=1.5pt] (-3.8,0) circle (1.5cm);
+  \draw[priBlue,dashed,line width=0.9pt] (-3.8,0) circle (1.1cm);
+  \draw[priBlue,dashed,line width=0.6pt] (-3.8,0) circle (0.7cm);
+  \fill (-3.8,0) circle (1.5pt);
+  \node[font=\song\footnotesize] at (-3.8,-0.3) {$r=0$};
+  \node[font=\song\footnotesize,text=priBlue] at (-1.8,1.2) {$R(t_1)=2$ cm};
+  \node[font=\song\footnotesize,text=priBlue] at (-2.1,0.0) {$R(t_2)$};
+  \node[font=\song\footnotesize,text=priBlue] at (-2.6,-0.8) {$R(t_3)$};
+  \draw[arrR,line width=1.0pt] (-2.5,0.7) -- (-2.9,0.4);
+  \node[font=\song\footnotesize,text=priRed] at (-1.5,0.7) {热/湿流（外$\to$内）};
+
+  % ===== 箭头 =====
+  \draw[arr,line width=1.2pt] (0.5,0.5) -- (1.5,0.5) node[midway,above,font=\song\footnotesize] {坐标变换};
+
+  % ===== (b) 计算域 =====
+  \node[font=\song\footnotesize\bfseries] at (4.5, 3.2) {(b) 计算域 $\xi$：固定 $[0,1]$};
+  \node[font=\song\footnotesize] at (2.0,2.0) {$\xi=0$};
+  \node[font=\song\footnotesize] at (7.0,2.0) {$\xi=1$};
+  \draw[priBlue,line width=1.5pt] (2.4,2.2) -- (6.6,2.2);
+  \draw[priBlue,dashed,line width=0.9pt] (2.4,1.3) -- (6.6,1.3);
+  \draw[priBlue,dashed,line width=0.6pt] (2.4,0.4) -- (6.6,0.4);
+  \fill (2.4,2.2) circle (1.5pt); \fill (6.6,2.2) circle (1.5pt);
+
+  % 右侧标注
+  \node[font=\song\footnotesize,text=priBlue,anchor=west] at (6.8,2.2) {$R=2$ cm};
+  \node[font=\song\footnotesize,text=priBlue,anchor=west] at (6.8,1.3) {$R=1.6$ cm};
+  \node[font=\song\footnotesize,text=priBlue,anchor=west] at (6.8,0.4) {$R=1.2$ cm};
+
+  \node[boxG,minimum width=12cm] at (4.5, -1.0) {
+    质量方程（无对流项）：$\partial_t\tilde C = \frac{1}{\xi R^2}\partial_\xi(\xi D\partial_\xi\tilde C)$\qquad
+    能量方程含压缩项：$-2(\dot R/R)\rho c_p T$
+  };
+
+\end{tikzpicture}
+\end{center}
+\end{document}

@@ -1,0 +1,59 @@
+% 来源：成文/A\_07\_符号说明.md
+\section{符号说明}
+本节给出全文主要符号一览（表~\ref{tab:0-1}），参数的具体取值在各章首次使用处逐项给出。
+
+
+
+\settabw{6}
+\begin{table}[htbp]
+  \centering
+  \caption{主要符号一览}\label{tab:0-1}
+\begin{tabular}{|>{\centering\arraybackslash}m{\dimexpr 0.260\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.580\tblw\relax}>{\centering\arraybackslash}m{\dimexpr 0.160\tblw\relax}|}
+\hline
+    符号 & 含义 & 单位 \\
+\hline
+\hline
+    \multicolumn{3}{|l|}{自变量与几何} \\
+\hline
+    $t,\ r$ & 时间；到药材中心的距离（径向坐标） & s、cm \\
+\hline
+    $R_0,\ L$ & 药材初始半径、长度 & cm \\
+\hline
+    $R(t),\ \xi$ & 药材半径（随时间变化，仅问题四）；物料坐标 $r/R(t)$ & cm、无量纲 \\
+\hline
+    \multicolumn{3}{|l|}{场量与初值} \\
+\hline
+    $T(r,t),\ C(r,t)$ & 药材温度；干基含水率（每千克干物质所含水分质量） & ℃、kg/kg \\
+\hline
+    $T_0,\ C_0$ & 药材初始温度、初始干基含水率 & ℃、kg/kg \\
+\hline
+    $T_\infty(t),\ C_\infty(t)$ & 烘房温度、烘房水分浓度（给定边界） & ℃、kg/kg \\
+\hline
+    $C_{\rm crit},\ t_{\rm dry}$ & 烘干达标阈值；达标所需时间 & kg/kg、h \\
+\hline
+    \multicolumn{3}{|l|}{物性参数} \\
+\hline
+    $\rho,\ c_p,\ k$ & 密度、比热容、导热系数 & kg/m\textsuperscript{3}、J/(kg·K)、W/(m·K) \\
+\hline
+    $D,\ \alpha$ & 水分扩散系数；热扩散率（$k/(\rho c_p)$） & m\textsuperscript{2}/s \\
+\hline
+    $h,\ k_m$ & 表面换热系数、表面传质系数 & W/(m\textsuperscript{2}·K)、m/s \\
+\hline
+    \multicolumn{3}{|l|}{数值参数与无量纲数} \\
+\hline
+    $Bi_T,\ Bi_m,\ Fo$ & 传热毕奥数、传质毕奥数、傅里叶数 & 无量纲 \\
+\hline
+    $\tau_T,\ \tau_C$ & 热扩散、质扩散的特征时间 & s \\
+\hline
+    $\Delta r,\ N,\ \Delta t$ & 空间步长、径向区间数、时间步长 & mm、无量纲、s \\
+\hline
+    $\mathbf A,\ E,\ G_0,\ G_1$ & 温度半离散系统的系数矩阵、其矩阵指数、分段线性杜哈梅尔积分系数 & s\textsuperscript{-1}、无量纲、s、s\textsuperscript{2} \\
+\hline
+    $\mathbf d^{n},\ \omega$ & 隐式推进方程的右端向量、迭代欠松弛因子 & 与场量同、无量纲 \\
+\hline
+\hline
+\hline
+  \end{tabular}
+\end{table}
+
+注：本表按论文呈现口径列出（长度 cm、温度 ℃、时间 s），模型内部计算一律采用国际单位制，附录 3、附录 4 经验式内的温度须以热力学温度 K 代入（正文相应处已声明）；下标 $i$ 为空间节点、$n$ 为时间层。两处易混：符号 $h$ 兼指表面换热系数与问题一温度侧精确推进的分段步长，正文按上下文区分；问题一温度场采用时间方向精确推进，问题一含水率场与其余各问的场量采用后向欧拉全隐式，两处不得混写。

@@ -1,0 +1,85 @@
+% F-01 总体建模流程图
+\documentclass[a4paper]{article}
+\usepackage[margin=0.3cm,paperwidth=20cm,paperheight=14cm]{geometry}
+\pagestyle{empty}
+\usepackage{fontspec}\setmainfont{Times New Roman}\setsansfont{Arial}
+\usepackage{ctex}
+\newcommand{\fontdir}{../../../../00_知识库/论文写作/LaTeX模板_2026国赛版/fonts/}
+\setCJKfamilyfont{song}[Path=\fontdir,UprightFont=SourceHanSerifCN-Regular.otf,BoldFont=SourceHanSerifCN-Bold.otf,AutoFakeBold=true]{SourceHanSerifCN}
+\newcommand*{\song}{\CJKfamily{song}}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric,backgrounds,fit}
+
+\definecolor{cBlue}{HTML}{1F3A93}
+\definecolor{cGold}{HTML}{F39C12}
+\definecolor{cGreen}{HTML}{27AE60}
+\definecolor{cRed}{HTML}{C0392B}
+\definecolor{cGray}{HTML}{9E9E9E}
+\definecolor{cInk}{HTML}{333333}
+\definecolor{cBg}{HTML}{F4F6F7}
+
+\begin{document}
+\begin{center}
+{\large\bfseries\song 图 1：总体建模流程图}\\[0.8cm]
+\begin{tikzpicture}[
+  box/.style={rectangle,draw,line width=1.0pt,minimum width=2.5cm,minimum height=0.8cm,
+              align=center,font=\song\small,inner sep=4pt,rounded corners=2pt},
+  arr/.style={-{Stealth[length=2.5mm,width=2.2mm]},line width=1.0pt},
+  >=Stealth,
+]
+
+% ===== 顶部：五个阶段 =====
+\node[box,draw=cGold,fill=cGold!8] (S1) at (0,0) {赛题分析\\附件1/2、附录2/3/4};
+\node[box,draw=cBlue,fill=cBlue!8,right=0.6cm of S1] (S2) {模型建立\\PDE + 边界条件};
+\node[box,draw=cGreen,fill=cGreen!8,right=0.6cm of S2] (S3) {数值求解\\FVM + 全隐式 + Picard};
+\node[box,draw=cGreen,fill=cGreen!8,right=0.6cm of S3] (S4) {结果验证\\收敛性/灵敏度};
+\node[box,draw=cRed,fill=cRed!8,right=0.6cm of S4] (S5) {论文呈现\\结果 + 检验 + 评价};
+
+\draw[arr,cGray] (S1) -- (S2);
+\draw[arr,cGray] (S2) -- (S3);
+\draw[arr,cGray] (S3) -- (S4);
+\draw[arr,cGray] (S4) -- (S5);
+
+% ===== 中部：核心方程 =====
+\node[box,draw=cBlue,fill=cBlue!6,minimum width=4.8cm,minimum height=1.2cm]
+  (EqT) at ($(S2.south)+(0,-1.5cm)$) {
+  热传导方程\\
+  $\displaystyle \rho c_p\frac{\partial T}{\partial t}
+  =\frac{1}{r}\frac{\partial}{\partial r}\!\Bigl(k\,r\frac{\partial T}{\partial r}\Bigr)$
+};
+
+\node[box,draw=cGreen,fill=cGreen!6,minimum width=4.8cm,minimum height=1.2cm]
+  (EqC) at ($(S3.south)+(0,-1.5cm)$) {
+  Fick 扩散方程\\
+  $\displaystyle \frac{\partial C}{\partial t}
+  =\frac{1}{r}\frac{\partial}{\partial r}\!\Bigl(D\,r\frac{\partial C}{\partial r}\Bigr)$
+};
+
+\draw[arr,cGray] (S2) -- (EqT);
+\draw[arr,cGray] (S3) -- (EqC);
+
+% 双向耦合箭头
+\draw[arr,cRed,line width=1.5pt,{Stealth[length=3mm,width=2.5mm]}-{Stealth[length=3mm,width=2.5mm]}]
+  (EqT.east) -- (EqC.west) node[midway,above,font=\song\small] {双向耦合};
+
+% ===== 底部：四问递进 =====
+\node[box,draw=cGold,fill=cGold!6,minimum width=16cm,minimum height=0.9cm]
+  (Chain) at ($(S3.south)+(0,-4.5cm)$) {
+  同一PDE框架，逐问加码：~~Q1 定物性(附录2)~$\rightarrow$~Q2 变物性(附录3)~
+  $\rightarrow$~Q3 长时程+终止判据~$\rightarrow$~Q4 移动边界(附录4+附件2)
+};
+
+% ===== 数值方法 =====
+\node[box,draw=cGray,fill=cBg,minimum width=16cm,minimum height=0.9cm]
+  (Method) at ($(Chain.south)+(0,-1.2cm)$) {
+  数值方法：~~守恒型有限体积法~~|~~全隐式时间推进~~|~~
+  Picard $\omega{=}0.7$, tol${=}10^{-10}$~~|~~Q4: 物料坐标 $\xi{=}r/R(t)$
+};
+
+\draw[arr,cGray] (EqT.south) -- ++(0,-0.8) -| (Chain.north);
+\draw[arr,cGray] (EqC.south) -- ++(0,-0.8) -| (Chain.north);
+\draw[arr,cGray] (Chain) -- (Method);
+
+\end{tikzpicture}
+\end{center}
+\end{document}

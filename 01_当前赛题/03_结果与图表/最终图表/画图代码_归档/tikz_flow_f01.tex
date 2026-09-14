@@ -1,0 +1,98 @@
+% F-01 总体建模流程图
+\documentclass[border=5pt]{article}
+\usepackage[margin=0pt,paperwidth=19cm,paperheight=11cm]{geometry}
+\pagestyle{empty}
+\usepackage{fontspec}
+\usepackage{ctex}
+\newcommand{\fontdir}{../../../00_知识库/论文写作/LaTeX模板_2026国赛版/fonts/}
+\setCJKfamilyfont{song}[
+  Path = \fontdir,
+  UprightFont = SourceHanSerifCN-Regular.otf,
+  BoldFont   = SourceHanSerifCN-Bold.otf,
+  AutoFakeBold = true,
+]{SourceHanSerifCN}
+\newcommand*{\song}{\CJKfamily{song}}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric,backgrounds,fit}
+
+\definecolor{primary}{HTML}{1F3A93}
+\definecolor{primaryDark}{HTML}{1A3A6E}
+\definecolor{secondary}{HTML}{D9E4F2}
+\definecolor{accent}{HTML}{D35400}
+\definecolor{accentLight}{HTML}{FDEBD0}
+\definecolor{decisionFill}{HTML}{E8F8F5}
+\definecolor{decisionBorder}{HTML}{117A65}
+\definecolor{gray}{HTML}{95A5A6}
+\definecolor{textDark}{HTML}{333333}
+\definecolor{arrowColor}{HTML}{5D6D7E}
+\definecolor{groupBg}{HTML}{F4F6F7}
+
+\tikzset{
+  process/.style = {rectangle,draw=primaryDark,line width=0.8pt,fill=primary,text=white,
+    minimum width=2.8cm,minimum height=0.9cm,align=center,font=\song\footnotesize,
+    inner sep=4pt,rounded corners=2pt},
+  processW/.style = {process,minimum width=3.6cm,minimum height=1.3cm,
+    font=\song\small},
+  processX/.style = {process,minimum width=17cm,minimum height=0.85cm},
+  subprocess/.style = {rectangle,draw=primaryDark,line width=0.7pt,fill=secondary,
+    text=textDark,minimum width=2.8cm,minimum height=0.85cm,align=center,
+    font=\song\footnotesize,inner sep=4pt,rounded corners=2pt},
+  subprocessW/.style = {subprocess,minimum width=17cm,minimum height=0.85cm},
+  startstop/.style = {rectangle,draw=accent,line width=1.0pt,fill=accentLight,
+    text=accent!85!black,minimum width=2.8cm,minimum height=0.9cm,align=center,
+    font=\song\footnotesize,inner sep=4pt,rounded corners=6pt},
+  arrow/.style = {-{Stealth[length=2.2mm,width=2.0mm]},line width=0.9pt,draw=arrowColor},
+  arrowBold/.style = {-{Stealth[length=2.5mm,width=2.2mm]},line width=1.2pt,draw=accent},
+  arrowBi/.style = {{Stealth[length=2.0mm,width=1.8mm]}-{Stealth[length=2.0mm,width=1.8mm]},
+    line width=1.0pt,draw=accent},
+}
+
+\begin{document}
+\begin{tikzpicture}
+
+  % === 顶部五个阶段 — 整体右移0.5cm ===
+  \node[subprocess]       (S1) at (2.0, 0) {赛题分析\\附件1/2、附录2/3/4};
+  \node[process]          (S2) at (5.5, 0) {模型建立\\PDE + 边界条件};
+  \node[process]          (S3) at (9.0, 0) {数值求解\\FVM + 全隐式\\+ Picard 迭代};
+  \node[process]          (S4) at (12.5,0) {结果验证\\收敛性/灵敏度};
+  \node[startstop]        (S5) at (16.0,0) {论文呈现\\结果 + 检验 + 评价};
+
+  \draw[arrow] (S1) -- (S2); \draw[arrow] (S2) -- (S3);
+  \draw[arrow] (S3) -- (S4); \draw[arrow] (S4) -- (S5);
+
+  % === 中部两个核心方程 ===
+  \node[processW] (EqT) at (3.5, -2.6) {
+    热传导方程\\[3pt]
+    $\displaystyle\rho c_p\frac{\partial T}{\partial t}
+    =\frac{1}{r}\frac{\partial}{\partial r}\bigl(kr\frac{\partial T}{\partial r}\bigr)$
+  };
+  \node[processW] (EqC) at (11.0,-2.6) {
+    Fick 扩散方程\\[3pt]
+    $\displaystyle\frac{\partial C}{\partial t}
+    =\frac{1}{r}\frac{\partial}{\partial r}\bigl(Dr\frac{\partial C}{\partial r}\bigr)$
+  };
+
+  \draw[arrow] (S2) -- (EqT);
+  \draw[arrow] (S3) -- (EqC);
+  \draw[arrowBi] (EqT) -- (EqC) node[midway,above,font=\song\footnotesize] {双向耦合};
+
+  % === 四问递进长条 ===
+  \node[startstop,minimum width=16cm,minimum height=0.85cm,
+        fill=accentLight!60,draw=accent!50,text=textDark]
+    (Chain) at (8.0, -4.5) {
+    \textbf{同一PDE框架，逐问加码：}~~Q1定物性(附录2)~$\rightarrow$~Q2变物性(附录3)~
+    $\rightarrow$~Q3长时程+终止判据~$\rightarrow$~Q4移动边界(附录4+附件2)
+  };
+  \draw[arrow] (EqT.south) -- ++(0,-0.5) -| (Chain.north);
+  \draw[arrow] (EqC.south) -- ++(0,-0.5) -| (Chain.north);
+
+  % === 数值方法 ===
+  \node[subprocessW,minimum width=16cm] (Method) at (8.0, -6.0) {
+    数值方法：~~守恒型有限体积法~~|~~全隐式时间推进~~|~~
+    Picard $\omega=0.7$, tol=$10^{-10}$~~|~~Q4: 物料坐标 $\xi=r/R(t)$
+  };
+  \draw[arrow] (Chain) -- (Method);
+
+\end{tikzpicture}
+\end{document}

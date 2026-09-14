@@ -1,0 +1,83 @@
+% F-21 Q2 双向耦合关系图
+\documentclass[a4paper]{article}
+\usepackage[margin=0.3cm,paperwidth=18cm,paperheight=11cm]{geometry}
+\pagestyle{empty}
+\usepackage{fontspec}\setmainfont{Times New Roman}\setsansfont{Arial}
+\usepackage{ctex}
+\newcommand{\fontdir}{../../../00_知识库/论文写作/LaTeX模板_2026国赛版/fonts/}
+\setCJKfamilyfont{song}[Path=\fontdir,UprightFont=SourceHanSerifCN-Regular.otf,BoldFont=SourceHanSerifCN-Bold.otf,AutoFakeBold=true]{SourceHanSerifCN}
+\newcommand*{\song}{\CJKfamily{song}}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\definecolor{priBlue}{HTML}{1F3A93}\definecolor{priGold}{HTML}{F39C12}
+\definecolor{priGreen}{HTML}{27AE60}\definecolor{priRed}{HTML}{C0392B}
+\definecolor{tkGray}{HTML}{9E9E9E}\definecolor{tkInk}{HTML}{333333}\definecolor{tkBg}{HTML}{F4F6F7}
+
+\tikzset{
+  boxT/.style={rectangle,draw=priBlue,line width=1.0pt,fill=priBlue!6,minimum width=4.5cm,minimum height=1.6cm,align=center,font=\song\footnotesize,inner sep=4pt,rounded corners=2pt},
+  boxC/.style={rectangle,draw=priGreen,line width=1.0pt,fill=priGreen!6,minimum width=4.5cm,minimum height=1.6cm,align=center,font=\song\footnotesize,inner sep=4pt,rounded corners=2pt},
+  boxP/.style={rectangle,draw=priGold,line width=1.0pt,fill=priGold!6,minimum width=5.2cm,minimum height=3.5cm,align=center,font=\song\footnotesize,inner sep=4pt,rounded corners=2pt},
+  boxNote/.style={rectangle,draw=tkGray,line width=0.7pt,fill=tkBg,minimum width=16cm,minimum height=0.7cm,align=center,font=\song\footnotesize,inner sep=4pt,rounded corners=2pt},
+  arr/.style={-{Stealth[length=1.8mm,width=1.6mm]},line width=0.9pt,draw=priRed},
+  bidir/.style={{Stealth[length=1.6mm,width=1.4mm]}-{Stealth[length=1.6mm,width=1.4mm]},line width=1.0pt,draw=priRed},
+}
+
+\begin{document}
+\begin{center}
+{\large\bfseries\song 图 21：Q2 热--湿双向耦合关系}\\[0.6cm]
+\begin{tikzpicture}
+
+  % 温度场
+  \node[boxT] (T) at (0, 3.5) {
+    \textbf{温度场 $T(r,t)$}\\[3pt]
+    热传导方程\\[2pt]
+    $\rho c_p\frac{\partial T}{\partial t}= \frac{1}{r}\frac{\partial}{\partial r}\!\bigl(kr\frac{\partial T}{\partial r}\bigr)$
+  };
+
+  % 水分浓度
+  \node[boxC] (C) at (0, -0.5) {
+    \textbf{水分浓度 $C(r,t)$}\\[3pt]
+    Fick 扩散方程\\[2pt]
+    $\frac{\partial C}{\partial t}= \frac{1}{r}\frac{\partial}{\partial r}\!\bigl(Dr\frac{\partial C}{\partial r}\bigr)$
+  };
+
+  % 物性（右侧）
+  \node[boxP] (Prop) at (6.0, 1.5) {
+    \textbf{物性参数（附录3）}\\[3pt]
+    $\rho = 650+128C$\\[2pt]
+    $c_p = 1450+2736\frac{C}{C+1}$\\[2pt]
+    $k = 0.21+0.38\frac{C}{C+1}$\\[2pt]
+    $D = 2.4{\times}10^{-3}e^{-0.45/C}e^{-3850/T}$
+  };
+
+  % T<->C 双向（左侧，竖直方向，两端箭头）
+  \draw[bidir] (-2.5, 2.8) -- (-2.5, 0.2);
+  \node[font=\song\footnotesize\bfseries,text=priRed,align=center] at (-3.8, 1.5) {双向\\强耦合};
+
+  % T → Prop（上方箭头）
+  \draw[arr] (T.east) -- ++(0.8,0) |- ([yshift=0.3cm]Prop.west)
+    node[pos=0.15,above,font=\song\footnotesize,text=priRed] {$T$ 影响 $D$};
+
+  % C → Prop（下方箭头）
+  \draw[arr] (C.east) -- ++(0.8,0) |- ([yshift=-0.3cm]Prop.west)
+    node[pos=0.15,below,font=\song\footnotesize,text=priRed] {$C$ 影响全部物性};
+
+  % Prop → T（返回箭头，走外侧）
+  \draw[arr] ([yshift=0.3cm]Prop.west) -- ++(-0.8,0) |- (T.east)
+    node[pos=0.15,above,font=\song\footnotesize,text=priRed] {更新 $\rho,c_p,k$};
+
+  % Prop → C（返回箭头，走外侧）
+  \draw[arr] ([yshift=-0.3cm]Prop.west) -- ++(-0.8,0) |- (C.east)
+    node[pos=0.15,below,font=\song\footnotesize,text=priRed] {更新 $D$};
+
+  % 底部说明
+  \node[boxNote] at (1.5, -2.5) {
+    Q1：单向耦合（附录2 常物性，$\rho,c_p,k$ 常数，$D{=}D(C)$ 仅单向）\qquad
+    Q2 起：闭环双向强耦合（附录3 全变物性）\qquad
+    IMEX 交替推进
+  };
+
+\end{tikzpicture}
+\end{center}
+\end{document}

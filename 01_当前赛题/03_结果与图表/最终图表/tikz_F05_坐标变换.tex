@@ -1,0 +1,143 @@
+% 图48-F05 Q4 物质坐标变换示意 — 最终定稿版
+\documentclass[border=5pt]{article}
+\usepackage[margin=0pt,paperwidth=18cm,paperheight=12cm]{geometry}
+\pagestyle{empty}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{ctex}
+\newcommand{\fontdir}{../../../00_知识库/论文写作/LaTeX模板_2026国赛版/fonts/}
+\setCJKfamilyfont{song}[
+  Path = \fontdir,
+  UprightFont = SourceHanSerifCN-Regular.otf,
+  BoldFont   = SourceHanSerifCN-Bold.otf,
+  AutoFakeBold = true,
+]{SourceHanSerifCN}
+\newcommand*{\song}{\CJKfamily{song}}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\definecolor{primary}{HTML}{1F3A93}
+\definecolor{accent}{HTML}{D35400}
+\definecolor{green}{HTML}{27AE60}
+\definecolor{gray}{HTML}{95A5A6}
+\definecolor{textDark}{HTML}{333333}
+\definecolor{gridColor}{HTML}{BBBBBB}
+
+\tikzset{
+  arrOrange/.style = {-{Stealth[length=3.0mm,width=2.5mm]},line width=1.5pt,draw=accent},
+}
+
+\begin{document}\song
+\begin{tikzpicture}[scale=0.78]
+
+% ── 左框：物理域（加高） ──
+\draw[fill=primary!6,draw=primary,line width=1.3pt,rounded corners=3pt]
+  (-6.5,-7.0) rectangle (0,6.5);
+\node[font=\song\small\bfseries,text=primary] at (-3.25,5.9)
+  {物理域 $r$（随时间收缩）};
+
+% 上椭圆
+\node[font=\song\footnotesize,text=textDark] at (-3.25,4.85)
+  {$t_0 \quad R(t_0) \approx 1.8\mathrm{\ cm}$};
+\draw[fill=primary!12,draw=primary,line width=1.2pt]
+  (-3.25,3.8) ellipse (2.0 and 0.7);
+\draw[draw=primary,->,line width=0.6pt] (-3.25,3.8) -- (-1.25,3.8);
+\node[font=\song\scriptsize,text=primary] at (-2.25,3.55) {$r$};
+\foreach \x in {-4.0,-3.7,...,-2.5}
+  \draw[gridColor,line width=0.5pt] (\x,2.5) -- (\x,2.85);
+\draw[draw=primary!60,line width=0.6pt] (-4.0,2.5) rectangle (-2.5,2.85);
+
+% 中椭圆
+\node[font=\song\footnotesize,text=textDark] at (-3.25,1.85)
+  {$t_1 \quad R(t_1) \approx 1.4\mathrm{\ cm}$};
+\draw[fill=primary!12,draw=primary,line width=1.2pt]
+  (-3.25,1.0) ellipse (1.5 and 0.55);
+\draw[draw=primary,->,line width=0.6pt] (-3.25,1.0) -- (-1.75,1.0);
+\node[font=\song\scriptsize,text=primary] at (-2.5,0.75) {$r$};
+\foreach \x in {-3.8,-3.5,...,-2.7}
+  \draw[gridColor,line width=0.5pt] (\x,-0.15) -- (\x,0.2);
+\draw[draw=primary!60,line width=0.6pt] (-3.8,-0.15) rectangle (-2.7,0.2);
+
+% 下椭圆
+\node[font=\song\footnotesize,text=textDark] at (-3.25,-1.05)
+  {$t_{\mathrm{dry}} \quad R(t_{\mathrm{dry}}) \approx 1.08\mathrm{\ cm}$};
+\draw[fill=primary!12,draw=primary,line width=1.2pt]
+  (-3.25,-1.8) ellipse (1.15 and 0.45);
+\draw[draw=primary,->,line width=0.6pt] (-3.25,-1.8) -- (-2.1,-1.8);
+\node[font=\song\scriptsize,text=primary] at (-2.65,-2.05) {$r$};
+\foreach \x in {-3.6,-3.4,...,-2.9}
+  \draw[gridColor,line width=0.5pt] (\x,-2.7) -- (\x,-2.35);
+\draw[draw=primary!60,line width=0.6pt] (-3.6,-2.7) rectangle (-2.9,-2.35);
+
+% 橙色收缩箭头（靠近椭圆左侧）
+\draw[arrOrange] (-5.3,3.1) -- (-5.3,-2.25);
+\node[font=\song\scriptsize\bfseries,text=accent] at (-4.85,0.4)
+  {$R(t)\!\downarrow$};
+
+\node[font=\song\footnotesize\bfseries,text=primary,align=center] at (-3.25,-3.8)
+  {网格随收缩同步加密};
+
+% ── 中间：坐标变换（两条斜约45°箭头） ──
+\draw[arrOrange] (0.4,1.2) -- (2.6,2.6);
+\draw[arrOrange] (0.4,-0.6) -- (2.6,0.8);
+
+\node[font=\song\footnotesize\bfseries,text=accent,align=center] at (1.5,3.7)
+  {坐标变换};
+\node[font=\song\normalsize\bfseries,text=accent,align=center] at (1.5,2.95)
+  {$\boldsymbol{\xi=\dfrac{r}{R(t)}}$};
+
+% ── 右框：计算域（矮一点） ──
+\draw[fill=green!8,draw=green,line width=1.3pt,rounded corners=3pt]
+  (3.0,-7.0) rectangle (9.5,6.5);
+\node[font=\song\small\bfseries,text=green!50!black] at (6.25,5.9)
+  {计算域 $\xi=r/R(t)$（固定）};
+
+\def\gridLeft{3.7}
+\def\gridRight{8.8}
+
+% 第1组网格
+\foreach \x in {3.7,4.0,...,8.8}
+  \draw[gridColor,line width=0.5pt] (\x,2.8) -- (\x,3.5);
+\draw[draw=green!50!black,line width=0.8pt]
+  (\gridLeft,2.8) rectangle (\gridRight,3.5);
+\node[font=\song\footnotesize,text=textDark,align=center] at (6.25,2.2)
+  {$\xi\in[0,1]$，不随时间变化\\[-1pt]
+   $\Delta\xi = 1/160$，节点数不变};
+
+% 第2组网格
+\foreach \x in {3.7,4.0,...,8.8}
+  \draw[gridColor,line width=0.5pt] (\x,0.2) -- (\x,0.9);
+\draw[draw=green!50!black,line width=0.8pt]
+  (\gridLeft,0.2) rectangle (\gridRight,0.9);
+\node[font=\song\footnotesize,text=textDark,align=center] at (6.25,-0.4)
+  {$\xi\in[0,1]$，不随时间变化\\[-1pt]
+   $\Delta\xi = 1/160$，节点数不变};
+
+% 第3组网格
+\foreach \x in {3.7,4.0,...,8.8}
+  \draw[gridColor,line width=0.5pt] (\x,-1.8) -- (\x,-1.1);
+\draw[draw=green!50!black,line width=0.8pt]
+  (\gridLeft,-1.8) rectangle (\gridRight,-1.1);
+\node[font=\song\footnotesize,text=textDark,align=center] at (6.25,-2.4)
+  {$\xi\in[0,1]$，不随时间变化\\[-1pt]
+   $\Delta\xi = 1/160$，节点数不变};
+
+% ── 底部通栏说明框 ──
+\draw[fill=white,draw=gray,line width=0.9pt,rounded corners=3pt]
+  (-6.5,-7.8) rectangle (9.5,-8.6);
+\node[font=\song\footnotesize,text=textDark] at (1.5,-8.2)
+  {$R(t): 2.000 \rightarrow 1.200\mathrm{\ cm}
+   \quad|\quad
+   N=160\ (\Delta\xi=1/160)
+   \quad|\quad
+   网格随 R(t) 同步映射，节点数不变$};
+
+\end{tikzpicture}
+\end{document}
+
+% ── 最终定稿版改动 ──
+% 1. 左框加高（y 上限 6.2→6.5, 下限 -6.2→-7.0），右框适度缩短（下限 -6.2→-6.0）
+% 2. 中间双箭头改为斜向约45°（上箭头 右下→右上, 下箭头 右下→右上）
+% 3. R(t)↓ 箭头右移（x -5.6→-5.3，靠近椭圆），标签字缩小并右移
+% 4. 底部通栏框下移适配新框高
+% 5. "网格随收缩同步加密"加粗加大

@@ -1,0 +1,104 @@
+% 图51-F51 Q3 求解流程图 — 修复溢出版
+\documentclass[border=5pt]{article}
+\usepackage[margin=0pt,paperwidth=14cm,paperheight=16cm]{geometry}
+\pagestyle{empty}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{ctex}
+\newcommand{\fontdir}{../../../00_知识库/论文写作/LaTeX模板_2026国赛版/fonts/}
+\setCJKfamilyfont{song}[
+  Path = \fontdir, UprightFont = SourceHanSerifCN-Regular.otf,
+  BoldFont = SourceHanSerifCN-Bold.otf, AutoFakeBold = true,
+]{SourceHanSerifCN}
+\newcommand*{\song}{\CJKfamily{song}}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric}
+
+\definecolor{primary}{HTML}{1F3A93}
+\definecolor{accent}{HTML}{D35400}
+\definecolor{green}{HTML}{27AE60}
+\definecolor{gray}{HTML}{95A5A6}
+\definecolor{textDark}{HTML}{333333}
+
+\tikzset{
+  arr/.style = {-{Stealth[length=2.0mm,width=1.8mm]},line width=0.8pt,draw=textDark!60},
+  arrD/.style = {-{Stealth[length=1.8mm,width=1.6mm]},line width=0.7pt,draw=accent,dashed,dash pattern=on 4pt off 2pt},
+  inNode/.style = {trapezium,trapezium left angle=65,trapezium right angle=65,
+    draw=primary,line width=0.9pt,fill=primary!10,text=textDark,
+    minimum width=4.0cm,minimum height=0.8cm,align=center,
+    font=\song\footnotesize,trapezium stretches=true},
+  procNode/.style = {rectangle,draw=green,line width=0.8pt,fill=green!10,text=textDark,
+    minimum width=3.4cm,minimum height=0.75cm,align=center,
+    font=\song\footnotesize,rounded corners=2pt},
+  decNode/.style = {diamond,draw=accent,line width=0.8pt,fill=accent!8,text=textDark,
+    minimum width=2.8cm,minimum height=1.0cm,align=center,
+    font=\song\footnotesize,aspect=1.8,inner sep=1pt},
+  outNode/.style = {rectangle,draw=primary,line width=1.1pt,fill=primary!8,text=textDark,
+    minimum width=3.6cm,minimum height=0.8cm,align=center,
+    font=\song\footnotesize\bfseries,rounded corners=2pt},
+}
+
+\begin{document}\song
+\begin{tikzpicture}[scale=0.82,node distance=1.2cm]
+
+% ── 1. 输入 ──
+\node[inNode] (Input) {输入：初值+边界（附件1）+尺寸（附件2）};
+
+% ── 2. 空间离散 ──
+\node[procNode,below=of Input] (Disc) {空间离散（$N=80$，元体平衡二阶）};
+
+% ── 3. 单步隐式推进 ──
+\node[procNode,below=of Disc] (Step) {单步隐式推进（追赶法求解）};
+
+% ── 4. 判断 ──
+\node[decNode,below=1.0cm of Step] (Check) {中心含水率\\[-1pt]$C(0) < 0.15$？};
+
+% ── 5. 步进（否分支，右侧） ──
+\node[procNode,right=2.8cm of Check] (Next) {步进下一输出步\\[-1pt]（自适应/固定步）};
+
+% ── 6. 回退（是分支，下方） ──
+\node[procNode,below=1.0cm of Check] (Back) {回退至该输出步起点\\[-1pt]保留子步历史};
+
+% ── 7. 二分 ──
+\node[procNode,below=of Back] (Bisect) {子步内二分回溯\\[-1pt]（精度 $10^{-3}$ s）};
+
+% ── 8. 输出 ──
+\node[outNode,below=of Bisect] (Output) {输出 $t_{\rm end}$ 写 result3.xlsx};
+
+% ====== 主线 ======
+\draw[arr] (Input) -- (Disc);
+\draw[arr] (Disc) -- (Step);
+\draw[arr] (Step) -- (Check);
+
+% ====== 否分支：Check→Next→回流至Step右侧 ======
+\draw[arr] (Check.east) -- node[above,font=\song\scriptsize] {否} (Next.west);
+% 先竖直上升到Step.east同一高度，再水平向左接Step.east
+\draw[arr,draw=gray!60!black,rounded corners=4pt] (Next.north)
+  |- (Step.east)
+  node[pos=0.75,above,font=\song\scriptsize,text=gray!70!black]
+  {循环回路\\[-1pt]未达判据};
+
+% ====== 是分支：Check→Back→Bisect→Output ======
+\draw[arr] (Check.south) -- node[right,font=\song\scriptsize] {是} (Back.north);
+\draw[arr] (Back) -- (Bisect);
+\draw[arr] (Bisect) -- (Output);
+
+% ====== 左侧二分回溯长虚线 ======
+% 从Bisect左侧引出，向左走x=-3.3，向上折返到Step左侧
+\draw[arrD] (Bisect.west) -- ++(-2.0,0)
+  node[midway,above,font=\song\scriptsize,text=accent] {二分回溯}
+  |- ([xshift=-0.3cm]Step.west);
+
+\end{tikzpicture}
+\end{document}
+
+% ── 修订版改动清单 ──
+% 1. paperwidth 从 16cm 缩到 14cm，paperheight 从 14cm 缩到 16cm（高一点防底部切）
+% 2. scale 从 0.85 微调到 0.82，整体更紧凑
+% 3. 节点 vertical node distance 从 1.6cm 压到 1.2cm，菱形/回退额外间距调到 1.0cm
+% 4. 右侧 Next 节点 horizontal 距离从 4cm 缩到 2.8cm，回流箭头不再溢出
+% 5. 左侧二分回溯虚线：x 步进从 -3.0 缩到 -2.0，始终在画布内
+% 6. 所有节点 minimum width/height 缩小（inNode 4.0→4.0, procNode 3.8→3.4, decNode 宽 3.5→2.8, outNode 4.0→3.6）
+% 7. arr 箭头线宽从 0.9pt 缩到 0.8pt，arrD 从 0.8pt 缩到 0.7pt
+% 8. 右侧回流改为从Next左上角→左弯折→Step顶部，圆角弯折(rounded corners=3pt)，删除灰色虚线框
+% 9. "循环回路未达判据"小灰字直接放在箭头右侧，无需外框

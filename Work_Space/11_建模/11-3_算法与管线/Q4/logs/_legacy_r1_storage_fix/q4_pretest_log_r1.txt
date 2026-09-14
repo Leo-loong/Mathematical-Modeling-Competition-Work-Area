@@ -1,0 +1,77 @@
+[SCALE] Q4 W2 pretest batch: 7 cases, all T1/T2 scale (see file header)
+[SCALE] max horizon=21600 s, max nodes=321, total wall est < 60 s + JIT
+[SCALE] NO deliverable produced; formal full solve NOT included
+R table: 145 pts, R(0)=0.0200 m, R(end)=0.0120 m, t_end=259200 s
+
+========================================================================
+S0 unit checks (pure python, no solving)
+iface([2,8,0,6]) = [3.2 0.  0. ]  expect [3.2, 0, 0]
+R interp: node/endpoints clamp OK
+center dual-path: algebraic identity documented (4k/(R^2 dxi^2)) OK
+cubic interp reproducibility err = 2.22e-16
+cubic interp reproducibility err = 1.11e-16
+cubic interp reproducibility err = 1.11e-16
+S0 PASS
+
+========================================================================
+S1 smoke: 60 s, N=80, n_sub=32 (t_corr=1, coupled)
+wall=3.90s inner=23842 res_max=1.38e-04
+T(0)=28.059838 T(R)=32.767083 C(0)=2.550000 C(R)=2.133365
+checks: T in [28,50.01]? True ; C nonneg & <=C0? True
+avg Picard iters/substep = 12.4 (cap 30) -> OK
+
+========================================================================
+S2 reuse check: q4(fixR,app3) vs q3_core.step_imex_fast, 60 s
+q3 wall=0.10s ; q4 wall=0.08s
+max|dT| = 3.154e-05 K ; max|dC| = 2.529e-09 kg/kg
+rel dT = 9.994e-07 ; rel dC = 9.918e-10
+S2 FAIL (criterion: rel <= 1e-9)
+
+========================================================================
+S3 adiabatic self-check: k=0 AND hc=0, 3600 s, real R(t) -> T*R^2 const
+T*R^2 invariant rel err = 1.030e-01 (criterion <= 1e-12)
+S3 FAIL
+
+========================================================================
+S4 D6 rho*cp layer choice: 7200 s, lag(0) vs predictor-corrector(1)
+wall lag=36.75s corrector=15.61s (ratio 0.42)
+max|dT| = 1.308e+00 K ; max|dC| = 1.271e-02 kg/kg
+C(0): lag=2.532283711 corr=2.528813193
+
+========================================================================
+S5 time convergence: 21600 s, n_sub in {8,16,32}, t_corr=1
+n_sub= 8 wall= 18.09s C(0)=1.630526644 C(R)=0.410596761 T(0)=51.452938
+n_sub=16 wall= 39.09s C(0)=1.630529422 C(R)=0.410597878 T(0)=51.452939
+n_sub=32 wall= 72.12s C(0)=1.630538072 C(R)=0.410600565 T(0)=51.452931
+rel change n_sub 8->16 : 1.090e-06 (criterion <= 5e-5)
+rel change n_sub 16->32 : 3.392e-06 (criterion <= 5e-5)
+
+========================================================================
+S6 space convergence: 21600 s, N in {40,80,160}, n_sub=32, t_corr=1
+N= 40 wall=226.86s C(0)=1.630206699 C(R)=0.410475196
+N= 80 wall= 80.79s C(0)=1.630538072 C(R)=0.410600565
+N=160 wall=175.11s C(0)=1.630682680 C(R)=0.410638293
+rel change N 40->80 : 1.300e-04
+rel change N 80->160 : 5.671e-05
+
+========================================================================
+S7 interpolation error at t=21600 s (pure post-processing)
+r*   xi*      cubic80      cubic160     cubic320    d80-320      d160-320
+0.500  0.3639  cubic80=1.462595609  q6-80=1.462595609  q6-320=1.462777385  d(c80,q320)=1.82e-04  d(q80,q320)=1.82e-04
+1.000  0.7278  cubic80=0.982536877  q6-80=0.982536863  q6-320=0.982646323  d(c80,q320)=1.09e-04  d(q80,q320)=1.09e-04
+1.305  0.9500  cubic80=0.539863933  q6-80=0.539863933  q6-320=0.539923888  d(c80,q320)=6.00e-05  d(q80,q320)=6.00e-05
+1.367  0.9950  cubic80=0.424649415  q6-80=0.424655141  q6-320=0.424706979  d(c80,q320)=5.76e-05  d(q80,q320)=5.18e-05
+worst |cubic80 - q6_320| = 1.818e-04 ; |q6_80 - q6_320| = 1.818e-04
+
+========================================================================
+S8 interface-coefficient port: new (integral avg) vs old (harmonic)
+C(0)  : old=1.596257457  new=1.630538072  diff=+3.428e-02 (+2.148%)
+C(R)  : old=0.407866630  new=0.410600565  diff=+2.734e-03 (+0.670%)
+T(0)  : old=52.099016  new=51.452931  diff=-6.461e-01 K
+判读：|diff| 显著大于收敛容差（>1e-4）⟹ 口径移植对 Q4 有实质影响，与 Q3 的 t_end 52% 修正同源；旧预试验结论作废，以本轮为准
+criterion: output-grid interp+disc error <= 5e-5 (L3-07)
+
+========================================================================
+BATCH SUMMARY
+total batch wall = 981.7 s
+full results in C:\Users\wang-\Desktop\2026数学建模\Work_Space\11_建模\11-3_算法与管线\Q4\code\..\logs\q4_pretest_log.txt

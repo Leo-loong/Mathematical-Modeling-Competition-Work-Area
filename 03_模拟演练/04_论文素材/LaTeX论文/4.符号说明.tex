@@ -1,0 +1,52 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{符号说明}
+
+本文使用的主要符号及其含义如表\ref{tab:符号说明}所示。符号按几何量、光学常数、光谱量、统计量分组。
+
+\begin{longtable}{>{\centering\arraybackslash}p{0.2\textwidth}>{\centering\arraybackslash}p{0.76\textwidth}}
+  \caption{符号说明}
+  \label{tab:符号说明} \\
+  \toprule
+  符号 & 含义 \\
+  \midrule
+  \endfirsthead
+  \caption{符号说明（续）} \\
+  \toprule
+  符号 & 含义 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \multicolumn{2}{c}{\textbf{几何量}} \\
+  \midrule
+  $n_0$ & 空气折射率，取 1 \\
+  $n_1$ & 外延层折射率（实常数），定稿值 2.55（4H-SiC，Goldberg 2001）\\
+  $d$ & 外延层厚度（待测量），单位 $\mu$m \\
+  $\theta$ & 真空中入射角，本题 10\degree 和 15\degree \\
+  $\theta_1$ & 外延层内折射角，由 Snell 定律 $n_1\sin\theta_1=\sin\theta$ 确定 \\
+  \midrule
+  \multicolumn{2}{c}{\textbf{光学常数}} \\
+  \midrule
+  $r_{01}$ & 空气/外延层界面 Fresnel 振幅反射系数（实数）\\
+  $\rho_{12}$ & 衬底界面反射系数幅值，拟合值 $\approx0.165$ \\
+  $\varphi_{12}$ & 衬底界面反射的有效常数相位，拟合值 $\approx-0.28\pi$（约 $-50$\degree）\\
+  $q$ & 往返因子 $q=|r_{10}r_{12}|$，衡量多光束干涉强度 \\
+  $\varepsilon_\infty$ & 衬底 Drude 模型高频介电常数 \\
+  $\sigma_p$ & 衬底 Drude 模型等离子体波数，单位 cm$^{-1}$ \\
+  $\gamma$ & 衬底 Drude 模型阻尼常数，单位 cm$^{-1}$ \\
+  \midrule
+  \multicolumn{2}{c}{\textbf{光谱量}} \\
+  \midrule
+  $\sigma$ & 真空波数（光谱横轴），单位 cm$^{-1}$ \\
+  $R(\sigma)$ & 反射率谱，无量纲（或\%）\\
+  $p$ & 往返光程 OPD = $2n_1d\cos\theta_1$，单位 cm \\
+  $\Delta\varphi(\sigma)$ & 两反射分量相位差，$\Delta\varphi=2\pi p\sigma+\varphi_{12}$ \\
+  $m$ & 条纹极值级数（整数），相邻极值 $m$ 差 1（半周期）\\
+  $k$ & 极值回归斜率 $k=2p$，$d=k/(4n_1\cos\theta_1)$ \\
+  $\Delta\sigma$ & 条纹周期（波数域），$\Delta\sigma=1/p$ \\
+  \midrule
+  \multicolumn{2}{c}{\textbf{统计量}} \\
+  \midrule
+  $\hat{\sigma}_{\text{noise}}$ & 光谱噪声标准差，定稿值 0.0117\%（10\degree）/ 0.0118\%（15\degree）\\
+  $\chi^2$ & 一致性检验统计量，分 L1（估计器间）和 L2（角度间）两级 \\
+  \end{longtable}

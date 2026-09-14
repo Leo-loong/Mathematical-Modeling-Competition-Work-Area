@@ -1,0 +1,5 @@
+iface,N,t_dry_h
+integral,40,50.6531
+integral,80,50.6452
+harmonic,40,54.0423
+harmonic,80,51.2863

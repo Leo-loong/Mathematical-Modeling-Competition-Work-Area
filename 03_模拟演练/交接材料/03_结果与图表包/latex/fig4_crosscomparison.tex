@@ -1,0 +1,36 @@
+% fig4_crosscomparison.tex — 图4: 多算法/双角度交叉对照与系统不确定度区间
+% 数据: data/fig4_data.csv (列: method,angle,d_hat_um,sigma_stat_um,bias_corrected_um,note)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\pgfplotstableread[col sep=comma]{data/fig4_data.csv}{\tblfour}
+\begin{axis}[
+  paperfig, width=0.98\textwidth, height=8.2cm,
+  ylabel={d (\textmu m)},
+  xtick=data,
+  xticklabels from table={\tblfour}{method},
+  x tick label style={rotate=40, anchor=east, font=\scriptsize},
+  legend cell align={left},
+  legend pos={north west},
+  ymin=7.4, ymax=9.6,
+  xmin=0.4, xmax=11.6,
+]
+% 系统区间带 [8.0, 8.9]
+\addplot[fill=gray!25, draw=none, forget plot]
+  coordinates {(0.4,8.0) (11.6,8.0) (11.6,8.9) (0.4,8.9)};
+\addlegendimage{fill=gray!25, draw=none}
+\addlegendentry{模型系统区间 $[8.0, 8.9]$ \textmu m}
+% 融合中心
+\addplot[black, line width=1pt] coordinates {(0.4,8.03) (11.6,8.03)};
+\addlegendentry{融合中心 8.03 \textmu m}
+% 各算法/角度估计 (误差棒=统计不确定度)
+\addplot+[only marks, mark=*, mark size=1.6pt, black,
+  error bars/.cd, y dir=both, y explicit]
+  table[x expr=\coordindex+1, y=d_hat_um, y error=sigma_stat_um, col sep=comma]
+  {data/fig4_data.csv};
+\addlegendentry{各算法/角度估计}
+\end{axis}
+\end{tikzpicture}
+\caption{多算法/双角度交叉对照。全部估计落于模型系统区间 $[8.0, 8.9]$ \textmu m 内，最大相互差 $\le 0.24$ \textmu m 且均可归因；误差棒为各估计的统计不确定度。横轴各行自左至右对应 03-1 总表口径：E1@10°, E1@15°, E2@10°, E2@15°, E3@10°, E3@15°, E3 联合, 融合@10°, 融合@15°, 最终融合, 最终融合(经验σ)。}
+\label{fig:crosscomparison}
+\end{figure}

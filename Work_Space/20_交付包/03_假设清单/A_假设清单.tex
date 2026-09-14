@@ -1,0 +1,63 @@
+% A 题《药材的烘干问题》· 模型假设（LaTeX 就绪版）
+% Agent: Math_1 | 版次: v3（新增 H11 局部热平衡 / H12 各向同性 / H13 传质驱动力口径） | 与 A_假设清单.md 同步
+% 注：论文正文按 md §二 精简为 5 条呈现；本文件为 13 条全量版。
+% 排版依赖: \usepackage{enumitem}
+% 说明: 正文中如需中文破折号（"热--质"），请按所用模板替换为 \textemdash 或直接使用中文全角符号。
+
+\begin{enumerate}[label=\textbf{假设\arabic*.},leftmargin=2.4em]
+
+\item \textbf{无限长圆柱、一维轴对称。}
+药材视为无限长圆柱，沿轴向与周向不存在温度与含水率梯度，两个场量仅依赖径向坐标 $r$ 与时间 $t$。
+依据：长径比 $L/2R_0=25/4=6.25$，两端面面积仅占总表面积约 $7.4\%$，端面效应可忽略。
+
+\item \textbf{初始分布均匀。}
+烘干开始时药材内部温度与干基含水率均匀分布：
+\begin{equation}
+T(r,0)=T_0=28\ ^\circ\mathrm{C},\qquad C(r,0)=C_0=2.55\ \mathrm{kg/kg}.
+\end{equation}
+依据：题目仅给出单一初值，未提供径向分布信息。
+
+\item \textbf{忽略蒸发潜热与热--质交叉扩散。}
+能量方程不含相变源项，忽略 Soret/Dufour 交叉扩散；温度场与水分场仅通过随 $C$、$T$ 变化的物性
+$\rho(C)$、$c_p(C)$、$k(C)$、$D(C,T)$ 发生耦合。
+
+\item \textbf{物性经验式按问题分套采用。}
+问题1 采用附录2 的常物性参数；问题2、3 \textbf{全程}采用附录3 的经验式（内部不设阶段切换）；
+问题4 采用附录4 的经验式。
+
+\item \textbf{表面换热与传质系数沿用附录2 取值。}
+\begin{equation}
+h=25\ \mathrm{W/(m^2\cdot K)},\qquad k_m=8\times10^{-7}\ \mathrm{m/s},
+\end{equation}
+对问题1--4 全程适用。
+
+\item \textbf{恒温干燥段烘房环境恒定。}
+\begin{equation}
+T_\infty=50.00\ ^\circ\mathrm{C},\qquad C_\infty=0.04999\ \mathrm{kg/kg}\qquad (t>1.44\times10^{4}\ \mathrm{s}),
+\end{equation}
+取值由附件1 末段实测均值外推（末段均值 $T_\infty=50.0049\ ^\circ\mathrm{C}$、$C_\infty=0.049989\ \mathrm{kg/kg}$，线性趋势约为零）。
+
+\item \textbf{收缩律由附件2 给定。}
+药材半径 $R(t)$ 按附件2 的 145 个节点线性插值；当 $t>2.592\times10^{5}\ \mathrm{s}$ 时取常值 $R=1.198\ \mathrm{cm}$。
+
+\item \textbf{第4问采用仿射（均匀）收缩。}
+物质点半径按 $r(t)=r_0\,R(t)/R_0$ 等比缩放，等价于取 $\xi=r/R(t)$ 为物质坐标。
+依据：附件2 仅给出表面半径 $R(t)$，题面未规定内部各点的收缩分配方式；仿射收缩是最简且无需额外参数的分配方式。
+
+\item \textbf{局部热力学平衡。}
+固相（干物质骨架）与液相（水分）温度相同，可用\textbf{单一温度} $T(r,t)$ 描述，不引入双温度（非平衡）模型。
+依据：题面只给出一个温度变量与一套热物性经验式，未给出两相间换热系数或非平衡松弛时间；且热扩散特征时间（$\tau_T\approx39$ min）远小于干燥特征时间（$\tau_C\approx22.5$ h）。
+
+\item \textbf{各向同性。}
+物性 $\rho,c_p,k,D$ 不随方向变化，不引入张量物性。
+依据：题面按标量形式给出四个物性经验式，未给任何方向相关参数；药材视为均质连续介质。
+
+\item \textbf{表面传质驱动力取干基浓度差。}
+表面水分通量按
+\begin{equation}
+-D\,\partial_rC\big|_{R}=k_m\left[C_R-C_\infty(t)\right]
+\end{equation}
+计算，不引入水分活度 $a_w$ 或平衡含水率 $C_e$。
+依据：题面附录2 直接以 $C_\infty(t)$ 为驱动给出该边界式，且未给吸湿等温线／水分活度关系；引入 $C_e$ 将带来不可标定的额外参数。
+
+\end{enumerate}

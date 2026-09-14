@@ -1,0 +1,53 @@
+====================================================================================
+Q1 唯一基线审计（只读）
+ROOT = C:\Users\wang-\Desktop\2026数学建模\Work_Space
+====================================================================================
+
+--- 1. 两份 code 目录的 q1_* 脚本 hash 对比 ---
+  合计 13 个：一致 13 / 不一致 0 / 仅工作区 0
+
+--- 2. 图数据 CSV 双份对比（交付包/04_图表包/data vs 30_图表/03_图数据准备）---
+  fig_e3_check.csv             一致
+  fig_env_timeseries.csv       一致
+  fig_gci_data.csv             一致
+  fig_q1_curves.csv            一致
+  fig_q1_field_C.csv           一致
+  fig_q1_field_T.csv           一致
+  fig_q1q2_overlap.csv         一致
+  fig_q2_curves.csv            一致
+  fig_q2_field_C.csv           一致
+  fig_q2_field_T.csv           一致
+  fig_q2_gci.csv               一致
+  fig_q2_props.csv             一致
+  fig_q3_conv.csv              一致
+  fig_q3_conv_pos.csv          一致
+  fig_q3_gci.csv               一致
+  fig_q3_gs_morris.csv         一致
+  fig_q3_gs_samples.csv        一致
+  fig_q3_gs_sobol.csv          一致
+  fig_q3_history.csv           一致
+  fig_q3_iface_grid.csv        一致
+  fig_q3_sensitivity.csv       一致
+  fig_q3_stepsize_adaptive.csv 一致
+  fig_q3_uq_grid.csv           一致
+  fig_q3_uq_lhs.csv            一致
+  fig_series_check.csv         一致
+  fig_smooth_check.csv         一致
+  fig_tornado_data.csv         一致
+  [仅交付包] fig_q3_drying_rate.csv
+
+--- 3. result1.xlsx 现状 ---
+  sheets = ['温度', '水分浓度']
+  [温度] rows=1801 cols=22  t=[1..1800]
+  [水分浓度] rows=1801 cols=22  t=[1..1800]
+  表1（温度）末行 t=1800：33.5754  33.7720  34.3642  35.3621  36.7856
+  表2（水分浓度）末行 t=1800：2.5500  2.5497  2.5383  2.3755  1.5104
+  距离列 = 0..2.0 (21 列)
+
+--- 4. q1_* 脚本内旧登记值残留扫描（1.51033 / 1.510332）---
+  工作区 :: q1_e3_explicit.py:77 :: 'C(0,1800)': 2.54999, 'C(R,1800)': 1.51033}
+  工作区 :: q1_e3_explicit.py:298 :: 'C(0)=2.54999，C(R)=1.51033）：')
+  工作区 :: q1_e5_sensitivity.py:78 :: 'C_center': 2.54999, 'C_surface': 1.51033}
+  交付包 :: q1_e3_explicit.py:77 :: 'C(0,1800)': 2.54999, 'C(R,1800)': 1.51033}
+  交付包 :: q1_e3_explicit.py:298 :: 'C(0)=2.54999，C(R)=1.51033）：')
+  交付包 :: q1_e5_sensitivity.py:78 :: 'C_center': 2.54999, 'C_surface': 1.51033}

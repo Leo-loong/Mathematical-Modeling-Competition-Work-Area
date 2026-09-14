@@ -1,0 +1,7 @@
+======================================================================
+E7 conservation (full solve, hist every 60 s)
+mass  : dW=-4.367677e-04  flux_out=5.481746e-04  rel residual=2.551e-01
+energy: dU=-1.074181e+04  net_in=1.371219e+04  rel residual=2.277e+00
+criterion: mass ~1e-3 order (Q2/Q3 same); energy residual includes
+60 s trapezoid truncation + endpoint sampling; attribute honestly
+t_dry=182816.749 s (50.7824 h) wall=501 s

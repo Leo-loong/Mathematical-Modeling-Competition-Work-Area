@@ -1,0 +1,16 @@
+======================================================================
+E7b conservation (corrected accounting) + E8b latent (fixed core)
+baseline solve: N=160, n_sub=32, t_corr=1, breaker 240 h
+baseline t_dry=182348.109 s (50.6523 h) wall=823 s
+--- E7b (PDE-level: M=int C.xi dxi, U=int rho_cp*T*R^2*xi dxi) ---
+mass  : dM=-1.215803e+00  -int(km/R*(CR-Cinf))dt=-1.216089e+00  rel residual=2.351e-04
+energy: dU=-1.304557e+04  int(h*R*(Tinf-TR))dt=-1.304298e+04  rel residual=1.991e-04
+cross W-form: dW=-5.014756e-04  int(2RR'M - R*km*(CR-Cinf))dt=-5.015774e-04  rel=2.030e-04
+residual sources (honest): 60 s trapezoid in time, O(dxi^2) spatial
+trapezoid + center-cell O(dxi) telescoping defect (L Hospital row doubling)
+criterion: mass/energy ~1e-3 order (Q2/Q3 same)
+--- E8b (latent L=2.26e6 J/kg, core fixed) ---
+latent  : t_dry=50.6613 h (wall 585 s)
+end-field: max|dT|=1.915e-04 K ; max|dC|=1.860e-08
+t_dry shift = +0.0090 h (+0.018%)
+total wall=1409 s

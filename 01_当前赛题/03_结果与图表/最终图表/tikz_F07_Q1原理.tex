@@ -1,0 +1,125 @@
+% 图 F-07 Q1 求解原理示意图 — 紧凑版
+\documentclass[border=5pt]{article}
+\usepackage[margin=0pt,paperwidth=25cm,paperheight=10cm]{geometry}
+\pagestyle{empty}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{ctex}
+\newcommand{\fontdir}{../../../00_知识库/论文写作/LaTeX模板_2026国赛版/fonts/}
+\setCJKfamilyfont{song}[
+  Path = \fontdir, UprightFont = SourceHanSerifCN-Regular.otf,
+  BoldFont = SourceHanSerifCN-Bold.otf, AutoFakeBold = true,
+]{SourceHanSerifCN}
+\newcommand*{\song}{\CJKfamily{song}}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\definecolor{primary}{HTML}{1F3A93}
+\definecolor{accent}{HTML}{D35400}
+\definecolor{green}{HTML}{27AE60}
+\definecolor{gray}{HTML}{95A5A6}
+\definecolor{textDark}{HTML}{333333}
+\definecolor{gridC}{HTML}{CCCCCC}
+\definecolor{beige}{HTML}{FFF8EE}
+\definecolor{ctrlFill}{HTML}{E8F5E9}
+
+\tikzset{arrH/.style={-{Stealth[length=2.2mm,width=2.0mm]},line width=1.2pt,draw=accent}}
+\tikzset{arrM/.style={-{Stealth[length=2.2mm,width=2.0mm]},line width=1.2pt,draw=primary}}
+\tikzset{arrG/.style={-{Stealth[length=2.2mm,width=2.0mm]},line width=1.0pt,draw=accent}}
+
+\begin{document}\song
+\begin{tikzpicture}[scale=0.85]
+
+% ====== (a) 圆柱截面与边界 ======
+\draw[fill=primary!4,draw=primary,line width=1.3pt,rounded corners=2pt]
+  (-5.5,-3.2) rectangle (3.5,4.8);
+\node[font=\song\small\bfseries,text=textDark] at (-1,4.3)
+  {(a) 圆柱截面与边界条件};
+
+% 横向椭圆（再下移）
+\draw[fill=beige,draw=accent,line width=1.2pt] (-1,0.1) ellipse (2.5 and 0.9);
+
+% 中心点 r=0
+\draw[fill=textDark] (-1,0.1) circle (1.8pt);
+\node[font=\song\footnotesize,text=textDark] at (-1.4,-0.4) {$r=0$};
+
+% 径向箭头
+\draw[draw=textDark,->,line width=0.7pt] (-1,0.1) -- (1.5,0.1);
+\node[font=\song\footnotesize,text=textDark] at (0.2,0.35) {$r$};
+\node[font=\song\footnotesize,text=accent] at (2.2,0.6) {$R_0=2$ cm};
+
+% Robin 条件
+\node[font=\song\footnotesize,text=textDark,align=center] at (-1,3.5)
+  {$-k\partial_r T = h(T_R-T_\infty),\ -D\partial_r C = k_m(C_R-C_\infty)$};
+
+% 热流 / 湿流箭头
+\draw[arrH] (-1.8,1.0) -- (-1.8,2.2);
+\node[font=\song\footnotesize,text=accent] at (-1.8,2.45) {热流};
+\draw[arrM] (-0.3,1.0) -- (-0.3,2.2);
+\node[font=\song\footnotesize,text=primary] at (-0.3,2.45) {湿流};
+
+% 对称条件
+\node[font=\song\footnotesize,text=textDark,align=center] at (-1,-1.3)
+  {$r=0$：$\partial_r T = \partial_r C = 0$};
+
+% 网格
+\foreach \x in {0,0.6,...,2.4}
+  \draw[gridC,line width=0.3pt] (-1,0.1) circle (\x cm and \x*0.36 cm);
+
+% ====== (b) 径向控制体 ======
+\draw[fill=primary!4,draw=primary,line width=1.3pt,rounded corners=2pt]
+  (4.5,-3.2) rectangle (13.5,4.8);
+\node[font=\song\small\bfseries,text=textDark] at (9,4.3)
+  {(b) 径向控制体 $(N=80,\ \Delta r=0.25\ \mathrm{mm})$};
+
+% 控制体方块（整体下移，拉开与标题的距离）
+\fill[beige,draw=accent,line width=1.0pt] (5.5,0.4) rectangle (7.0,2.9);
+\node[font=\song\footnotesize,text=accent] at (6.25,3.2) {中心半格};
+\fill[ctrlFill,draw=green,line width=0.8pt] (7.0,0.4) rectangle (8.5,2.9);
+\fill[ctrlFill,draw=green,line width=0.8pt] (8.5,0.4) rectangle (10.0,2.9);
+\fill[ctrlFill,draw=green,line width=0.8pt] (10.0,0.4) rectangle (11.5,2.9);
+\fill[ctrlFill,draw=green,line width=1.0pt] (11.5,0.4) rectangle (12.3,2.9);
+\node[font=\song\footnotesize,text=green!50!black] at (11.9,3.2) {表面半格};
+
+% 分隔线
+\foreach \xi in {7.0,8.5,10.0,11.5}
+  \draw[draw=textDark,line width=0.5pt] (\xi,-0.1) -- (\xi,2.9);
+
+\node[font=\song\footnotesize,text=textDark,align=center] at (9,-0.5)
+  {$r_{i-1/2}$（内界面）\quad $r_{i+1/2}$（外界面）};
+\node[font=\song\footnotesize,text=textDark,align=center] at (9,-1.2)
+  {输出点 = 计算点（$0.1\ \mathrm{cm}=4\Delta r$）};
+
+% ====== (c) 时空离散与推进 ======
+\draw[fill=white,draw=gray,line width=0.9pt,rounded corners=2pt]
+  (14.5,-3.2) rectangle (23.0,4.8);
+\node[font=\song\small\bfseries,text=textDark] at (18.75,4.3)
+  {(c) 时空离散与推进};
+
+% 坐标轴
+\draw[->,line width=0.8pt] (15.5,-2.5) -- (15.5,3.8) node[above,font=\song\footnotesize] {$t$};
+\draw[->,line width=0.8pt] (15.5,-2.5) -- (22.5,-2.5) node[right,font=\song\footnotesize] {$r$};
+
+% 网格
+\foreach \x in {16.2,16.9,...,22.0}
+  \draw[gridC,line width=0.3pt] (\x,-2.2) -- (\x,3.2);
+\foreach \y in {-2.2,-1.4,...,3.2}
+  \draw[gridC,line width=0.3pt] (15.5,\y) -- (21.5,\y);
+
+% 推进箭头
+\draw[arrG] (16.2,-1.8) -- (16.2,0.2);
+\node[font=\song\footnotesize,text=accent,rotate=90] at (15.7,-0.8) {推进};
+
+% 步长文字
+\node[font=\song\small,text=textDark,align=left] at (19.2,2.8)
+  {输出步: $\Delta t_o = 1\ \mathrm{s}$\\[2pt]
+   热步子步: $\Delta t_T = 1/32\ \mathrm{s}$\\[2pt]
+   湿步子步: $\Delta t_C = 0.1\ \mathrm{s}$};
+
+% 时间层级标注
+\node[font=\song\footnotesize,text=gray] at (20.5,-1.5) {$K$ 时层};
+\node[font=\song\footnotesize,text=textDark] at (20.5,1.0) {$K{+}1$ 时层};
+\draw[gridC,line width=0.5pt,dashed] (15.5,-0.2) -- (21.5,-0.2);
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,6 @@
+kind,key,N,n_sub,t_dry_s
+space,spN80,80,32,182355.749
+space,spN160,160,32,182348.109
+space,spN320,320,32,182346.082
+time,tsub16,160,16,182315.027
+time,tsub64,160,64,182437.759

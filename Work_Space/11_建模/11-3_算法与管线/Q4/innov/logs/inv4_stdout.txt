@@ -1,0 +1,37 @@
+[SCALE] IN-4 aux: 8 full event solves, Pool(5), wall 15-25 min
+[SCALE] IN-4 aux: 8 full event solves, Pool(5), wall 15-25 min
+[SCALE] IN-4 aux: 8 full event solves, Pool(5), wall 15-25 min
+[SCALE] IN-4 aux: 8 full event solves, Pool(5), wall 15-25 min
+[SCALE] IN-4 aux: 8 full event solves, Pool(5), wall 15-25 min
+[SCALE] IN-4 aux: 8 full event solves, Pool(5), wall 15-25 min
+  [latent_hist] step 12000 t=3.3 h C0=2.3264 wall=47
+  [ifc_h80] step 12000 t=3.3 h C0=2.3250 wall=6
+  [ifc_h80] step 24000 t=6.7 h C0=1.4727 wall=12
+  [ifc_h80] step 36000 t=10.0 h C0=0.9074 wall=18
+  [ifc_h80] step 48000 t=13.3 h C0=0.6031 wall=24
+  [ifc_h80] step 60000 t=16.7 h C0=0.4394 wall=29
+  [ifc_h80] step 72000 t=20.0 h C0=0.3462 wall=34
+  [ifc_h80] step 84000 t=23.3 h C0=0.2888 wall=39
+  [ifc_h80] step 96000 t=26.7 h C0=0.2508 wall=44
+  [latent_hist] step 24000 t=6.7 h C0=1.4742 wall=93
+  [ifc_h80] step 108000 t=30.0 h C0=0.2242 wall=48
+  [ifc_h80] step 120000 t=33.3 h C0=0.2045 wall=53
+  [ifc_h80] step 132000 t=36.7 h C0=0.1893 wall=58
+  [ifc_h80] step 144000 t=40.0 h C0=0.1773 wall=62
+  [ifc_h80] step 156000 t=43.3 h C0=0.1675 wall=66
+  [ifc_h80] step 168000 t=46.7 h C0=0.1593 wall=70
+  [ifc_h80] step 180000 t=50.0 h C0=0.1524 wall=74
+  [latent_hist] step 36000 t=10.0 h C0=0.9082 wall=141
+  [latent_hist] step 48000 t=13.3 h C0=0.6035 wall=189
+  [latent_hist] step 60000 t=16.7 h C0=0.4394 wall=244
+  [latent_hist] step 72000 t=20.0 h C0=0.3459 wall=298
+  [latent_hist] step 84000 t=23.3 h C0=0.2883 wall=344
+  [latent_hist] step 96000 t=26.7 h C0=0.2501 wall=385
+  [latent_hist] step 108000 t=30.0 h C0=0.2233 wall=427
+  [latent_hist] step 120000 t=33.3 h C0=0.2034 wall=464
+  [latent_hist] step 132000 t=36.7 h C0=0.1882 wall=500
+  [latent_hist] step 144000 t=40.0 h C0=0.1761 wall=534
+  [latent_hist] step 156000 t=43.3 h C0=0.1663 wall=568
+  [latent_hist] step 168000 t=46.7 h C0=0.1581 wall=604
+  [latent_hist] step 180000 t=50.0 h C0=0.1512 wall=633
+INV4 DONE

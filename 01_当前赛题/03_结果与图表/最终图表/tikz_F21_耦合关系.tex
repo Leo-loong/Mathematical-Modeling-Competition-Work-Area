@@ -1,0 +1,84 @@
+% 图50-F21 Q2 双向耦合关系图 — 修订版
+\documentclass[border=5pt]{article}
+\usepackage[margin=0pt,paperwidth=16cm,paperheight=10cm]{geometry}
+\pagestyle{empty}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{ctex}
+\newcommand{\fontdir}{../../../00_知识库/论文写作/LaTeX模板_2026国赛版/fonts/}
+\setCJKfamilyfont{song}[
+  Path = \fontdir, UprightFont = SourceHanSerifCN-Regular.otf,
+  BoldFont = SourceHanSerifCN-Bold.otf, AutoFakeBold = true,
+]{SourceHanSerifCN}
+\newcommand*{\song}{\CJKfamily{song}}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\definecolor{primary}{HTML}{1F3A93}
+\definecolor{accent}{HTML}{D35400}
+\definecolor{green}{HTML}{27AE60}
+\definecolor{gray}{HTML}{95A5A6}
+\definecolor{textDark}{HTML}{333333}
+
+\tikzset{
+  arrBi/.style = {{Stealth[length=2.2mm,width=2.0mm]}-{Stealth[length=2.2mm,width=2.0mm]},
+    line width=1.2pt,draw=primary},
+  arrDashed/.style = {-{Stealth[length=2.0mm,width=1.8mm]},line width=0.9pt,
+    draw=textDark,dashed,dash pattern=on 5pt off 3pt},
+  fldNode/.style = {rectangle,draw=primary,line width=1.2pt,rounded corners=4pt,
+    align=center,font=\song,minimum width=3.2cm,minimum height=1.6cm},
+}
+
+\begin{document}\song
+\begin{tikzpicture}[scale=0.88]
+
+% ── 左框：温度场 ──
+\node[fldNode,fill=blue!7,text=primary] (T) at (0,0)
+  {\textbf{\large 温度场}\\[4pt] $T(r,t)$};
+
+% ── 右框：水分浓度场 ──
+\node[fldNode,fill=green!7,text=green!50!black] (C) at (7,0)
+  {\textbf{\large 水分浓度场}\\[4pt] $C(r,t)$};
+
+% ====== 三组双向耦合箭头 ======
+
+% 第1层（最上方）：D0 exp 公式，向上偏移0.2cm
+\draw[arrBi] (T.65) to[bend left=35]
+  node[midway,above,font=\song\footnotesize,text=textDark,yshift=0.2cm]
+  {$\boldsymbol{D = D_0\exp(-E_a/RT)}$} (C.115);
+
+% 第2层（中间）：迭代反馈，弧度加大，文字放在弧线内侧
+\draw[arrBi] (T.25) to[bend left=30]
+  node[midway,above,font=\song\footnotesize,text=primary,inner sep=2pt]
+  {$\boldsymbol{T^k \rightarrow D^{k+1}}$} (C.155);
+\draw[arrBi] (C.205) to[bend left=30]
+  node[midway,below,font=\song\footnotesize,text=green!50!black,inner sep=2pt]
+  {$\boldsymbol{C^{k+1}\rightarrow k^{k+1},c_p^{k+1}}$} (T.335);
+
+% 第3层（最下方）：k(C) 公式
+\draw[arrBi] (T.295) to[bend left=40]
+  node[midway,below,font=\song\footnotesize,text=textDark,yshift=-0.1cm]
+  {$\boldsymbol{k(C),\,c_p(C),\,\rho(C)}$} (C.245);
+
+% ====== U型虚线（IMEX 交替推进），整体下移0.15cm ======
+\draw[arrDashed] (T.south) -- ++(0,-2.2) -- ++(7,0) -- ++(0,2.2);
+
+\node[font=\song\scriptsize,text=textDark,align=center] at (3.5,-2.7)
+  {IMEX 交替推进：隐式 $T$ + 显式 $C$，Picard $\omega=0.7$};
+
+% ====== 底部通栏说明 ======
+\draw[fill=white,draw=gray,line width=0.9pt,rounded corners=3pt]
+  (-4.5,-3.5) rectangle (11.5,-4.3);
+\node[font=\song\footnotesize,text=textDark] at (3.5,-3.9)
+  {Q1：单向耦合（$T\rightarrow C$，可分开解）\qquad
+   Q2--Q4：双向闭环（物性互馈，须交替迭代）};
+
+\end{tikzpicture}
+\end{document}
+
+% ── 修订版改动清单 ──
+% 1. 左框填充 blue!7（浅蓝），右框填充 green!7（浅绿），黑白打印可区分
+% 2. 三组双向弧线箭头分层排布：上层D0公式(y+0.2cm)、中层T→D/C→k文字(弧度加大、放弧线内侧)、下层k(C)公式
+% 3. U型虚线整体下移 0.15cm，与底部说明框拉开间距
+% 4. 高度对齐：两框 minimum height 统一 1.6cm
+% 5. 配色：填充色极浅（blue!7 / green!7），Arrow 深蓝，文字黑色/主色

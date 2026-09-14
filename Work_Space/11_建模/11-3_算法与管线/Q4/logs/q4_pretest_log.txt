@@ -1,0 +1,80 @@
+[SCALE] Q4 W2 pretest batch: 9 cases (S0-S8), all T1/T2 scale (see file header)
+[SCALE] max horizon=21600 s, max nodes=321, total wall est ~400 s (measured 403 s) + JIT
+[SCALE] NO deliverable produced; formal full solve NOT included
+R table: 145 pts, R(0)=0.0200 m, R(end)=0.0120 m, t_end=259200 s
+
+========================================================================
+S0 unit checks (pure python, no solving)
+iface([2,8,0,6]) = [3.2 0.  0. ]  expect [3.2, 0, 0]
+R interp: node/endpoints clamp OK
+center dual-path: algebraic identity documented (4k/(R^2 dxi^2)) OK
+cubic interp reproducibility err = 2.22e-16
+cubic interp reproducibility err = 1.11e-16
+cubic interp reproducibility err = 1.11e-16
+S0 PASS
+
+========================================================================
+S1 smoke: 60 s, N=80, n_sub=32 (t_corr=1, coupled)
+wall=0.11s inner=23841 res_max=1.38e-04
+T(0)=28.118911 T(R)=32.817804 C(0)=2.550000 C(R)=2.133629
+checks: T in [28,50.01]? True ; C nonneg & <=C0? True
+avg Picard iters/substep = 12.4 (cap 30) -> OK
+
+========================================================================
+S2 reuse check: q4(fixR,app3) vs q3_core.step_imex_fast, 60 s
+q3 wall=0.11s ; q4 wall=0.09s
+max|dT| = 3.154e-05 K ; max|dC| = 2.529e-09 kg/kg
+rel dT = 9.994e-07 ; rel dC = 9.918e-10
+S2 PASS (criteria: rel dC<=1e-9 [交付量] ; |dT|<=5e-5 K [输出预算])
+   -> rel dC=9.918e-10 [OK] ; |dT|=3.154e-05 K [OK]
+   (严格联合判据备查 max(rel dT/50, rel dC/2.55) = 6.308e-07 vs 1e-9 -> FAIL)
+
+========================================================================
+S3 adiabatic self-check: k=0 AND hc=0, 3600 s, real R(t) -> T*R^2 const
+T*R^2 invariant rel err = 9.851e-14 (criterion <= 1e-12)
+S3 PASS
+
+========================================================================
+S4 D6 rho*cp layer choice: 7200 s, lag(0) vs predictor-corrector(1)
+wall lag=14.95s corrector=13.66s (ratio 0.91)
+max|dT| = 1.477e+00 K ; max|dC| = 1.372e-02 kg/kg
+C(0): lag=2.524656433 corr=2.519719170
+
+========================================================================
+S5 time convergence: 21600 s, n_sub in {8,16,32}, t_corr=1
+n_sub= 8 wall= 11.01s C(0)=1.596202014 C(R)=0.407892541 T(0)=52.099070
+n_sub=16 wall= 21.37s C(0)=1.596204259 C(R)=0.407893495 T(0)=52.099069
+n_sub=32 wall= 41.27s C(0)=1.596213365 C(R)=0.407896363 T(0)=52.099061
+rel change n_sub 8->16 : 8.804e-07 (criterion <= 5e-5)
+rel change n_sub 16->32 : 3.571e-06 (criterion <= 5e-5)
+
+========================================================================
+S6 space convergence: 21600 s, N in {40,80,160}, n_sub=32, t_corr=1
+N= 40 wall= 22.20s C(0)=1.596132427 C(R)=0.407796974
+N= 80 wall= 53.96s C(0)=1.596213365 C(R)=0.407896363
+N=160 wall=101.24s C(0)=1.596234620 C(R)=0.407921513
+rel change N 40->80 : 3.898e-05
+rel change N 80->160 : 9.863e-06
+
+========================================================================
+S7 interpolation error at t=21600 s (pure post-processing)
+r*   xi*      cubic80      cubic160     cubic320    d80-320      d160-320
+0.500  0.3639  cubic80=1.434132896  q6-80=1.434132897  q6-320=1.434156320  d(c80,q320)=2.34e-05  d(q80,q320)=2.34e-05
+1.000  0.7278  cubic80=0.968306050  q6-80=0.968306036  q6-320=0.968326959  d(c80,q320)=2.09e-05  d(q80,q320)=2.09e-05
+1.305  0.9500  cubic80=0.535075610  q6-80=0.535075610  q6-320=0.535102434  d(c80,q320)=2.68e-05  d(q80,q320)=2.68e-05
+1.367  0.9950  cubic80=0.421730965  q6-80=0.421736588  q6-320=0.421768107  d(c80,q320)=3.71e-05  d(q80,q320)=3.15e-05
+worst |cubic80 - q6_320| = 3.714e-05 ; |q6_80 - q6_320| = 3.152e-05
+
+========================================================================
+S8 interface-coefficient port: new (integral avg) vs old (harmonic)
+C(0)  : old=1.596257457  new=1.596213365  diff=-4.409e-05 (-0.003%)
+C(R)  : old=0.407866630  new=0.407896363  diff=+2.973e-05 (+0.007%)
+T(0)  : old=52.099016  new=52.099061  diff=+4.457e-05 K
+判读：以上为「r1 期参照（含存储缺陷 ＋ 调和平均）」与「现口径（积分平均、存储项已修复）」的实测差；
+  r1 期同一比较曾报 +2.148%（受存储项缺陷污染，**不得引用**）。**以本轮实测数值为准。**
+参考：S7 判据为 output-grid interp+disc error <= 5e-5 (L3-07)
+
+========================================================================
+BATCH SUMMARY
+total batch wall = 477.7 s
+full results in c:\Users\wang-\Desktop\2026数学建模\Work_Space\11_建模\11-3_算法与管线\Q4\code\..\logs\q4_pretest_log.txt

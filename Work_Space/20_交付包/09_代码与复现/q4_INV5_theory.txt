@@ -1,0 +1,14 @@
+======================================================================
+A5 lower bound (uniform-C / surface-controlled lump limit):
+  t_dry >= 8.3592 h   (严格：真实剖面 C_R < 平均 C ⟹ 通量更小、更慢)
+A5 upper bound (rigorous numeric): t_dry(fixR, appendix-4) —— 见 IN-4 fixR 档
+  asymptotic scale check: D*=D(C=0.15,T=50C)=3.806e-10 m2/s, BiC(km R0/D*)=42.0,
+  R0^2/D* = 1.051e+06 s = 291.9 h（长时程渐近时标量级；非严格界）
+A6 compression heating mechanism (from baseline hist):
+  measured: max excess T_R - T_inf = +2.811 K at t=2.03 h ; steps above env: 2967/3040
+  quasi-steady estimate theta_qs: max +3.322 K at t=0.48 h（量级/时相一致）
+  adiabatic envelope T_ad(t) = T0*rho_cp0*R0^2/(rho_cp(C_end)*R^2):
+    at peak-excess time: T_ad=86.7 C vs measured T_R=52.4 C -> T <= T_ad PASS
+    global check: max(T_R - T_ad) = -25.741 K over steps with T_R > T_inf PASS
+  interpretation: 超温峰值出现在 R 收缩最快时段（附件2 前段），
+  准稳态估计给出量级与相位；严格包络由绝热迹线承担（T>T∞ 时净散热 ⟹ T ≤ T_ad）。

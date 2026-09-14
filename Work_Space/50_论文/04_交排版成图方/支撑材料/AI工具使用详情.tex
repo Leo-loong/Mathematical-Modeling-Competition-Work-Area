@@ -1,0 +1,264 @@
+% ===== 支撑材料 · AI 工具使用详情（样式与正文同源：\input 正文版式件）=====
+% 生成器：root_temp/_mkaitool.py（复用 gen_latex 的 inline()/table_block()）
+\input{../交付排版方论文/preamble}
+
+\begin{document}
+
+\begin{center}
+  {\zihao{3}\bfseries 2026 全国大学生数学建模竞赛 · AI 工具使用详情说明}
+\end{center}
+
+\vspace{0.6em}
+
+\section*{一、所用 AI 工具名称、版本或型号}
+
+\settabw{8}
+\begin{longtable}{>{\raggedleft\arraybackslash}m{\dimexpr 0.070\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.285\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.278\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.367\tblw\relax}}
+  \toprule
+    序号 & AI 工具名称 & 版本／型号 & 主要用途 \\
+  \midrule
+  \endfirsthead
+  \multicolumn{4}{r}{\footnotesize（续）}\\
+  \toprule
+    序号 & AI 工具名称 & 版本／型号 & 主要用途 \\
+  \midrule
+  \endhead
+  \specialrule{\heavyrulewidth}{\dimexpr-\aboverulesep+\lightrulewidth\relax}{0pt}
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  1 & CodeBuddy（IDE内AI编程/建模辅助助手） & 会话模型 DeepSeek-V4.1-Flash；IDE内Agent模式 & 资料梳理、方案讨论、代码草稿与调试、文字润色（竞赛期间使用的主力工具） \\
+  \midrule
+  2 & 通用大语言模型（作为第二路独立梳理与交叉核对） & Claude + DeepSeek V4（网页对话框交互） & 工作区只读梳理、口径裁定的独立复核与交叉核对 \\
+  \midrule
+  3 & Python解析库（openpyxl/python-docx等，只读解析） & 由本机既有环境提供，版本见支撑材料 requirements.txt & 只读解析题目附件结构、结果文件维度与文档内容，用于数据核查；非生成式AI，不产出任何建模结论 \\
+  \midrule
+  4 & CodeBuddy（队长侧，IDE内AI编程辅助） & DeepSeek V4 Flash；IDE内Agent模式 & 建模与代码编写、独立复跑验证、结果核验 \\
+\end{longtable}
+
+第1、2、4项为生成式AI工具，其全部输出均经本队逐项人工审查与核实（见第四章）。其中第2项为队员侧第二路独立复核，第4项为队长侧独立复跑验证，两条路径相互独立。第3项为确定性程序库，仅作只读解析与核对，不属生成式AI。
+
+\section*{二、具体使用目的和环节}
+
+\settabw{10}
+\begin{longtable}{>{\raggedleft\arraybackslash}m{\dimexpr 0.075\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.137\tblw\relax}>{\centering\arraybackslash}m{\dimexpr 0.075\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.639\tblw\relax}>{\centering\arraybackslash}m{\dimexpr 0.074\tblw\relax}}
+  \toprule
+    序号 & 论文写作环节 & 是否使用 & 使用目的 & 使用工具 \\
+  \midrule
+  \endfirsthead
+  \multicolumn{5}{r}{\footnotesize（续）}\\
+  \toprule
+    序号 & 论文写作环节 & 是否使用 & 使用目的 & 使用工具 \\
+  \midrule
+  \endhead
+  \specialrule{\heavyrulewidth}{\dimexpr-\aboverulesep+\lightrulewidth\relax}{0pt}
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  1 & 赛题理解与问题分析 & \textbf{是} & 通读三道候选赛题，解析各题附件结构（表名行列数），为选题评估提供数据；做五维选题评估矩阵；识别裁定题面11项口径歧义（G1-G11），包括扩散系数经验式形式裁定、result2时间跨度、传质方程写法、达标判据等；做PDF原件和markdown解析文本的逐字符一致性核验（相似度从0.993提到1.000000）；建L0-L3四层架构和接口-取值分离机制。选题评估矩阵和最终锁题是本队做的。 & 1,2,3 \\
+  \midrule
+  2 & 模型假设与符号定义 & \textbf{是} & 梳理题面口径歧义清单供本队裁定；建语义基线（MB-01至MB-21）和模型假设清单（H1-H10），覆盖时间原点、输出坐标语义、Q4收缩模式、能量方程物料坐标守恒形式；做分层架构设计和接口-取值分离机制；双Agent独立互验全量复核（Math\textbackslash{}\_1主Agent加Math\textbackslash{}\_2独立复核）。假设条文的取舍和表述是本队定的。 & 1,2 \\
+  \midrule
+  3 & 模型建立与算法设计 & \textbf{是} & 给数值方案的候选对比：空间离散（元体平衡法/控制容积法）、时间推进（后向欧拉/IMEX交替）、耦合策略（Picard迭代/全耦合）、移动边界处理（物料坐标变换/固定域重映照）；推导能量方程在物料坐标下的守恒形式并做三项退化自检；Q3界面变系数取法的对比和方案抉择——从两端点调和平均改成沿含水率积分平均（经解析对拍验证偏差从>50\%降到<5\%）；三轮联网文献检索加知识库入库（约40份资料）。控制方程、离散格式、终止判据和界面取值口径是本队确定并逐式推导的。 & 1,2 \\
+  \midrule
+  4 & 模型求解与编程实现 & \textbf{是} & 写四问求解和检验代码（Q1-Q4约125个.py脚本，含innov改进链），排查报错，核对数据结构和输出模板；求解器升级：Q1求解核抽离成q1\textbackslash{}\_core.py、单遍运行消除表和结果文件异源（174.7→54.5s）、中心双路装配（元体平衡vs洛必达解级比对）；Q2性能优化（Picard内层自适应退出、自适应时间步）；Q3精度-速度双轨方案；Q4物料坐标守恒离散实现和预试验批次。结果文件全部经本队独立复算核对后才采信。 & 1,3 \\
+  \midrule
+  5 & 结果分析与模型检验 & \textbf{是} & 梳理六维检验体系：①收敛性和误差带（GCI加Richardson外推）；②解析对拍（常物性加常边界vs Carslaw-Jaeger级数）；③独立实现互验（显式格式vs隐式主力逐位比对）；④守恒核算（区域积分质量加能量闭合，含Q2变物性下积分项的物性修正）；⑤参数灵敏度（OAT加全局Sobol）；⑥简化代价对照（E6平滑/E8潜热对照/界面取法对照）。还有Q1成果成绩评估（按知识库国赛60个获奖要点做16维146检查点）。检验脚本的判据阈值和结论是本队主导的。 & 1,2 \\
+  \midrule
+  6 & 论文撰写与文字润色 & \textbf{是} & 语言润色、通顺度调整、格式规范核对（图表编号、三线表、参考文献著录）；写大白话复盘文档（自包含、代号就地解释）；文档结构性重组和编号精简（消除F1-F10和F-01-F-13撞号这类冗余编号）；建论文写作骨架、成文全稿复核（PR-01至PR-38）和终门禁复核。核心论述的结构和论断是本队写的，润色后逐句回读确保没改原意。 & 1 \\
+  \midrule
+  7 & 其他辅助环节（文献/数据/图表等） & \textbf{是} & 参考文献题录格式核对和来源核验（在Crossref/出版商页逐条取题名作者卷期页，18条A级题录）；图表规范和命名核对（补规格卡、清图内英文残留、配色系一致性检验）；工作区文件只读梳理和索引（README齐全性审查33份、交付快照比对、双工作区同步）；建零外部引用护栏并写成规则条款（工作约束§11）。 & 1,2,3 \\
+\end{longtable}
+
+\section*{三、主要提示方式与使用过程说明}
+
+\subsection*{（一）主要提示方式}
+
+\settabw{8}
+\begin{longtable}{>{\raggedleft\arraybackslash}m{\dimexpr 0.094\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.264\tblw\relax}>{\centering\arraybackslash}m{\dimexpr 0.142\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.500\tblw\relax}}
+  \toprule
+    序号 & 提示方式 & 是否使用 & 简要说明 \\
+  \midrule
+  \endfirsthead
+  \multicolumn{4}{r}{\footnotesize（续）}\\
+  \toprule
+    序号 & 提示方式 & 是否使用 & 简要说明 \\
+  \midrule
+  \endhead
+  \specialrule{\heavyrulewidth}{\dimexpr-\aboverulesep+\lightrulewidth\relax}{0pt}
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  1 & 网页对话框交互 & 是 & 用于第二路独立梳理与口径交叉核对（工具2） \\
+  \midrule
+  2 & 代码编辑器内嵌AI & 是 & 用于代码编写、补全与调试、重构（工具1） \\
+  \midrule
+  3 & 上传文件或数据对话 & 是 & 上传题目附件、结果文件与章节草稿供只读分析（工具1、2、3） \\
+  \midrule
+  4 & AI智能体工作流（多步自动执行） & 是 & 使用IDE内Agent模式完成读取-梳理-落盘文档的多步流程（工具1）；默认只读，写盘动作逐次确认 \\
+  \midrule
+  5 & 其他方式 & 否 & - \\
+\end{longtable}
+
+\subsection*{（二）典型交互示例}
+
+\textbf{示例 1}
+
+\settabw{4}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.248\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.752\tblw\relax}}
+  \toprule
+    项目 & 填写内容 \\
+  \midrule
+  \endfirsthead
+  \multicolumn{2}{r}{\footnotesize（续）}\\
+  \toprule
+    项目 & 填写内容 \\
+  \midrule
+  \endhead
+  \specialrule{\heavyrulewidth}{\dimexpr-\aboverulesep+\lightrulewidth\relax}{0pt}
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  对应环节 & 赛题理解与问题分析（题面口径歧义裁定） \\
+  \midrule
+  使用工具及版本 & CodeBuddy（DeepSeek-V4.1-Flash，IDE内Agent模式） \\
+  \midrule
+  交互时间 & 2026-09-08 15:00 \\
+  \midrule
+  本队提示词 & 题面附录中扩散系数经验式在两种写法下量级差别很大，请依据题面原件判断是两个独立负指数因子连乘还是嵌套正指数，并给出判断依据。 \\
+  \midrule
+  AI 回复内容 & AI初判为嵌套正指数写法，并给出量级推算；同时提示可按原件渲染目视复核。 \\
+  \midrule
+  本队处理方式 & 没采纳。本队自己回题目PDF原件放大渲染目视核对，又做量级和物理合理性双向检验，最后裁定是两个独立负指数因子连乘形式。据此改了题目里对应的文本，登记成易错点。 \\
+  \midrule
+  人工核验方式 & 回原件目视核对、量级和物理合理性双向检验、和另一路独立梳理的结果交叉比对一致后才采信。 \\
+\end{longtable}
+
+\textbf{示例 2}
+
+\settabw{4}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.239\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.761\tblw\relax}}
+  \toprule
+    项目 & 填写内容 \\
+  \midrule
+  \endfirsthead
+  \multicolumn{2}{r}{\footnotesize（续）}\\
+  \toprule
+    项目 & 填写内容 \\
+  \midrule
+  \endhead
+  \specialrule{\heavyrulewidth}{\dimexpr-\aboverulesep+\lightrulewidth\relax}{0pt}
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  对应环节 & 结果分析与模型检验（题目与解析文本的一致性核验） \\
+  \midrule
+  使用工具及版本 & CodeBuddy（DeepSeek-V4.1-Flash，IDE内Agent模式） \\
+  \midrule
+  交互时间 & 2026-09-08 22:30 \\
+  \midrule
+  本队提示词 & 请给出可执行的核验方法，确认解析文本与题目PDF内容完全一致，排除看漏/串行这类最基本的读题错误。 \\
+  \midrule
+  AI 回复内容 & 建议采用三重核验：①检查PDF是否为纯文本层（有无图片承载内容）；②对汉字+数字骨架做逐字符比对并给出相似度；③全页渲染目视核对表格行列与单位。 \\
+  \midrule
+  本队处理方式 & 修改后用了。按AI建议的三重核验执行，发现解析文本缺了两行小标题；补上后复算相似度从0.993提到1.000000、差异块变0。又补做了4页全渲染目视核对。 \\
+  \midrule
+  人工核验方式 & 逐字符比对结果本队独立复算，目视核对本队成员做的，核验过程和结论都落盘留了痕迹。 \\
+\end{longtable}
+
+\textbf{示例 3}
+
+\settabw{4}
+\begin{longtable}{>{\centering\arraybackslash}m{\dimexpr 0.252\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.748\tblw\relax}}
+  \toprule
+    项目 & 填写内容 \\
+  \midrule
+  \endfirsthead
+  \multicolumn{2}{r}{\footnotesize（续）}\\
+  \toprule
+    项目 & 填写内容 \\
+  \midrule
+  \endhead
+  \specialrule{\heavyrulewidth}{\dimexpr-\aboverulesep+\lightrulewidth\relax}{0pt}
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  对应环节 & 模型建立与算法设计（移动边界情形的能量方程形式） \\
+  \midrule
+  使用工具及版本 & CodeBuddy（DeepSeek-V4.1-Flash，IDE内Agent模式） \\
+  \midrule
+  交互时间 & 2026-09-09 11:00 \\
+  \midrule
+  本队提示词 & 计算域随时间收缩时，能量方程在物料坐标下的守恒形式应当如何书写？请给出完整变换并说明与非守恒形式的差别。 \\
+  \midrule
+  AI 回复内容 & 给出物料坐标下的变换结果，并指出守恒形式与固定坐标写法相差一项与热容变化率相关的项。 \\
+  \midrule
+  本队处理方式 & 修改后用了。对变换式逐项独立推导，修正了AI初稿里对流项被双重计入的问题，最后定成守恒形式（热容在时间导数里面），写进语义基线锁成接口条款。 \\
+  \midrule
+  人工核验方式 & 逐式独立推导复核，做退化检验（令收缩率为零应逐位复现固定半径结果），用绝热不变量做物理自检，结论写入基线文件长期锁定。 \\
+\end{longtable}
+
+\section*{四、对 AI 输出的采纳、人工修改和核验的主要情况}
+
+\settabw{8}
+\begin{longtable}{>{\raggedleft\arraybackslash}m{\dimexpr 0.068\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.141\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.535\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.256\tblw\relax}}
+  \toprule
+    序号 & AI 输出内容类别 & 采纳与修改情况 & 人工核验方式 \\
+  \midrule
+  \endfirsthead
+  \multicolumn{4}{r}{\footnotesize（续）}\\
+  \toprule
+    序号 & AI 输出内容类别 & 采纳与修改情况 & 人工核验方式 \\
+  \midrule
+  \endhead
+  \specialrule{\heavyrulewidth}{\dimexpr-\aboverulesep+\lightrulewidth\relax}{0pt}
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  1 & 建模思路与方法建议 & AI给了多条路线，本队逐条比选。留了机理数值路线（一维非稳态导热+等效扩散+物料坐标守恒），淘汰了和数据条件不匹配的方案。对保留方案做了问题特化：时间推进分场选取、事件驱动终止、界面变系数用积分平均。 & 独立推导论证，退化对照加量纲和物理合理性检验确认可行。 \\
+  \midrule
+  2 & 公式推导与理论参考 & AI给的推导草稿有对的有错的。关键修正三处：能量方程守恒形式里对流项被AI双重计入了（本队发现并更正）、界面扩散系数从调和平均改成了沿含水率积分平均（经解析对拍验证，偏差从>50\%降到<5\%）、能量边界RHS符号由h[T\textbackslash{}\_inf-T\textbackslash{}\_R]改为h[T\textbackslash{}\_R-T\textbackslash{}\_inf]（L0通道更正，三重证据确认）。 & 逐式独立推导复核，和教材及同行评议论文交叉查证，还做了退化检验（令收缩率为零看是否复现固定半径结果）。 \\
+  \midrule
+  3 & 代码编写与调试 & AI帮忙写和调代码草稿，本队逐文件审读、补断言、独立复跑。关键实现另写了第二套独立代码互验（显式格式对隐式主力）。发现并修正了AI代码里的重大缺陷：Picard迭代的时间导数右端用了迭代变量而不是固定上一时层解（导致每次迭代在解不同问题，永不收敛）；所谓"双路自检"实际是同式两写属自证，改成了真正的解级比对。 & 独立复跑，关键量逐格比对到与结果文件逐位一致，程序化断言加守恒核算。 \\
+  \midrule
+  4 & 结果分析与模型评价 & AI出过分析要点的候选表述，本队重写后逐数字回表核对。不用AI直接生成的结论句。像Q3误差根因（界面取法问题）和E7能量守恒异常（积分项缺物性修正）这类关键判断，全是本队主导推演验证的。 & 数字一律从口径登记表取并逐项复算，结论和误差带、灵敏度结果互相对照。 \\
+  \midrule
+  5 & 论文核心论述（摘要/结论等） & AI只做语言润色和格式核对，结构和论断是本队写的。润色完逐句回读确保没改原意。正文核心论述——包括四问的总体结构、时间方向精确推进、事件驱动终止、物料坐标守恒、界面变系数积分平均——全是本队提出论证的。 & 逐句复核，和正文术语、时间格式、干基口径保持一致。 \\
+  \midrule
+  6 & 其他内容（题录格式/图表规范/文件梳理） & 格式和整理类内容改后采纳。题录逐条在Crossref/出版商页核过题名作者卷期页。图表规范对照规范文件核对，包括把图里残留的英文清掉、配色统一。文件清单和实际实体逐项回验。 & 题录回原件核验，教材字段经高教社官网核实。 \\
+\end{longtable}
+
+\textbf{核心环节人工主导确认：}
+
+\settabw{8}
+\begin{longtable}{>{\raggedleft\arraybackslash}m{\dimexpr 0.070\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.203\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.129\tblw\relax}>{\raggedright\arraybackslash}m{\dimexpr 0.598\tblw\relax}}
+  \toprule
+    序号 & 核心环节 & 是否本队主导 & 本队贡献说明 \\
+  \midrule
+  \endfirsthead
+  \multicolumn{4}{r}{\footnotesize（续）}\\
+  \toprule
+    序号 & 核心环节 & 是否本队主导 & 本队贡献说明 \\
+  \midrule
+  \endhead
+  \specialrule{\heavyrulewidth}{\dimexpr-\aboverulesep+\lightrulewidth\relax}{0pt}
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  1 & 模型结构与创新点 & \textbf{是} & 四问一个模型四组旋钮的总体结构、时间方向精确推进、事件驱动终止、物料坐标守恒、界面变系数沿C积分平均，全是本队提出论证的。AI只参与了方案对比和表述整理。 \\
+  \midrule
+  2 & 公式推导与求解步骤 & \textbf{是} & 控制方程、定解条件、界面取值口径、能量方程守恒形式、离散格式、终止判据全由本队独立推导锁定。AI草稿里的对流项双重计入、能量边界符号反了、界面取法不对、Picard迭代右端项等错误，全是本队发现更正的。 \\
+  \midrule
+  3 & 程序逻辑与参数设置 & \textbf{是} & 求解核结构、网格和子步参数（Δr=0.25mm、Δt=1s/内部1/32s）、迭代容限1e-8、断言和熔断设置全是本队定的。代码经独立复跑加逐格比对核对。 \\
+  \midrule
+  4 & 结果分析与论文核心论述 & \textbf{是} & 结论、误差带（GCI+Richardson外推、解析对拍偏差<5\%）、灵敏度解释和适用边界是本队写的，数字逐项回表复算。正文摘要结论每章分析都是本队写的，AI只润色。 \\
+  \midrule
+  5 & 论文撰写与图表制作等 & \textbf{是} & 章节结构、图表设计语言和规格（统一配色、三线表、矢量PDF、坐标轴标注规范）是本队定的。AI只做语言润色和格式核对。图件数据全来自程序真实运行结果，没编造美化。 \\
+  \midrule
+  6 & 代码与结果的独立复跑验证（队长侧） & \textbf{是} & 队长在CodeBuddy中用DeepSeek V4 Flash独立复跑了全部四问代码，逐格比对结果文件，确保求解核输出与交付结果一致，并与队员侧复跑结论交叉确认。 \\
+\end{longtable}
+
+\textbf{本队确认以上AI工具使用情况真实完整，核心建模与分析由本队主导完成，所有AI输出内容均经人工审查核实。如有不实愿承担相应责任。}
+
+
+\end{document}

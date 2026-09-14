@@ -1,0 +1,35 @@
+% fig5_closedloop.tex — 图5: 合成闭环精度验证 + 融合厚度 bootstrap 分布
+% 数据: data/fig5_spread.csv (列: d0_um,E1,E2,E3) | data/fig5_boot.csv (列: fused10,fused15)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{groupplot}[
+  group style={group size=2 by 1, horizontal sep=1.6cm},
+  paperfig small, width=0.46\textwidth,
+]
+\nextgroupplot[ylabel={稳健离散 spread (\textmu m)},
+  xlabel={设定真厚度 $d_0$ (\textmu m)},
+  legend cell align={left}, legend pos={north west},
+  ybar, bar width=7pt, ymin=0, symbolic x coords={10,30,100},
+  xtick=data]
+\addplot[black!80, fill=black!25] table[x=d0_um, y=E1, col sep=comma] {data/fig5_spread.csv};
+\addlegendentry{E1}
+\addplot[blue!70!black, fill=blue!25] table[x=d0_um, y=E2, col sep=comma] {data/fig5_spread.csv};
+\addlegendentry{E2}
+\addplot[orange!85!black, fill=orange!30] table[x=d0_um, y=E3, col sep=comma] {data/fig5_spread.csv};
+\addlegendentry{E3}
+\nextgroupplot[ylabel={频数}, xlabel={融合 $d$ (\textmu m)},
+  every axis plot/.append style={fill opacity=0.55, draw opacity=0.8}]
+\addplot+[hist/{bins=20}, fill=blue!30]
+  table[y=fused10, col sep=comma] {data/fig5_boot.csv};
+\addlegendentry{10°}
+\addplot+[hist/{bins=20}, fill=orange!35]
+  table[y=fused15, col sep=comma] {data/fig5_boot.csv};
+\addlegendentry{15°}
+\addplot[black, line width=1pt] coordinates {(8.026,0) (8.026,28)};
+\addlegendentry{最终融合 8.026 \textmu m}
+\end{groupplot}
+\end{tikzpicture}
+\caption{算法验证闭环。左：合成数据闭环（真厚度 10/30/100 \textmu m，各 30 次噪声实现）三算法恢复的稳健离散——算法自身精度上限远小于报告精度；右：分块 bootstrap（N=200）融合厚度分布，两角度分布紧致且高度重叠。}
+\label{fig:closedloop}
+\end{figure}

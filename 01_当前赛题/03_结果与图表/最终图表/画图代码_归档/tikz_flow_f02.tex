@@ -1,0 +1,73 @@
+\documentclass[border=5pt]{standalone}
+\usepackage{fontspec}
+\usepackage{ctex}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, calc}
+
+\setCJKmainfont{Songti SC}
+\setmainfont{Times New Roman}
+
+\definecolor{cBlue}{HTML}{1F3A93}
+\definecolor{cGold}{HTML}{F39C12}
+\definecolor{cGreen}{HTML}{27AE60}
+\definecolor{cRed}{HTML}{C0392B}
+\definecolor{cGray}{HTML}{9E9E9E}
+\definecolor{cInk}{HTML}{333333}
+\definecolor{cBg}{HTML}{F4F6F7}
+
+\begin{document}
+\begin{tikzpicture}[
+  box/.style={
+    draw, rounded corners=2pt, minimum width=2.8cm, minimum height=1.8cm,
+    text width=2.6cm, align=center, font=\small
+  },
+  arr/.style={-{Stealth[length=2.5mm]}, thick, cGray}
+]
+
+% 四个问题框
+\node[box, fill=cBlue!8, draw=cBlue] (Q1) at (0, 0) {
+  \textbf{Q1 预热阶段}\\[2pt]
+  0–1800 s\\
+  附录2 定物性\\
+  固定半径 2 cm
+};
+
+\node[box, fill=cBlue!8, draw=cBlue, right=1.2cm of Q1] (Q2) {
+  \textbf{Q2 变物性}\\[2pt]
+  0–3 h\\
+  附录3 变物性\\
+  $\rho(C), c_p(C), k(C), D(C,T)$
+};
+
+\node[box, fill=cBlue!8, draw=cBlue, right=1.2cm of Q2] (Q3) {
+  \textbf{Q3 长时程}\\[2pt]
+  至达标\\
+  $\max_r C(r,t) < 0.15$\\
+  烘干时间确定
+};
+
+\node[box, fill=cBlue!8, draw=cBlue, right=1.2cm of Q3] (Q4) {
+  \textbf{Q4 移动边界}\\[2pt]
+  考虑收缩\\
+  $R = R(t)$\\
+  物料坐标变换
+};
+
+% 递进箭头
+\draw[arr, cRed, line width=1.8pt] (Q1.east) -- (Q2.west);
+\draw[arr, cRed, line width=1.8pt] (Q2.east) -- (Q3.west);
+\draw[arr, cRed, line width=1.8pt] (Q3.east) -- (Q4.west);
+
+% 底部统一框架
+\node[box, fill=cGold!8, draw=cGold, minimum width=14cm, minimum height=0.8cm, below=1.5cm of Q2] (framework) {
+  \textbf{统一框架}：轴对称圆柱 1D 径向模型 (L/R=12.5) ｜ 热传导 + Fick 扩散 PDE 耦合 ｜ 全隐式 FVM + Picard 迭代
+};
+
+% 连接箭头
+\draw[arr] (Q1.south) -- (framework.north);
+\draw[arr] (Q2.south) -- (framework.north);
+\draw[arr] (Q3.south) -- (framework.north);
+\draw[arr] (Q4.south) -- (framework.north);
+
+\end{tikzpicture}
+\end{document}

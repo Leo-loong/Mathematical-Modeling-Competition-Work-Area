@@ -1,0 +1,108 @@
+% F-02 四问递进关系图
+\documentclass[border=5pt]{article}
+\usepackage[margin=0pt,paperwidth=19cm,paperheight=11cm]{geometry}
+\pagestyle{empty}
+\usepackage{fontspec}
+\usepackage{ctex}
+\newcommand{\fontdir}{../../../00_知识库/论文写作/LaTeX模板_2026国赛版/fonts/}
+\setCJKfamilyfont{song}[
+  Path = \fontdir,
+  UprightFont = SourceHanSerifCN-Regular.otf,
+  BoldFont   = SourceHanSerifCN-Bold.otf,
+  AutoFakeBold = true,
+]{SourceHanSerifCN}
+\newcommand*{\song}{\CJKfamily{song}}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\definecolor{primary}{HTML}{1F3A93}
+\definecolor{primaryDark}{HTML}{1A3A6E}
+\definecolor{secondary}{HTML}{D9E4F2}
+\definecolor{accent}{HTML}{D35400}
+\definecolor{accentLight}{HTML}{FDEBD0}
+\definecolor{gray}{HTML}{95A5A6}
+\definecolor{textDark}{HTML}{333333}
+\definecolor{arrowColor}{HTML}{5D6D7E}
+\definecolor{groupBg}{HTML}{F4F6F7}
+
+\tikzset{
+  process/.style = {rectangle,draw=primaryDark,line width=0.8pt,fill=primary,
+    text=white,minimum width=3.0cm,minimum height=0.9cm,
+    align=center,font=\song\footnotesize,inner sep=4pt,rounded corners=2pt},
+  subprocess/.style = {rectangle,draw=primaryDark,line width=0.7pt,fill=secondary,
+    text=textDark,minimum width=3.0cm,minimum height=0.85cm,
+    align=center,font=\song\footnotesize,inner sep=4pt,rounded corners=2pt},
+  startstop/.style = {rectangle,draw=accent,line width=1.0pt,fill=accentLight,
+    text=accent!85!black,minimum width=3.0cm,minimum height=0.9cm,
+    align=center,font=\song\footnotesize,inner sep=4pt,rounded corners=6pt},
+  arrow/.style = {-{Stealth[length=2.2mm,width=2.0mm]},line width=0.9pt,draw=arrowColor},
+  arrowBold/.style = {-{Stealth[length=2.5mm,width=2.2mm]},line width=1.2pt,draw=accent},
+}
+
+\begin{document}
+\begin{tikzpicture}
+
+  % === 第一行：四个问题盒（process风格） ===
+  \node[process,minimum width=3.2cm,minimum height=2.0cm] (Q1) at (1.6, 0) {
+    \textbf{Q1 预热阶段}\\[2pt]
+    0--1800 s\\[2pt]
+    附录2 定物性\\固定半径 $R_0{=}2$ cm\\
+    $\rho,c_p,k$ 常数，$D{=}D(C)$
+  };
+  \node[process,minimum width=3.2cm,minimum height=2.0cm] (Q2) at (6.0, 0) {
+    \textbf{Q2 变物性}\\[2pt]
+    0--3 h\\[2pt]
+    附录3 全变物性\\
+    $\rho(C),c_p(C),$\\
+    $k(C),D(C,T)$
+  };
+  \node[process,minimum width=3.2cm,minimum height=2.0cm] (Q3) at (10.4,0) {
+    \textbf{Q3 长时程}\\[2pt]
+    至达标\\[2pt]
+    $\max C(r,t){<}0.15$\\
+    事件驱动终止\\
+    确定烘干时间
+  };
+  \node[process,minimum width=3.2cm,minimum height=2.0cm] (Q4) at (14.8,0) {
+    \textbf{Q4 移动边界}\\[2pt]
+    考虑收缩\\[2pt]
+    附录4 + 附件2\\
+    $R{=}R(t)$, 坐标变换
+  };
+
+  \draw[arrowBold] (Q1.east) -- (Q2.west);
+  \draw[arrowBold] (Q2.east) -- (Q3.west);
+  \draw[arrowBold] (Q3.east) -- (Q4.west);
+
+  % === 第二行：灰色升级盒（subprocess风格，充足间距） ===
+  \node[subprocess,minimum width=3.2cm] (G1) at (1.6, -3.0)
+    {基础：建立 PDE 框架\\验证数值方法};
+  \node[subprocess,minimum width=3.2cm] (G2) at (6.0, -3.0)
+    {扩展：引入变物性\\IMEX 交替推进};
+  \node[subprocess,minimum width=3.2cm] (G3) at (10.4,-3.0)
+    {应用：全过程模拟\\灵敏度与不确定度};
+  \node[subprocess,minimum width=3.2cm] (G4) at (14.8,-3.0)
+    {修正：移动边界\\收缩效应量化};
+
+  \draw[arrow] (Q1.south) -- (G1.north);
+  \draw[arrow] (Q2.south) -- (G2.north);
+  \draw[arrow] (Q3.south) -- (G3.north);
+  \draw[arrow] (Q4.south) -- (G4.north);
+
+  % === 第三行：统一框架（startstop风格，居中收窄） ===
+  \node[startstop,minimum width=15cm,minimum height=1.0cm,
+        fill=accentLight!60,draw=accent!50,text=textDark]
+    (Uni) at (8.2, -5.5) {
+    \textbf{统一框架：}~~~轴对称圆柱 1D 径向 ($L/R{=}12.5$)~~~
+    热传导 + Fick 扩散 PDE 耦合\\[2pt]
+    全隐式 FVM + Picard 迭代~~~同一模型、逐问递进、逐级加码
+  };
+
+  \draw[arrow] (G1.south) -- ++(0,-1.1) -| (Uni.north);
+  \draw[arrow] (G2.south) -- ++(0,-1.1) -| (Uni.north);
+  \draw[arrow] (G3.south) -- ++(0,-1.1) -| (Uni.north);
+  \draw[arrow] (G4.south) -- ++(0,-1.1) -| (Uni.north);
+
+\end{tikzpicture}
+\end{document}

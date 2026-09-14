@@ -1,0 +1,7 @@
+[SCALE] IN-6 Sobol: Saltelli N=16 -> 128 surrogate runs (N=40/n_sub=8), Pool(5)
+[SCALE] IN-6 Sobol: Saltelli N=16 -> 128 surrogate runs (N=40/n_sub=8), Pool(5)
+[SCALE] IN-6 Sobol: Saltelli N=16 -> 128 surrogate runs (N=40/n_sub=8), Pool(5)
+[SCALE] IN-6 Sobol: Saltelli N=16 -> 128 surrogate runs (N=40/n_sub=8), Pool(5)
+[SCALE] IN-6 Sobol: Saltelli N=16 -> 128 surrogate runs (N=40/n_sub=8), Pool(5)
+[SCALE] IN-6 Sobol: Saltelli N=16 -> 128 surrogate runs (N=40/n_sub=8), Pool(5)
+INV6 DONE

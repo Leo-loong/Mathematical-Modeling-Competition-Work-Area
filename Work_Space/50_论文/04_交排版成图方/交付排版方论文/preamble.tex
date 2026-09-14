@@ -1,0 +1,264 @@
+% ============================================================================
+% A 题 · 论文 LaTeX 前言（preamble）—— 由 50\_论文/02\_章节稿/gen\_latex.py 生成
+% GEN\_LATEX\_VERSION: gen\_latex/v11
+% 设计依据：kb《AI论文插图与LaTeX排版》＋ 官方《论文格式规范》＋ 我方《内容与排版绘图交接说明》§四
+% 编译：xelatex 两遍（见 README\_排版交付说明.md）
+% ============================================================================
+% ★ 行距用 **ctexart 的类选项**指定（`linespread=<值>`），**不可用 `\linespread`**：
+%   ctex 会在 \begin{document} 处按自身方案重设 \baselinestretch，故前言区的 `\linespread{}` 会被覆盖
+%   （实测：`\linespread{1.12}` 与 `\linespread{1.09}` 页数完全相同，证实其为**空操作**）。
+\documentclass[12pt,a4paper,linespread=1.0]{ctexart}
+
+\usepackage{geometry}\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}  % 官方第一条
+
+% ---- ★ v4 新增：版面调参区（属**模板接口**；贵方如需自定义，改本区块即可，或取回 preamble.tex.bak）----
+% 依据：官方第八条明示"论文中的**字号、字体、行距**不作统一要求"，故以下取值均为可选优化，非官方要求。
+% 目的：正文页数由"内容侧已触底"后的 32 页收进官方第四条红线（≤30 页），并消除版面松散感。
+% 行距：见上方 \documentclass 的 `linespread=1.0` 类选项（前置件的 `\linespread` 会被 ctex 覆盖）。
+%   ★ 官方依据：《全国大学生数学建模竞赛论文格式规范》**第八条**——"字号、字体、行距、颜色等
+%   **不做统一要求**" ⟹ 行距可自主设定。由 1.06 调至 **1.0（单倍）**以压缩页数。
+%   **注意不可再动页边距**：**第一条**要求"上下左右各留出**至少 2.5 厘米**"，本件
+%   `\geometry{...=2.5cm}` 恰好压在下限，**再小即违规**。
+% 浮动体密度：允许每页承载更多浮动体，避免"整页只有一张图/表"的松散页
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{6}
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.90}
+\renewcommand{\textfraction}{0.06}
+\renewcommand{\floatpagefraction}{0.75}
+% -----------------------------------------------------------------------------
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}          % 三线表（\toprule/\midrule/\bottomrule），全篇无竖线
+\usepackage{longtable}         % 长表：自动重复表头（对应"（续）"要求）
+\usepackage{array}
+% 图片搜索路径：**相对路径实时链接** 50\_论文/05\_成品图（禁用绝对路径），并保留本地 figures/ 备选
+\usepackage{graphicx}\graphicspath{{../../05\_成品图/}{figures/}}
+\usepackage{float}
+\usepackage{wrapfig}           % ★ v14：个别图改"环绕"排版（用户指令；正文绕图，图不独占版面）
+% ★ v14：**带圈数字路由**——`①`–`⑳`（U+2460–U+24FF）不在 xeCJK 默认的 CJK 区间内，
+%   会被送到西文字体（本件 `\setmainfont{Times New Roman}`）⟹ Times 无此字形，
+%   实测产出 **9 处 `Missing character`（①②③④⑤⑥）**。划入 CJK 字符类后由宋体渲染 ⟹ 缺字归零。
+%   **仅改字形路由，不改任何字体/字号/样式**。
+\xeCJKDeclareCharClass{CJK}{"2460 -> "24FF}
+\usepackage[font=small,labelsep=quad]{caption}
+\usepackage{listings}
+% ★ v12：**新字符兜底**（`literate` 在 XeLaTeX 下对多字节字符不总生效，故再叠加 `newunicodechar`）——
+%   把代码注释里 DejaVu Sans Mono 缺失的两个字形映射到**已有字体**里的同义字形：
+%   `⟹`(U+27F9) → 数学体 `\Longrightarrow`；`✅`(U+2705) → `pifont` 的 `\ding{51}`（✓）。
+%   两者**都不改动 `code/` 源文件字节** ⟹ 与真源逐字节一致、哈希不变。
+\usepackage{newunicodechar}
+\newunicodechar{⟹}{\ensuremath{\Longrightarrow}}
+\newunicodechar{✅}{\ding{51}}
+% ★ v23（附录 B 扩录至 B.12 后新暴露的两处缺字，来自 `code/q3_verify_nu.py`／`code/q4_w6_e5.py`
+%   注释里的 `≫`／`≪`——DejaVu Sans Mono 无此二字形）：映射到数学字体的 `\gg`／`\ll`，
+%   与 v12 同一处置（**不改 `code/` 一个字节**）。
+\newunicodechar{≫}{\ensuremath{\gg}}
+\newunicodechar{≪}{\ensuremath{\ll}}
+% ★ 本轮（附录改 Consolas 后暴露的 4 个缺字）：Consolas **无** ★(U+2605)／⚠(U+26A0)／
+%   ⟨(U+27E8)／⟩(U+27E9)。此处按"映射到已有字形"处理（不改 `code/` 与表格内容一个字节）：
+%   ★→`\ding{72}`（pifont）、⟨⟩→数学字体的 `\langle`／`\rangle`、⚠→DejaVu Sans Mono（覆盖广）。
+\newunicodechar{★}{\ding{72}}
+\newunicodechar{⟨}{\ensuremath{\langle}}
+\newunicodechar{⟩}{\ensuremath{\rangle}}
+% ⚠ 用 `\char"26A0` 输出字形本身（若写成 `{\dejavumono ⚠}` 会因映射再次命中自己 ⟹ 无限递归、
+%   TeX capacity exceeded；实测已复现并改用本写法）。
+\newunicodechar{⚠}{{\dejavumono\char"26A0}}
+% ★ 再补 7 个 Consolas 缺字形（实测 31 处）：数学符号走数学字体，其余走 DejaVu 兜底；
+%   下标 t 用 LaTeX 的 `\textsubscript`（保持"下标"语义，不写成普通字母）。
+\newunicodechar{∇}{\ensuremath{\nabla}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{∝}{\ensuremath{\propto}}
+\newunicodechar{≲}{{\dejavumono\char"2272}}
+\newunicodechar{≳}{{\dejavumono\char"2273}}
+\newunicodechar{▶}{{\dejavumono\char"25B6}}
+\newunicodechar{ₜ}{\textsubscript{t}}
+\usepackage{pifont}            % ★ v12：`\ding{51}` 用于附录 B 代码注释里的 ✅ 字形（见下 literate）
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+% ★ v12：**图表"留白"收紧**（用户反馈"很多图表都有很大的白边"；官方第八条"字号、字体、行距、
+%   颜色等不做统一要求" ⟹ 可自主设定）。取证：① **图件本体无白边**——19 张成品图实测
+%   "页面盒≈内容盒"，四边白边率 0–2.6%（0 张 >12%）；② **页面无大空白**——全篇 126 页中
+%   仅 p1（标题页）与 p38（页尾 95pt）空隙 >60pt，其余最大空隙 ≤31pt、填充率 ~100%。
+%   ⟹ 观感上的"白边"来自**插入图表时的默认间距**（LaTeX 默认 `\textfloatsep`≈12pt、
+%   `\intextsep`≈12pt、`\abovecaptionskip`≈10pt 偏松）。此处统一收紧（中等幅度，不挤读感）。
+% ★ v12 归因结论（实测）：把 `\textfloatsep`/`\intextsep`/`\floatsep` 收紧到 8–9pt
+%   会改变分页、进而使两张**长表**（`longtable`）的页内分块超出 ⟹ 冒 2 处
+%   `Overfull \vbox`（254／260 pt）；**停用即归零**。依"无证据不留改动"纪律，
+%   **保留 LaTeX 默认的浮动体间距**，只收紧**题注间距**（下图，实测 0 vbox／0 hbox）。
+\setlength{\abovecaptionskip}{5pt}                   % 图/表 ↔ 题注（默认 ≈10pt）
+\setlength{\belowcaptionskip}{0pt}
+% 注：**未动 `\arraystretch`**（实测把它调紧会与长表 `longtable` 的分块配合出现
+%     `Overfull \vbox`，见交付件变更留痕 ⟹ 依"无证据不留改动"回退，保持默认 1.0）。
+
+% ---- 源程序（附录 B）：文件放入 code/ 即自动嵌入，缺位时显示占位框（保证可编译）----
+% 注：文件名含下划线（`q1\_core.py`），故一律经 `\detokenize` 处理，避免被当作数学下标。
+% ★ v9：代码改用等宽字体 `\lstmonofam` —— `\ttfamily`（lmmono）**缺 ★／希腊字母／数学符号字形**，
+%   代码注释里的这些符号会在 PDF 中**留空**（`Missing character` 警告）；改用覆盖更广的 DejaVu Sans Mono，
+%   字体不可用时自动退回 `\ttfamily`（不影响编译）。**仅作用于附录 B 的代码块**。
+\IfFontExistsTF{DejaVu Sans Mono}{\newfontfamily\lstmonofam{DejaVu Sans Mono}\newfontfamily\dejavumono{DejaVu Sans Mono}}{\let\lstmonofam\ttfamily\newcommand{\dejavumono}{}}
+% ============================================================================
+% ★ 本轮（用户指令）：附录源程序加**IDE 式语法高亮**（VS Code 配色）
+%   · 用 listings **内置的 Python 词法** —— 不需要 `-shell-escape`，比 minted 快且稳
+%     （附录 B 有约 150 页代码，minted 会显著拖慢编译并引入外部依赖）。
+%   · 配色取 VS Code 常用色：关键字＝蓝、字符串＝暗红、注释＝绿。
+%   · **注释不加 `\itshape`**：Consolas／宋体都无斜体字形，加斜体会触发字体替换告警。
+%   · **中文注释只上色、不换字体**（仍由 xeCJK 送宋体）。
+%   · 行号与具体数字着色**未启用**（会改动代码块版式与行宽；如需可再开）。
+% ============================================================================
+\definecolor{pykw}{HTML}{0000FF}   % 关键字（if/def/class/return…）
+\definecolor{pystr}{HTML}{A31515}  % 字符串
+\definecolor{pycmt}{HTML}{008000}  % 注释（含中文注释）
+% ---- 识别列表（函数/类名、全大写常量、import 模块别名、数字字面量）----
+%   由脚本**从附录 B 实际嵌入的源程序里自动抽取**，生成 `pylists.tex`（勿手改）：
+%       python 40_复核\06_偏移性检查\temp\gen_pylists.py
+%   代码改动后重跑该脚本即刷新。**该文件缺失时退回下面的基础样式**（仅
+%   关键字/字符串/注释着色），故换机也不会编译失败。
+\IfFileExists{pylists.tex}{\input{pylists}}{%
+  \lstdefinestyle{pycode}{%
+    language=Python,%
+    basicstyle=\lstmonofam\scriptsize,%
+    keywordstyle=\color{pykw}\bfseries,%
+    stringstyle=\color{pystr},%
+    commentstyle=\color{pycmt},%
+    showstringspaces=false,%
+    breaklines=true,%
+    extendedchars=true,%
+    columns=fullflexible,%
+    keepspaces=true,%
+  }%
+}
+
+\newcommand{\srcfile}[1]{%
+  \edef\srcpath{\detokenize{#1}}%
+  % ★ v11：代码字号由 `\footnotesize`（10pt）降为 `\scriptsize`（9pt）—— 实测 `code/*.py`
+  %   第 4 行的 80 字符 `=` 横幅注释在 10pt 等宽下宽 481.6pt，超版心 455.2pt 达 **26.4pt**
+  %   （日志 7 处 `Overfull \hbox`，附录 B 代码块内文字越出边框）；9pt 下 80 字符仅 433.4pt，
+  %   且嵌入集内最长行恰为 80 字符 ⟹ 全部收回版心。`breaklines=true` 保留作二次保险。
+  \IfFileExists{code/\srcpath}{\lstinputlisting[style=pycode]{code/\srcpath}}%
+  {\fbox{\parbox[c][1.1cm][c]{0.9\textwidth}{\centering\ttfamily\footnotesize 源程序 \detokenize{#1}（放入 code/ 目录后自动嵌入）}}}}
+
+% ---- 图片：**依《A\_图表编号对照.md》的命名候选链自动解析** ----
+% `\fgphchain{宽度}{候选1,候选2,候选3}`：依次尝试 `候选.pdf`／`候选.png`，命中即插入；
+% 三个候选分别为 PDF 文件索引号（图NN，交付命名）／F 号／论文内索引号，皆缺则显示占位框
+% （框内列出候选名，便于贵方对号投放）。**工程在任何情况下均可编译**。
+\makeatletter
+\newcommand{\fgphchain}[2]{%
+  \def\fgfound{0}%
+  \@for\fcand:=#2\do{%
+    \ifnum\fgfound=0
+      \IfFileExists{\fcand}{\includegraphics[width=#1]{\fcand}\def\fgfound{1}}{%
+        \IfFileExists{\fcand.pdf}{\includegraphics[width=#1]{\fcand}\def\fgfound{1}}{%
+          \IfFileExists{\fcand.png}{\includegraphics[width=#1]{\fcand}\def\fgfound{1}}{}}}%
+    \fi}%
+  \ifnum\fgfound=0
+    \fbox{\parbox[c][2.6cm][c]{#1}{\centering 图占位\\\ttfamily\footnotesize #2}}%
+  \fi}
+\makeatother
+\newcommand{\fgph}[2][0.82\textwidth]{\fgphchain{#1}{#2}}
+
+% ---- 摘要页与关键词 ----
+\newcommand{\keywords}[1]{\par\vspace{0.8em}\noindent\textbf{关键词：}#1\par}
+
+% ---- 编号：**全部由 LaTeX 计数器在编译期动态生成**（源文件内不写死任何图/表/式号）----
+%  章-序 连字符风格（式 (5-1)、图 5-1、表 5-1；附录自动成 表 A-1、图 C-1）；`\label`-`\ref` 自动跟随。
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+% ---- ★ v7：题面强制表（表 1–表 6）的**独立计数器** ----
+%     六张题面表由生成器在**组内**把 `\thetable` 改写为 `\arabic{reqtab}` ⟹ 全篇连续 1–6；
+%     本文补充表（表 5-1）与附录表（表 A-1）仍走"章-序" ⟹ 编号纪律与《A\_图表编号对照.md》不变。
+\newcounter{reqtab}
+\renewcommand{\theequation}{\thesection-\arabic{equation}}
+\renewcommand{\thefigure}{\thesection-\arabic{figure}}
+\renewcommand{\thetable}{\thesection-\arabic{table}}
+
+% ---- 表格：列宽**按各列内容加权分配**（旧实现各列均分 ⟹ 短列过宽、长列（说明／作用）过窄）----
+% 用法：每张表前 `\settabw{2n}`（n ＝ 列数）先记下可用宽度，各列 p{} 再按月其**份额**取用。
+\newlength{\tblw}
+\newcommand{\settabw}[1]{\setlength{\tblw}{\dimexpr0.97\textwidth-#1\tabcolsep\relax}}
+
+% ---- 列表（源程序语言高亮）----
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,frame=single,
+        numbers=left,numberstyle=\tiny,columns=fullflexible,keepspaces=true,
+        % ★ v12：**消除 44 处 `Missing character`**（附录 B 代码注释的 ⟹×43 ＋ ✅×1 ——
+        %   DejaVu Sans Mono 无这两个字形，PDF 中留空）。用 `literate` 在**排版层**换成
+        %   数学／符号字体里的同义字形 ⟹ **不改动 `code/` 下任何源文件的字节**（与真源保持
+        %   逐字节一致、哈希不变），仅影响渲染。
+        literate={⟹}{{\ensuremath{\Longrightarrow}}}1 {✅}{{\ding{51}}}1 {≫}{{\ensuremath{\gg}}}1 {≪}{{\ensuremath{\ll}}}1
+        {★}{{\ding{72}}}1 {⚠}{{\dejavumono\char"26A0}}1 {⟨}{{\ensuremath{\langle}}}1 {⟩}{{\ensuremath{\rangle}}}1
+        {∇}{{\ensuremath{\nabla}}}1 {∈}{{\ensuremath{\in}}}1 {∝}{{\ensuremath{\propto}}}1
+        {≲}{{\dejavumono\char"2272}}1 {≳}{{\dejavumono\char"2273}}1 {▶}{{\dejavumono\char"25B6}}1
+        {ₜ}{{\textsubscript{t}}}1}
+
+% ---- 标题层级：章/节/子节（不加人为断页；表题在上、图题在下由生成器保证）----
+% ★ v13：**标题字号/对齐按 kb 口径落地**（官方第八条"字号、字体、行距、颜色等不做统一要求"）
+%   口径源（三处，已逐条读取原文）：
+%   ①《必看！2026数学建模国赛获奖要点解析》要点48："一级标题黑体三号，二级标题黑体四号，三级标题黑体小四"
+%   ②《2026国赛零基础获奖速成课讲义》表15/16："标题1 黑体三号(16pt) 居中、段前段后各12pt、加粗；
+%      标题2 黑体四号(14pt) 左对齐、段前段后各6pt；标题3 黑体小四(12pt) 左对齐、段前段后各3pt"
+%   ③《AI 论文全维度自查表》13.2："正文宋体小四，标题黑体，数字/公式 Times New Roman"
+%   ⟹ 一级 三号16pt **居中**、二级 四号14pt、三级 小四12pt，均黑体（ctex 的 \bfseries → SimHei）。
+\ctexset{section={format=\zihao{3}\bfseries\centering,aftername=\quad},
+         subsection={format=\zihao{4}\bfseries,aftername=\quad},
+         subsubsection={format=\zihao{-4}\bfseries,aftername=\quad}}
+% ★ 本轮（用户指令）：**压缩标题的上下行间距**（段前／段后），用于回收正文页数。
+%   背景：正文 9 个 section ＋ 25 个 subsection ＋ 23 个 subsubsection ≈ 57 个标题；
+%   按 ctex 默认（section 前 3.5ex／后 2.3ex，次两级 前 3.25ex／后 1.5ex）压缩到
+%   下列值，预计回收 500–600 pt（≈0.8 页），且**只动标题周围空白**、不动字号字体。
+%   ⚠ 紧凑度是观感取舍：若觉得挤，把 `beforeskip` 回调到 2.0ex／1.8ex 即可（一键回退）。
+\ctexset{section={beforeskip=1.5ex plus .2ex minus .2ex, afterskip=1.0ex plus .2ex},
+         subsection={beforeskip=1.5ex plus .2ex minus .2ex, afterskip=0.7ex plus .2ex},
+         subsubsection={beforeskip=1.4ex plus .2ex minus .2ex, afterskip=0.6ex plus .2ex}}
+% ★ v13 归因：讲义表15/16 另有"段前段后各 12pt／6pt／3pt"一条，实测按此设置会使
+%   两张长表页内分块超出 ⟹ 冒 2 处 `Overfull \vbox`（p9 142pt／p11 296pt）。
+%   按用户既定优先级【**字体 ＞ 字号 ＞ 行间距**】，此条**属最低优先的间距项** ⟹ 回退为
+%   ctex 默认段距，**保留**字体（黑体）与字号（三号／四号／小四）两项。**行距维持单倍**。
+% ★ v13：**西文/数字改用 Times New Roman**（口径源 ③）；中文仍为 ctex 的 SimSun。
+\setmainfont{Times New Roman}
+\usepackage{newtxmath}
+
+% ============================================================================
+% ★ 本轮（试用）：**页眉字体 = 金山云技术体（商免）**
+%   · 该字体为**用户级安装**（%LOCALAPPDATA%\Microsoft\Windows\Fonts\Kingsoft_Cloud_Font.ttf），
+%     XeLaTeX 的字体库**看不到族名**——实测 `\IfFontExistsTF` 对「金山云技术体」「金山云技术」
+%     「Kingsoft Cloud Font」「Kingsoft_Cloud_Font」**全部 not found** ⟹ 改**按文件路径加载**
+%     （fontspec 的 `Path=`＋文件名），绕开字体库枚举。
+%   · 字体随件放 `fonts/Kingsoft_Cloud_Font.ttf`；**缺该文件时 `\headfont` 退化为空**
+%     （即用正文主字体），**仍可编译**，不会因换机而编译失败。
+%   · 页眉**结构与位置保持不变**：左＝章号＋章名（`\leftmark`），右＝页码（`\thepage`），
+%     **不画**页眉横线（保持现状的"无线"外观）。正文页数因此**不应变化**。
+%   · **一键回退**：删掉本区块的两行 `\pagestyle{kyhead}`／改回 `\pagestyle{headings}` 即复原。
+% ============================================================================
+\IfFileExists{fonts/Kingsoft_Cloud_Font.ttf}{%
+  \newfontfamily\headfont[Path=fonts/]{Kingsoft_Cloud_Font.ttf}%      % 西文/数字
+  \newCJKfontfamily\headfontcjk[Path=fonts/]{Kingsoft_Cloud_Font.ttf}% % 中文（关键：只定义 \headfont 时中文仍走 SimSun）
+}{\newcommand{\headfont}{}\newcommand{\headfontcjk}{}}
+\usepackage{fancyhdr}
+\fancypagestyle{kyhead}{%
+  \fancyhf{}%
+  \fancyhead[L]{\headfontcjk\headfont\small\leftmark}%
+  % ★ 官方《论文格式规范（2026 年修订稿）》第三条原文：
+  %   "论文第三页为摘要专用页……论文**从此页开始编写页码，页码位于页脚中部**，
+  %    用阿拉伯数字从"1"开始连续编号。"
+  %   ⟹ 页码必须放在**页脚居中**（原实现放在页眉右侧 ✗）。此处把页码从页眉移到页脚中部；
+  %   页眉只保留章号＋章名（规范未规定页眉，第八条明确"字体字号等不做统一要求"）。
+  % 页脚＝**页码**：不套金山云，落回主字体 **Times New Roman**（KB《AI 论文全维度自查表》
+  %   13.2 原文："正文宋体小四，标题黑体，**公式 Times New Roman**，**没有多种字体混用**"
+%   ⟹ 页码用主字体 Times：既与公式同族，也**少引入一种字体**（合该条"不混用字体"的要求）。
+%   注：KB **未单独规定页码字体**；官方第八条也明确字体字号自定）。
+  \fancyfoot[C]{\small\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+\pagestyle{kyhead}
+% ★ 摘要页用的是 `\thispagestyle{plain}`；fancyhdr 的 plain 默认沿用**正文主字体**
+%   ⟹ 实测第 1 页页码为 TimesNewRomanPSMT 12.0pt，与第 2 页起的
+%   Kingsoft_Cloud_Font 10.9pt **不一致** ✗。此处把 plain 与 kyhead 统一：**页码走主字体 Times**。
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\small\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}

@@ -1,0 +1,35 @@
+[chain] running python q4_w6_e78b.py --go
+[SCALE] E7b+E8b: two full solves (N=160, n_sub=32, t_corr=1, breaker 240 h)
+[SCALE] wall est 17-20 min; outputs: logs/q4_w6_e78b.txt + logs/q4_e7_hist.csv
+  [e7b] step 12000 t=3.3 h C0=2.3251 wall=78
+  [e7b] step 24000 t=6.7 h C0=1.4727 wall=132
+  [e7b] step 36000 t=10.0 h C0=0.9073 wall=171
+  [e7b] step 48000 t=13.3 h C0=0.6030 wall=252
+  [e7b] step 60000 t=16.7 h C0=0.4391 wall=336
+  [e7b] step 72000 t=20.0 h C0=0.3458 wall=432
+  [e7b] step 84000 t=23.3 h C0=0.2882 wall=524
+  [e7b] step 96000 t=26.7 h C0=0.2501 wall=592
+  [e7b] step 108000 t=30.0 h C0=0.2232 wall=645
+  [e7b] step 120000 t=33.3 h C0=0.2034 wall=673
+  [e7b] step 132000 t=36.7 h C0=0.1881 wall=699
+  [e7b] step 144000 t=40.0 h C0=0.1761 wall=730
+  [e7b] step 156000 t=43.3 h C0=0.1662 wall=764
+  [e7b] step 168000 t=46.7 h C0=0.1581 wall=792
+  [e7b] step 180000 t=50.0 h C0=0.1512 wall=818
+  [e8b] step 12000 t=3.3 h C0=2.3264 wall=44
+  [e8b] step 24000 t=6.7 h C0=1.4742 wall=101
+  [e8b] step 36000 t=10.0 h C0=0.9082 wall=141
+  [e8b] step 48000 t=13.3 h C0=0.6035 wall=179
+  [e8b] step 60000 t=16.7 h C0=0.4394 wall=219
+  [e8b] step 72000 t=20.0 h C0=0.3459 wall=283
+  [e8b] step 84000 t=23.3 h C0=0.2883 wall=340
+  [e8b] step 96000 t=26.7 h C0=0.2501 wall=384
+  [e8b] step 108000 t=30.0 h C0=0.2233 wall=413
+  [e8b] step 120000 t=33.3 h C0=0.2034 wall=440
+  [e8b] step 132000 t=36.7 h C0=0.1882 wall=469
+  [e8b] step 144000 t=40.0 h C0=0.1761 wall=498
+  [e8b] step 156000 t=43.3 h C0=0.1663 wall=527
+  [e8b] step 168000 t=46.7 h C0=0.1581 wall=554
+  [e8b] step 180000 t=50.0 h C0=0.1512 wall=580
+E78B DONE
+[chain] exit=0

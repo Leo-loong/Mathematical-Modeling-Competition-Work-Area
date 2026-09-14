@@ -1,0 +1,470 @@
+{
+ "generated_by": "build_indexes.py（与 A_图表编号对照.md 同源，勿手改）",
+ "updated": "rebuild by rerunning build_indexes.py",
+ "counts": {
+  "f_total": 51,
+  "arrived": 51,
+  "paper_index_filled": 12
+ },
+ "figures": [
+  {
+   "f_no": "F-01",
+   "name": "总体建模流程图",
+   "pdf_index": "图01",
+   "pdf_no": "01",
+   "arrived": true,
+   "paper_index": "5-1",
+   "first_chapter": "A_08_模型建立与求解_基线"
+  },
+  {
+   "f_no": "F-02",
+   "name": "四问递进关系图",
+   "pdf_index": "图02",
+   "pdf_no": "02",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-03",
+   "name": "烘房环境时序",
+   "pdf_index": "图03",
+   "pdf_no": "03",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-04",
+   "name": "药材半径收缩曲线",
+   "pdf_index": "图04",
+   "pdf_no": "04",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-06",
+   "name": "网格与时间收敛",
+   "pdf_index": "图05（a/b）",
+   "pdf_no": "05",
+   "arrived": true,
+   "paper_index": "A-1",
+   "first_chapter": "A_10_模型检验_基线"
+  },
+  {
+   "f_no": "F-08",
+   "name": "Q1 温度场时空分布",
+   "pdf_index": "图06",
+   "pdf_no": "06",
+   "arrived": true,
+   "paper_index": "5-5",
+   "first_chapter": "A_08_模型建立与求解_基线"
+  },
+  {
+   "f_no": "F-09",
+   "name": "Q1 水分浓度场时空分布",
+   "pdf_index": "图07",
+   "pdf_no": "07",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-10",
+   "name": "Q1 关键点时程曲线",
+   "pdf_index": "图08",
+   "pdf_no": "08",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-11",
+   "name": "解析级数解对拍",
+   "pdf_index": "图09",
+   "pdf_no": "09",
+   "arrived": true,
+   "paper_index": "A-2",
+   "first_chapter": "A_10_模型检验_基线"
+  },
+  {
+   "f_no": "F-12",
+   "name": "独立实现互验",
+   "pdf_index": "图10",
+   "pdf_no": "10",
+   "arrived": true,
+   "paper_index": "A-3",
+   "first_chapter": "A_10_模型检验_基线"
+  },
+  {
+   "f_no": "F-13",
+   "name": "参数灵敏度龙卷风",
+   "pdf_index": "图11",
+   "pdf_no": "11",
+   "arrived": true,
+   "paper_index": "5-8",
+   "first_chapter": "A_08_模型建立与求解_基线"
+  },
+  {
+   "f_no": "F-14",
+   "name": "数据预处理对照",
+   "pdf_index": "图12",
+   "pdf_no": "12",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-15",
+   "name": "Q2 变物性演化",
+   "pdf_index": "图13",
+   "pdf_no": "13",
+   "arrived": true,
+   "paper_index": "5-9",
+   "first_chapter": "A_08_模型建立与求解_基线"
+  },
+  {
+   "f_no": "F-16",
+   "name": "Q2 温度场时空分布",
+   "pdf_index": "图14",
+   "pdf_no": "14",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-17",
+   "name": "Q2 水分浓度场时空分布",
+   "pdf_index": "图15",
+   "pdf_no": "15",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-18",
+   "name": "Q2 关键点时程曲线",
+   "pdf_index": "图16",
+   "pdf_no": "16",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-19",
+   "name": "Q1Q2 重叠段差异归因",
+   "pdf_index": "图17",
+   "pdf_no": "17",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-20",
+   "name": "Q2 收敛性",
+   "pdf_index": "图18",
+   "pdf_no": "18",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-22",
+   "name": "IMEX 交替推进流程图",
+   "pdf_index": "图19",
+   "pdf_no": "19",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-23",
+   "name": "Q2 三维演化曲面",
+   "pdf_index": "图20",
+   "pdf_no": "20",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-24",
+   "name": "Q2 温度含水率相轨迹",
+   "pdf_index": "图21",
+   "pdf_no": "21",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-25",
+   "name": "Q2 全断面失水瀑布图",
+   "pdf_index": "图22",
+   "pdf_no": "22",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-27",
+   "name": "Q2 耦合强度分解图",
+   "pdf_index": "图23",
+   "pdf_no": "23",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-28",
+   "name": "Q2 守恒性总账瀑布图",
+   "pdf_index": "图24",
+   "pdf_no": "24",
+   "arrived": true,
+   "paper_index": "A-20",
+   "first_chapter": "A_10_模型检验_基线"
+  },
+  {
+   "f_no": "F-29",
+   "name": "Q2 潜热对照双联",
+   "pdf_index": "图25",
+   "pdf_no": "25",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-30",
+   "name": "Q2 精度效率帕累托",
+   "pdf_index": "图26",
+   "pdf_no": "26",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-31",
+   "name": "Q2 全局灵敏度热力图",
+   "pdf_index": "图27",
+   "pdf_no": "27",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-32",
+   "name": "Q2 自适应步长轨迹",
+   "pdf_index": "图28",
+   "pdf_no": "28",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-33",
+   "name": "Q3 长时程含水率演化",
+   "pdf_index": "图29",
+   "pdf_no": "29",
+   "arrived": true,
+   "paper_index": "5-16",
+   "first_chapter": "A_08_模型建立与求解_基线"
+  },
+  {
+   "f_no": "F-34",
+   "name": "Q3 收敛性与网格裁决",
+   "pdf_index": "图30（a/b/c）",
+   "pdf_no": "30",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-35",
+   "name": "Q3 参数灵敏度",
+   "pdf_index": "图31",
+   "pdf_no": "31",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-36",
+   "name": "Q3 离散不确定度与误差带",
+   "pdf_index": "图32",
+   "pdf_no": "32",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-37",
+   "name": "Q3 全局灵敏度",
+   "pdf_index": "图33",
+   "pdf_no": "33",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-38",
+   "name": "Q3 低 C 端外推不确定度",
+   "pdf_index": "图34",
+   "pdf_no": "34",
+   "arrived": true,
+   "paper_index": "A-9",
+   "first_chapter": "A_10_模型检验_基线"
+  },
+  {
+   "f_no": "F-39",
+   "name": "Q3 界面取法×网格对照",
+   "pdf_index": "图35",
+   "pdf_no": "35",
+   "arrived": true,
+   "paper_index": "A-10",
+   "first_chapter": "A_10_模型检验_基线"
+  },
+  {
+   "f_no": "F-40",
+   "name": "Q3 干燥速率曲线",
+   "pdf_index": "图36",
+   "pdf_no": "36",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-41",
+   "name": "误差驱动自适应步长轨迹",
+   "pdf_index": "图37",
+   "pdf_no": "37",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-42",
+   "name": "边界不确定度散布区间",
+   "pdf_index": "图38",
+   "pdf_no": "38",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-43",
+   "name": "全局灵敏度与 OAT 并置",
+   "pdf_index": "图39",
+   "pdf_no": "39",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-44",
+   "name": "Q4 离散误差带 GCI",
+   "pdf_index": "图40",
+   "pdf_no": "40",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-45",
+   "name": "Q4 低 C 端外推 UQ",
+   "pdf_index": "图41（a/b）",
+   "pdf_no": "41",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-46",
+   "name": "Q4 全局灵敏度",
+   "pdf_index": "图42",
+   "pdf_no": "42",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-47",
+   "name": "Q4 收缩–物性双效应分解",
+   "pdf_index": "图43",
+   "pdf_no": "43",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-48",
+   "name": "Q4 潜热中段温降曲线",
+   "pdf_index": "图44",
+   "pdf_no": "44",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-49",
+   "name": "Q4 压缩温升机理与绝热包络",
+   "pdf_index": "图45",
+   "pdf_no": "45",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-50",
+   "name": "Q4 界面取法×网格对照",
+   "pdf_index": "图46",
+   "pdf_no": "46",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-26",
+   "name": "Q2 灵敏度结构雷达图",
+   "pdf_index": "图47",
+   "pdf_no": "47",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-05",
+   "name": "Q4 物质坐标变换示意",
+   "pdf_index": "图48",
+   "pdf_no": "48",
+   "arrived": true,
+   "paper_index": "5-17",
+   "first_chapter": "A_08_模型建立与求解_基线"
+  },
+  {
+   "f_no": "F-07",
+   "name": "Q1 求解原理示意图",
+   "pdf_index": "图49",
+   "pdf_no": "49",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-21",
+   "name": "Q2 双向耦合关系图",
+   "pdf_index": "图50",
+   "pdf_no": "50",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  },
+  {
+   "f_no": "F-51",
+   "name": "Q3 求解流程图（事件驱动＋子步级二分）",
+   "pdf_index": "图51",
+   "pdf_no": "51",
+   "arrived": true,
+   "paper_index": "",
+   "first_chapter": ""
+  }
+ ]
+}

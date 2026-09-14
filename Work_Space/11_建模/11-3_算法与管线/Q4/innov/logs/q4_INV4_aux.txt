@@ -1,0 +1,18 @@
+======================================================================
+IN-4 aux batch (n_sub=16 unless noted; breaker as configured)
+--- A4 criterion sensitivity (vs main 0.15 -> 50.6523 h) ---
+C_crit=0.18 : t_dry=38.8240 h  dt=-23.35% vs C_crit=0.15
+C_crit=0.13 : t_dry=64.9233 h  dt=+28.17% vs C_crit=0.15
+--- A7 shrinkage vs property decomposition (appendix-4 both) ---
+contracted R(t)  : t_dry=50.6523 h (main)
+fixed R=R0       : t_dry=129.4777 h  (收缩加速贡献 = fixR - main = +78.825 h, +155.62%)
+(vs Q3 fixed-R appendix-3 57.53 h：跨口径差异见口径表，不直接相减)
+--- B7 interface-selection x mesh 2x2 (对照失败臂，不得作结果呈现) ---
+ifc_i40  : t_dry=50.6531 h
+ifc_i80  : t_dry=50.6452 h
+ifc_h40  : t_dry=54.0423 h
+ifc_h80  : t_dry=51.2863 h
+--- B4 latent-heat mid-horizon curve (L=2.26e6, n_sub=32, hist) ---
+max|dT(t)| = 0.0745 K at t=1.03 h ; dT(6h)=-0.0281 K ; dT(24h)=-0.0012 K
+t_dry(latent)=50.6613 h
+total wall=751 s

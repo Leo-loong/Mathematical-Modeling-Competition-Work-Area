@@ -1,0 +1,22 @@
+[chain] running python q4_INV3_global.py --go
+[SCALE] IN-3 global sensitivity: Morris 70 + LHS 48 (surrogate) + 2 strict, Pool(5)
+[SCALE] IN-3 global sensitivity: Morris 70 + LHS 48 (surrogate) + 2 strict, Pool(5)
+[SCALE] IN-3 global sensitivity: Morris 70 + LHS 48 (surrogate) + 2 strict, Pool(5)
+[SCALE] IN-3 global sensitivity: Morris 70 + LHS 48 (surrogate) + 2 strict, Pool(5)
+[SCALE] IN-3 global sensitivity: Morris 70 + LHS 48 (surrogate) + 2 strict, Pool(5)
+[SCALE] IN-3 global sensitivity: Morris 70 + LHS 48 (surrogate) + 2 strict, Pool(5)
+C:\Users\wang-\Desktop\2026数学建模\Work_Space\11_建模\11-3_算法与管线\Q4\innov\q4_INV3_global.py:142: RuntimeWarning: Mean of empty slice
+  mus[n] = float(e.mean())
+C:\Users\wang-\AppData\Roaming\Python\Python314\site-packages\numpy\_core\_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+C:\Users\wang-\Desktop\2026数学建模\Work_Space\11_建模\11-3_算法与管线\Q4\innov\q4_INV3_global.py:143: RuntimeWarning: Mean of empty slice
+  mus_star[n] = float(np.abs(e).mean())
+[SCALE] IN-3 global sensitivity: Morris 70 + LHS 48 (surrogate) + 2 strict, Pool(5)
+[SCALE] IN-3 global sensitivity: Morris 70 + LHS 48 (surrogate) + 2 strict, Pool(5)
+[SCALE] IN-3 global sensitivity: Morris 70 + LHS 48 (surrogate) + 2 strict, Pool(5)
+[SCALE] IN-3 global sensitivity: Morris 70 + LHS 48 (surrogate) + 2 strict, Pool(5)
+[SCALE] IN-3 global sensitivity: Morris 70 + LHS 48 (surrogate) + 2 strict, Pool(5)
+[SCALE] IN-3 global sensitivity: Morris 70 + LHS 48 (surrogate) + 2 strict, Pool(5)
+[SCALE] IN-3 global sensitivity: Morris 70 + LHS 48 (surrogate) + 2 strict, Pool(5)
+INV3 DONE
+[chain] exit=0

@@ -1,0 +1,83 @@
+% F-07 Q1 求解原理示意图
+\documentclass[a4paper]{article}
+\usepackage[margin=0.3cm,paperwidth=18cm,paperheight=8cm]{geometry}
+\pagestyle{empty}
+\usepackage{fontspec}\setmainfont{Times New Roman}\setsansfont{Arial}
+\usepackage{ctex}
+\newcommand{\fontdir}{../../../00_知识库/论文写作/LaTeX模板_2026国赛版/fonts/}
+\setCJKfamilyfont{song}[Path=\fontdir,UprightFont=SourceHanSerifCN-Regular.otf,BoldFont=SourceHanSerifCN-Bold.otf,AutoFakeBold=true]{SourceHanSerifCN}
+\newcommand*{\song}{\CJKfamily{song}}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\definecolor{priBlue}{HTML}{1F3A93}
+\definecolor{priGold}{HTML}{F39C12}
+\definecolor{priGreen}{HTML}{27AE60}
+\definecolor{priRed}{HTML}{C0392B}
+\definecolor{tkGray}{HTML}{9E9E9E}
+\definecolor{tkInk}{HTML}{333333}
+
+\tikzset{
+  arr/.style={-{Stealth[length=1.8mm,width=1.6mm]},line width=0.8pt,draw=tkInk!60},
+  arrR/.style={-{Stealth[length=2.0mm,width=1.8mm]},line width=0.9pt,draw=priRed},
+}
+
+\begin{document}
+\begin{center}
+{\large\bfseries\song 图 7：Q1 求解原理示意图（圆柱药材热湿耦合离散）}\\[0.5cm]
+\begin{tikzpicture}
+
+  % ===== (a) 圆柱截面 =====
+  \node[font=\song\footnotesize\bfseries] at (-5.5, 2.8) {(a) 圆柱截面与边界};
+  \draw[priBlue,line width=1.2pt,fill=priBlue!4] (-5.5,0) circle (1.8cm);
+  \fill (-5.5,0) circle (1.5pt);
+  \draw[tkGray,line width=0.5pt] (-5.5,0) -- (-3.9,0.8);
+  \node[font=\song\footnotesize] at (-3.5,1.2) {$R_0=2$ cm};
+  \node[font=\song\footnotesize] at (-5.5,-0.5) {$\partial_r T{=}\partial_r C{=}0$};
+
+  \draw[arrR] (-3.5,0.4) -- (-2.5,1.5);
+  \node[font=\song\footnotesize,text=priRed,anchor=west] at (-2.3,1.5) {Robin 边界};
+
+  \draw[arr,priGold!80,line width=0.8pt] (-4.5,0.5) -- (-5.0,0.1);
+  \node[font=\song\footnotesize,text=priGold] at (-7.0,0.5) {热/湿流（外$\to$内）};
+
+  % ===== (b) 控制体 =====
+  \node[font=\song\footnotesize\bfseries] at (0, 2.5) {(b) 径向控制体网格};
+
+  \draw[priBlue,line width=1.0pt] (0,0) circle (1.8cm);
+  \foreach \r in {0.45,0.9,1.35} {
+    \draw[tkGray,dashed,line width=0.35pt] (0,0) circle (\r cm);
+  }
+  \foreach \a in {0,60,120,180,240,300} {
+    \draw[tkGray,dashed,line width=0.25pt] (0,0) -- ({1.8*cos(\a)},{1.8*sin(\a)});
+  }
+  \fill[priGreen!15,draw=priGreen,line width=0.7pt] (0.6,0.1) rectangle (1.0,0.3);
+  \node[font=\song\footnotesize,text=priGreen] at (1.8,1.0) {控制体};
+  \fill[priBlue!12,draw=priBlue,line width=0.7pt] (0,0) circle (0.3cm);
+  \node[font=\song\footnotesize,text=priBlue] at (-1.5,1.2) {中心控制体};
+  \node[font=\song\footnotesize] at (2.5,-0.3) {$N{=}80$, $\Delta r{=}0.25$ mm};
+
+  % ===== (c) 时空离散 =====
+  \node[font=\song\footnotesize\bfseries] at (5.8, 2.5) {(c) 时空离散网格};
+
+  \foreach \i in {0,1,2,3,4} {
+    \draw[tkGray,dashed,line width=0.3pt] (3.3, \i*0.6-1.5) -- (7.5, \i*0.6-1.5);
+  }
+  \foreach \j in {0,1,2,3,4,5,6} {
+    \draw[tkGray,dashed,line width=0.3pt] (3.3+\j*0.6, -1.5) -- (3.3+\j*0.6, 0.9);
+  }
+  \foreach \j in {0,1,2,3,4,5} {
+    \foreach \i in {1,2,3} {
+      \fill[priBlue] (3.6+\j*0.6, \i*0.6-1.5) circle (1.0pt);
+    }
+  }
+  \fill[priRed] (6.9, -0.3) circle (2.0pt);
+  \node[font=\song\footnotesize,text=priRed] at (6.9, 0) {$t^n$};
+  \draw[arrR,line width=1.0pt] (4.5, 1.2) -- (6.5, 1.2);
+  \node[font=\song\footnotesize,text=priRed] at (5.5,1.5) {时间推进方向 $\to$};
+  \node[font=\song\footnotesize] at (7.8, -1.0) {$\Delta t{=}1$ s（输出）};
+  \node[font=\song\footnotesize] at (7.8, -0.4) {子步 $1/32$ s};
+
+\end{tikzpicture}
+\end{center}
+\end{document}

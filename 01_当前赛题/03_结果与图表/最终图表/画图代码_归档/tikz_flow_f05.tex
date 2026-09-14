@@ -1,0 +1,69 @@
+\documentclass[border=5pt]{article}
+\usepackage[margin=0pt,paperwidth=16cm,paperheight=8cm]{geometry}
+\pagestyle{empty}
+\usepackage{fontspec}
+\usepackage{ctex}
+\newcommand{\fontdir}{../../../00_知识库/论文写作/LaTeX模板_2026国赛版/fonts/}
+\setCJKfamilyfont{song}[Path=\fontdir,UprightFont=SourceHanSerifCN-Regular.otf,BoldFont=SourceHanSerifCN-Bold.otf,AutoFakeBold=true]{SourceHanSerifCN}
+\newcommand*{\song}{\CJKfamily{song}}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\definecolor{primary}{HTML}{1F3A93}\definecolor{primaryDark}{HTML}{1A3A6E}\definecolor{secondary}{HTML}{D9E4F2}
+\definecolor{accent}{HTML}{D35400}\definecolor{accentLight}{HTML}{FDEBD0}
+\definecolor{gray}{HTML}{95A5A6}\definecolor{textDark}{HTML}{333333}\definecolor{arrowColor}{HTML}{5D6D7E}
+\tikzset{
+  process/.style={rectangle,draw=primaryDark,line width=0.8pt,fill=primary,text=white,align=center,font=\song\footnotesize,inner sep=5pt,rounded corners=2pt},
+  subprocess/.style={rectangle,draw=primaryDark,line width=0.7pt,fill=secondary,text=textDark,align=center,font=\song\footnotesize,inner sep=4pt,rounded corners=2pt},
+  arrow/.style={-{Stealth[length=2.2mm,width=2.0mm]},line width=0.9pt,draw=arrowColor},
+  arrowR/.style={-{Stealth[length=2.2mm,width=2.0mm]},line width=1.0pt,draw=accent},
+}
+
+\begin{document}
+\begin{center}
+{\large\bfseries\song 图 5：物质坐标变换 $r \to \xi = r/R(t)$}\\[0.6cm]
+\begin{tikzpicture}
+
+  % === 左半：(a) 物理域 ===
+  \node[font=\song\small\bfseries] at (-3.5, 3.2) {(a) 物理域：$r$ 坐标（边界移动）};
+
+  % 同心圆
+  \draw[primary,line width=1.5pt] (-3.5,0) circle (1.8cm);
+  \draw[primary,dashed,line width=0.9pt] (-3.5,0) circle (1.3cm);
+  \draw[primary,dashed,line width=0.5pt] (-3.5,0) circle (0.8cm);
+  \fill[primary] (-3.5,0) circle (1.8pt) node[below=0.15cm,font=\song\footnotesize] {$r=0$};
+
+  \node[font=\song\footnotesize,text=primary] at (-1.3,1.1) {$R(t_1)=2$ cm};
+  \node[font=\song\footnotesize,text=primary] at (-1.8,0.1) {$R(t_2)$};
+  \node[font=\song\footnotesize,text=primary] at (-2.3,-0.8) {$R(t_3)$};
+
+  % 热流方向
+  \draw[arrowR] (-2.2,0.8) -- (-2.8,0.4);
+  \draw[arrowR] (-2.6,0.5) -- (-3.0,0.2);
+  \node[font=\song\footnotesize,text=accent] at (-1.3,0.8) {热/湿流（外$\to$内）};
+
+  % 变换箭头
+  \draw[arrow,line width=1.5pt] (0.8,0.5) -- (2.0,0.5)
+    node[midway,above,font=\song\footnotesize] {坐标变换 $\xi=r/R(t)$};
+
+  % === 右半：(b) 计算域 ===
+  \node[font=\song\small\bfseries] at (5.5, 3.2) {(b) 计算域：$\xi\in[0,1]$（固定网格）};
+
+  \node[font=\song\footnotesize] at (2.5, 2.6) {$\xi=0$};
+  \node[font=\song\footnotesize] at (8.5, 2.6) {$\xi=1$};
+  \draw[primary,line width=1.5pt] (3.0,2.4) -- (8.0,2.4);
+  \draw[primary,dashed,line width=0.9pt] (3.0,1.4) -- (8.0,1.4);
+  \draw[primary,dashed,line width=0.5pt] (3.0,0.4) -- (8.0,0.4);
+
+  \node[font=\song\footnotesize,text=primary,right] at (8.2,2.4) {$R=2$ cm};
+  \node[font=\song\footnotesize,text=primary,right] at (8.2,1.4) {$R=1.6$ cm};
+  \node[font=\song\footnotesize,text=primary,right] at (8.2,0.4) {$R=1.2$ cm};
+
+  % 方程框
+  \node[subprocess,minimum width=14cm,minimum height=1.0cm] at (5.5, -1.0) {
+    质量方程：$\partial_t\tilde C = \frac{1}{\xi R^2}\partial_\xi(\xi D\partial_\xi\tilde C)$（无对流项）\quad
+    能量方程含压缩项：$-2(\dot R/R)\rho c_p T$
+  };
+
+\end{tikzpicture}
+\end{center}
+\end{document}

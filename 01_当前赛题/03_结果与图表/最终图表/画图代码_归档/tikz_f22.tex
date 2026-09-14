@@ -1,0 +1,74 @@
+% F-22 IMEX 交替推进算法流程图
+\documentclass[a4paper]{article}
+\usepackage[margin=0.3cm,paperwidth=18cm,paperheight=18cm]{geometry}
+\pagestyle{empty}
+\usepackage{fontspec}\setmainfont{Times New Roman}\setsansfont{Arial}
+\usepackage{ctex}
+\newcommand{\fontdir}{../../../../00_知识库/论文写作/LaTeX模板_2026国赛版/fonts/}
+\setCJKfamilyfont{song}[Path=\fontdir,UprightFont=SourceHanSerifCN-Regular.otf,BoldFont=SourceHanSerifCN-Bold.otf,AutoFakeBold=true]{SourceHanSerifCN}
+\newcommand*{\song}{\CJKfamily{song}}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\definecolor{priBlue}{HTML}{1F3A93}\definecolor{priGold}{HTML}{F39C12}
+\definecolor{priGreen}{HTML}{27AE60}\definecolor{priRed}{HTML}{C0392B}
+\definecolor{tkGray}{HTML}{9E9E9E}\definecolor{tkInk}{HTML}{333333}
+
+\tikzset{
+  boxB/.style={rectangle,draw=priBlue,line width=1.2pt,fill=priBlue!6,text=tkInk,minimum width=8.5cm,minimum height=1.2cm,align=center,font=\song\large,inner sep=7pt,rounded corners=3pt},
+  boxG/.style={rectangle,draw=priGreen,line width=1.2pt,fill=priGreen!6,text=tkInk,minimum width=8.5cm,minimum height=1.2cm,align=center,font=\song\large,inner sep=7pt,rounded corners=3pt},
+  boxY/.style={rectangle,draw=priGold,line width=1.2pt,fill=priGold!6,text=tkInk,minimum width=8.5cm,minimum height=1.1cm,align=center,font=\song\large,inner sep=7pt,rounded corners=3pt},
+  boxR/.style={rectangle,draw=priRed,line width=1.2pt,fill=priRed!6,text=tkInk,minimum width=8.5cm,minimum height=1.2cm,align=center,font=\song\large,inner sep=7pt,rounded corners=3pt},
+  arr/.style={-{Stealth[length=1.8mm,width=1.6mm]},line width=0.8pt,draw=tkInk!60},
+  arrR/.style={-{Stealth[length=1.8mm,width=1.6mm]},line width=0.9pt,draw=priRed},
+}
+
+\begin{document}
+\begin{center}
+{\large\bfseries\song 图 22：IMEX 交替推进算法流程}\\[0.5cm]
+\begin{tikzpicture}[node distance=0.6cm and 0.5cm]
+
+  % 开始
+  \node[boxB] (Init) {\textbf{开始}~~~$t=0$, $T_0=28^\circ$C, $C_0=2.55$ kg/kg};
+  % 物性
+  \node[boxY,below=of Init] (Props) {更新物性 $\rho,c_p,k,D(C,T)$（附录3）};
+  % 解T
+  \node[boxB,below=of Props] (SolveT) {隐式求解温度 $T^{n+1}$\quad 三对角矩阵直接求解};
+  % 重算D
+  \node[boxY,below=of SolveT] (UpdateD) {重算 $D(C,T^{n+1})$（温度已更新）};
+  % 解C
+  \node[boxG,below=of UpdateD] (SolveC) {隐式求解水分浓度 $C^{n+1}$\quad Picard 迭代 ($\omega{=}0.7$, tol${=}10^{-10}$, 最多 30 次)};
+  % 收敛判断
+  \node[boxY,below=of SolveC] (Converge) {Picard 收敛？};
+  % 时间推进
+  \node[boxB,below=of Converge] (Advance) {$t \mathrel{+}= \Delta t$\quad 时间推进};
+  % 外循环
+  \node[boxY,below=of Advance] (Check) {$t < t_{\max}$ ?};
+  % 结束
+  \node[boxY,below=of Check] (End) {\textbf{结束}~~~输出 result2.xlsx};
+
+  % 主流程
+  \draw[arr] (Init) -- (Props);
+  \draw[arr] (Props) -- (SolveT);
+  \draw[arr] (SolveT) -- (UpdateD);
+  \draw[arr] (UpdateD) -- (SolveC);
+  \draw[arr] (SolveC) -- (Converge);
+  \draw[arr,draw=priGreen,line width=1.0pt] (Converge) -- node[right,xshift=0.5cm,font=\song\footnotesize,text=priGreen] {是} (Advance);
+  \draw[arr] (Advance) -- (Check);
+  \draw[arr] (Check) -- node[right,font=\song\footnotesize] {否} (End);
+
+  % Picard 未收敛 -- 回到解C（Retry 在 Converge 右侧，形成矩形布局）
+  \node[boxR,right=of Converge,xshift=1.5cm,minimum width=3.5cm] (Retry) {未收敛：\\继续 Picard 迭代};
+  % Converge → Retry：水平向右（否）
+  \draw[arrR] (Converge.east) -- (Retry.west)
+    node[pos=0.5,above,font=\song\footnotesize,text=priRed] {否};
+  % Retry → SolveC：先上到与 SolveC 同高，再水平向左
+  \draw[arrR,dashed,rounded corners=4pt] (Retry.north) -- (Retry.north |- SolveC.east) -- (SolveC.east);
+
+  % 外循环回物性
+  \draw[arr,rounded corners=8pt] (Check.west) -- ++(-4,0) |- (Props.west)
+    node[pos=0.25,left,font=\song\footnotesize] {是};
+
+\end{tikzpicture}
+\end{center}
+\end{document}

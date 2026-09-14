@@ -1,0 +1,15 @@
+======================================================================
+IN-6 Sobol variance decomposition (6-dim incl C_fr; surrogate N=40/n_sub=8)
+Saltelli N=16 -> 224 runs (calc_second_order=True); prior C_fr~U[0.15,1.0] subjective
+Y range: 19.172 - 42.771 h (surrogate t_dry)
+--- Sobol indices (t_dry output; 95% CI) ---
+d_fac  S1=+0.5647 ± 0.3714   ST=0.2623 ± 0.3453   ST-S1=-0.3025
+h      S1=+0.0067 ± 0.0065   ST=0.0001 ± 0.0001   ST-S1=-0.0067
+km     S1=+0.0098 ± 0.0826   ST=0.0248 ± 0.0455   ST-S1=0.0151
+Tinf   S1=+0.0193 ± 0.0412   ST=0.0050 ± 0.0115   ST-S1=-0.0143
+Cinf   S1=-0.0000 ± 0.0566   ST=0.0049 ± 0.0087   ST-S1=0.0050
+C_fr   S1=+0.6070 ± 0.7519   ST=0.4237 ± 0.2729   ST-S1=-0.1833
+sum S1=1.208 ; sum ST=0.721（与 1 的偏差＝高阶交互与采样误差）
+NOTE: 代理保真度与 IN-3 相同（N=40/n_sub=8）；C_fr 先验 U[0.15,1.0] 主观（声明）
+NOTE: 二阶交互（S2）已计算、未在日志展开，完整矩阵见 CSV
+total wall=1135 s

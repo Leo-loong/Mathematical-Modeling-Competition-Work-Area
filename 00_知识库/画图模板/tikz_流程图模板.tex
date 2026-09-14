@@ -1,0 +1,502 @@
+% ============================================================
+% TikZ 流程图模板 — 数学建模竞赛论文专用
+% ============================================================
+% 用法：
+%   方式一（推荐，独立编译→嵌入论文）：
+%     1. 复制本文件中对应场景的代码到新 .tex 文件
+%     2. xelatex 编译 → 得到 PDF 矢量图
+%     3. 论文中用 \includegraphics{xxx.pdf} 嵌入
+%
+%   方式二（直接嵌入论文源码）：
+%     将 flowchart 环境内的 tikzpicture 代码复制到论文 .tex 中
+%     （需确保论文导言区已加载 tikz + arrows.meta + positioning + calc）
+%
+% 设计原则：
+%   - 字体自动匹配论文（思源宋体中文 + Times New Roman 英文/数字）
+%   - 所有颜色、字号、线宽统一定义，修改一次全局生效
+%   - 矢量输出，无限缩放不失真
+% ============================================================
+
+\documentclass[a4paper]{article}
+\usepackage[margin=0.5cm,paperwidth=21cm,paperheight=29.7cm]{geometry}
+\pagestyle{empty}
+
+% ---------- 字体（与论文 format.cls 保持一致）----------
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\usepackage{ctex}
+% 从本文件所在位置 (00_知识库/画图模板/) 推导字体目录的绝对路径
+% 编译时先找到项目根目录，再拼接 LaTeX 模板的 fonts 目录
+\newcommand{\fontdir}{../论文写作/LaTeX模板_2026国赛版/fonts/}
+% 备用方案：改为系统的思源宋体路径
+% \newcommand{\fontdir}{}
+
+% 中文宋体（常规，AutoFakeBold 避免 bfseries 回落英文粗体）
+\setCJKfamilyfont{song}[%
+  Path = \fontdir,
+  UprightFont = SourceHanSerifCN-Regular.otf,
+  BoldFont   = SourceHanSerifCN-Bold.otf,
+  AutoFakeBold = true,
+]{SourceHanSerifCN}
+\newcommand*{\song}{\CJKfamily{song}}
+
+% 兼容：如果找不到思源宋体，回退到 ctex 内置宋体
+% 删掉上面 setCJKfamilyfont 行，用 \setCJKmainfont 自动探测即可
+
+% ---------- TikZ 库 ----------
+\usepackage{tikz}
+\usetikzlibrary{
+  arrows.meta,      % 箭头样式
+  positioning,       % 相对定位（below=of, right=of）
+  calc,              % 坐标计算
+  shapes.geometric,  % 菱形（decision）
+  shapes.multipart,  % 多段节点
+  backgrounds,       % 背景层
+  fit,               % 包围盒
+  decorations.pathreplacing, % 括号/花括号
+}
+
+% ============================================================
+% 全局样式定义（修改这里，所有图自动更新）
+% ============================================================
+
+% ---- 颜色方案（学术/专业风格）----
+\definecolor{primary}{HTML}{2B579A}     % 主色：沉稳蓝（矩形框填充）
+\definecolor{primaryDark}{HTML}{1A3A6E} % 深蓝（框边框）
+\definecolor{secondary}{HTML}{D9E4F2}   % 浅蓝（次级框填充）
+\definecolor{accent}{HTML}{D35400}      % 强调色：深橙（start/end 框）
+\definecolor{accentLight}{HTML}{FDEBD0} % 浅橙
+\definecolor{decisionFill}{HTML}{E8F8F5}% 菱形填充：浅绿
+\definecolor{decisionBorder}{HTML}{117A65}% 菱形边框：深绿
+\definecolor{gray}{HTML}{95A5A6}        % 灰色线
+\definecolor{textDark}{HTML}{2C3E50}    % 深色文字
+\definecolor{arrowColor}{HTML}{5D6D7E}  % 箭头色
+\definecolor{groupBg}{HTML}{F4F6F7}     % 分组背景
+
+% ---- 节点样式 ----
+\tikzset{
+  % 流程矩形框（最常用）
+  process/.style = {
+    rectangle, draw=primaryDark, line width=0.8pt,
+    fill=primary, text=white,
+    minimum width=3.8cm, minimum height=1.0cm,
+    align=center, font=\song\footnotesize\bfseries,
+    inner sep=6pt, rounded corners=2pt,
+  },
+  % 次级流程框（浅色，用于子步骤）
+  subprocess/.style = {
+    rectangle, draw=primaryDark, line width=0.7pt,
+    fill=secondary, text=textDark,
+    minimum width=3.2cm, minimum height=0.85cm,
+    align=center, font=\song\footnotesize,
+    inner sep=4pt, rounded corners=2pt,
+  },
+  % 开始/结束（圆角矩形，强调色）
+  startstop/.style = {
+    rectangle, draw=accent, line width=1.0pt,
+    fill=accentLight, text=accent!85!black,
+    minimum width=3.2cm, minimum height=0.9cm,
+    align=center, font=\song\footnotesize\bfseries,
+    inner sep=6pt, rounded corners=8pt,
+  },
+  % 判断菱形
+  decision/.style = {
+    diamond, draw=decisionBorder, line width=0.9pt,
+    fill=decisionFill, text=textDark,
+    minimum width=3.2cm, minimum height=1.2cm,
+    align=center, font=\song\footnotesize\bfseries,
+    inner sep=2pt, aspect=2.0,
+  },
+  % 数据/输入输出（平行四边形）
+  data/.style = {
+    trapezium, trapezium left angle=70, trapezium right angle=70,
+    draw=primaryDark, line width=0.7pt,
+    fill=secondary, text=textDark,
+    minimum width=3.2cm, minimum height=0.9cm,
+    align=center, font=\song\footnotesize,
+    inner sep=6pt,
+  },
+  % 标注/注释（无边框文字）
+  annotation/.style = {
+    rectangle, draw=none, fill=none,
+    text=gray, font=\song\scriptsize\itshape,
+    align=left,
+  },
+  % 分组框（虚线圈定一个区域）
+  groupbox/.style = {
+    rectangle, draw=gray, line width=0.6pt, dashed,
+    fill=groupBg, fill opacity=0.5,
+    inner sep=10pt, rounded corners=6pt,
+  },
+}
+
+% ---- 箭头样式 ----
+\tikzset{
+  arrowMain/.style = {
+    -{Stealth[length=2.2mm, width=2.0mm]},
+    line width=0.9pt, draw=arrowColor,
+  },
+  arrowSub/.style = {
+    -{Stealth[length=1.8mm, width=1.6mm]},
+    line width=0.7pt, draw=gray,
+  },
+  arrowBidir/.style = {
+    {Stealth[length=2.0mm, width=1.8mm]}-{Stealth[length=2.0mm, width=1.8mm]},
+    line width=0.8pt, draw=arrowColor,
+  },
+  arrowDashed/.style = {
+    -{Stealth[length=2.0mm, width=1.8mm]},
+    line width=0.7pt, draw=gray, densely dashed,
+  },
+  lineNoArrow/.style = {
+    line width=0.7pt, draw=arrowColor,
+  },
+}
+
+% ---- 标签样式（放在箭头上的文字）----
+\tikzset{
+  edgeLabel/.style = {
+    font=\song\footnotesize, fill=white, fill opacity=0.85,
+    inner sep=2pt, text=textDark,
+  },
+  edgeLabelYes/.style = {
+    edgeLabel, text=decisionBorder,
+  },
+  edgeLabelNo/.style = {
+    edgeLabel, text=accent,
+  },
+}
+
+% ---- 节点间距预设 ----
+\newcommand{\nodeDist}{1.2cm}  % 垂直间距
+\newcommand{\nodeDistWide}{1.8cm} % 宽垂直间距
+\newcommand{\colDist}{1.5cm}  % 水平间距
+
+% ============================================================
+% 场景 1：顺序流程图（论文最常见：建模步骤/算法流程）
+% ============================================================
+% 适用：算法步骤、问题求解流程、模型构建过程、数据处理流水线
+%
+% 使用方法：修改 \foreach 里的步骤文字即可
+% 如需增减步骤数，调整 in {...} 里的条目
+%
+\newcommand{\sequentialFlowchart}{
+\begin{tikzpicture}[node distance=\nodeDist]
+  % 步骤直接列出，方便修改文字和增删
+  \node[startstop] (N1) {数据预处理与清洗};
+  \node[process, below=of N1] (N2) {特征提取与选择};
+  \node[process, below=of N2] (N3) {模型建立与参数估计};
+  \node[process, below=of N3] (N4) {模型求解与优化};
+  \node[startstop, below=of N4] (N5) {结果分析与检验};
+  \draw[arrowMain] (N1) -- (N2);
+  \draw[arrowMain] (N2) -- (N3);
+  \draw[arrowMain] (N3) -- (N4);
+  \draw[arrowMain] (N4) -- (N5);
+\end{tikzpicture}
+}
+
+% ============================================================
+% 场景 2：判断分支流程图（循环/条件判断）
+% ============================================================
+% 适用：迭代求解流程、模型选择决策树、有条件的算法路径
+%
+\newcommand{\decisionFlowchart}{
+\begin{tikzpicture}[node distance=\nodeDist and \colDist]
+  \node[startstop] (S) {开始};
+
+  \node[process, below=of S] (P1) {步骤一：初始数据计算};
+  \draw[arrowMain] (S) -- (P1);
+
+  \node[decision, below=of P1, yshift=-0.3cm] (D1) {条件判断\\（如收敛？精度满足？）};
+  \draw[arrowMain] (P1) -- (D1);
+
+  \node[process, right=of D1, xshift=1.0cm] (P2) {调整参数/迭代更新};
+  \node[process, below=of D1, yshift=-0.3cm] (P3) {输出中间结果};
+
+  \draw[arrowMain] (D1) -- node[edgeLabelYes, right] {否} (P2);
+  \draw[arrowMain] (P2.east) -- ++(0.8,0) |- (P1.east);
+  \draw[arrowMain] (D1) -- node[edgeLabelNo, left]  {是} (P3);
+
+  \node[process, below=of P3] (P4) {后续处理};
+  \draw[arrowMain] (P3) -- (P4);
+
+  \node[startstop, below=of P4] (E) {结束};
+  \draw[arrowMain] (P4) -- (E);
+\end{tikzpicture}
+}
+
+% ============================================================
+% 场景 3：技术路线图（总体分析/研究框架）
+% ============================================================
+% 适用：论文第 2 节"总体分析"、研究框架、四问递进关系
+%
+\newcommand{\techRoadmap}{
+\begin{tikzpicture}[node distance=\nodeDistWide and \colDist]
+  % ---- 第 1 层：总目标 ----
+  \node[startstop, minimum width=6cm, font=\song\small\bfseries] (T) {\textbf{总体目标}\\建立药材烘干过程的传热传质耦合模型};
+
+  % ---- 第 2 层：四个问题并行 ----
+  \node[process, below left=of T, xshift=-2.2cm, minimum width=2.8cm] (Q1) {问题一\\单颗粒干燥动力学};
+  \node[process, below left=of T, xshift=0cm,   minimum width=2.8cm] (Q2) {问题二\\固定床堆积传热};
+  \node[process, below right=of T, xshift=0cm,  minimum width=2.8cm] (Q3) {问题三\\连续带式干燥机};
+  \node[process, below right=of T, xshift=2.2cm,minimum width=2.8cm] (Q4) {问题四\\分段温控优化};
+
+  \draw[arrowMain] (T.south) -- ++(0,-0.3) -| (Q1.north);
+  \draw[arrowMain] (T.south) -- ++(0,-0.3) -| (Q2.north);
+  \draw[arrowMain] (T.south) -- ++(0,-0.3) -| (Q3.north);
+  \draw[arrowMain] (T.south) -- ++(0,-0.3) -| (Q4.north);
+
+  % ---- 第 3 层：方法 ----
+  \node[subprocess, below=of Q1] (M1) {菲克扩散定律\\Page 薄层模型};
+  \node[subprocess, below=of Q2] (M2) {多孔介质传热\\Ergun 压降方程};
+  \node[subprocess, below=of Q3] (M3) {一维稳态模型\\热质耦合平衡};
+  \node[subprocess, below=of Q4] (M4) {多目标优化\\遗传算法 / PSO};
+
+  \draw[arrowSub] (Q1) -- (M1);
+  \draw[arrowSub] (Q2) -- (M2);
+  \draw[arrowSub] (Q3) -- (M3);
+  \draw[arrowSub] (Q4) -- (M4);
+
+  % ---- 第 4 层：输出 ----
+  \node[subprocess, below=of M1, fill=white, draw=gray] (R1) {干燥速率曲线\\水分比变化规律};
+  \node[subprocess, below=of M2, fill=white, draw=gray] (R2) {温度分布\\风速影响规律};
+  \node[subprocess, below=of M3, fill=white, draw=gray] (R3) {出料含水率\\干燥效率};
+  \node[subprocess, below=of M4, fill=white, draw=gray] (R4) {最优温控策略\\能效评估};
+
+  \draw[arrowSub] (M1) -- (R1);
+  \draw[arrowSub] (M2) -- (R2);
+  \draw[arrowSub] (M3) -- (R3);
+  \draw[arrowSub] (M4) -- (R4);
+
+  % ---- 底部收敛 ----
+  \node[startstop, below=of R2, xshift=2cm, yshift=-0.5cm,
+        minimum width=8cm, font=\song\small\bfseries] (Final) {综合最优烘干工艺方案};
+
+  \draw[arrowMain] (R1.south) -- ++(0,-0.2) -| (Final.north);
+  \draw[arrowMain] (R2.south) -- ++(0,-0.2) -| (Final.north);
+  \draw[arrowMain] (R3.south) -- ++(0,-0.2) -| (Final.north);
+  \draw[arrowMain] (R4.south) -- ++(0,-0.2) -| (Final.north);
+\end{tikzpicture}
+}
+
+% ============================================================
+% 场景 4：并列对比流程（两种方案/算法并行对比）
+% ============================================================
+% 适用：算法对比、方案 A vs 方案 B、模型选择
+%
+\newcommand{\parallelFlowchart}{
+\begin{tikzpicture}[node distance=\nodeDist and 2.5cm]
+  \node[startstop, minimum width=7cm] (S) {同一输入数据};
+
+  \node[process, below left=of S, xshift=-1.2cm, minimum width=3.0cm] (A1) {方案 A\\（如：有限差分法）};
+  \node[process, below right=of S, xshift=1.2cm, minimum width=3.0cm] (B1) {方案 B\\（如：有限元法）};
+
+  \draw[arrowMain] (S.south) -- ++(0,-0.3) -| (A1.north);
+  \draw[arrowMain] (S.south) -- ++(0,-0.3) -| (B1.north);
+
+  \node[subprocess, below=of A1] (A2) {求解过程描述};
+  \node[subprocess, below=of B1] (B2) {求解过程描述};
+
+  \draw[arrowSub] (A1) -- (A2);
+  \draw[arrowSub] (B1) -- (B2);
+
+  \node[subprocess, below=of A2, fill=white, draw=gray] (A3) {结果 A：...};
+  \node[subprocess, below=of B2, fill=white, draw=gray] (B3) {结果 B：...};
+
+  \draw[arrowSub] (A2) -- (A3);
+  \draw[arrowSub] (B2) -- (B3);
+
+  \node[decision, below=of A2, xshift=2.5cm, yshift=-1.8cm,
+        minimum width=4.0cm] (D) {对比分析\\哪个更优？};
+
+  \draw[arrowMain] (A3.south) -- ++(0,-0.3) -| (D.west);
+  \draw[arrowMain] (B3.south) -- ++(0,-0.3) -| (D.east);
+
+  \node[startstop, below=of D, yshift=-0.3cm,
+        minimum width=4.5cm, font=\song\small\bfseries] (E) {结论：推荐方案 X};
+  \draw[arrowMain] (D) -- (E);
+\end{tikzpicture}
+}
+
+% ============================================================
+% 场景 5：多阶段递进（嵌套循环/层次化流程）
+% ============================================================
+% 适用：多层优化流程、嵌套迭代、分阶段建模
+%
+\newcommand{\multiStageFlowchart}{
+\begin{tikzpicture}[node distance=\nodeDist and \colDist]
+  \node[startstop] (S) {开始};
+
+  % 第 1 阶段
+  \node[process, below=of S] (P1) {阶段一：全局预搜索};
+  \draw[arrowMain] (S) -- (P1);
+
+  \node[subprocess, below=of P1] (P1sub) {用粗网格/大步长扫描参数空间};
+  \draw[arrowSub] (P1) -- (P1sub);
+
+  % 第 2 阶段
+  \node[process, below=of P1sub, yshift=-0.2cm] (P2) {阶段二：局部精细优化};
+  \draw[arrowMain] (P1sub) -- (P2);
+
+  \node[subprocess, below=of P2] (P2sub) {在粗最优附近用梯度下降精细搜索};
+  \draw[arrowSub] (P2) -- (P2sub);
+
+  % 判断
+  \node[decision, below=of P2sub, yshift=-0.3cm] (D) {精度满足？};
+  \draw[arrowMain] (P2sub) -- (D);
+
+  \node[subprocess, right=of P2sub, xshift=1.2cm] (adj) {缩小步长 / 扩大范围};
+  \draw[arrowMain] (D) -- node[edgeLabelYes, above] {否} (adj);
+  \draw[arrowSub] (adj.north) -- ++(0,1.0) -| (P2.east);
+
+  \node[process, below=of D, yshift=-0.3cm] (P3) {阶段三：敏感性分析};
+  \draw[arrowMain] (D) -- node[edgeLabelNo, left] {是} (P3);
+
+  \node[startstop, below=of P3] (E) {输出最优解 + 置信区间};
+  \draw[arrowMain] (P3) -- (E);
+\end{tikzpicture}
+}
+
+% ============================================================
+% 场景 6：数据流图（输入→处理→输出，带标注）
+% ============================================================
+% 适用：数据处理流水线、模型 I/O 关系
+%
+\newcommand{\dataFlowDiagram}{
+\begin{tikzpicture}[node distance=\nodeDist and 1.8cm]
+  % 输入
+  \node[data] (D1) {附件1\\实验条件数据};
+  \node[data, right=of D1] (D2) {附件2\\干燥过程记录};
+  \node[data, right=of D2] (D3) {附件3\\物性参数};
+
+  % 处理
+  \node[process, below=of D2, yshift=-0.2cm,
+        minimum width=3.5cm] (Proc) {数据清洗与融合\\（异常检测、插值、对齐）};
+
+  \draw[arrowMain] (D1.south) -- ++(0,-0.2) -| (Proc.north);
+  \draw[arrowMain] (D2.south) -- (Proc.north);
+  \draw[arrowMain] (D3.south) -- ++(0,-0.2) -| (Proc.north);
+
+  % 中间产物
+  \node[subprocess, below=of Proc, fill=white, draw=gray] (Mid) {\song\footnotesize 标准化数据集\\（n=XXX, 字段=XX）};
+
+  \draw[arrowSub] (Proc) -- (Mid);
+
+  % 建模
+  \node[process, below=of Mid, minimum width=3.5cm] (Model) {模型建立与求解};
+
+  \draw[arrowMain] (Mid) -- (Model);
+
+  % 输出
+  \node[data, below left=of Model, xshift=-0.6cm] (Out1) {干燥速率曲线};
+  \node[data, below right=of Model, xshift=0.6cm] (Out2) {最优工艺参数};
+
+  \draw[arrowMain] (Model.south) -- ++(0,-0.3) -| (Out1.north);
+  \draw[arrowMain] (Model.south) -- ++(0,-0.3) -| (Out2.north);
+\end{tikzpicture}
+}
+
+% ============================================================
+% 场景 7：带数学公式标注的流程图
+% ============================================================
+% 适用：需要展示核心公式的建模流程
+%
+\newcommand{\mathFlowchart}{
+\begin{tikzpicture}[node distance=\nodeDistWide and \colDist]
+  \node[startstop] (S) {开始：输入物料参数与操作条件};
+
+  \node[process, below=of S, minimum width=6cm] (P1) {
+    \textbf{Step 1：干燥动力学方程} \\[3pt]
+    $MR = \dfrac{M_t - M_e}{M_0 - M_e} = \exp(-k t^n)$
+  };
+  \draw[arrowMain] (S) -- (P1);
+
+  \node[process, below=of P1, minimum width=6cm] (P2) {
+    \textbf{Step 2：传热方程} \\[3pt]
+    $\rho c_p \dfrac{\partial T}{\partial t} = \nabla\cdot(k\nabla T) + \dot{q}$
+  };
+  \draw[arrowMain] (P1) -- (P2);
+
+  \node[decision, below=of P2, yshift=-0.3cm, minimum width=5cm] (D) {
+    残差 $< \varepsilon$ \\ 且迭代次数 $< N_{\max}$
+  };
+  \draw[arrowMain] (P2) -- (D);
+
+  \node[process, right=of D, xshift=1.2cm] (Adj) {调整松弛因子};
+  \draw[arrowMain] (D) -- node[edgeLabelYes, above] {否} (Adj);
+  \draw[arrowSub] (Adj.north) |- (P2.east);
+
+  \node[process, below=of D, yshift=-0.3cm, minimum width=5cm] (P3) {
+    \textbf{Step 3：后处理} \\[3pt]
+    输出 $T(x,t)$, $M(x,t)$, 干燥速率曲线
+  };
+  \draw[arrowMain] (D) -- node[edgeLabelNo, left] {是} (P3);
+
+  \node[startstop, below=of P3] (E) {结束};
+  \draw[arrowMain] (P3) -- (E);
+\end{tikzpicture}
+}
+
+% ============================================================
+% 场景 8：分组/分模块流程图（用虚线框圈出逻辑组）
+% ============================================================
+% 适用：系统架构、模块划分、分层设计
+%
+\newcommand{\groupedFlowchart}{
+\begin{tikzpicture}[node distance=\nodeDist and 2.5cm]
+  % ---- 模块 A：数据层 ----
+  \node[groupbox, minimum width=5.2cm, minimum height=2.5cm] (GA) {};
+  \node[annotation, above=0.2cm of GA.north, font=\song\footnotesize\bfseries] {数据层};
+  \node[data, minimum width=3.5cm] at (GA) (DA1) {原始数据采集};
+  \node[data, below=0.6cm of DA1, minimum width=3.5cm] at (GA) (DA2) {预处理与标准化};
+
+  \draw[arrowSub] (DA1) -- (DA2);
+
+  % ---- 模块 B：模型层 ----
+  \node[groupbox, right=of GA, xshift=1.0cm,
+        minimum width=5.2cm, minimum height=2.5cm] (GB) {};
+  \node[annotation, above=0.2cm of GB.north, font=\song\footnotesize\bfseries] {模型层};
+  \node[process, minimum width=3.5cm] at (GB) (MB1) {传热传质耦合模型};
+  \node[subprocess, below=0.6cm of MB1, minimum width=3.5cm] at (GB) (MB2) {参数辨识与验证};
+
+  \draw[arrowSub] (MB1) -- (MB2);
+
+  % ---- 模块 C：输出层 ----
+  \node[groupbox, right=of GB, xshift=1.0cm,
+        minimum width=5.2cm, minimum height=2.5cm] (GC) {};
+  \node[annotation, above=0.2cm of GC.north, font=\song\footnotesize\bfseries] {输出层};
+  \node[subprocess, fill=white, draw=gray, minimum width=3.5cm] at (GC) (RC1) {可视化结果};
+  \node[subprocess, fill=white, draw=gray, below=0.6cm of RC1, minimum width=3.5cm] at (GC) (RC2) {最优工艺方案};
+
+  \draw[arrowSub] (RC1) -- (RC2);
+
+  % 模块间连接
+  \draw[arrowMain] (DA2.east) -- (DA2.east -| GA.east) -- ++(0.6,0) |- (MB1.west);
+  \draw[arrowMain] (MB2.east) -- (MB2.east -| GB.east) -- ++(0.6,0) |- (RC1.west);
+\end{tikzpicture}
+}
+
+% ============================================================
+% 主文档：编译时用注释切换想要输出的场景，也可在命令行覆盖
+%          如 xelatex '\def\scene{tech}\input{tikz_流程图模板}'
+% ============================================================
+\begin{document}
+% 下面 8 个场景，取消注释其中一个即可，不要同时保留多个
+% 默认输出场景 5（如果不加 \scene 定义）
+
+\ifdefined\scene
+  \ifx\scene\tech     \techRoadmap          \fi   % xelatex '\def\scene{tech}\input{...}'
+  \ifx\scene\seq      \sequentialFlowchart  \fi
+  \ifx\scene\dec      \decisionFlowchart    \fi
+  \ifx\scene\paral    \parallelFlowchart    \fi
+  \ifx\scene\multi    \multiStageFlowchart  \fi
+  \ifx\scene\data     \dataFlowDiagram      \fi
+  \ifx\scene\math     \mathFlowchart        \fi
+  \ifx\scene\group    \groupedFlowchart     \fi
+\else
+  % ---- 默认输出（修改这一行切换默认场景）----
+  \multiStageFlowchart      % 不改\scene定义时输出这个
+\fi
+
+\end{document}

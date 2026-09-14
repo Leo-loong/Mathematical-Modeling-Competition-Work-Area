@@ -1,0 +1,10 @@
+======================================================================
+E2 frozen+fixR vs series (57600 s, N=160)
+frozen run wall=62 s
+BiT=1.8964 FoT=11.304 ; BiC=15.2801 FoC=0.1508
+series self-check theta(Fo->0): max|1-theta|=6.65e-03
+max|dT| = 2.419e-10 K (nodes)
+max|dC| = 5.244e-05 kg/kg (nodes)
+T(0): num=50.000000 ser=50.000000 ; T(R): num=50.000000 ser=50.000000
+C(0): num=1.849281 ser=1.849231 ; C(R): num=0.204027 ser=0.204024
+criterion: |dT|,|dC| ~ 1e-4 order (first-order time discretization)

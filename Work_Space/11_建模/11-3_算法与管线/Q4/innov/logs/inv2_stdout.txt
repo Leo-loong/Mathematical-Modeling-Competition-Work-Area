@@ -1,0 +1,9 @@
+[chain] running python q4_INV2_uq_lowC.py --go
+[SCALE] IN-2 UQ: 31 full event solves (n_sub=16), Pool(5), wall 25-35 min
+[SCALE] IN-2 UQ: 31 full event solves (n_sub=16), Pool(5), wall 25-35 min
+[SCALE] IN-2 UQ: 31 full event solves (n_sub=16), Pool(5), wall 25-35 min
+[SCALE] IN-2 UQ: 31 full event solves (n_sub=16), Pool(5), wall 25-35 min
+[SCALE] IN-2 UQ: 31 full event solves (n_sub=16), Pool(5), wall 25-35 min
+[SCALE] IN-2 UQ: 31 full event solves (n_sub=16), Pool(5), wall 25-35 min
+INV2 DONE
+[chain] exit=0

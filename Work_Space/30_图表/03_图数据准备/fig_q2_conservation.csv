@@ -1,0 +1,12 @@
+kind,item,value,rel_resid
+mass,initial,5.100000e-04,1.903000e-03
+mass,final,2.715653e-04,1.903000e-03
+mass,change,-2.384347e-04,1.903000e-03
+mass,flux,-2.388884e-04,1.903000e-03
+mass,residual,4.537000e-07,1.903000e-03
+energy,initial,1.867429e+04,1.803000e-02
+energy,final,2.486752e+04,1.803000e-02
+energy,change,6.193227e+03,1.803000e-02
+energy,flux,1.427207e+04,1.803000e-02
+energy,property_term,-7.821551e+03,1.803000e-02
+energy,residual,-2.573000e+02,1.803000e-02

@@ -1,0 +1,33 @@
+[SCALE] E7b+E8b: two full solves (N=160, n_sub=32, t_corr=1, breaker 240 h)
+[SCALE] wall est 17-20 min; outputs: logs/q4_w6_e78b.txt + logs/q4_e7_hist.csv
+  [e7b] step 12000 t=3.3 h C0=2.3545 wall=74
+  [e7b] step 24000 t=6.7 h C0=1.5027 wall=158
+  [e7b] step 36000 t=10.0 h C0=0.9237 wall=233
+  [e7b] step 48000 t=13.3 h C0=0.6116 wall=295
+  [e7b] step 60000 t=16.7 h C0=0.4439 wall=339
+  [e7b] step 72000 t=20.0 h C0=0.3486 wall=380
+  [e7b] step 84000 t=23.3 h C0=0.2900 wall=417
+  [e7b] step 96000 t=26.7 h C0=0.2513 wall=455
+  [e7b] step 108000 t=30.0 h C0=0.2241 wall=501
+  [e7b] step 120000 t=33.3 h C0=0.2041 wall=545
+  [e7b] step 132000 t=36.7 h C0=0.1887 wall=585
+  [e7b] step 144000 t=40.0 h C0=0.1765 wall=625
+  [e7b] step 156000 t=43.3 h C0=0.1666 wall=666
+  [e7b] step 168000 t=46.7 h C0=0.1584 wall=704
+  [e7b] step 180000 t=50.0 h C0=0.1515 wall=740
+  [e8b] step 12000 t=3.3 h C0=2.3556 wall=59
+  [e8b] step 24000 t=6.7 h C0=1.5042 wall=105
+  [e8b] step 36000 t=10.0 h C0=0.9246 wall=142
+  [e8b] step 48000 t=13.3 h C0=0.6121 wall=179
+  [e8b] step 60000 t=16.7 h C0=0.4442 wall=212
+  [e8b] step 72000 t=20.0 h C0=0.3488 wall=245
+  [e8b] step 84000 t=23.3 h C0=0.2901 wall=274
+  [e8b] step 96000 t=26.7 h C0=0.2514 wall=305
+  [e8b] step 108000 t=30.0 h C0=0.2242 wall=337
+  [e8b] step 120000 t=33.3 h C0=0.2041 wall=364
+  [e8b] step 132000 t=36.7 h C0=0.1887 wall=392
+  [e8b] step 144000 t=40.0 h C0=0.1765 wall=419
+  [e8b] step 156000 t=43.3 h C0=0.1666 wall=447
+  [e8b] step 168000 t=46.7 h C0=0.1584 wall=473
+  [e8b] step 180000 t=50.0 h C0=0.1515 wall=495
+E78B DONE
